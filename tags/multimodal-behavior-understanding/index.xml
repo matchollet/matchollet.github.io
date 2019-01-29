@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multimodal Behavior Understanding on Mathieu Chollet</title>
+    <link>https://matchollet.github.io/tags/multimodal-behavior-understanding/</link>
+    <description>Recent content in Multimodal Behavior Understanding on Mathieu Chollet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://matchollet.github.io/tags/multimodal-behavior-understanding/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cicero</title>
+      <link>https://matchollet.github.io/project/cicero/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/project/cicero/</guid>
+      <description>In the CICERO project, our aim is to investigate if public speaking skills can be improved using virtual training. Descriptions of the user&amp;rsquo;s public speaking behavior are automatically extracted from audiovisual sensors, and an interactive virtual audience is used to provide feedback to the users depending on their public speaking performance. To investigate how virtual characters can help improving the learning outcome of a public speaking training system, I proposed a flexible and modular architecture for interactive virtual audiences, and conducted a series of studies on the impact of different feedback strategies on training outcomes and user experiences.</description>
+    </item>
+    
+    <item>
+      <title>A generic platform for training social skills with adaptative virtual agents</title>
+      <link>https://matchollet.github.io/publication/aamas18generic/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/aamas18generic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The relationship between task-induced stress, vocal changes, and physiological state during a dyadic team task</title>
+      <link>https://matchollet.github.io/publication/icmi17physiology/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icmi17physiology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessing Public Speaking Ability from Thin Slices of Behavior</title>
+      <link>https://matchollet.github.io/publication/fg17assessing/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/fg17assessing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Native vs. Non-native language fluency implications on multimodal interaction for interpersonal skills training</title>
+      <link>https://matchollet.github.io/publication/icmi16native/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icmi16native/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multimodal public speaking performance assessment</title>
+      <link>https://matchollet.github.io/publication/icmi15multimodal/</link>
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icmi15multimodal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Public speaking training with a multimodal interactive virtual audience framework</title>
+      <link>https://matchollet.github.io/publication/icmi15demo/</link>
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icmi15demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An interactive virtual audience platform for public speaking training</title>
+      <link>https://matchollet.github.io/publication/aamas14audience/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/aamas14audience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interpersonal stance recognition using non-verbal signals on several time windows</title>
+      <link>https://matchollet.github.io/publication/wacai12interpersonal/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/wacai12interpersonal/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

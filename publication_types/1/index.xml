@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1 on Mathieu Chollet</title>
+    <link>https://matchollet.github.io/publication_types/1/</link>
+    <description>Recent content in 1 on Mathieu Chollet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://matchollet.github.io/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Influence of individual differences when training public speaking with virtual audiences</title>
+      <link>https://matchollet.github.io/publication/iva18influence/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva18influence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NADIA - Neural network driven virtual human conversation agents</title>
+      <link>https://matchollet.github.io/publication/iva18nadia/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva18nadia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A generic platform for training social skills with adaptative virtual agents</title>
+      <link>https://matchollet.github.io/publication/aamas18generic/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/aamas18generic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NADiA - Towards neural network driven virtual human conversation agents</title>
+      <link>https://matchollet.github.io/publication/aamas18nadia/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/aamas18nadia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The relationship between task-induced stress, vocal changes, and physiological state during a dyadic team task</title>
+      <link>https://matchollet.github.io/publication/icmi17physiology/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icmi17physiology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Racing heart and sweaty palms: What influences users&#39; self-assessments and physiological signals when interacting with virtual audiences?</title>
+      <link>https://matchollet.github.io/publication/iva17racing/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva17racing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Affect-LM: A neural language model for customizable affective text generation</title>
+      <link>https://matchollet.github.io/publication/acl17affectlm/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/acl17affectlm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessing Public Speaking Ability from Thin Slices of Behavior</title>
+      <link>https://matchollet.github.io/publication/fg17assessing/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/fg17assessing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Native vs. Non-native language fluency implications on multimodal interaction for interpersonal skills training</title>
+      <link>https://matchollet.github.io/publication/icmi16native/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icmi16native/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An architecture for biologically grounded real-time reflexive behavior</title>
+      <link>https://matchollet.github.io/publication/iva16biologically/</link>
+      <pubDate>Mon, 05 Sep 2016 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva16biologically/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Manipulating the perception of virtual audiences using crowdsourced behaviors</title>
+      <link>https://matchollet.github.io/publication/iva16manipulating/</link>
+      <pubDate>Mon, 05 Sep 2016 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva16manipulating/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A multimodal corpus for the assessment of public speaking ability and anxiety</title>
+      <link>https://matchollet.github.io/publication/lrec16corpus/</link>
+      <pubDate>Sun, 01 May 2016 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/lrec16corpus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multimodal public speaking performance assessment</title>
+      <link>https://matchollet.github.io/publication/icmi15multimodal/</link>
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icmi15multimodal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Public speaking training with a multimodal interactive virtual audience framework</title>
+      <link>https://matchollet.github.io/publication/icmi15demo/</link>
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icmi15demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploring feedback strategies to improve public speaking: An interactive virtual audience framework</title>
+      <link>https://matchollet.github.io/publication/ubicomp15exploring/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/ubicomp15exploring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Towards a socially adaptive virtual agent</title>
+      <link>https://matchollet.github.io/publication/iva15adaptative/</link>
+      <pubDate>Sat, 01 Aug 2015 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva15adaptative/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>From non-verbal signals sequence mining to bayesian networks for interpersonal attitudes expression</title>
+      <link>https://matchollet.github.io/publication/iva14sequence/</link>
+      <pubDate>Fri, 01 Aug 2014 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva14sequence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An interactive virtual audience platform for public speaking training</title>
+      <link>https://matchollet.github.io/publication/aamas14audience/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/aamas14audience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Expressing social attitudes in virtual agents for social coaching</title>
+      <link>https://matchollet.github.io/publication/aamas14expressing/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/aamas14expressing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mining a multimodal corpus for non-verbal signals sequences conveying attitudes</title>
+      <link>https://matchollet.github.io/publication/lrec14mining/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/lrec14mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A multimodal corpus approach to the design of virtual recruiters</title>
+      <link>https://matchollet.github.io/publication/acii13multimodal/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/acii13multimodal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The TARDIS framework: Intelligent virtual agents for social coaching in job interviews</title>
+      <link>https://matchollet.github.io/publication/ace13tardis/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/ace13tardis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vers des agents conversationnels animés socio-affectifs</title>
+      <link>https://matchollet.github.io/publication/ihm13agents/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/ihm13agents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computational model of film editing for interactive storytelling</title>
+      <link>https://matchollet.github.io/publication/icids11computational/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icids11computational/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automated Camera Planner for Film Editing Using Key Shots</title>
+      <link>https://matchollet.github.io/publication/sca11planner/</link>
+      <pubDate>Sun, 01 May 2011 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/sca11planner/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

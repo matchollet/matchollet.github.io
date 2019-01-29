@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathieu Chollet on Mathieu Chollet</title>
+    <link>https://matchollet.github.io/</link>
+    <description>Recent content in Mathieu Chollet on Mathieu Chollet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cicero</title>
+      <link>https://matchollet.github.io/project/cicero/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/project/cicero/</guid>
+      <description>&lt;p&gt;In the CICERO project, our aim is to investigate if public speaking skills can be improved using virtual training. Descriptions of the user&amp;rsquo;s public speaking behavior are automatically extracted from audiovisual sensors, and an interactive virtual audience is used to provide feedback to the users depending on their public speaking performance. To investigate how virtual characters can help improving the learning outcome of a public speaking training system, I proposed a flexible and modular architecture for interactive virtual audiences, and conducted a series of studies on the impact of different feedback strategies on training outcomes and user experiences.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/dTE14lPBO98&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;!--
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/YiajdZJlZYQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+--&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tardis</title>
+      <link>https://matchollet.github.io/project/tardis/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/project/tardis/</guid>
+      <description>&lt;p&gt;I was involved in the EU FP7 Tardis Project. TARDIS aimed to build a scenario-based serious-game simulation platform for young people (ages 18-25) at risk of exclusion to explore, practice and improve their social skills. TARDIS  facilitates the interaction through virtual agents (VAs) acting as recruiters in job interviews scenarios. My contribution in this project focused on the virtual recruiter. I proposed a data-driven model allowing VAs to express different interpersonal attitudes (dominant, friendly&amp;hellip;) which takes into account how the recruiter’s non-verbal behaviors are sequenced. The model uses a dataset of non-verbal behavior sequences obtained using sequence mining techniques, and can generate new sequences to express a chosen interpersonal attitude.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/8fmJMzC18C4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Perceptive Patient</title>
+      <link>https://matchollet.github.io/project/perceptivepatient/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/project/perceptivepatient/</guid>
+      <description>&lt;p&gt;With colleagues from the MedVR USC-ICT group, I was involved in the Perceptive Patient project where we investigated training medical doctors communication skills. Doctors’ communication styles are known to be predictors of patients’ satisfaction, as well as actual health outcomes. We are designing emotional state and behavioral expression models for virtual patients, and creating new architectures for online, distributed systems for human-virtual agent interaction. Our system demo at the 2018 International Meeting on Simulation in Healthcare received the “Best of Show” demo award.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/DHaUUt5yeWQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>CineSys</title>
+      <link>https://matchollet.github.io/project/cinesys/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/project/cinesys/</guid>
+      <description>&lt;p&gt;As part of my Master’s thesis, I proposed a model for automatic editing of 3D movies, that can learn from examples. Using a 3D virtual environment (CineSys) and a description of a scenario (i.e. timed actor actions), it casts the problem of film editing as a path-planning problem in a space of available cameras (pre-defined positions or automatically computed from actors positions). I defined cost functions for shot quality (e.g. shot type preferences, composition, visibility of actions), for cutting between shots (e.g. jump cuts, do not break the line of action), and for pacing. Each rule is associated to a weight: these weights can be automatically learned from manually produced movie examples, effectively representing the editing style of a particular user.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/Aj1Iy_k0QVI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Influence of individual differences when training public speaking with virtual audiences</title>
+      <link>https://matchollet.github.io/publication/iva18influence/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva18influence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NADIA - Neural network driven virtual human conversation agents</title>
+      <link>https://matchollet.github.io/publication/iva18nadia/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva18nadia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A generic platform for training social skills with adaptative virtual agents</title>
+      <link>https://matchollet.github.io/publication/aamas18generic/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/aamas18generic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NADiA - Towards neural network driven virtual human conversation agents</title>
+      <link>https://matchollet.github.io/publication/aamas18nadia/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/aamas18nadia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The relationship between task-induced stress, vocal changes, and physiological state during a dyadic team task</title>
+      <link>https://matchollet.github.io/publication/icmi17physiology/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icmi17physiology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Methodology for the Automatic Extraction and Generation of Non-Verbal Signals Sequences Conveying Interpersonal Attitudes</title>
+      <link>https://matchollet.github.io/publication/taffc17methodology/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/taffc17methodology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Perception of virtual audiences</title>
+      <link>https://matchollet.github.io/publication/cga17perception/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/cga17perception/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Racing heart and sweaty palms: What influences users&#39; self-assessments and physiological signals when interacting with virtual audiences?</title>
+      <link>https://matchollet.github.io/publication/iva17racing/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva17racing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Affect-LM: A neural language model for customizable affective text generation</title>
+      <link>https://matchollet.github.io/publication/acl17affectlm/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/acl17affectlm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessing Public Speaking Ability from Thin Slices of Behavior</title>
+      <link>https://matchollet.github.io/publication/fg17assessing/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/fg17assessing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emotion and Attitude Modeling for Non-player Characters</title>
+      <link>https://matchollet.github.io/publication/eig16emotion/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/eig16emotion/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

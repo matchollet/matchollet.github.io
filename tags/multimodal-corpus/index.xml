@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multimodal Corpus on Mathieu Chollet</title>
+    <link>https://matchollet.github.io/tags/multimodal-corpus/</link>
+    <description>Recent content in Multimodal Corpus on Mathieu Chollet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 May 2016 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://matchollet.github.io/tags/multimodal-corpus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A multimodal corpus for the assessment of public speaking ability and anxiety</title>
+      <link>https://matchollet.github.io/publication/lrec16corpus/</link>
+      <pubDate>Sun, 01 May 2016 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/lrec16corpus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A multimodal corpus for the study of non-verbal behavior expressing interpersonal stances</title>
+      <link>https://matchollet.github.io/publication/mmc13corpus/</link>
+      <pubDate>Thu, 01 Aug 2013 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/mmc13corpus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A multimodal corpus approach to the design of virtual recruiters</title>
+      <link>https://matchollet.github.io/publication/acii13multimodal/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/acii13multimodal/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

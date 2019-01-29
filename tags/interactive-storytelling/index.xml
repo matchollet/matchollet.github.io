@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interactive Storytelling on Mathieu Chollet</title>
+    <link>https://matchollet.github.io/tags/interactive-storytelling/</link>
+    <description>Recent content in Interactive Storytelling on Mathieu Chollet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://matchollet.github.io/tags/interactive-storytelling/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CineSys</title>
+      <link>https://matchollet.github.io/project/cinesys/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/project/cinesys/</guid>
+      <description>As part of my Master’s thesis, I proposed a model for automatic editing of 3D movies, that can learn from examples. Using a 3D virtual environment (CineSys) and a description of a scenario (i.e. timed actor actions), it casts the problem of film editing as a path-planning problem in a space of available cameras (pre-defined positions or automatically computed from actors positions). I defined cost functions for shot quality (e.g. shot type preferences, composition, visibility of actions), for cutting between shots (e.</description>
+    </item>
+    
+    <item>
+      <title>Computational model of film editing for interactive storytelling</title>
+      <link>https://matchollet.github.io/publication/icids11computational/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icids11computational/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A virtual cinematography system that learns from examples</title>
+      <link>https://matchollet.github.io/publication/master11/</link>
+      <pubDate>Wed, 01 Jun 2011 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/master11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automated Camera Planner for Film Editing Using Key Shots</title>
+      <link>https://matchollet.github.io/publication/sca11planner/</link>
+      <pubDate>Sun, 01 May 2011 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/sca11planner/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

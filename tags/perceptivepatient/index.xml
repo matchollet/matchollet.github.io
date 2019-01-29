@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PerceptivePatient on Mathieu Chollet</title>
+    <link>https://matchollet.github.io/tags/perceptivepatient/</link>
+    <description>Recent content in PerceptivePatient on Mathieu Chollet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://matchollet.github.io/tags/perceptivepatient/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Perceptive Patient</title>
+      <link>https://matchollet.github.io/project/perceptivepatient/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/project/perceptivepatient/</guid>
+      <description>With colleagues from the MedVR USC-ICT group, I was involved in the Perceptive Patient project where we investigated training medical doctors communication skills. Doctors’ communication styles are known to be predictors of patients’ satisfaction, as well as actual health outcomes. We are designing emotional state and behavioral expression models for virtual patients, and creating new architectures for online, distributed systems for human-virtual agent interaction. Our system demo at the 2018 International Meeting on Simulation in Healthcare received the “Best of Show” demo award.</description>
+    </item>
+    
+  </channel>
+</rss>

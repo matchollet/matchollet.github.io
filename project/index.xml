@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Mathieu Chollet</title>
+    <link>https://matchollet.github.io/project/</link>
+    <description>Recent content in Projects on Mathieu Chollet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://matchollet.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cicero</title>
+      <link>https://matchollet.github.io/project/cicero/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/project/cicero/</guid>
+      <description>In the CICERO project, our aim is to investigate if public speaking skills can be improved using virtual training. Descriptions of the user&amp;rsquo;s public speaking behavior are automatically extracted from audiovisual sensors, and an interactive virtual audience is used to provide feedback to the users depending on their public speaking performance. To investigate how virtual characters can help improving the learning outcome of a public speaking training system, I proposed a flexible and modular architecture for interactive virtual audiences, and conducted a series of studies on the impact of different feedback strategies on training outcomes and user experiences.</description>
+    </item>
+    
+    <item>
+      <title>Tardis</title>
+      <link>https://matchollet.github.io/project/tardis/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/project/tardis/</guid>
+      <description>I was involved in the EU FP7 Tardis Project. TARDIS aimed to build a scenario-based serious-game simulation platform for young people (ages 18-25) at risk of exclusion to explore, practice and improve their social skills. TARDIS facilitates the interaction through virtual agents (VAs) acting as recruiters in job interviews scenarios. My contribution in this project focused on the virtual recruiter. I proposed a data-driven model allowing VAs to express different interpersonal attitudes (dominant, friendly&amp;hellip;) which takes into account how the recruiter’s non-verbal behaviors are sequenced.</description>
+    </item>
+    
+    <item>
+      <title>Perceptive Patient</title>
+      <link>https://matchollet.github.io/project/perceptivepatient/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/project/perceptivepatient/</guid>
+      <description>With colleagues from the MedVR USC-ICT group, I was involved in the Perceptive Patient project where we investigated training medical doctors communication skills. Doctors’ communication styles are known to be predictors of patients’ satisfaction, as well as actual health outcomes. We are designing emotional state and behavioral expression models for virtual patients, and creating new architectures for online, distributed systems for human-virtual agent interaction. Our system demo at the 2018 International Meeting on Simulation in Healthcare received the “Best of Show” demo award.</description>
+    </item>
+    
+    <item>
+      <title>CineSys</title>
+      <link>https://matchollet.github.io/project/cinesys/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/project/cinesys/</guid>
+      <description>As part of my Master’s thesis, I proposed a model for automatic editing of 3D movies, that can learn from examples. Using a 3D virtual environment (CineSys) and a description of a scenario (i.e. timed actor actions), it casts the problem of film editing as a path-planning problem in a space of available cameras (pre-defined positions or automatically computed from actors positions). I defined cost functions for shot quality (e.g. shot type preferences, composition, visibility of actions), for cutting between shots (e.</description>
+    </item>
+    
+  </channel>
+</rss>
