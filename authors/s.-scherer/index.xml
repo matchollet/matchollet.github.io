@@ -21,4 +21,149 @@
     </item>
     
   </channel>
+</rss>>
+      <title>NADIA - Neural network driven virtual human conversation agents</title>
+      <link>https://matchollet.github.io/publication/iva18nadia/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva18nadia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A generic platform for training social skills with adaptative virtual agents</title>
+      <link>https://matchollet.github.io/publication/aamas18generic/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/aamas18generic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NADiA - Towards neural network driven virtual human conversation agents</title>
+      <link>https://matchollet.github.io/publication/aamas18nadia/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/aamas18nadia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The relationship between task-induced stress, vocal changes, and physiological state during a dyadic team task</title>
+      <link>https://matchollet.github.io/publication/icmi17physiology/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icmi17physiology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Perception of virtual audiences</title>
+      <link>https://matchollet.github.io/publication/cga17perception/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/cga17perception/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Racing heart and sweaty palms: What influences users&#39; self-assessments and physiological signals when interacting with virtual audiences?</title>
+      <link>https://matchollet.github.io/publication/iva17racing/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva17racing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Affect-LM: A neural language model for customizable affective text generation</title>
+      <link>https://matchollet.github.io/publication/acl17affectlm/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/acl17affectlm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessing Public Speaking Ability from Thin Slices of Behavior</title>
+      <link>https://matchollet.github.io/publication/fg17assessing/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/fg17assessing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Native vs. Non-native language fluency implications on multimodal interaction for interpersonal skills training</title>
+      <link>https://matchollet.github.io/publication/icmi16native/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icmi16native/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An architecture for biologically grounded real-time reflexive behavior</title>
+      <link>https://matchollet.github.io/publication/iva16biologically/</link>
+      <pubDate>Mon, 05 Sep 2016 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva16biologically/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Manipulating the perception of virtual audiences using crowdsourced behaviors</title>
+      <link>https://matchollet.github.io/publication/iva16manipulating/</link>
+      <pubDate>Mon, 05 Sep 2016 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/iva16manipulating/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A multimodal corpus for the assessment of public speaking ability and anxiety</title>
+      <link>https://matchollet.github.io/publication/lrec16corpus/</link>
+      <pubDate>Sun, 01 May 2016 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/lrec16corpus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multimodal public speaking performance assessment</title>
+      <link>https://matchollet.github.io/publication/icmi15multimodal/</link>
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icmi15multimodal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Public speaking training with a multimodal interactive virtual audience framework</title>
+      <link>https://matchollet.github.io/publication/icmi15demo/</link>
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/icmi15demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploring feedback strategies to improve public speaking: An interactive virtual audience framework</title>
+      <link>https://matchollet.github.io/publication/ubicomp15exploring/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/ubicomp15exploring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An interactive virtual audience platform for public speaking training</title>
+      <link>https://matchollet.github.io/publication/aamas14audience/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0100</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/aamas14audience/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
 </rss>
