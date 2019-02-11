@@ -6,10 +6,19 @@
     <description>Recent content in 1 on Mathieu Chollet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://matchollet.github.io/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Towards Narrative-Driven Atmosphere for Virtual Classroom</title>
+      <link>https://matchollet.github.io/publication/chi19classroom/</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://matchollet.github.io/publication/chi19classroom/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Influence of individual differences when training public speaking with virtual audiences</title>
