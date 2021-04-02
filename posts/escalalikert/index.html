@@ -97,13 +97,13 @@
 </li>
 </ol>
 <p>Ao final, você deve conseguir um resultado como esse:</p>
-<p><img src="/static/Gr%C3%A1ficoFinal.png" alt="Gráfico de barras empilhadas e de previsão de probabilidades."></p>
+<p><img src="/graficofinal.png" alt="Gráfico de barras empilhadas e previsão de probabilidades."></p>
 <p>Esse artigo assume que você conhece os comandos básicos do R, como manipular dados, como instalar e carregar pacotes além de outras funcionalidades semelhantes. Nosso objetivo não é dar informações detalhadas sobres interpretação dos dados, mas apenas ilustrar como investigá-los com o R.</p>
 <h3 id="o-experimento">O experimento</h3>
-<p>O experimento mensurava o julgamento de falantes em uma escala com 5 níveis, indo de 1 = discordo totalmente até 5 = concordo totalmente. Os fatores preditivos eram ordem dos quatificadores em uma sentença (um-todo e todo-um) e número de um pronome anafórico na sentença seguinte (singular e plural). Dois exemplos de frases são dados abaixo:</p>
-<p>&hellip;mostrou uma camisa&hellip; para todo comprador&hellip;
-&hellip;mostrou toda camisa&hellip; para um comprador&hellip;</p>
-<p>Os dados usados nesse tutorial podem ser baixados <a href="">aqui</a>. Os nomes e e-mails dos participantes foram alterados para preservar suas identidades.</p>
+<p>O experimento mensurava o julgamento de falantes em uma escala com 5 níveis, indo de 1 = discordo totalmente até 5 = concordo totalmente. Os fatores preditivos eram ordem dos quatificadores em uma sentença (um-todo e todo-um) e número de um pronome anafórico na sentença seguinte (singular e plural). Dois exemplos esquemáticos de frases são dados abaixo:</p>
+<p>&hellip;mostrou <strong>uma</strong> camisa&hellip; para <strong>todo</strong> comprador&hellip;</p>
+<p>&hellip;mostrou <strong>toda</strong> camisa&hellip; para <strong>um</strong> comprador&hellip;</p>
+<p>Os dados usados nesse tutorial podem ser baixados <a href="">aqui</a>. Os nomes e e-mails dos participantes foram alterados para preservar suas identidades. Uma descrição mais detalhada do experimento pode ser encontrada <a href="">aqui</a>.</p>
 <h1 id="carregando-os-dados-de-um-arquivo-ibex">Carregando os dados de um arquivo ibex</h1>
 <p>O primeiro passo é instalar o pacote <code>ibextor</code> para acessar os dados do Ibex Farm. Se o comando <code>install.packages(&quot;ibextor&quot;)</code> não funcionar, sugerimos que você instale o pacote <code>remotes</code> e então faça a instalação diretamente do repositório do <code>ibextor</code>. A Documentação do pacote está disponível <a href="https://github.com/antonmalko/ibextor">aqui</a>.</p>
 <pre><code class="language-{r}" data-lang="{r}">install.packages(&quot;remotes&quot;)
@@ -186,6 +186,16 @@ write.csv(contag, &quot;contagens.csv&quot;)
 colnames(porc_horiz) &lt;- c(&quot;Ordem&quot;, &quot;Num&quot;, &quot;Discordo_Totalmente&quot;, &quot;Discordo&quot;, &quot;Neutro&quot;, &quot;Concordo&quot;, &quot;Concordo_Totalmente&quot;)
 
 write.csv(porc_horiz, &quot;porcentagens.csv&quot;)
+</code></pre><p>Seu resultado será parecido com isso:</p>
+<pre><code class="language-{r}" data-lang="{r}">&gt; porc_horiz
+# A tibble: 4 x 7
+# Groups:   Ordem, Num [4]
+  Ordem   Num   Discordo_Totalmente Discordo Neutro Concordo Concordo_Totalmente
+  &lt;fct&gt;   &lt;fct&gt;               &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;               &lt;dbl&gt;
+1 todo-um PL                  52.3     24.2    6.71     9.06                7.72
+2 todo-um SG                   9.18     8.50  13.6     18.0                50.7
+3 um-todo PL                  21.4      8.44  13.6     21.4                35.1
+4 um-todo SG                   6.69     4.01  11.0     17.7                60.5
 </code></pre><p>Esses já são nossos dados finais, mas, para colocá-los em um gráfico de barras empilhadas, vamos precisar fazer algumas manipulações com eles. O princípio será o seguinte: dividir os dados ao meio, de modo que um conjunto contenha os dados da parte baixa da escala, ou seja, discordo totalmente e discordo; e outro conjunto contenha os dados da parte de cima da escala, ou seja, concordo e concordo totamente. Além disso, quanto ao meio da escala (o julgamento Neutro), temos que colocar metade dele abaixo e metade dele acima da escala.</p>
 <p>Primeiro, vamos dividir o meio da escala (os julgamentos &ldquo;Neutro&rdquo;):</p>
 <pre><code class="language-{r}" data-lang="{r}">dados_meio &lt;- porc_horiz %&gt;%
@@ -206,7 +216,7 @@ meio_baixo &lt;- dados_meio %&gt;%
 legend_pal&lt;-c(&quot;#2B83BA&quot;, &quot;#ABDDA4&quot;, &quot;#FFFFBF&quot;, &quot;#FFFFBF&quot;, &quot;#FDAE61&quot;, &quot;#D7191C&quot;) # Duplica a cor do meio manualmente
 legend_pal &lt;- gsub(&quot;#FFFFBF&quot;, &quot;#9C9C9C&quot;, legend_pal) # Substituir a cor do meio por um cinza
 names(legend_pal) &lt;- c(&quot;Concordo_Totalmente&quot;, &quot;Concordo&quot;, &quot;c1&quot;, &quot;c2&quot;, &quot;Discordo&quot;, &quot;Discordo_Totalmente&quot;) # Atribuir nomes às cores
-</code></pre><p>Com isso, podemos produzir o gráfico. Retire o comentário de <code>coord_flip</code> se quiser ver o gráfico por um outro ângulo.</p>
+</code></pre><p>Com isso, podemos produzir o gráfico, o mesmo que está no Painel 1 no innício deste post. Retire o comentário de <code>coord_flip</code> se quiser ver o gráfico por um outro ângulo.</p>
 <pre><code class="language-{r}" data-lang="{r}">ggplot() +
     geom_bar(data = meio_alto, aes(x = Num, y=perc, fill = answer), stat=&quot;identity&quot;) +
     geom_bar(data = meio_baixo, aes(x = Num, y=-perc, fill = answer), stat=&quot;identity&quot;) +
@@ -265,8 +275,10 @@ fixos.m&lt;-as.data.frame(fixos.m)
   ggtitle(&quot;Coeficientes estimados e intervalos de credibilidade (0.95)&quot;,
           subtitle = &quot;Intervalos que não contêm zero são estatisticamente significativos&quot;) +
   coord_flip()+theme_classic()
-</code></pre><h3 id="calculando-a-previsão-de-probabilidades">Calculando a previsão de probabilidades</h3>
-<p>Em geral, a menos que você seja um entendedor do assunto (e, portanto, nem estaria por aqui), esses coeficientes são difíceis de interpretar e, para dados ordinais, o melhor é extrair do modelo a &ldquo;previsão de probabilidades&rdquo; para os dados utilizados ou para um novo conjunto de dados. Vamos usar para isso o pacote <code>sjPlot</code> (documentação <a href="https://cran.r-project.org/web/packages/sjPlot/vignettes/plot_marginal_effects.html">aqui</a> e investigar os chamados &ldquo;efeitos marginais&rdquo;.</p>
+</code></pre><p>O resultado será mais ou menos assim:</p>
+<p><img src="/efeitosfixos.png" alt="Gráfico de efeitos fixos do modelo."></p>
+<h3 id="calculando-a-previsão-de-probabilidades">Calculando a previsão de probabilidades</h3>
+<p>Em geral, a menos que você seja um entendedor do assunto (e, portanto, nem estaria por aqui), esses coeficientes são difíceis de interpretar e, para dados ordinais, o melhor é extrair do modelo a &ldquo;previsão de probabilidades&rdquo; para os dados utilizados ou para um novo conjunto de dados. Vamos usar para isso o pacote <code>sjPlot</code> (documentação <a href="https://cran.r-project.org/web/packages/sjPlot/vignettes/plot_marginal_effects.html">aqui</a>) e investigar os chamados &ldquo;efeitos marginais&rdquo;.</p>
 <pre><code class="language-{r}" data-lang="{r}">model_data&lt;-get_model_data(m2,
                            type = &quot;pred&quot;,
                            terms = c(&quot;Ordem&quot;, &quot;Num&quot;),
@@ -316,7 +328,7 @@ model_data %&gt;%
           subtitle = &quot;Linhas verticais indicam intervalos de credibilidade preditos.&quot;)+
   theme_classic()+
   guides(colour = guide_legend(reverse=T)) # Apenas organizando a ordem da legenda.
-</code></pre><p>Pronto, finalmente acabamos!</p>
+</code></pre><p>Pronto, finalmente acabamos! O resultado final será composto pelos dois gráficos disponíveis no início desse post, colocados um abaixo do outro para facilitar a comparação entre os dados descritivos (Painel 1) e os dados inferenciais (Painel 2).</p>
 
     </div>
     <div class="post-footer">
