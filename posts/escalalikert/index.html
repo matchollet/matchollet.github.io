@@ -71,7 +71,7 @@
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          11 min read
+          12 min read
         </div>
       </div>
     </header>
@@ -91,7 +91,10 @@
 </ol>
 <p>Esse artigo assume que você conhece os comandos básicos do R, como manipular dados, como instalar e carregar pacotes além de outras funcionalidades semelhantes. Nosso objetivo não é dar informações detalhadas sobres interpretação dos dados, mas apenas ilustrar como investigá-los com o R.</p>
 <h3 id="o-experimento">O experimento</h3>
-<p>O experimento mensurava o julgamento de falantes em uma escala com 5 níveis, indo de 1 = discordo totalmente até 5 = concordo totalmente. Os fatores preditivos eram ordem dos quatificadores em uma sentença (um-todo e todo-um) e número de um pronome anafórico na sentença seguinte (singular e plural).</p>
+<p>O experimento mensurava o julgamento de falantes em uma escala com 5 níveis, indo de 1 = discordo totalmente até 5 = concordo totalmente. Os fatores preditivos eram ordem dos quatificadores em uma sentença (um-todo e todo-um) e número de um pronome anafórico na sentença seguinte (singular e plural). Dois exemplos de frases são dados abaixo:</p>
+<p>&hellip;mostrou uma camisa&hellip; para todo comprador&hellip;
+&hellip;mostrou toda camisa&hellip; para um comprador&hellip;</p>
+<p>Os dados usados nesse tutorial podem ser baixados <a href="">aqui</a>. Os nomes e e-mails dos participantes foram alterados para preservar suas identidades.</p>
 <h1 id="carregando-os-dados-de-um-arquivo-ibex">Carregando os dados de um arquivo ibex</h1>
 <p>O primeiro passo é instalar o pacote <code>ibextor</code> para acessar os dados do Ibex Farm. Se o comando <code>install.packages(&quot;ibextor&quot;)</code> não funcionar, sugerimos que você instale o pacote <code>remotes</code> e então faça a instalação diretamente do repositório do <code>ibextor</code>. A Documentação do pacote está disponível <a href="https://github.com/antonmalko/ibextor">aqui</a>.</p>
 <pre><code class="language-{r}" data-lang="{r}">install.packages(&quot;remotes&quot;)
@@ -211,11 +214,14 @@ names(legend_pal) &lt;- c(&quot;Concordo_Totalmente&quot;, &quot;Concordo&quot;,
     theme_classic()
 </code></pre><p>Se você quiser, pode fazer o mesmo gráfico para os itens ou mesmo para cada um dos sujeitos. Para isso, basta repetir os passos, desde a produção da tabela de contagens e porcentagens. É um bom exercício para praticar.</p>
 <h1 id="ajustando-um-modelo-de-regressão-ordinal-aos-dados">Ajustando um modelo de regressão ordinal aos dados</h1>
-<p>Como a variável resposta desse experimento é de natureza ordinal, ou seja, valores ordenados em uma escala, o modo adequado de analisá-la é com um modelo de regressão ordinal. Há alguns pacotes no <code>R</code> que fazem esse serviço. O mais comum deles é o pacote <code>MASS</code>, que tem a função <code>polr</code> para esse tipo de dado. Um bom exemplo de como fazer uma análise desse tipo pode ser encontrada <a href="https://stats.idre.ucla.edu/r/dae/ordinal-logistic-regression/">neste endereço</a>. O problema é que essa função não nos permite incluir fatores aleatórios (&ldquo;random factors&rdquo;) no modelo, e, no caso em questão, temos dois fatores aleatórios (<code>sujeitos</code> e <code>itens</code>).</p>
+<p>Os pacotes necessários a essa etapa são:</p>
+<pre><code class="language-{r}" data-lang="{r}">require(brms)
+require(sjPlot)
+</code></pre><p>Como a variável resposta desse experimento é de natureza ordinal, ou seja, valores ordenados em uma escala, o modo adequado de analisá-la é com um modelo de regressão ordinal. Há alguns pacotes no <code>R</code> que fazem esse serviço. O mais comum deles é o pacote <code>MASS</code>, que tem a função <code>polr</code> para esse tipo de dado. Um bom exemplo de como fazer uma análise desse tipo pode ser encontrada <a href="https://stats.idre.ucla.edu/r/dae/ordinal-logistic-regression/">neste endereço</a>. O problema é que essa função não nos permite incluir fatores aleatórios (&ldquo;random factors&rdquo;) no modelo, e, no caso em questão, temos dois fatores aleatórios (<code>sujeitos</code> e <code>itens</code>).</p>
 <p>Uma boa solução, então, seria usar o <a href="https://cran.r-project.org/web/packages/ordinal/ordinal.pdf">pacote ordinal</a>. No entanto, esse pacote não nos fornece uma importante ferramenta, que o pacote <code>MASS</code> fornecia, que é a &ldquo;previsão de probabilidades&rdquo;. Se quiser saber como usar esse pacote, você pode dar uma olhada <a href="https://cran.r-project.org/web/packages/ordinal/vignettes/clmm2_tutorial.pdf">neste tutorial</a>.</p>
 <p>A saída parece ser, portanto, apelar para a estratégia de &ldquo;usar uma bazuca para matar coelhos&rdquo; e tentar analisar os dados em uma abordagem bayesiana com o pacote <code>brms</code>, cuja documentação pode ser encontrada <a href="https://github.com/paul-buerkner/brms">aqui</a>. Há um bom tutorial do próprio autor disponível <a href="https://journals.sagepub.com/doi/10.1177/2515245918823199">aqui</a>.</p>
 <h3 id="ajustando-um-modelo-máximo">Ajustando um modelo máximo</h3>
-<p>Primeiro, vamos seguir as recomendações de Baar et. al. (2015) e ajustar um modelo máximo aos dados.</p>
+<p>Primeiro, vamos seguir as recomendações de <a href="https://pubmed.ncbi.nlm.nih.gov/24403724/">Baar et. al. (2013)</a> e ajustar um modelo máximo aos dados.</p>
 <p>Mas antes, verifiquemos quais os contrastes dos dados:</p>
 <pre><code class="language-{r}" data-lang="{r}">contrasts(dados$Num)
 contrasts(dados$Ordem)
