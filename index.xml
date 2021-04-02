@@ -12,24 +12,14 @@
     
     
     <item>
-      <title>EscalaLikert</title>
+      <title>Tratamento de dados de Escala Likert</title>
       <link>https://igordeo-costa.github.io/posts/escalalikert/</link>
       <pubDate>Thu, 01 Apr 2021 23:05:39 -0300</pubDate>
       
       <guid>https://igordeo-costa.github.io/posts/escalalikert/</guid>
       <description>Preliminares Nosso objetivo é mostrar como fazer um tratamento preliminar de dados de escala do tipo Likert usando o R. Nosso caminho será:
   Inicialmente, mostraremos como extrair os dados de um documento advindo do Ibex Farm, fazendo uma pequena limpeza nos dados de modo a torná-los mais palatáveis;
-  Em seguida, faremos uma breve investigação descritiva dos dados, mostrando como construir um gráfico útil para publicar essas informações.</description>
-    </item>
-    
-    <item>
-      <title>Teste</title>
-      <link>https://igordeo-costa.github.io/posts/teste/</link>
-      <pubDate>Thu, 01 Apr 2021 22:50:14 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/posts/teste/</guid>
-      <description>meu teste aqui
-meu código aqui ponto final</description>
+  Em seguida, faremos uma breve investigação descritiva dos dados, mostrando como construir uma tabela com contagens e porcentagens para cada nível da escala e como visualizar esses dados com um gráfico útil para publicar essas informações;</description>
     </item>
     
     <item>

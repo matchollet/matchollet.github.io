@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <title>EscalaLikert // Igor Costa</title>
+    <title>Tratamento de dados de Escala Likert // Igor Costa</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.68.3" />
@@ -12,15 +12,15 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="EscalaLikert"/>
+<meta name="twitter:title" content="Tratamento de dados de Escala Likert"/>
 <meta name="twitter:description" content="Preliminares Nosso objetivo é mostrar como fazer um tratamento preliminar de dados de escala do tipo Likert usando o R. Nosso caminho será:
   Inicialmente, mostraremos como extrair os dados de um documento advindo do Ibex Farm, fazendo uma pequena limpeza nos dados de modo a torná-los mais palatáveis;
-  Em seguida, faremos uma breve investigação descritiva dos dados, mostrando como construir um gráfico útil para publicar essas informações."/>
+  Em seguida, faremos uma breve investigação descritiva dos dados, mostrando como construir uma tabela com contagens e porcentagens para cada nível da escala e como visualizar esses dados com um gráfico útil para publicar essas informações;"/>
 
-    <meta property="og:title" content="EscalaLikert" />
+    <meta property="og:title" content="Tratamento de dados de Escala Likert" />
 <meta property="og:description" content="Preliminares Nosso objetivo é mostrar como fazer um tratamento preliminar de dados de escala do tipo Likert usando o R. Nosso caminho será:
   Inicialmente, mostraremos como extrair os dados de um documento advindo do Ibex Farm, fazendo uma pequena limpeza nos dados de modo a torná-los mais palatáveis;
-  Em seguida, faremos uma breve investigação descritiva dos dados, mostrando como construir um gráfico útil para publicar essas informações." />
+  Em seguida, faremos uma breve investigação descritiva dos dados, mostrando como construir uma tabela com contagens e porcentagens para cada nível da escala e como visualizar esses dados com um gráfico útil para publicar essas informações;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://igordeo-costa.github.io/posts/escalalikert/" />
 <meta property="article:published_time" content="2021-04-01T23:05:39-03:00" />
@@ -57,7 +57,7 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">EscalaLikert</h1>
+      <h1 class ="post-title">Tratamento de dados de Escala Likert</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
@@ -83,23 +83,25 @@
 <p>Inicialmente, mostraremos como extrair os dados de um documento advindo do <a href="https://spellout.net/ibexfarm/">Ibex Farm</a>, fazendo uma pequena limpeza nos dados de modo a torná-los mais palatáveis;</p>
 </li>
 <li>
-<p>Em seguida, faremos uma breve investigação descritiva dos dados, mostrando como construir um gráfico útil para publicar essas informações.</p>
+<p>Em seguida, faremos uma breve investigação descritiva dos dados, mostrando como construir uma tabela com contagens e porcentagens para cada nível da escala e como visualizar esses dados com um gráfico útil para publicar essas informações;</p>
 </li>
 <li>
-<p>Por fim, faremos uma análie desses dados com um modelo bayesiano com o pacote <code>brms</code>.</p>
+<p>Por fim, faremos uma análie desses dados com um modelo de regressão oridinal com o pacote <code>brms</code>.</p>
 </li>
 </ol>
-<p>Esse artigo assume que você conhece os comandos básicos do R, como manipular dados, como instalar pacotes e outras funcionalidades semelhantes.</p>
+<p>Esse artigo assume que você conhece os comandos básicos do R, como manipular dados, como instalar e carregar pacotes além de outras funcionalidades semelhantes. Nosso objetivo não é dar informações detalhadas sobres interpretação dos dados, mas apenas ilustrar como investigá-los com o R.</p>
+<h3 id="o-experimento">O experimento</h3>
+<p>O experimento mensurava o julgamento de falantes em uma escala com 5 níveis, indo de 1 = discordo totalmente até 5 = concordo totalmente. Os fatores preditivos eram ordem dos quatificadores em uma sentença (um-todo e todo-um) e número de um pronome anafórico na sentença seguinte (singular e plural).</p>
 <h1 id="carregando-os-dados-de-um-arquivo-ibex">Carregando os dados de um arquivo ibex</h1>
 <p>O primeiro passo é instalar o pacote <code>ibextor</code> para acessar os dados do Ibex Farm. Se o comando <code>install.packages(&quot;ibextor&quot;)</code> não funcionar, sugerimos que você instale o pacote <code>remotes</code> e então faça a instalação diretamente do repositório do <code>ibextor</code>. A Documentação do pacote está disponível <a href="https://github.com/antonmalko/ibextor">aqui</a>.</p>
 <pre><code class="language-{r}" data-lang="{r}">install.packages(&quot;remotes&quot;)
 remotes::install_github(&quot;antonmalko/ibextor&quot;)
-</code></pre><h2 id="carregando-pacotes-necessários-para-esse-tutorial">Carregando pacotes necessários para esse tutorial</h2>
+</code></pre><h3 id="carregando-pacotes-necessários-para-esse-tutorial">Carregando pacotes necessários para esse tutorial</h3>
 <pre><code class="language-{r}" data-lang="{r}">require(stringr)
 require(dplyr)
 require(tidyr)
 require(ibextor)
-</code></pre><h2 id="extraindo-resultados-de-julgamento-de-aceitabilidade">Extraindo resultados de julgamento de aceitabilidade</h2>
+</code></pre><h3 id="extraindo-resultados-de-julgamento-de-aceitabilidade">Extraindo resultados de julgamento de aceitabilidade</h3>
 <p>Para começar, vamos usar a função <code>get_results_aj</code> para extrair os dados de nosso interesse. Observe que <code>aj</code> vem de <code>acceptability judgment</code>, que é o tipo de experimento feito no Ibex nesse caso. Se você estivesse extraindo outro tipo de dado, como de leitura automonitorada, a função seria outra. Consulte a <a href="https://github.com/antonmalko/ibextor">documentação do pacote</a> para esses casos. Vamos colocar esses dados num objeto de nome <code>dados</code> (você pode dar o nome que você quiser). Repare que você precisará colocar o <code>PATH</code> adequado no local onde está, no exemplo baixo, <code>&quot;/home/dados/...&quot;</code>. Esse é o endereço no seu computador onde o arquivo está guardado, terminando com o nome do arquivo.</p>
 <pre><code class="language-{r}" data-lang="{r}">dados&lt;-get_results_aj(&quot;/home/dados/Acadêmicos/Doutorado/EXPERIMENTOS_2021/EscalaLikert/Resultados.csv&quot;)
 </code></pre><p>Se você quiser, pode explorar essa tabela com as funções <code>head</code>, <code>str</code>, etc. Após essa inspeção, nós vamos limpá-la de algumas colunas que não nos interessam nela. Caso deseje entender o que estamos fazendo aqui, rode passo a passo o código abaixo:</p>
@@ -109,7 +111,7 @@ require(ibextor)
   separate(type, c(&quot;Ordem&quot;, &quot;Num&quot;), &quot;[_]&quot;) %&gt;% # Separa a coluna &quot;type&quot; (condições) nos fatores analisados (V. Independentes)
   separate(Ordem, c(&quot;a&quot;, &quot;Ordem&quot;), &quot;[.]&quot;) %&gt;% # Separa o &quot;e&quot; inicial em uma coluna própria
   select(-a) # Remove essa coluna inútil
-</code></pre><h2 id="extraindo-os-dados-dos-sujeitos">Extraindo os dados dos sujeitos</h2>
+</code></pre><h3 id="extraindo-os-dados-dos-sujeitos">Extraindo os dados dos sujeitos</h3>
 <p>Para extrair os dados socioeconômicos dos sujeitos, basta usar a função <code>get_subj_info</code>, também do <code>ibextor</code>. No caso do experimento em questão, além do <code>PATH</code> onde o arquivo está armazenado (o mesmo usado anteriormente), vamos passar pela função o argumento <code>form_name</code>, já que nosso experimento tinha mais de um formulário. Vamos dar o nome de <code>sujeitos</code> a esses dados (como sempre, você pode dar o nome que achar melhor).</p>
 <pre><code class="language-{r}" data-lang="{r}">sujeitos&lt;-get_subj_info(&quot;/home/dados/Acadêmicos/Doutorado/EXPERIMENTOS_2021/EscalaLikert/Resultados.csv&quot;,
                         form_name = &quot;DadosPessoais&quot;) # Como há mais de um formulário, de qual deles extrair os dados
@@ -120,7 +122,7 @@ dados&lt;-inner_join(dados, sujeitos)
 
 dados&lt;-dados %&gt;%
   select(-c(nome, contato)) # E também a coluna &quot;contato&quot; para garantir o sigilo dos sujeitos
-</code></pre><h2 id="extraindo-os-dados-que-você-julgar-necessários">Extraindo os dados que você julgar necessários</h2>
+</code></pre><h3 id="extraindo-informações-necessárias">Extraindo informações necessárias</h3>
 <p>Feito isso, você pode extrair os dados que achar necessários, inclusive exportando essa tabela para fora do R para ser publicada em algum lugar. Vamos mostrar algumas possibilidades.</p>
 <p>Primeiro, vamos salvar essa tabela externamente ao R em formato <code>.csv</code>. Nesse caso, ela será salva no seu <code>working directory</code>. Veja a função <code>getwd</code> e <code>setwd</code> para saber qual é o seu diretório de trabalho e como modificá-lo.</p>
 <pre><code class="language-{r}" data-lang="{r}">write.csv(dados, &quot;dados_finais.csv&quot;)
@@ -132,14 +134,14 @@ dados&lt;-dados %&gt;%
 <pre><code class="language-{r}" data-lang="{r}">sujeitos %&gt;%
   filter(str_detect(contato, &quot;@&quot;)) %&gt;%
   write.csv(&quot;lista_emails.csv&quot;)
-</code></pre><h1 id="fazendo-uma-abordagem-descritiva-dos-dados">Fazendo uma abordagem descritiva dos dados</h1>
+</code></pre><h1 id="abordagem-descritiva-dos-dados">Abordagem descritiva dos dados</h1>
 <p>Os pacotes necessários a essa etapa são:</p>
 <pre><code class="language-{R}" data-lang="{R}">require(ggplot2)
 require(dplyr)
 require(RColorBrewer)
 require(tidyr)
 require(scales)
-</code></pre><h2 id="filtragens-iniciais">Filtragens iniciais</h2>
+</code></pre><h3 id="filtragens-iniciais">Filtragens iniciais</h3>
 <p>Se você quiser (e achamos que deveria), pode dar uma olhada nos dados com a função <code>str</code>. A partir disso, vamos fazer algumas tranformações nos dados, transformando as colunas do tipo caractere (<code>chr</code>) em funções do tipo fator (<code>Factor</code>). A coluna <code>answer</code> será, por sua vez, do tipo ordenada (<code>ordered factor</code>), já que é a resposta dada à escala do tipo Likert.</p>
 <pre><code class="language-{r}" data-lang="{r}">dados&lt;-dados %&gt;%
   mutate_if(is.character, as.factor) %&gt;%
@@ -148,7 +150,7 @@ require(scales)
 <pre><code class="language-{r}" data-lang="{r}">dados&lt;-dados %&gt;%
   filter(idioma %in% &quot;sim&quot;) %&gt;% # Seleciona apenas o que contém &quot;sim&quot;
   filter(!item == 11) # Seleciona apenas o que não contém (`!=`) 11.
-</code></pre><h2 id="abordagem-descritiva">Abordagem descritiva</h2>
+</code></pre><h3 id="abordagem-descritiva-por-si">Abordagem descritiva por si</h3>
 <p>Em primeiro lugar, vamos deixar claro que o modo de fazer o gráfico foi primeiramente disponibilizado <a href="https://ourcodingclub.github.io/tutorials/qualitative/">neste endereço</a>. Vale a pena dar uma conferida por lá.</p>
 <p>Antes de tudo, vamos calcular a contagem dos valores brutos, colocar isso em uma tabela no formato horizontal, mudar o nome das colunas de modo que os números da escala (1 a 5) recebem suas categorias correspondentes (de &ldquo;discordo totalmente&rdquo; até &ldquo;concordo totalmente&rdquo;):</p>
 <pre><code class="language-{r}" data-lang="{r}">contag &lt;- dados %&gt;%
@@ -212,7 +214,7 @@ names(legend_pal) &lt;- c(&quot;Concordo_Totalmente&quot;, &quot;Concordo&quot;,
 <p>Como a variável resposta desse experimento é de natureza ordinal, ou seja, valores ordenados em uma escala, o modo adequado de analisá-la é com um modelo de regressão ordinal. Há alguns pacotes no <code>R</code> que fazem esse serviço. O mais comum deles é o pacote <code>MASS</code>, que tem a função <code>polr</code> para esse tipo de dado. Um bom exemplo de como fazer uma análise desse tipo pode ser encontrada <a href="https://stats.idre.ucla.edu/r/dae/ordinal-logistic-regression/">neste endereço</a>. O problema é que essa função não nos permite incluir fatores aleatórios (&ldquo;random factors&rdquo;) no modelo, e, no caso em questão, temos dois fatores aleatórios (<code>sujeitos</code> e <code>itens</code>).</p>
 <p>Uma boa solução, então, seria usar o <a href="https://cran.r-project.org/web/packages/ordinal/ordinal.pdf">pacote ordinal</a>. No entanto, esse pacote não nos fornece uma importante ferramenta, que o pacote <code>MASS</code> fornecia, que é a &ldquo;previsão de probabilidades&rdquo;. Se quiser saber como usar esse pacote, você pode dar uma olhada <a href="https://cran.r-project.org/web/packages/ordinal/vignettes/clmm2_tutorial.pdf">neste tutorial</a>.</p>
 <p>A saída parece ser, portanto, apelar para a estratégia de &ldquo;usar uma bazuca para matar coelhos&rdquo; e tentar analisar os dados em uma abordagem bayesiana com o pacote <code>brms</code>, cuja documentação pode ser encontrada <a href="https://github.com/paul-buerkner/brms">aqui</a>. Há um bom tutorial do próprio autor disponível <a href="https://journals.sagepub.com/doi/10.1177/2515245918823199">aqui</a>.</p>
-<h2 id="ajustando-um-modelo-máximo">Ajustando um modelo máximo</h2>
+<h3 id="ajustando-um-modelo-máximo">Ajustando um modelo máximo</h3>
 <p>Primeiro, vamos seguir as recomendações de Baar et. al. (2015) e ajustar um modelo máximo aos dados.</p>
 <p>Mas antes, verifiquemos quais os contrastes dos dados:</p>
 <pre><code class="language-{r}" data-lang="{r}">contrasts(dados$Num)
@@ -248,7 +250,8 @@ fixos.m&lt;-as.data.frame(fixos.m)
   ggtitle(&quot;Coeficientes estimados e intervalos de credibilidade (0.95)&quot;,
           subtitle = &quot;Intervalos que não contêm zero são estatisticamente significativos&quot;) +
   coord_flip()+theme_classic()
-</code></pre><p>Em geral, a menos que você seja um entendedor do assunto (e, portanto, nem estaria por aqui), esses coeficientes são difíceis de interpretar e, para dados ordinais, o melhor é extrair do modelo a &ldquo;previsão de probabilidades&rdquo; para os dados utilizados ou para um novo conjunto de dados. Vamos usar para isso o pacote <code>sjPlot</code> (documentação <a href="https://cran.r-project.org/web/packages/sjPlot/vignettes/plot_marginal_effects.html">aqui</a> e investigar os chamados &ldquo;efeitos marginais&rdquo;.</p>
+</code></pre><h3 id="calculando-a-previsão-de-probabilidades">Calculando a previsão de probabilidades</h3>
+<p>Em geral, a menos que você seja um entendedor do assunto (e, portanto, nem estaria por aqui), esses coeficientes são difíceis de interpretar e, para dados ordinais, o melhor é extrair do modelo a &ldquo;previsão de probabilidades&rdquo; para os dados utilizados ou para um novo conjunto de dados. Vamos usar para isso o pacote <code>sjPlot</code> (documentação <a href="https://cran.r-project.org/web/packages/sjPlot/vignettes/plot_marginal_effects.html">aqui</a> e investigar os chamados &ldquo;efeitos marginais&rdquo;.</p>
 <pre><code class="language-{r}" data-lang="{r}">model_data&lt;-get_model_data(m2,
                            type = &quot;pred&quot;,
                            terms = c(&quot;Ordem&quot;, &quot;Num&quot;),
