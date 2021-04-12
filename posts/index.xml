@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Igor Costa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Apr 2021 19:37:46 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 11 Apr 2021 22:18:25 -0300</lastBuildDate>
     
 	<atom:link href="https://igordeo-costa.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Instalando o R pela primeira vez</title>
+      <link>https://igordeo-costa.github.io/posts/intallr/</link>
+      <pubDate>Sun, 11 Apr 2021 22:18:25 -0300</pubDate>
+      
+      <guid>https://igordeo-costa.github.io/posts/intallr/</guid>
+      <description>Esse artigo &amp;ndash; feito à pedido da minha amiga Ana Paula &amp;ndash; tem por objetivo apresentar o R e o R Studio, fornecendo um passo a passo muito básico de como instalá-los. Ao final desse texto, acreditamos que você estará mais informado sobre o que é o R e sobre as diferenças entre ele e o R Studio.
+O que é o R? R é uma linguagem de programação e, ao mesmo tempo, um ambiente de trabalho para análise estatística, ou seja, é uma ferramenta específica para a manipulação de dados numéricos, produção de gráficos e modelagens estatísticas, das mais simples às mais complexas.</description>
+    </item>
     
     <item>
       <title>Acessando dados do Ibex e PCIbex com o R</title>
