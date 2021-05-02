@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Virtual Audiences on Mathieu Chollet</title>
+    <title>Virtual Audiences | Mathieu Chollet</title>
     <link>https://matchollet.github.io/tags/virtual-audiences/</link>
-    <description>Recent content in Virtual Audiences on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://matchollet.github.io/tags/virtual-audiences/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://matchollet.github.io/tags/virtual-audiences/index.xml" rel="self" type="application/rss+xml" />
+    <description>Virtual Audiences</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0100</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Virtual Audiences</title>
+      <link>https://matchollet.github.io/tags/virtual-audiences/</link>
+    </image>
     
     <item>
       <title>Cicero</title>
       <link>https://matchollet.github.io/project/cicero/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/project/cicero/</guid>
-      <description>In the CICERO project, our aim is to investigate if public speaking skills can be improved using virtual training. Descriptions of the user&amp;rsquo;s public speaking behavior are automatically extracted from audiovisual sensors, and an interactive virtual audience is used to provide feedback to the users depending on their public speaking performance. To investigate how virtual characters can help improving the learning outcome of a public speaking training system, I proposed a flexible and modular architecture for interactive virtual audiences, and conducted a series of studies on the impact of different feedback strategies on training outcomes and user experiences.</description>
+      <description>&lt;p&gt;In the CICERO project, our aim is to investigate if public speaking skills can be improved using virtual training. Descriptions of the user&amp;rsquo;s public speaking behavior are automatically extracted from audiovisual sensors, and an interactive virtual audience is used to provide feedback to the users depending on their public speaking performance. To investigate how virtual characters can help improving the learning outcome of a public speaking training system, I proposed a flexible and modular architecture for interactive virtual audiences, and conducted a series of studies on the impact of different feedback strategies on training outcomes and user experiences.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/dTE14lPBO98&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;!-- raw HTML omitted --&gt;
+</description>
     </item>
     
     <item>
       <title>Towards Narrative-Driven Atmosphere for Virtual Classroom</title>
       <link>https://matchollet.github.io/publication/chi19classroom/</link>
-      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/chi19classroom/</guid>
       <description></description>
     </item>
@@ -32,8 +38,7 @@
     <item>
       <title>Influence of individual differences when training public speaking with virtual audiences</title>
       <link>https://matchollet.github.io/publication/iva18influence/</link>
-      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
-      
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/iva18influence/</guid>
       <description></description>
     </item>
@@ -41,8 +46,7 @@
     <item>
       <title>Perception of virtual audiences</title>
       <link>https://matchollet.github.io/publication/cga17perception/</link>
-      <pubDate>Mon, 21 Aug 2017 00:00:00 +0100</pubDate>
-      
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/cga17perception/</guid>
       <description></description>
     </item>
@@ -50,8 +54,7 @@
     <item>
       <title>Racing heart and sweaty palms: What influences users&#39; self-assessments and physiological signals when interacting with virtual audiences?</title>
       <link>https://matchollet.github.io/publication/iva17racing/</link>
-      <pubDate>Tue, 01 Aug 2017 00:00:00 +0100</pubDate>
-      
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/iva17racing/</guid>
       <description></description>
     </item>
@@ -59,8 +62,7 @@
     <item>
       <title>Native vs. Non-native language fluency implications on multimodal interaction for interpersonal skills training</title>
       <link>https://matchollet.github.io/publication/icmi16native/</link>
-      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
-      
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/icmi16native/</guid>
       <description></description>
     </item>
@@ -68,8 +70,7 @@
     <item>
       <title>Manipulating the perception of virtual audiences using crowdsourced behaviors</title>
       <link>https://matchollet.github.io/publication/iva16manipulating/</link>
-      <pubDate>Mon, 05 Sep 2016 00:00:00 +0100</pubDate>
-      
+      <pubDate>Mon, 05 Sep 2016 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/iva16manipulating/</guid>
       <description></description>
     </item>
@@ -77,8 +78,7 @@
     <item>
       <title>Public speaking training with a multimodal interactive virtual audience framework</title>
       <link>https://matchollet.github.io/publication/icmi15demo/</link>
-      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
-      
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/icmi15demo/</guid>
       <description></description>
     </item>
@@ -86,8 +86,7 @@
     <item>
       <title>Exploring feedback strategies to improve public speaking: An interactive virtual audience framework</title>
       <link>https://matchollet.github.io/publication/ubicomp15exploring/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0100</pubDate>
-      
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/ubicomp15exploring/</guid>
       <description></description>
     </item>
@@ -95,8 +94,7 @@
     <item>
       <title>An interactive virtual audience platform for public speaking training</title>
       <link>https://matchollet.github.io/publication/aamas14audience/</link>
-      <pubDate>Thu, 01 May 2014 00:00:00 +0100</pubDate>
-      
+      <pubDate>Thu, 01 May 2014 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/aamas14audience/</guid>
       <description></description>
     </item>

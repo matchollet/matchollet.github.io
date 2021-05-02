@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>G. Sratou on Mathieu Chollet</title>
+    <title>G. Sratou | Mathieu Chollet</title>
     <link>https://matchollet.github.io/authors/g.-sratou/</link>
-    <description>Recent content in G. Sratou on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 01 May 2014 00:00:00 +0100</lastBuildDate>
-    
-	<atom:link href="https://matchollet.github.io/authors/g.-sratou/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://matchollet.github.io/authors/g.-sratou/index.xml" rel="self" type="application/rss+xml" />
+    <description>G. Sratou</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 May 2014 00:00:00 +0200</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>G. Sratou</title>
+      <link>https://matchollet.github.io/authors/g.-sratou/</link>
+    </image>
     
     <item>
       <title>An interactive virtual audience platform for public speaking training</title>
       <link>https://matchollet.github.io/publication/aamas14audience/</link>
-      <pubDate>Thu, 01 May 2014 00:00:00 +0100</pubDate>
-      
+      <pubDate>Thu, 01 May 2014 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/aamas14audience/</guid>
       <description></description>
     </item>

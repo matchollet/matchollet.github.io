@@ -1,30 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>BBB on Mathieu Chollet</title>
+    <title>BBB | Mathieu Chollet</title>
     <link>https://matchollet.github.io/tags/bbb/</link>
-    <description>Recent content in BBB on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://matchollet.github.io/tags/bbb/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Breaking Bad Behaviors</title>
-      <link>https://matchollet.github.io/project/bbb/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://matchollet.github.io/project/bbb/</guid>
-      <description>The project Breaking Bad Behaviors, initiated by researchers from Universität Würzburg, aims at creating a platform to teach classroom management skills to new teachers. With colleagues from Ecole Nationale d&amp;rsquo;Ingénieurs de Brest, we are now combining our research expertise to improve the existing prototype with perceptually validated behavior models for the virtual students, and with interactive storytelling techniques to manage the learning scenarios.</description>
-    </item>
+      <atom:link href="https://matchollet.github.io/tags/bbb/index.xml" rel="self" type="application/rss+xml" />
+    <description>BBB</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0100</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>BBB</title>
+      <link>https://matchollet.github.io/tags/bbb/</link>
+    </image>
     
     <item>
       <title>Towards Narrative-Driven Atmosphere for Virtual Classroom</title>
       <link>https://matchollet.github.io/publication/chi19classroom/</link>
-      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/chi19classroom/</guid>
       <description></description>
     </item>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Socia Skills Training on Mathieu Chollet</title>
+    <title>Socia Skills Training | Mathieu Chollet</title>
     <link>https://matchollet.github.io/tags/socia-skills-training/</link>
-    <description>Recent content in Socia Skills Training on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://matchollet.github.io/tags/socia-skills-training/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://matchollet.github.io/tags/socia-skills-training/index.xml" rel="self" type="application/rss+xml" />
+    <description>Socia Skills Training</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0100</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Socia Skills Training</title>
+      <link>https://matchollet.github.io/tags/socia-skills-training/</link>
+    </image>
     
     <item>
       <title>Towards Narrative-Driven Atmosphere for Virtual Classroom</title>
       <link>https://matchollet.github.io/publication/chi19classroom/</link>
-      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/chi19classroom/</guid>
       <description></description>
     </item>

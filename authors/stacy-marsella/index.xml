@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stacy Marsella | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/authors/stacy-marsella/</link>
+      <atom:link href="https://matchollet.github.io/authors/stacy-marsella/index.xml" rel="self" type="application/rss+xml" />
+    <description>Stacy Marsella</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 06 Mar 2021 11:35:10 +0200</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Stacy Marsella</title>
+      <link>https://matchollet.github.io/authors/stacy-marsella/</link>
+    </image>
+    
+    <item>
+      <title>Training public speaking with virtual social interactions: effectiveness of real-time feedback and delayed feedback</title>
+      <link>https://matchollet.github.io/publication/jmuitraining/</link>
+      <pubDate>Sat, 06 Mar 2021 11:35:10 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/jmuitraining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multiple metaphors in metaphoric gesturing</title>
+      <link>https://matchollet.github.io/publication/acii19gesture/</link>
+      <pubDate>Tue, 03 Sep 2019 11:33:58 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/acii19gesture/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

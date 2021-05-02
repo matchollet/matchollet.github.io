@@ -3,12 +3,14 @@
   <channel>
     <title>Mathieu Chollet</title>
     <link>https://matchollet.github.io/author/admin/</link>
-    <description>Recent content on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://matchollet.github.io/author/admin/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://matchollet.github.io/author/admin/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mathieu Chollet</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Mathieu Chollet</title>
+      <link>https://matchollet.github.io/author/admin/</link>
+    </image>
     
   </channel>
 </rss>

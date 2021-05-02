@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>H. Prendinger on Mathieu Chollet</title>
+    <title>H. Prendinger | Mathieu Chollet</title>
     <link>https://matchollet.github.io/authors/h.-prendinger/</link>
-    <description>Recent content in H. Prendinger on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 01 Nov 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://matchollet.github.io/authors/h.-prendinger/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://matchollet.github.io/authors/h.-prendinger/index.xml" rel="self" type="application/rss+xml" />
+    <description>H. Prendinger</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Nov 2016 00:00:00 +0100</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>H. Prendinger</title>
+      <link>https://matchollet.github.io/authors/h.-prendinger/</link>
+    </image>
     
     <item>
       <title>Native vs. Non-native language fluency implications on multimodal interaction for interpersonal skills training</title>
       <link>https://matchollet.github.io/publication/icmi16native/</link>
-      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
-      
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/icmi16native/</guid>
       <description></description>
     </item>
@@ -23,8 +23,7 @@
     <item>
       <title>Public speaking training with a multimodal interactive virtual audience framework</title>
       <link>https://matchollet.github.io/publication/icmi15demo/</link>
-      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
-      
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/icmi15demo/</guid>
       <description></description>
     </item>

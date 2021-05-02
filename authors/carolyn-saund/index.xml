@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Carolyn Saund | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/authors/carolyn-saund/</link>
+      <atom:link href="https://matchollet.github.io/authors/carolyn-saund/index.xml" rel="self" type="application/rss+xml" />
+    <description>Carolyn Saund</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 03 Sep 2019 11:33:58 +0200</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Carolyn Saund</title>
+      <link>https://matchollet.github.io/authors/carolyn-saund/</link>
+    </image>
+    
+    <item>
+      <title>Multiple metaphors in metaphoric gesturing</title>
+      <link>https://matchollet.github.io/publication/acii19gesture/</link>
+      <pubDate>Tue, 03 Sep 2019 11:33:58 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/acii19gesture/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>R. Stiefelhagen on Mathieu Chollet</title>
+    <title>R. Stiefelhagen | Mathieu Chollet</title>
     <link>https://matchollet.github.io/authors/r.-stiefelhagen/</link>
-    <description>Recent content in R. Stiefelhagen on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 01 Nov 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://matchollet.github.io/authors/r.-stiefelhagen/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://matchollet.github.io/authors/r.-stiefelhagen/index.xml" rel="self" type="application/rss+xml" />
+    <description>R. Stiefelhagen</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Nov 2015 00:00:00 +0100</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>R. Stiefelhagen</title>
+      <link>https://matchollet.github.io/authors/r.-stiefelhagen/</link>
+    </image>
     
     <item>
       <title>Multimodal public speaking performance assessment</title>
       <link>https://matchollet.github.io/publication/icmi15multimodal/</link>
-      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
-      
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/icmi15multimodal/</guid>
       <description></description>
     </item>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Emotions on Mathieu Chollet</title>
+    <title>Emotions | Mathieu Chollet</title>
     <link>https://matchollet.github.io/tags/emotions/</link>
-    <description>Recent content in Emotions on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 01 Nov 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://matchollet.github.io/tags/emotions/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://matchollet.github.io/tags/emotions/index.xml" rel="self" type="application/rss+xml" />
+    <description>Emotions</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Nov 2016 00:00:00 +0100</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Emotions</title>
+      <link>https://matchollet.github.io/tags/emotions/</link>
+    </image>
     
     <item>
       <title>Emotion and Attitude Modeling for Non-player Characters</title>
       <link>https://matchollet.github.io/publication/eig16emotion/</link>
-      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
-      
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/eig16emotion/</guid>
       <description></description>
     </item>
@@ -23,8 +23,7 @@
     <item>
       <title>Vers des Agents Conversationnels Animés dotés d&#39;émotions et d&#39;attitudes sociales</title>
       <link>https://matchollet.github.io/publication/jips15agents/</link>
-      <pubDate>Tue, 22 Sep 2015 00:00:00 +0100</pubDate>
-      
+      <pubDate>Tue, 22 Sep 2015 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/jips15agents/</guid>
       <description></description>
     </item>
@@ -32,8 +31,7 @@
     <item>
       <title>Vers des agents conversationnels animés socio-affectifs</title>
       <link>https://matchollet.github.io/publication/ihm13agents/</link>
-      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/ihm13agents/</guid>
       <description></description>
     </item>

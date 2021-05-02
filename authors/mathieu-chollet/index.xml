@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathieu Chollet</title>
+    <link>https://matchollet.github.io/authors/mathieu-chollet/</link>
+      <atom:link href="https://matchollet.github.io/authors/mathieu-chollet/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mathieu Chollet</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 06 Mar 2021 11:35:10 +0200</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Mathieu Chollet</title>
+      <link>https://matchollet.github.io/authors/mathieu-chollet/</link>
+    </image>
+    
+    <item>
+      <title>Training public speaking with virtual social interactions: effectiveness of real-time feedback and delayed feedback</title>
+      <link>https://matchollet.github.io/publication/jmuitraining/</link>
+      <pubDate>Sat, 06 Mar 2021 11:35:10 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/jmuitraining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessment of Situation Awareness during Robotic Surgery using Multimodal Data</title>
+      <link>https://matchollet.github.io/publication/msecp20sawareness/</link>
+      <pubDate>Sun, 25 Oct 2020 11:34:59 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/msecp20sawareness/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Investigating the Influence of Sound Design for Inducing Anxiety in Virtual Public Speaking</title>
+      <link>https://matchollet.github.io/publication/samih20sound/</link>
+      <pubDate>Sun, 25 Oct 2020 11:34:59 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/samih20sound/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Etude de l&#39;influence du comportement d&#39;un public virtuel sur le stress ressenti lors de prises de paroles simulées</title>
+      <link>https://matchollet.github.io/publication/wacai20stress/</link>
+      <pubDate>Wed, 03 Jun 2020 11:34:24 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/wacai20stress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vers un système de production de feedbacks personnalisé pour l&#39;entraînement de la prise de parole en public</title>
+      <link>https://matchollet.github.io/publication/wacai20feedback/</link>
+      <pubDate>Fri, 06 Mar 2020 11:34:33 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/wacai20feedback/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multiple metaphors in metaphoric gesturing</title>
+      <link>https://matchollet.github.io/publication/acii19gesture/</link>
+      <pubDate>Tue, 03 Sep 2019 11:33:58 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/acii19gesture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Scalability Benchmark for a Virtual Audience Perception Model in Virtual Reality</title>
+      <link>https://matchollet.github.io/publication/vrst19scalability/</link>
+      <pubDate>Sat, 12 Jan 2019 11:34:10 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/vrst19scalability/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

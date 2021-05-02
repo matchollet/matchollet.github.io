@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>E. Laksana on Mathieu Chollet</title>
+    <title>E. Laksana | Mathieu Chollet</title>
     <link>https://matchollet.github.io/authors/e.-laksana/</link>
-    <description>Recent content in E. Laksana on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://matchollet.github.io/authors/e.-laksana/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://matchollet.github.io/authors/e.-laksana/index.xml" rel="self" type="application/rss+xml" />
+    <description>E. Laksana</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0100</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>E. Laksana</title>
+      <link>https://matchollet.github.io/authors/e.-laksana/</link>
+    </image>
     
     <item>
       <title>Affect-LM: A neural language model for customizable affective text generation</title>
       <link>https://matchollet.github.io/publication/acl17affectlm/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/acl17affectlm/</guid>
       <description></description>
     </item>

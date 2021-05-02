@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CineSys on Mathieu Chollet</title>
+    <title>CineSys | Mathieu Chollet</title>
     <link>https://matchollet.github.io/tags/cinesys/</link>
-    <description>Recent content in CineSys on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://matchollet.github.io/tags/cinesys/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://matchollet.github.io/tags/cinesys/index.xml" rel="self" type="application/rss+xml" />
+    <description>CineSys</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0100</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>CineSys</title>
+      <link>https://matchollet.github.io/tags/cinesys/</link>
+    </image>
     
     <item>
       <title>CineSys</title>
       <link>https://matchollet.github.io/project/cinesys/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/project/cinesys/</guid>
-      <description>As part of my Master’s thesis, I proposed a model for automatic editing of 3D movies, that can learn from examples. Using a 3D virtual environment (CineSys) and a description of a scenario (i.e. timed actor actions), it casts the problem of film editing as a path-planning problem in a space of available cameras (pre-defined positions or automatically computed from actors positions). I defined cost functions for shot quality (e.g. shot type preferences, composition, visibility of actions), for cutting between shots (e.</description>
+      <description>&lt;p&gt;As part of my Master’s thesis, I proposed a model for automatic editing of 3D movies, that can learn from examples. Using a 3D virtual environment (CineSys) and a description of a scenario (i.e. timed actor actions), it casts the problem of film editing as a path-planning problem in a space of available cameras (pre-defined positions or automatically computed from actors positions). I defined cost functions for shot quality (e.g. shot type preferences, composition, visibility of actions), for cutting between shots (e.g. jump cuts, do not break the line of action), and for pacing. Each rule is associated to a weight: these weights can be automatically learned from manually produced movie examples, effectively representing the editing style of a particular user.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/Aj1Iy_k0QVI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
     </item>
     
     <item>
       <title>Computational model of film editing for interactive storytelling</title>
       <link>https://matchollet.github.io/publication/icids11computational/</link>
-      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
-      
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/icids11computational/</guid>
       <description></description>
     </item>
@@ -32,8 +37,7 @@
     <item>
       <title>A virtual cinematography system that learns from examples</title>
       <link>https://matchollet.github.io/publication/master11/</link>
-      <pubDate>Wed, 01 Jun 2011 00:00:00 +0100</pubDate>
-      
+      <pubDate>Wed, 01 Jun 2011 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/master11/</guid>
       <description></description>
     </item>
@@ -41,8 +45,7 @@
     <item>
       <title>Automated Camera Planner for Film Editing Using Key Shots</title>
       <link>https://matchollet.github.io/publication/sca11planner/</link>
-      <pubDate>Sun, 01 May 2011 00:00:00 +0100</pubDate>
-      
+      <pubDate>Sun, 01 May 2011 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/sca11planner/</guid>
       <description></description>
     </item>

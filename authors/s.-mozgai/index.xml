@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>S. Mozgai on Mathieu Chollet</title>
+    <title>S. Mozgai | Mathieu Chollet</title>
     <link>https://matchollet.github.io/authors/s.-mozgai/</link>
-    <description>Recent content in S. Mozgai on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 01 Nov 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://matchollet.github.io/authors/s.-mozgai/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://matchollet.github.io/authors/s.-mozgai/index.xml" rel="self" type="application/rss+xml" />
+    <description>S. Mozgai</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Nov 2018 00:00:00 +0100</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>S. Mozgai</title>
+      <link>https://matchollet.github.io/authors/s.-mozgai/</link>
+    </image>
     
     <item>
       <title>NADIA - Neural network driven virtual human conversation agents</title>
       <link>https://matchollet.github.io/publication/iva18nadia/</link>
-      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
-      
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/iva18nadia/</guid>
       <description></description>
     </item>
@@ -23,8 +23,7 @@
     <item>
       <title>NADiA - Towards neural network driven virtual human conversation agents</title>
       <link>https://matchollet.github.io/publication/aamas18nadia/</link>
-      <pubDate>Sun, 01 Jul 2018 00:00:00 +0100</pubDate>
-      
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/aamas18nadia/</guid>
       <description></description>
     </item>
@@ -32,8 +31,7 @@
     <item>
       <title>The relationship between task-induced stress, vocal changes, and physiological state during a dyadic team task</title>
       <link>https://matchollet.github.io/publication/icmi17physiology/</link>
-      <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
-      
+      <pubDate>Wed, 01 Nov 2017 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/icmi17physiology/</guid>
       <description></description>
     </item>

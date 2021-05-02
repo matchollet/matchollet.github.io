@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Enora Gabory | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/authors/enora-gabory/</link>
+      <atom:link href="https://matchollet.github.io/authors/enora-gabory/index.xml" rel="self" type="application/rss+xml" />
+    <description>Enora Gabory</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 25 Oct 2020 11:34:59 +0200</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Enora Gabory</title>
+      <link>https://matchollet.github.io/authors/enora-gabory/</link>
+    </image>
+    
+    <item>
+      <title>Investigating the Influence of Sound Design for Inducing Anxiety in Virtual Public Speaking</title>
+      <link>https://matchollet.github.io/publication/samih20sound/</link>
+      <pubDate>Sun, 25 Oct 2020 11:34:59 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/samih20sound/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,120 +1,116 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homes on Mathieu Chollet</title>
+    <title>Homes | Mathieu Chollet</title>
     <link>https://matchollet.github.io/home/</link>
-    <description>Recent content in Homes on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0100</lastBuildDate>
-
-	<atom:link href="https://matchollet.github.io/home/index.xml" rel="self" type="application/rss+xml" />
-
-
+      <atom:link href="https://matchollet.github.io/home/index.xml" rel="self" type="application/rss+xml" />
+    <description>Homes</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 23 Jan 2019 16:00:00 +0100</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Homes</title>
+      <link>https://matchollet.github.io/home/</link>
+    </image>
+    
     <item>
       <title>Biography</title>
       <link>https://matchollet.github.io/home/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/home/about/</guid>
       <description></description>
     </item>
-
+    
     <item>
       <title>News</title>
       <link>https://matchollet.github.io/home/news/</link>
-      <pubDate>Wed, 23 Jan 2019 16:00:00 +0000</pubDate>
-
+      <pubDate>Wed, 23 Jan 2019 16:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/home/news/</guid>
-      <description>
-01-10-19 &amp;mdash; I have started a new faculty position as Assistant Professor in the PACCE team of IMT Atlantique, in Nantes, France!
-21-06-19 &amp;mdash; The first paper from our students Carolyn Saund and Marion Roth &amp;ldquo;TMetaphor and metaphoric gesturing&amp;rdquo;, has been accepted at ACII 2019.
-11-02-19 &amp;mdash; The first paper from my newest project on virtual classrooms &amp;ldquo;Towards Narrative-Driven Atmosphere for Virtual Classroom&amp;rdquo;, written with colleagues from Universität Würzburg and Ecole Nationale d&amp;rsquo;Ingénieurs de Brest, has been accepted in the CHI 2019 Late-Breaking Results track.
-16-12-18 &amp;mdash; I presented the Cicero project at the VSI 2018 workshop.
-15-11-18 &amp;mdash; Just came back from an intense couple of weeks, after I presented 2 papers at IVA 2018, and gave seminars on interpersonal skills training with multimodal interaction at UNSW, Sydney and at Seikei University, Tokyo.</description>
-    </item>
+      <description>&lt;p&gt;&lt;em&gt;01-10-19 &amp;mdash;&lt;/em&gt; I have started a new faculty position as Assistant Professor in the PACCE team of IMT Atlantique, in Nantes, France!&lt;/p&gt;
 
+&lt;p&gt;&lt;em&gt;21-06-19 &amp;mdash;&lt;/em&gt; The first paper from our students Carolyn Saund and Marion Roth &amp;ldquo;Metaphor and metaphoric gesturing&amp;rdquo;, has been accepted at ACII 2019.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;11-02-19 &amp;mdash;&lt;/em&gt; The first paper from my newest project on virtual classrooms &amp;ldquo;Towards Narrative-Driven Atmosphere for Virtual Classroom&amp;rdquo;, written with colleagues from Universität Würzburg and Ecole Nationale d&amp;rsquo;Ingénieurs de Brest, has been accepted in the CHI 2019 Late-Breaking Results track.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;16-12-18 &amp;mdash;&lt;/em&gt; I presented the Cicero project at the &lt;a href=&#34;https://medium.com/virtual-reality-virtual-people/virtual-social-interaction-conference-8972dcd9211c&#34; target=&#34;_blank&#34;&gt;VSI 2018 workshop&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;15-11-18 &amp;mdash;&lt;/em&gt; Just came back from an intense couple of weeks, after I presented 2 papers at &lt;a href=&#34;https://iva2018.westernsydney.edu.au&#34; target=&#34;_blank&#34;&gt;IVA 2018&lt;/a&gt;, and gave seminars on interpersonal skills training with multimodal interaction at UNSW, Sydney and at Seikei University, Tokyo. Thanks to to Prof. Skinner, Prof. Epps, and Prof. Nakano for setting those up!&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Featured Publications</title>
       <link>https://matchollet.github.io/home/publications_featured/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/home/publications_featured/</guid>
       <description></description>
     </item>
-
+    
     <item>
       <title>Recent Publications</title>
       <link>https://matchollet.github.io/home/publications/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/home/publications/</guid>
       <description></description>
     </item>
-
+    
     <item>
       <title>Featured Talks</title>
       <link>https://matchollet.github.io/home/talks_featured/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/home/talks_featured/</guid>
       <description></description>
     </item>
-
+    
     <item>
       <title>Recent &amp; Upcoming Talks</title>
       <link>https://matchollet.github.io/home/talks/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/home/talks/</guid>
       <description></description>
     </item>
-
+    
     <item>
       <title>Recent Posts</title>
       <link>https://matchollet.github.io/home/posts/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/home/posts/</guid>
       <description></description>
     </item>
-
+    
     <item>
       <title>Projects</title>
       <link>https://matchollet.github.io/home/projects/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/home/projects/</guid>
       <description></description>
     </item>
-
+    
     <item>
       <title>Custom Section</title>
       <link>https://matchollet.github.io/home/teaching/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/home/teaching/</guid>
-      <description>This is an example of using the custom widget to create your own homepage section.
-To remove this section, either delete content/home/teaching.md or edit the frontmatter of the file to deactivate the widget by setting active = false.</description>
-    </item>
+      <description>&lt;p&gt;This is an example of using the &lt;em&gt;custom&lt;/em&gt; widget to create your own homepage section.&lt;/p&gt;
 
+&lt;p&gt;To remove this section, either delete &lt;code&gt;content/home/teaching.md&lt;/code&gt; or edit the frontmatter of the file to deactivate the widget by setting &lt;code&gt;active = false&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
     <item>
       <title>Tags</title>
       <link>https://matchollet.github.io/home/tags/</link>
-      <pubDate>Wed, 20 Sep 2017 00:00:00 +0100</pubDate>
-
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/home/tags/</guid>
       <description></description>
     </item>
-
+    
     <item>
       <title>Contact</title>
       <link>https://matchollet.github.io/home/contact/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/home/contact/</guid>
       <description></description>
     </item>
-
+    
   </channel>
 </rss>

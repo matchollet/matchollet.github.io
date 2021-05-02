@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>C., Lino on Mathieu Chollet</title>
+    <title>C. Lino | Mathieu Chollet</title>
     <link>https://matchollet.github.io/authors/c.-lino/</link>
-    <description>Recent content in C., Lino on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 01 May 2011 00:00:00 +0100</lastBuildDate>
+      <atom:link href="https://matchollet.github.io/authors/c.-lino/index.xml" rel="self" type="application/rss+xml" />
+    <description>C. Lino</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Nov 2011 00:00:00 +0100</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>C. Lino</title>
+      <link>https://matchollet.github.io/authors/c.-lino/</link>
+    </image>
     
-	<atom:link href="https://matchollet.github.io/authors/c.-lino/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>Computational model of film editing for interactive storytelling</title>
+      <link>https://matchollet.github.io/publication/icids11computational/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0100</pubDate>
+      <guid>https://matchollet.github.io/publication/icids11computational/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Automated Camera Planner for Film Editing Using Key Shots</title>
       <link>https://matchollet.github.io/publication/sca11planner/</link>
-      <pubDate>Sun, 01 May 2011 00:00:00 +0100</pubDate>
-      
+      <pubDate>Sun, 01 May 2011 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/sca11planner/</guid>
       <description></description>
     </item>

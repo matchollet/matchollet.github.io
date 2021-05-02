@@ -1,57 +1,64 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Social Skills Training on Mathieu Chollet</title>
+    <title>Social Skills Training | Mathieu Chollet</title>
     <link>https://matchollet.github.io/tags/social-skills-training/</link>
-    <description>Recent content in Social Skills Training on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://matchollet.github.io/tags/social-skills-training/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Breaking Bad Behaviors</title>
-      <link>https://matchollet.github.io/project/bbb/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://matchollet.github.io/project/bbb/</guid>
-      <description>The project Breaking Bad Behaviors, initiated by researchers from Universität Würzburg, aims at creating a platform to teach classroom management skills to new teachers. With colleagues from Ecole Nationale d&amp;rsquo;Ingénieurs de Brest, we are now combining our research expertise to improve the existing prototype with perceptually validated behavior models for the virtual students, and with interactive storytelling techniques to manage the learning scenarios.</description>
-    </item>
+      <atom:link href="https://matchollet.github.io/tags/social-skills-training/index.xml" rel="self" type="application/rss+xml" />
+    <description>Social Skills Training</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0100</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Social Skills Training</title>
+      <link>https://matchollet.github.io/tags/social-skills-training/</link>
+    </image>
     
     <item>
       <title>Cicero</title>
       <link>https://matchollet.github.io/project/cicero/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/project/cicero/</guid>
-      <description>In the CICERO project, our aim is to investigate if public speaking skills can be improved using virtual training. Descriptions of the user&amp;rsquo;s public speaking behavior are automatically extracted from audiovisual sensors, and an interactive virtual audience is used to provide feedback to the users depending on their public speaking performance. To investigate how virtual characters can help improving the learning outcome of a public speaking training system, I proposed a flexible and modular architecture for interactive virtual audiences, and conducted a series of studies on the impact of different feedback strategies on training outcomes and user experiences.</description>
-    </item>
-    
-    <item>
-      <title>Perceptive Patient</title>
-      <link>https://matchollet.github.io/project/perceptivepatient/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://matchollet.github.io/project/perceptivepatient/</guid>
-      <description>With colleagues from the MedVR USC-ICT group, I was involved in the Perceptive Patient project where we investigated training medical doctors communication skills. Doctors’ communication styles are known to be predictors of patients’ satisfaction, as well as actual health outcomes. We are designing emotional state and behavioral expression models for virtual patients, and creating new architectures for online, distributed systems for human-virtual agent interaction. Our system demo at the 2018 International Meeting on Simulation in Healthcare received the “Best of Show” demo award.</description>
+      <description>&lt;p&gt;In the CICERO project, our aim is to investigate if public speaking skills can be improved using virtual training. Descriptions of the user&amp;rsquo;s public speaking behavior are automatically extracted from audiovisual sensors, and an interactive virtual audience is used to provide feedback to the users depending on their public speaking performance. To investigate how virtual characters can help improving the learning outcome of a public speaking training system, I proposed a flexible and modular architecture for interactive virtual audiences, and conducted a series of studies on the impact of different feedback strategies on training outcomes and user experiences.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/dTE14lPBO98&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;!-- raw HTML omitted --&gt;
+</description>
     </item>
     
     <item>
       <title>Tardis</title>
       <link>https://matchollet.github.io/project/tardis/</link>
-      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
-      
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/project/tardis/</guid>
-      <description>I was involved in the EU FP7 Tardis Project. TARDIS aimed to build a scenario-based serious-game simulation platform for young people (ages 18-25) at risk of exclusion to explore, practice and improve their social skills. TARDIS facilitates the interaction through virtual agents (VAs) acting as recruiters in job interviews scenarios. My contribution in this project focused on the virtual recruiter. I proposed a data-driven model allowing VAs to express different interpersonal attitudes (dominant, friendly&amp;hellip;) which takes into account how the recruiter’s non-verbal behaviors are sequenced.</description>
+      <description>&lt;p&gt;I was involved in the EU FP7 Tardis Project. TARDIS aimed to build a scenario-based serious-game simulation platform for young people (ages 18-25) at risk of exclusion to explore, practice and improve their social skills. TARDIS  facilitates the interaction through virtual agents (VAs) acting as recruiters in job interviews scenarios. My contribution in this project focused on the virtual recruiter. I proposed a data-driven model allowing VAs to express different interpersonal attitudes (dominant, friendly&amp;hellip;) which takes into account how the recruiter’s non-verbal behaviors are sequenced. The model uses a dataset of non-verbal behavior sequences obtained using sequence mining techniques, and can generate new sequences to express a chosen interpersonal attitude.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/8fmJMzC18C4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Perceptive Patient</title>
+      <link>https://matchollet.github.io/project/perceptivepatient/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0100</pubDate>
+      <guid>https://matchollet.github.io/project/perceptivepatient/</guid>
+      <description>&lt;p&gt;With colleagues from the MedVR USC-ICT group, I was involved in the Perceptive Patient project where we investigated training medical doctors communication skills. Doctors’ communication styles are known to be predictors of patients’ satisfaction, as well as actual health outcomes. We are designing emotional state and behavioral expression models for virtual patients, and creating new architectures for online, distributed systems for human-virtual agent interaction. Our system demo at the 2018 International Meeting on Simulation in Healthcare received the “Best of Show” demo award.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/DHaUUt5yeWQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
     </item>
     
     <item>
       <title>Influence of individual differences when training public speaking with virtual audiences</title>
       <link>https://matchollet.github.io/publication/iva18influence/</link>
-      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
-      
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/iva18influence/</guid>
       <description></description>
     </item>
@@ -59,8 +66,7 @@
     <item>
       <title>A generic platform for training social skills with adaptative virtual agents</title>
       <link>https://matchollet.github.io/publication/aamas18generic/</link>
-      <pubDate>Sun, 01 Jul 2018 00:00:00 +0100</pubDate>
-      
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/aamas18generic/</guid>
       <description></description>
     </item>
@@ -68,8 +74,7 @@
     <item>
       <title>Racing heart and sweaty palms: What influences users&#39; self-assessments and physiological signals when interacting with virtual audiences?</title>
       <link>https://matchollet.github.io/publication/iva17racing/</link>
-      <pubDate>Tue, 01 Aug 2017 00:00:00 +0100</pubDate>
-      
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/iva17racing/</guid>
       <description></description>
     </item>
@@ -77,8 +82,7 @@
     <item>
       <title>Assessing Public Speaking Ability from Thin Slices of Behavior</title>
       <link>https://matchollet.github.io/publication/fg17assessing/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/fg17assessing/</guid>
       <description></description>
     </item>
@@ -86,8 +90,7 @@
     <item>
       <title>Native vs. Non-native language fluency implications on multimodal interaction for interpersonal skills training</title>
       <link>https://matchollet.github.io/publication/icmi16native/</link>
-      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
-      
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/icmi16native/</guid>
       <description></description>
     </item>
@@ -95,8 +98,7 @@
     <item>
       <title>Investigating the Physiological Responses to Virtual Audience Behavioral Changes</title>
       <link>https://matchollet.github.io/publication/pava16stress/</link>
-      <pubDate>Thu, 01 Sep 2016 00:00:00 +0100</pubDate>
-      
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/pava16stress/</guid>
       <description></description>
     </item>
@@ -104,8 +106,7 @@
     <item>
       <title>A multimodal corpus for the assessment of public speaking ability and anxiety</title>
       <link>https://matchollet.github.io/publication/lrec16corpus/</link>
-      <pubDate>Sun, 01 May 2016 00:00:00 +0100</pubDate>
-      
+      <pubDate>Sun, 01 May 2016 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/lrec16corpus/</guid>
       <description></description>
     </item>
@@ -113,8 +114,7 @@
     <item>
       <title>Multimodal public speaking performance assessment</title>
       <link>https://matchollet.github.io/publication/icmi15multimodal/</link>
-      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
-      
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/icmi15multimodal/</guid>
       <description></description>
     </item>
@@ -122,8 +122,7 @@
     <item>
       <title>Public speaking training with a multimodal interactive virtual audience framework</title>
       <link>https://matchollet.github.io/publication/icmi15demo/</link>
-      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
-      
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/icmi15demo/</guid>
       <description></description>
     </item>
@@ -131,8 +130,7 @@
     <item>
       <title>Exploring feedback strategies to improve public speaking: An interactive virtual audience framework</title>
       <link>https://matchollet.github.io/publication/ubicomp15exploring/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0100</pubDate>
-      
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/ubicomp15exploring/</guid>
       <description></description>
     </item>
@@ -140,8 +138,7 @@
     <item>
       <title>An architecture for a socially adaptive virtual recruiter in job interview simulations</title>
       <link>https://matchollet.github.io/publication/idgei15architecture/</link>
-      <pubDate>Sun, 29 Mar 2015 00:00:00 +0000</pubDate>
-      
+      <pubDate>Sun, 29 Mar 2015 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/idgei15architecture/</guid>
       <description></description>
     </item>
@@ -149,8 +146,7 @@
     <item>
       <title>Expressing social attitudes in virtual agents for social coaching</title>
       <link>https://matchollet.github.io/publication/wacai14expressing/</link>
-      <pubDate>Sun, 01 Jun 2014 00:00:00 +0100</pubDate>
-      
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/wacai14expressing/</guid>
       <description></description>
     </item>
@@ -158,8 +154,7 @@
     <item>
       <title>An interactive virtual audience platform for public speaking training</title>
       <link>https://matchollet.github.io/publication/aamas14audience/</link>
-      <pubDate>Thu, 01 May 2014 00:00:00 +0100</pubDate>
-      
+      <pubDate>Thu, 01 May 2014 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/aamas14audience/</guid>
       <description></description>
     </item>
@@ -167,8 +162,7 @@
     <item>
       <title>Expressing social attitudes in virtual agents for social coaching</title>
       <link>https://matchollet.github.io/publication/aamas14expressing/</link>
-      <pubDate>Thu, 01 May 2014 00:00:00 +0100</pubDate>
-      
+      <pubDate>Thu, 01 May 2014 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/aamas14expressing/</guid>
       <description></description>
     </item>
@@ -176,8 +170,7 @@
     <item>
       <title>Expressing social attitudes in virtual agents for social training games</title>
       <link>https://matchollet.github.io/publication/idgei14expressing/</link>
-      <pubDate>Mon, 24 Feb 2014 00:00:00 +0000</pubDate>
-      
+      <pubDate>Mon, 24 Feb 2014 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/idgei14expressing/</guid>
       <description></description>
     </item>
@@ -185,8 +178,7 @@
     <item>
       <title>The TARDIS framework: Intelligent virtual agents for social coaching in job interviews</title>
       <link>https://matchollet.github.io/publication/ace13tardis/</link>
-      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0100</pubDate>
       <guid>https://matchollet.github.io/publication/ace13tardis/</guid>
       <description></description>
     </item>

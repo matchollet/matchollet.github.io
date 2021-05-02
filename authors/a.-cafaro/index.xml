@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>A., Cafaro on Mathieu Chollet</title>
+    <title>A., Cafaro | Mathieu Chollet</title>
     <link>https://matchollet.github.io/authors/a.-cafaro/</link>
-    <description>Recent content in A., Cafaro on Mathieu Chollet</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 Aug 2014 00:00:00 +0100</lastBuildDate>
-    
-	<atom:link href="https://matchollet.github.io/authors/a.-cafaro/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="https://matchollet.github.io/authors/a.-cafaro/index.xml" rel="self" type="application/rss+xml" />
+    <description>A., Cafaro</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Aug 2014 00:00:00 +0200</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>A., Cafaro</title>
+      <link>https://matchollet.github.io/authors/a.-cafaro/</link>
+    </image>
     
     <item>
       <title>Suggestions for extending saiba with the vib platform</title>
       <link>https://matchollet.github.io/publication/wasiva14vib/</link>
-      <pubDate>Fri, 01 Aug 2014 00:00:00 +0100</pubDate>
-      
+      <pubDate>Fri, 01 Aug 2014 00:00:00 +0200</pubDate>
       <guid>https://matchollet.github.io/publication/wasiva14vib/</guid>
       <description></description>
     </item>
