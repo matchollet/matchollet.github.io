@@ -6,10 +6,19 @@
     <description>Recent content in PCIbex on Igor Costa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 May 2021 18:33:34 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 02 May 2021 19:05:10 -0300</lastBuildDate>
     
 	<atom:link href="https://igordeo-costa.github.io/tags/pcibex/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Começando do zero no PcIbex - Parte 02</title>
+      <link>https://igordeo-costa.github.io/posts/pcibextutorial02/</link>
+      <pubDate>Sun, 02 May 2021 19:05:10 -0300</pubDate>
+      
+      <guid>https://igordeo-costa.github.io/posts/pcibextutorial02/</guid>
+      <description>Na parte 1 do nosso tutorial, que você pode acessar aqui, mostramos como começar do zero no PCIbex, criando uma página de instruções com um botão clicável e como inserir um único item experimental para um experimento de leitura automonitorada. O problema é que nunca temos um único item experimental, mas vários itens, de vários tipos diferentes. Nessa parte 2, então, vamos mostrar como usar a mesma estrutura básica que já aprendemos para, em vez de inserirmos item a item no código, buscarmos cada um dos itens em uma tabela.</description>
+    </item>
     
     <item>
       <title>Começando do zero no PCIbex - Parte 01</title>
