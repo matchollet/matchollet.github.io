@@ -106,229 +106,229 @@
 <p>Os dados usados nesse tutorial podem ser baixados <a href="">aqui</a>. Os nomes e e-mails dos participantes foram alterados para preservar suas identidades. Uma descrição mais detalhada do experimento pode ser encontrada <a href="">aqui</a>.</p>
 <h1 id="carregando-os-dados-de-um-arquivo-ibex">Carregando os dados de um arquivo ibex</h1>
 <p>O primeiro passo é instalar o pacote <code>ibextor</code> para acessar os dados do Ibex Farm. Se o comando <code>install.packages(&quot;ibextor&quot;)</code> não funcionar, sugerimos que você instale o pacote <code>remotes</code> e então faça a instalação diretamente do repositório do <code>ibextor</code>. A Documentação do pacote está disponível <a href="https://github.com/antonmalko/ibextor">aqui</a>.</p>
-<pre><code class="language-{r}" data-lang="{r}">install.packages(&quot;remotes&quot;)
-remotes::install_github(&quot;antonmalko/ibextor&quot;)
-</code></pre><h3 id="carregando-pacotes-necessários-para-esse-tutorial">Carregando pacotes necessários para esse tutorial</h3>
-<pre><code class="language-{r}" data-lang="{r}">require(stringr)
-require(dplyr)
-require(tidyr)
-require(ibextor)
-</code></pre><h3 id="extraindo-resultados-de-julgamento-de-aceitabilidade">Extraindo resultados de julgamento de aceitabilidade</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">install.packages</span>(<span style="color:#c41a16">&#34;remotes&#34;</span>)
+<span style="color:#000">remotes</span><span style="color:#000">::</span><span style="color:#000">install_github</span>(<span style="color:#c41a16">&#34;antonmalko/ibextor&#34;</span>)</code></pre></div>
+<h3 id="carregando-pacotes-necessários-para-esse-tutorial">Carregando pacotes necessários para esse tutorial</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">require</span>(<span style="color:#000">stringr</span>)
+<span style="color:#000">require</span>(<span style="color:#000">dplyr</span>)
+<span style="color:#000">require</span>(<span style="color:#000">tidyr</span>)
+<span style="color:#000">require</span>(<span style="color:#000">ibextor</span>)</code></pre></div>
+<h3 id="extraindo-resultados-de-julgamento-de-aceitabilidade">Extraindo resultados de julgamento de aceitabilidade</h3>
 <p>Para começar, vamos usar a função <code>get_results_aj</code> para extrair os dados de nosso interesse. Observe que <code>aj</code> vem de <code>acceptability judgment</code>, que é o tipo de experimento feito no Ibex nesse caso. Se você estivesse extraindo outro tipo de dado, como de leitura automonitorada, a função seria outra. Consulte a <a href="https://github.com/antonmalko/ibextor">documentação do pacote</a> para esses casos. Vamos colocar esses dados num objeto de nome <code>dados</code> (você pode dar o nome que você quiser). Repare que você precisará colocar o <code>PATH</code> adequado no local onde está, no exemplo baixo, <code>&quot;/home/dados/...&quot;</code>. Esse é o endereço no seu computador onde o arquivo está guardado, terminando com o nome do arquivo.</p>
-<pre><code class="language-{r}" data-lang="{r}">dados&lt;-get_results_aj(&quot;/home/dados/Acadêmicos/Doutorado/EXPERIMENTOS_2021/EscalaLikert/Resultados.csv&quot;)
-</code></pre><p>Se você quiser, pode explorar essa tabela com as funções <code>head</code>, <code>str</code>, etc. Após essa inspeção, nós vamos limpá-la de algumas colunas que não nos interessam nela. Caso deseje entender o que estamos fazendo aqui, rode passo a passo o código abaixo:</p>
-<pre><code class="language-{r}" data-lang="{r}">dados&lt;-dados %&gt;%
-  select(-c(question, sentence, presentation_order, subj_uid)) %&gt;% # Elimina colunas desnecessárias
-  filter(str_detect(type, &quot;^e&quot;)) %&gt;% # Filtra apenas as sentenças experimentais (começam com a letra &quot;e&quot;)
-  separate(type, c(&quot;Ordem&quot;, &quot;Num&quot;), &quot;[_]&quot;) %&gt;% # Separa a coluna &quot;type&quot; (condições) nos fatores analisados (V. Independentes)
-  separate(Ordem, c(&quot;a&quot;, &quot;Ordem&quot;), &quot;[.]&quot;) %&gt;% # Separa o &quot;e&quot; inicial em uma coluna própria
-  select(-a) # Remove essa coluna inútil
-</code></pre><h3 id="extraindo-os-dados-dos-sujeitos">Extraindo os dados dos sujeitos</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">dados</span><span style="color:#000">&lt;-</span><span style="color:#000">get_results_aj</span>(<span style="color:#c41a16">&#34;/home/dados/Acadêmicos/Doutorado/EXPERIMENTOS_2021/EscalaLikert/Resultados.csv&#34;</span>)</code></pre></div>
+<p>Se você quiser, pode explorar essa tabela com as funções <code>head</code>, <code>str</code>, etc. Após essa inspeção, nós vamos limpá-la de algumas colunas que não nos interessam nela. Caso deseje entender o que estamos fazendo aqui, rode passo a passo o código abaixo:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">dados</span><span style="color:#000">&lt;-</span><span style="color:#000">dados</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">select</span>(<span style="color:#000">-</span><span style="color:#000">c</span>(<span style="color:#000">question</span>, <span style="color:#000">sentence</span>, <span style="color:#000">presentation_order</span>, <span style="color:#000">subj_uid</span>)) <span style="color:#000">%&gt;%</span> <span style="color:#177500"># Elimina colunas desnecessárias</span>
+  <span style="color:#000">filter</span>(<span style="color:#000">str_detect</span>(<span style="color:#000">type</span>, <span style="color:#c41a16">&#34;^e&#34;</span>)) <span style="color:#000">%&gt;%</span> <span style="color:#177500"># Filtra apenas as sentenças experimentais (começam com a letra &#34;e&#34;)</span>
+  <span style="color:#000">separate</span>(<span style="color:#000">type</span>, <span style="color:#000">c</span>(<span style="color:#c41a16">&#34;Ordem&#34;</span>, <span style="color:#c41a16">&#34;Num&#34;</span>), <span style="color:#c41a16">&#34;[_]&#34;</span>) <span style="color:#000">%&gt;%</span> <span style="color:#177500"># Separa a coluna &#34;type&#34; (condições) nos fatores analisados (V. Independentes)</span>
+  <span style="color:#000">separate</span>(<span style="color:#000">Ordem</span>, <span style="color:#000">c</span>(<span style="color:#c41a16">&#34;a&#34;</span>, <span style="color:#c41a16">&#34;Ordem&#34;</span>), <span style="color:#c41a16">&#34;[.]&#34;</span>) <span style="color:#000">%&gt;%</span> <span style="color:#177500"># Separa o &#34;e&#34; inicial em uma coluna própria</span>
+  <span style="color:#000">select</span>(<span style="color:#000">-</span><span style="color:#000">a</span>) <span style="color:#177500"># Remove essa coluna inútil</span></code></pre></div>
+<h3 id="extraindo-os-dados-dos-sujeitos">Extraindo os dados dos sujeitos</h3>
 <p>Para extrair os dados socioeconômicos dos sujeitos, basta usar a função <code>get_subj_info</code>, também do <code>ibextor</code>. No caso do experimento em questão, além do <code>PATH</code> onde o arquivo está armazenado (o mesmo usado anteriormente), vamos passar pela função o argumento <code>form_name</code>, já que nosso experimento tinha mais de um formulário. Vamos dar o nome de <code>sujeitos</code> a esses dados (como sempre, você pode dar o nome que achar melhor).</p>
-<pre><code class="language-{r}" data-lang="{r}">sujeitos&lt;-get_subj_info(&quot;/home/dados/Acadêmicos/Doutorado/EXPERIMENTOS_2021/EscalaLikert/Resultados.csv&quot;,
-                        form_name = &quot;DadosPessoais&quot;) # Como há mais de um formulário, de qual deles extrair os dados
-</code></pre><p>Vamos agora fazer uma gambiarra aqui e criar uma coluna com os números de cada sujeito. Essa coluna precisa ter o mesmo nome (<code>subj</code>) da coluna sujeitos na tabela anterior. Além disso, ela será do tipo fator (<code>factor</code>), assim como a coluna <code>subj</code> da tabela anterior. Daí vamos juntar as duas tabelas com <code>inner_join</code>, de modo a ter as informações dos sujeitos, e, por fim, já que agora a coluna <code>subj</code> e <code>nome</code> são redundantes, vamos retirar a <code>nome</code>. Vamos fazer em três passos:</p>
-<pre><code class="language-{r}" data-lang="{r}">sujeitos$subj &lt;- as.factor(seq.int(nrow(sujeitos)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">sujeitos</span><span style="color:#000">&lt;-</span><span style="color:#000">get_subj_info</span>(<span style="color:#c41a16">&#34;/home/dados/Acadêmicos/Doutorado/EXPERIMENTOS_2021/EscalaLikert/Resultados.csv&#34;</span>,
+                        <span style="color:#000">form_name</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;DadosPessoais&#34;</span>) <span style="color:#177500"># Como há mais de um formulário, de qual deles extrair os dados</span></code></pre></div>
+<p>Vamos agora fazer uma gambiarra aqui e criar uma coluna com os números de cada sujeito. Essa coluna precisa ter o mesmo nome (<code>subj</code>) da coluna sujeitos na tabela anterior. Além disso, ela será do tipo fator (<code>factor</code>), assim como a coluna <code>subj</code> da tabela anterior. Daí vamos juntar as duas tabelas com <code>inner_join</code>, de modo a ter as informações dos sujeitos, e, por fim, já que agora a coluna <code>subj</code> e <code>nome</code> são redundantes, vamos retirar a <code>nome</code>. Vamos fazer em três passos:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">sujeitos</span><span style="color:#000">$</span><span style="color:#000">subj</span> <span style="color:#000">&lt;-</span> <span style="color:#000">as.factor</span>(<span style="color:#000">seq.int</span>(<span style="color:#000">nrow</span>(<span style="color:#000">sujeitos</span>)))
 
-dados&lt;-inner_join(dados, sujeitos)
+<span style="color:#000">dados</span><span style="color:#000">&lt;-</span><span style="color:#000">inner_join</span>(<span style="color:#000">dados</span>, <span style="color:#000">sujeitos</span>)
 
-dados&lt;-dados %&gt;%
-  select(-c(nome, contato)) # E também a coluna &quot;contato&quot; para garantir o sigilo dos sujeitos
-</code></pre><h3 id="extraindo-informações-necessárias">Extraindo informações necessárias</h3>
+<span style="color:#000">dados</span><span style="color:#000">&lt;-</span><span style="color:#000">dados</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">select</span>(<span style="color:#000">-</span><span style="color:#000">c</span>(<span style="color:#000">nome</span>, <span style="color:#000">contato</span>)) <span style="color:#177500"># E também a coluna &#34;contato&#34; para garantir o sigilo dos sujeitos</span></code></pre></div>
+<h3 id="extraindo-informações-necessárias">Extraindo informações necessárias</h3>
 <p>Feito isso, você pode extrair os dados que achar necessários, inclusive exportando essa tabela para fora do R para ser publicada em algum lugar. Vamos mostrar algumas possibilidades.</p>
 <p>Primeiro, vamos salvar essa tabela externamente ao R em formato <code>.csv</code>. Nesse caso, ela será salva no seu <code>working directory</code>. Veja a função <code>getwd</code> e <code>setwd</code> para saber qual é o seu diretório de trabalho e como modificá-lo.</p>
-<pre><code class="language-{r}" data-lang="{r}">write.csv(dados, &quot;dados_finais.csv&quot;)
-</code></pre><p>Vamos, além disso, filtar alguns sujeitos, digamos, que tenham sido instruídos a digitar seus nomes com uma informação (por exemplo: alunos provenientes da Universidade UERJ, que digitaram depois do nome <code>UERJ</code>).</p>
-<pre><code class="language-{r}" data-lang="{r}">sujeitos %&gt;%
-  filter(str_detect(nome, &quot;UERJ&quot;)) %&gt;% # filtrar todos que tenham &quot;UERJ&quot;
-  write.csv(&quot;alunos_uerj.csv&quot;) # Exportar a tabela
-</code></pre><p>Ou vamos supor que você precise enviar uma mensagem, digamos, a cópia do TCLE, para todos os que deixaram seu e-mail cadastrado. Como todo e-mail tem <code>@</code>, vamos filtar por esse elemento:</p>
-<pre><code class="language-{r}" data-lang="{r}">sujeitos %&gt;%
-  filter(str_detect(contato, &quot;@&quot;)) %&gt;%
-  write.csv(&quot;lista_emails.csv&quot;)
-</code></pre><h1 id="abordagem-descritiva-dos-dados">Abordagem descritiva dos dados</h1>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">write.csv</span>(<span style="color:#000">dados</span>, <span style="color:#c41a16">&#34;dados_finais.csv&#34;</span>)</code></pre></div>
+<p>Vamos, além disso, filtar alguns sujeitos, digamos, que tenham sido instruídos a digitar seus nomes com uma informação (por exemplo: alunos provenientes da Universidade UERJ, que digitaram depois do nome <code>UERJ</code>).</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">sujeitos</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">filter</span>(<span style="color:#000">str_detect</span>(<span style="color:#000">nome</span>, <span style="color:#c41a16">&#34;UERJ&#34;</span>)) <span style="color:#000">%&gt;%</span> <span style="color:#177500"># filtrar todos que tenham &#34;UERJ&#34;</span>
+  <span style="color:#000">write.csv</span>(<span style="color:#c41a16">&#34;alunos_uerj.csv&#34;</span>) <span style="color:#177500"># Exportar a tabela</span></code></pre></div>
+<p>Ou vamos supor que você precise enviar uma mensagem, digamos, a cópia do TCLE, para todos os que deixaram seu e-mail cadastrado. Como todo e-mail tem <code>@</code>, vamos filtar por esse elemento:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">sujeitos</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">filter</span>(<span style="color:#000">str_detect</span>(<span style="color:#000">contato</span>, <span style="color:#c41a16">&#34;@&#34;</span>)) <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">write.csv</span>(<span style="color:#c41a16">&#34;lista_emails.csv&#34;</span>)</code></pre></div>
+<h1 id="abordagem-descritiva-dos-dados">Abordagem descritiva dos dados</h1>
 <p>Os pacotes necessários a essa etapa são:</p>
-<pre><code class="language-{R}" data-lang="{R}">require(ggplot2)
-require(dplyr)
-require(RColorBrewer)
-require(tidyr)
-require(scales)
-</code></pre><h3 id="filtragens-iniciais">Filtragens iniciais</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">require</span>(<span style="color:#000">ggplot2</span>)
+<span style="color:#000">require</span>(<span style="color:#000">dplyr</span>)
+<span style="color:#000">require</span>(<span style="color:#000">RColorBrewer</span>)
+<span style="color:#000">require</span>(<span style="color:#000">tidyr</span>)
+<span style="color:#000">require</span>(<span style="color:#000">scales</span>)</code></pre></div>
+<h3 id="filtragens-iniciais">Filtragens iniciais</h3>
 <p>Se você quiser (e achamos que deveria), pode dar uma olhada nos dados com a função <code>str</code>. A partir disso, vamos fazer algumas tranformações nos dados, transformando as colunas do tipo caractere (<code>chr</code>) em funções do tipo fator (<code>Factor</code>). A coluna <code>answer</code> será, por sua vez, do tipo ordenada (<code>ordered factor</code>), já que é a resposta dada à escala do tipo Likert.</p>
-<pre><code class="language-{r}" data-lang="{r}">dados&lt;-dados %&gt;%
-  mutate_if(is.character, as.factor) %&gt;%
-  mutate(answer=as.ordered(answer))
-</code></pre><p>Feito isso, vamos filtar os sujeitos que não atendem ao critério &ldquo;Falante nativo&rdquo; (<code>idioma == nao</code>). Se você investigar com mais atenção esses dados, perceberá que todos os sujeitos atendem ao critério &ldquo;escolaridade&rdquo; (Ensino Médio Completo), então não vamos tirar nada com base nessa coluna. No entanto, ao investigar a construção dos estímulos, percebemos um problema com o item de número 11, então vamos eliminá-lo completamente também.</p>
-<pre><code class="language-{r}" data-lang="{r}">dados&lt;-dados %&gt;%
-  filter(idioma %in% &quot;sim&quot;) %&gt;% # Seleciona apenas o que contém &quot;sim&quot;
-  filter(!item == 11) # Seleciona apenas o que não contém (`!=`) 11.
-</code></pre><h3 id="abordagem-descritiva-por-si">Abordagem descritiva por si</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">dados</span><span style="color:#000">&lt;-</span><span style="color:#000">dados</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">mutate_if</span>(<span style="color:#000">is.character</span>, <span style="color:#000">as.factor</span>) <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">mutate</span>(<span style="color:#000">answer</span><span style="color:#000">=</span><span style="color:#000">as.ordered</span>(<span style="color:#000">answer</span>))</code></pre></div>
+<p>Feito isso, vamos filtar os sujeitos que não atendem ao critério &ldquo;Falante nativo&rdquo; (<code>idioma == nao</code>). Se você investigar com mais atenção esses dados, perceberá que todos os sujeitos atendem ao critério &ldquo;escolaridade&rdquo; (Ensino Médio Completo), então não vamos tirar nada com base nessa coluna. No entanto, ao investigar a construção dos estímulos, percebemos um problema com o item de número 11, então vamos eliminá-lo completamente também.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">dados</span><span style="color:#000">&lt;-</span><span style="color:#000">dados</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">filter</span>(<span style="color:#000">idioma</span> <span style="color:#000">%in%</span> <span style="color:#c41a16">&#34;sim&#34;</span>) <span style="color:#000">%&gt;%</span> <span style="color:#177500"># Seleciona apenas o que contém &#34;sim&#34;</span>
+  <span style="color:#000">filter</span>(<span style="color:#000">!</span><span style="color:#000">item</span> <span style="color:#000">==</span> <span style="color:#1c01ce">11</span>) <span style="color:#177500"># Seleciona apenas o que não contém (`!=`) 11.</span></code></pre></div>
+<h3 id="abordagem-descritiva-por-si">Abordagem descritiva por si</h3>
 <p>Em primeiro lugar, vamos deixar claro que o modo de fazer o gráfico foi primeiramente disponibilizado <a href="https://ourcodingclub.github.io/tutorials/qualitative/">neste endereço</a>. Vale a pena dar uma conferida por lá.</p>
 <p>Antes de tudo, vamos calcular a contagem dos valores brutos, colocar isso em uma tabela no formato horizontal, mudar o nome das colunas de modo que os números da escala (1 a 5) recebem suas categorias correspondentes (de &ldquo;discordo totalmente&rdquo; até &ldquo;concordo totalmente&rdquo;):</p>
-<pre><code class="language-{r}" data-lang="{r}">contag &lt;- dados %&gt;%
-  group_by(Ordem, Num, answer) %&gt;%
-  tally() %&gt;%
-  group_by(Ordem, Num) %&gt;%
-  spread(answer, n)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">contag</span> <span style="color:#000">&lt;-</span> <span style="color:#000">dados</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">group_by</span>(<span style="color:#000">Ordem</span>, <span style="color:#000">Num</span>, <span style="color:#000">answer</span>) <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">tally</span>() <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">group_by</span>(<span style="color:#000">Ordem</span>, <span style="color:#000">Num</span>) <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">spread</span>(<span style="color:#000">answer</span>, <span style="color:#000">n</span>)
 
-colnames(contag) &lt;- c(&quot;Ordem&quot;, &quot;Num&quot;, &quot;Discordo_Totalmente&quot;, &quot;Discordo&quot;, &quot;Neutro&quot;, &quot;Concordo&quot;, &quot;Concordo_Totalmente&quot;)
+<span style="color:#000">colnames</span>(<span style="color:#000">contag</span>) <span style="color:#000">&lt;-</span> <span style="color:#000">c</span>(<span style="color:#c41a16">&#34;Ordem&#34;</span>, <span style="color:#c41a16">&#34;Num&#34;</span>, <span style="color:#c41a16">&#34;Discordo_Totalmente&#34;</span>, <span style="color:#c41a16">&#34;Discordo&#34;</span>, <span style="color:#c41a16">&#34;Neutro&#34;</span>, <span style="color:#c41a16">&#34;Concordo&#34;</span>, <span style="color:#c41a16">&#34;Concordo_Totalmente&#34;</span>)
 
-write.csv(contag, &quot;contagens.csv&quot;)
-</code></pre><p>Agora vamos calcular as porcentagens correspondentes e colocar em uma tabela de formato horizontal.</p>
-<pre><code class="language-{r}" data-lang="{r}">porc_horiz &lt;- dados %&gt;%
-  group_by(Ordem, Num, answer) %&gt;%
-  tally() %&gt;%
-  mutate(perc=n/sum(n)*100) %&gt;%
-  dplyr::select(-n) %&gt;%
-  group_by(Ordem, Num) %&gt;%
-  spread(answer, perc)
+<span style="color:#000">write.csv</span>(<span style="color:#000">contag</span>, <span style="color:#c41a16">&#34;contagens.csv&#34;</span>)</code></pre></div>
+<p>Agora vamos calcular as porcentagens correspondentes e colocar em uma tabela de formato horizontal.</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">porc_horiz</span> <span style="color:#000">&lt;-</span> <span style="color:#000">dados</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">group_by</span>(<span style="color:#000">Ordem</span>, <span style="color:#000">Num</span>, <span style="color:#000">answer</span>) <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">tally</span>() <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">mutate</span>(<span style="color:#000">perc</span><span style="color:#000">=</span><span style="color:#000">n</span><span style="color:#000">/</span><span style="color:#000">sum</span>(<span style="color:#000">n</span>)<span style="color:#000">*</span><span style="color:#1c01ce">100</span>) <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">dplyr</span><span style="color:#000">::</span><span style="color:#000">select</span>(<span style="color:#000">-</span><span style="color:#000">n</span>) <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">group_by</span>(<span style="color:#000">Ordem</span>, <span style="color:#000">Num</span>) <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">spread</span>(<span style="color:#000">answer</span>, <span style="color:#000">perc</span>)
 
-colnames(porc_horiz) &lt;- c(&quot;Ordem&quot;, &quot;Num&quot;, &quot;Discordo_Totalmente&quot;, &quot;Discordo&quot;, &quot;Neutro&quot;, &quot;Concordo&quot;, &quot;Concordo_Totalmente&quot;)
+<span style="color:#000">colnames</span>(<span style="color:#000">porc_horiz</span>) <span style="color:#000">&lt;-</span> <span style="color:#000">c</span>(<span style="color:#c41a16">&#34;Ordem&#34;</span>, <span style="color:#c41a16">&#34;Num&#34;</span>, <span style="color:#c41a16">&#34;Discordo_Totalmente&#34;</span>, <span style="color:#c41a16">&#34;Discordo&#34;</span>, <span style="color:#c41a16">&#34;Neutro&#34;</span>, <span style="color:#c41a16">&#34;Concordo&#34;</span>, <span style="color:#c41a16">&#34;Concordo_Totalmente&#34;</span>)
 
-write.csv(porc_horiz, &quot;porcentagens.csv&quot;)
-</code></pre><p>Seu resultado será parecido com isso:</p>
-<pre><code class="language-{r}" data-lang="{r}">&gt; porc_horiz
-# A tibble: 4 x 7
-# Groups:   Ordem, Num [4]
-  Ordem   Num   Discordo_Totalmente Discordo Neutro Concordo Concordo_Totalmente
-  &lt;fct&gt;   &lt;fct&gt;               &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;               &lt;dbl&gt;
-1 todo-um PL                  52.3     24.2    6.71     9.06                7.72
-2 todo-um SG                   9.18     8.50  13.6     18.0                50.7
-3 um-todo PL                  21.4      8.44  13.6     21.4                35.1
-4 um-todo SG                   6.69     4.01  11.0     17.7                60.5
-</code></pre><p>Esses já são nossos dados finais, mas, para colocá-los em um gráfico de barras empilhadas, vamos precisar fazer algumas manipulações com eles. O princípio será o seguinte: dividir os dados ao meio, de modo que um conjunto contenha os dados da parte baixa da escala, ou seja, discordo totalmente e discordo; e outro conjunto contenha os dados da parte de cima da escala, ou seja, concordo e concordo totamente. Além disso, quanto ao meio da escala (o julgamento Neutro), temos que colocar metade dele abaixo e metade dele acima da escala.</p>
+<span style="color:#000">write.csv</span>(<span style="color:#000">porc_horiz</span>, <span style="color:#c41a16">&#34;porcentagens.csv&#34;</span>)</code></pre></div>
+Seu resultado será parecido com isso:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">&gt;</span> <span style="color:#000">porc_horiz</span>
+<span style="color:#177500"># A tibble: 4 x 7</span>
+<span style="color:#177500"># Groups:   Ordem, Num [4]</span>
+  <span style="color:#000">Ordem</span>   <span style="color:#000">Num</span>   <span style="color:#000">Discordo_Totalmente</span> <span style="color:#000">Discordo</span> <span style="color:#000">Neutro</span> <span style="color:#000">Concordo</span> <span style="color:#000">Concordo_Totalmente</span>
+  <span style="color:#000">&lt;</span><span style="color:#000">fct</span><span style="color:#000">&gt;</span>   <span style="color:#000">&lt;</span><span style="color:#000">fct</span><span style="color:#000">&gt;</span>               <span style="color:#000">&lt;</span><span style="color:#000">dbl</span><span style="color:#000">&gt;</span>    <span style="color:#000">&lt;</span><span style="color:#000">dbl</span><span style="color:#000">&gt;</span>  <span style="color:#000">&lt;</span><span style="color:#000">dbl</span><span style="color:#000">&gt;</span>    <span style="color:#000">&lt;</span><span style="color:#000">dbl</span><span style="color:#000">&gt;</span>               <span style="color:#000">&lt;</span><span style="color:#000">dbl</span><span style="color:#000">&gt;</span>
+<span style="color:#1c01ce">1</span> <span style="color:#000">todo</span><span style="color:#000">-</span><span style="color:#000">um</span> <span style="color:#000">PL</span>                  <span style="color:#1c01ce">52.3</span>     <span style="color:#1c01ce">24.2</span>    <span style="color:#1c01ce">6.71</span>     <span style="color:#1c01ce">9.06</span>                <span style="color:#1c01ce">7.72</span>
+<span style="color:#1c01ce">2</span> <span style="color:#000">todo</span><span style="color:#000">-</span><span style="color:#000">um</span> <span style="color:#000">SG</span>                   <span style="color:#1c01ce">9.18</span>     <span style="color:#1c01ce">8.50</span>  <span style="color:#1c01ce">13.6</span>     <span style="color:#1c01ce">18.0</span>                <span style="color:#1c01ce">50.7</span>
+<span style="color:#1c01ce">3</span> <span style="color:#000">um</span><span style="color:#000">-</span><span style="color:#000">todo</span> <span style="color:#000">PL</span>                  <span style="color:#1c01ce">21.4</span>      <span style="color:#1c01ce">8.44</span>  <span style="color:#1c01ce">13.6</span>     <span style="color:#1c01ce">21.4</span>                <span style="color:#1c01ce">35.1</span>
+<span style="color:#1c01ce">4</span> <span style="color:#000">um</span><span style="color:#000">-</span><span style="color:#000">todo</span> <span style="color:#000">SG</span>                   <span style="color:#1c01ce">6.69</span>     <span style="color:#1c01ce">4.01</span>  <span style="color:#1c01ce">11.0</span>     <span style="color:#1c01ce">17.7</span>                <span style="color:#1c01ce">60.5</span></code></pre></div>
+<p>Esses já são nossos dados finais, mas, para colocá-los em um gráfico de barras empilhadas, vamos precisar fazer algumas manipulações com eles. O princípio será o seguinte: dividir os dados ao meio, de modo que um conjunto contenha os dados da parte baixa da escala, ou seja, discordo totalmente e discordo; e outro conjunto contenha os dados da parte de cima da escala, ou seja, concordo e concordo totamente. Além disso, quanto ao meio da escala (o julgamento Neutro), temos que colocar metade dele abaixo e metade dele acima da escala.</p>
 <p>Primeiro, vamos dividir o meio da escala (os julgamentos &ldquo;Neutro&rdquo;):</p>
-<pre><code class="language-{r}" data-lang="{r}">dados_meio &lt;- porc_horiz %&gt;%
-  mutate(c1 = Neutro / 2,
-         c2 = Neutro / 2) %&gt;%
-  dplyr::select(Ordem, Num, Discordo_Totalmente, Discordo, c1, c2, Concordo, Concordo_Totalmente) %&gt;%
-  gather(key = answer, value = perc, 3:8)
-</code></pre><p>Agora vamos separar a escala em dois conjuntos, o &ldquo;alto&rdquo; e o &ldquo;baixo&rdquo; (não deixe de ler os comentários no código, pois há uma inversão que pode ser um pouco confusa):</p>
-<pre><code class="language-{r}" data-lang="{r}">meio_alto &lt;- dados_meio %&gt;%
-  filter(answer %in% c(&quot;Concordo_Totalmente&quot;, &quot;Concordo&quot;, &quot;c2&quot;)) %&gt;%
-  mutate(answer = factor(answer, levels = c(&quot;Concordo_Totalmente&quot;, &quot;Concordo&quot;, &quot;c2&quot;))) # Níveis na ordem normal!
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">dados_meio</span> <span style="color:#000">&lt;-</span> <span style="color:#000">porc_horiz</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">mutate</span>(<span style="color:#000">c1</span> <span style="color:#000">=</span> <span style="color:#000">Neutro</span> <span style="color:#000">/</span> <span style="color:#1c01ce">2</span>,
+         <span style="color:#000">c2</span> <span style="color:#000">=</span> <span style="color:#000">Neutro</span> <span style="color:#000">/</span> <span style="color:#1c01ce">2</span>) <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">dplyr</span><span style="color:#000">::</span><span style="color:#000">select</span>(<span style="color:#000">Ordem</span>, <span style="color:#000">Num</span>, <span style="color:#000">Discordo_Totalmente</span>, <span style="color:#000">Discordo</span>, <span style="color:#000">c1</span>, <span style="color:#000">c2</span>, <span style="color:#000">Concordo</span>, <span style="color:#000">Concordo_Totalmente</span>) <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">gather</span>(<span style="color:#000">key</span> <span style="color:#000">=</span> <span style="color:#000">answer</span>, <span style="color:#000">value</span> <span style="color:#000">=</span> <span style="color:#000">perc</span>, <span style="color:#1c01ce">3</span><span style="color:#000">:</span><span style="color:#1c01ce">8</span>)</code></pre></div>
+<p>Agora vamos separar a escala em dois conjuntos, o &ldquo;alto&rdquo; e o &ldquo;baixo&rdquo; (não deixe de ler os comentários no código, pois há uma inversão que pode ser um pouco confusa):</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">meio_alto</span> <span style="color:#000">&lt;-</span> <span style="color:#000">dados_meio</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">filter</span>(<span style="color:#000">answer</span> <span style="color:#000">%in%</span> <span style="color:#000">c</span>(<span style="color:#c41a16">&#34;Concordo_Totalmente&#34;</span>, <span style="color:#c41a16">&#34;Concordo&#34;</span>, <span style="color:#c41a16">&#34;c2&#34;</span>)) <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">mutate</span>(<span style="color:#000">answer</span> <span style="color:#000">=</span> <span style="color:#000">factor</span>(<span style="color:#000">answer</span>, <span style="color:#000">levels</span> <span style="color:#000">=</span> <span style="color:#000">c</span>(<span style="color:#c41a16">&#34;Concordo_Totalmente&#34;</span>, <span style="color:#c41a16">&#34;Concordo&#34;</span>, <span style="color:#c41a16">&#34;c2&#34;</span>))) <span style="color:#177500"># Níveis na ordem normal!</span>
 
-meio_baixo &lt;- dados_meio %&gt;%
-  filter(answer %in% c(&quot;c1&quot;, &quot;Discordo&quot;, &quot;Discordo_Totalmente&quot;)) %&gt;%
-  mutate(answer = factor(answer, levels = c(&quot;Discordo_Totalmente&quot;, &quot;Discordo&quot;, &quot;c1&quot;))) # Níveis na ordem inversa!
-</code></pre><p>Com isso, você já poderia plotar os dados com o <code>ggplot2</code>, mas vamos estabelecer uma paleta de cores mais interessante para os dados. Você pode investigar as diversas paletas de cores do pacote <code>RColorBrewer</code> apenas <a href="https://www.r-graph-gallery.com/38-rcolorbrewers-palettes.html">buscando no Google</a> pelo nome do pacote.</p>
-<pre><code class="language-{r}" data-lang="{r}">legend_pal &lt;- brewer.pal(name = &quot;Spectral&quot;, n = 5) # Usar, do pacote RColorBrewer, a paleta de cores &quot;spectral&quot;, com 5 cores
-legend_pal&lt;-c(&quot;#2B83BA&quot;, &quot;#ABDDA4&quot;, &quot;#FFFFBF&quot;, &quot;#FFFFBF&quot;, &quot;#FDAE61&quot;, &quot;#D7191C&quot;) # Duplica a cor do meio manualmente
-legend_pal &lt;- gsub(&quot;#FFFFBF&quot;, &quot;#9C9C9C&quot;, legend_pal) # Substituir a cor do meio por um cinza
-names(legend_pal) &lt;- c(&quot;Concordo_Totalmente&quot;, &quot;Concordo&quot;, &quot;c1&quot;, &quot;c2&quot;, &quot;Discordo&quot;, &quot;Discordo_Totalmente&quot;) # Atribuir nomes às cores
-</code></pre><p>Com isso, podemos produzir o gráfico, o mesmo que está no Painel 1 no innício deste post. Retire o comentário de <code>coord_flip</code> se quiser ver o gráfico por um outro ângulo.</p>
-<pre><code class="language-{r}" data-lang="{r}">ggplot() +
-    geom_bar(data = meio_alto, aes(x = Num, y=perc, fill = answer), stat=&quot;identity&quot;) +
-    geom_bar(data = meio_baixo, aes(x = Num, y=-perc, fill = answer), stat=&quot;identity&quot;) +
-    geom_hline(yintercept = 0, color =c(&quot;black&quot;)) +
-    facet_wrap(~Ordem)+
-    scale_fill_manual(values = legend_pal,
-                      breaks = c(&quot;Concordo_Totalmente&quot;, &quot;Concordo&quot;, &quot;c2&quot;, &quot;Discordo&quot;, &quot;Discordo_Totalmente&quot;),
-                      labels = c(&quot;Concordo_Totalmente&quot;, &quot;Concordo&quot;, &quot;Neutro&quot;, &quot;Discordo&quot;, &quot;Discordo_Totalmente&quot;)) +
-    scale_y_continuous(breaks = seq(from=-100, to=100, by=20))+
-    #coord_flip() +
-    labs(x = &quot;&quot;, y = &quot;Porcentagem de Respostas (%)&quot;, fill=&quot;Respostas&quot;) +
-    ggtitle(&quot;Painel 1: Distribuição percentual dos julgamentos na amostra&quot;,
-            subtitle = &quot;Barras empilhadas somam 100% cada&quot;) +
-    theme_classic()
-</code></pre><p>Se você quiser, pode fazer o mesmo gráfico para os itens ou mesmo para cada um dos sujeitos. Para isso, basta repetir os passos, desde a produção da tabela de contagens e porcentagens. É um bom exercício para praticar.</p>
+<span style="color:#000">meio_baixo</span> <span style="color:#000">&lt;-</span> <span style="color:#000">dados_meio</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">filter</span>(<span style="color:#000">answer</span> <span style="color:#000">%in%</span> <span style="color:#000">c</span>(<span style="color:#c41a16">&#34;c1&#34;</span>, <span style="color:#c41a16">&#34;Discordo&#34;</span>, <span style="color:#c41a16">&#34;Discordo_Totalmente&#34;</span>)) <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">mutate</span>(<span style="color:#000">answer</span> <span style="color:#000">=</span> <span style="color:#000">factor</span>(<span style="color:#000">answer</span>, <span style="color:#000">levels</span> <span style="color:#000">=</span> <span style="color:#000">c</span>(<span style="color:#c41a16">&#34;Discordo_Totalmente&#34;</span>, <span style="color:#c41a16">&#34;Discordo&#34;</span>, <span style="color:#c41a16">&#34;c1&#34;</span>))) <span style="color:#177500"># Níveis na ordem inversa!</span></code></pre></div>
+<p>Com isso, você já poderia plotar os dados com o <code>ggplot2</code>, mas vamos estabelecer uma paleta de cores mais interessante para os dados. Você pode investigar as diversas paletas de cores do pacote <code>RColorBrewer</code> apenas <a href="https://www.r-graph-gallery.com/38-rcolorbrewers-palettes.html">buscando no Google</a> pelo nome do pacote.</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">legend_pal</span> <span style="color:#000">&lt;-</span> <span style="color:#000">brewer.pal</span>(<span style="color:#000">name</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;Spectral&#34;</span>, <span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">5</span>) <span style="color:#177500"># Usar, do pacote RColorBrewer, a paleta de cores &#34;spectral&#34;, com 5 cores</span>
+<span style="color:#000">legend_pal</span><span style="color:#000">&lt;-</span><span style="color:#000">c</span>(<span style="color:#c41a16">&#34;#2B83BA&#34;</span>, <span style="color:#c41a16">&#34;#ABDDA4&#34;</span>, <span style="color:#c41a16">&#34;#FFFFBF&#34;</span>, <span style="color:#c41a16">&#34;#FFFFBF&#34;</span>, <span style="color:#c41a16">&#34;#FDAE61&#34;</span>, <span style="color:#c41a16">&#34;#D7191C&#34;</span>) <span style="color:#177500"># Duplica a cor do meio manualmente</span>
+<span style="color:#000">legend_pal</span> <span style="color:#000">&lt;-</span> <span style="color:#000">gsub</span>(<span style="color:#c41a16">&#34;#FFFFBF&#34;</span>, <span style="color:#c41a16">&#34;#9C9C9C&#34;</span>, <span style="color:#000">legend_pal</span>) <span style="color:#177500"># Substituir a cor do meio por um cinza</span>
+<span style="color:#000">names</span>(<span style="color:#000">legend_pal</span>) <span style="color:#000">&lt;-</span> <span style="color:#000">c</span>(<span style="color:#c41a16">&#34;Concordo_Totalmente&#34;</span>, <span style="color:#c41a16">&#34;Concordo&#34;</span>, <span style="color:#c41a16">&#34;c1&#34;</span>, <span style="color:#c41a16">&#34;c2&#34;</span>, <span style="color:#c41a16">&#34;Discordo&#34;</span>, <span style="color:#c41a16">&#34;Discordo_Totalmente&#34;</span>) <span style="color:#177500"># Atribuir nomes às cores</span></code></pre></div>
+Com isso, podemos produzir o gráfico, o mesmo que está no Painel 1 no innício deste post. Retire o comentário de <code>coord_flip</code> se quiser ver o gráfico por um outro ângulo.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">ggplot</span>() <span style="color:#000">+</span>
+    <span style="color:#000">geom_bar</span>(<span style="color:#000">data</span> <span style="color:#000">=</span> <span style="color:#000">meio_alto</span>, <span style="color:#000">aes</span>(<span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#000">Num</span>, <span style="color:#000">y</span><span style="color:#000">=</span><span style="color:#000">perc</span>, <span style="color:#000">fill</span> <span style="color:#000">=</span> <span style="color:#000">answer</span>), <span style="color:#000">stat</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;identity&#34;</span>) <span style="color:#000">+</span>
+    <span style="color:#000">geom_bar</span>(<span style="color:#000">data</span> <span style="color:#000">=</span> <span style="color:#000">meio_baixo</span>, <span style="color:#000">aes</span>(<span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#000">Num</span>, <span style="color:#000">y</span><span style="color:#000">=-</span><span style="color:#000">perc</span>, <span style="color:#000">fill</span> <span style="color:#000">=</span> <span style="color:#000">answer</span>), <span style="color:#000">stat</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;identity&#34;</span>) <span style="color:#000">+</span>
+    <span style="color:#000">geom_hline</span>(<span style="color:#000">yintercept</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>, <span style="color:#000">color</span> <span style="color:#000">=</span><span style="color:#000">c</span>(<span style="color:#c41a16">&#34;black&#34;</span>)) <span style="color:#000">+</span>
+    <span style="color:#000">facet_wrap</span>(<span style="color:#000">~</span><span style="color:#000">Ordem</span>)<span style="color:#000">+</span>
+    <span style="color:#000">scale_fill_manual</span>(<span style="color:#000">values</span> <span style="color:#000">=</span> <span style="color:#000">legend_pal</span>,
+                      <span style="color:#000">breaks</span> <span style="color:#000">=</span> <span style="color:#000">c</span>(<span style="color:#c41a16">&#34;Concordo_Totalmente&#34;</span>, <span style="color:#c41a16">&#34;Concordo&#34;</span>, <span style="color:#c41a16">&#34;c2&#34;</span>, <span style="color:#c41a16">&#34;Discordo&#34;</span>, <span style="color:#c41a16">&#34;Discordo_Totalmente&#34;</span>),
+                      <span style="color:#000">labels</span> <span style="color:#000">=</span> <span style="color:#000">c</span>(<span style="color:#c41a16">&#34;Concordo_Totalmente&#34;</span>, <span style="color:#c41a16">&#34;Concordo&#34;</span>, <span style="color:#c41a16">&#34;Neutro&#34;</span>, <span style="color:#c41a16">&#34;Discordo&#34;</span>, <span style="color:#c41a16">&#34;Discordo_Totalmente&#34;</span>)) <span style="color:#000">+</span>
+    <span style="color:#000">scale_y_continuous</span>(<span style="color:#000">breaks</span> <span style="color:#000">=</span> <span style="color:#000">seq</span>(<span style="color:#000">from</span><span style="color:#000">=</span><span style="color:#1c01ce">-100</span>, <span style="color:#000">to</span><span style="color:#000">=</span><span style="color:#1c01ce">100</span>, <span style="color:#000">by</span><span style="color:#000">=</span><span style="color:#1c01ce">20</span>))<span style="color:#000">+</span>
+    <span style="color:#177500">#coord_flip() +</span>
+    <span style="color:#000">labs</span>(<span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;&#34;</span>, <span style="color:#000">y</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;Porcentagem de Respostas (%)&#34;</span>, <span style="color:#000">fill</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;Respostas&#34;</span>) <span style="color:#000">+</span>
+    <span style="color:#000">ggtitle</span>(<span style="color:#c41a16">&#34;Painel 1: Distribuição percentual dos julgamentos na amostra&#34;</span>,
+            <span style="color:#000">subtitle</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;Barras empilhadas somam 100% cada&#34;</span>) <span style="color:#000">+</span>
+    <span style="color:#000">theme_classic</span>()</code></pre></div>
+<p>Se você quiser, pode fazer o mesmo gráfico para os itens ou mesmo para cada um dos sujeitos. Para isso, basta repetir os passos, desde a produção da tabela de contagens e porcentagens. É um bom exercício para praticar.</p>
 <h1 id="ajustando-um-modelo-de-regressão-ordinal-aos-dados">Ajustando um modelo de regressão ordinal aos dados</h1>
 <p>Os pacotes necessários a essa etapa são:</p>
-<pre><code class="language-{r}" data-lang="{r}">require(brms)
-require(sjPlot)
-</code></pre><p>Como a variável resposta desse experimento é de natureza ordinal, ou seja, valores ordenados em uma escala, o modo adequado de analisá-la é com um modelo de regressão ordinal. Há alguns pacotes no <code>R</code> que fazem esse serviço. O mais comum deles é o pacote <code>MASS</code>, que tem a função <code>polr</code> para esse tipo de dado. Um bom exemplo de como fazer uma análise desse tipo pode ser encontrada <a href="https://stats.idre.ucla.edu/r/dae/ordinal-logistic-regression/">neste endereço</a>. O problema é que essa função não nos permite incluir fatores aleatórios (&ldquo;random factors&rdquo;) no modelo, e, no caso em questão, temos dois fatores aleatórios (<code>sujeitos</code> e <code>itens</code>).</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">require</span>(<span style="color:#000">brms</span>)
+<span style="color:#000">require</span>(<span style="color:#000">sjPlot</span>)</code></pre></div>
+<p>Como a variável resposta desse experimento é de natureza ordinal, ou seja, valores ordenados em uma escala, o modo adequado de analisá-la é com um modelo de regressão ordinal. Há alguns pacotes no <code>R</code> que fazem esse serviço. O mais comum deles é o pacote <code>MASS</code>, que tem a função <code>polr</code> para esse tipo de dado. Um bom exemplo de como fazer uma análise desse tipo pode ser encontrada <a href="https://stats.idre.ucla.edu/r/dae/ordinal-logistic-regression/">neste endereço</a>. O problema é que essa função não nos permite incluir fatores aleatórios (&ldquo;random factors&rdquo;) no modelo, e, no caso em questão, temos dois fatores aleatórios (<code>sujeitos</code> e <code>itens</code>).</p>
 <p>Uma boa solução, então, seria usar o <a href="https://cran.r-project.org/web/packages/ordinal/ordinal.pdf">pacote ordinal</a>. No entanto, esse pacote não nos fornece uma importante ferramenta, que o pacote <code>MASS</code> fornecia, que é a &ldquo;previsão de probabilidades&rdquo;. Se quiser saber como usar esse pacote, você pode dar uma olhada <a href="https://cran.r-project.org/web/packages/ordinal/vignettes/clmm2_tutorial.pdf">neste tutorial</a>.</p>
 <p>A saída parece ser, portanto, apelar para a estratégia de &ldquo;usar uma bazuca para matar coelhos&rdquo; e tentar analisar os dados em uma abordagem bayesiana com o pacote <code>brms</code>, cuja documentação pode ser encontrada <a href="https://github.com/paul-buerkner/brms">aqui</a>. Há um bom tutorial do próprio autor disponível <a href="https://journals.sagepub.com/doi/10.1177/2515245918823199">aqui</a>.</p>
 <h3 id="ajustando-um-modelo-máximo">Ajustando um modelo máximo</h3>
 <p>Primeiro, vamos seguir as recomendações de <a href="https://pubmed.ncbi.nlm.nih.gov/24403724/">Baar et. al. (2013)</a> e ajustar um modelo máximo aos dados.</p>
 <p>Mas antes, verifiquemos quais os contrastes dos dados:</p>
-<pre><code class="language-{r}" data-lang="{r}">contrasts(dados$Num)
-contrasts(dados$Ordem)
-</code></pre><p>E mudemos o nível-base para &ldquo;um-todo&rdquo; para facilitar a comparação entre as condições &ldquo;um-todo&rdquo; SG x PL</p>
-<pre><code class="language-{r}" data-lang="{r}">dados$Ordem&lt;-relevel(dados$Ordem, ref = &quot;um-todo&quot;)
-</code></pre><p>Daí ajustamos o modelo. Tenha paciência porque isso vai demorar&hellip; bastante&hellip; Vamos ajustar um modelo logístico cumulativo.</p>
-<pre><code class="language-{r}" data-lang="{r}">m2 &lt;- brm(answer ~ Ordem*Num + (1+Ordem*Num|subj)+(1+Ordem*Num|item), data = dados,
-          family = cumulative(&quot;logit&quot;))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">contrasts</span>(<span style="color:#000">dados</span><span style="color:#000">$</span><span style="color:#000">Num</span>)
+<span style="color:#000">contrasts</span>(<span style="color:#000">dados</span><span style="color:#000">$</span><span style="color:#000">Ordem</span>)</code></pre></div>
+<p>E mudemos o nível-base para &ldquo;um-todo&rdquo; para facilitar a comparação entre as condições &ldquo;um-todo&rdquo; SG x PL</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">dados</span><span style="color:#000">$</span><span style="color:#000">Ordem</span><span style="color:#000">&lt;-</span><span style="color:#000">relevel</span>(<span style="color:#000">dados</span><span style="color:#000">$</span><span style="color:#000">Ordem</span>, <span style="color:#000">ref</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;um-todo&#34;</span>)</code></pre></div>
+<p>Daí ajustamos o modelo. Tenha paciência porque isso vai demorar&hellip; bastante&hellip; Vamos ajustar um modelo logístico cumulativo.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">m2</span> <span style="color:#000">&lt;-</span> <span style="color:#000">brm</span>(<span style="color:#000">answer</span> <span style="color:#000">~</span> <span style="color:#000">Ordem</span><span style="color:#000">*</span><span style="color:#000">Num</span> <span style="color:#000">+</span> (<span style="color:#1c01ce">1</span><span style="color:#000">+</span><span style="color:#000">Ordem</span><span style="color:#000">*</span><span style="color:#000">Num</span><span style="color:#000">|</span><span style="color:#000">subj</span>)<span style="color:#000">+</span>(<span style="color:#1c01ce">1</span><span style="color:#000">+</span><span style="color:#000">Ordem</span><span style="color:#000">*</span><span style="color:#000">Num</span><span style="color:#000">|</span><span style="color:#000">item</span>), <span style="color:#000">data</span> <span style="color:#000">=</span> <span style="color:#000">dados</span>,
+          <span style="color:#000">family</span> <span style="color:#000">=</span> <span style="color:#000">cumulative</span>(<span style="color:#c41a16">&#34;logit&#34;</span>))
 
-summary(m2)
-</code></pre><p>Feito isso, vamos montar uma tabela com os dados dos fatores fixos e respectivos intervalos de credibilidade:</p>
-<pre><code class="language-{r}" data-lang="{r}"># Extrai os dados
-fixos.m&lt;-fixef(m2)[5:7,]
+<span style="color:#000">summary</span>(<span style="color:#000">m2</span>)</code></pre></div>
+<p>Feito isso, vamos montar uma tabela com os dados dos fatores fixos e respectivos intervalos de credibilidade:</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#177500"># Extrai os dados</span>
+<span style="color:#000">fixos.m</span><span style="color:#000">&lt;-</span><span style="color:#000">fixef</span>(<span style="color:#000">m2</span>)<span style="color:#000">[5</span><span style="color:#000">:</span><span style="color:#1c01ce">7</span>,<span style="color:#000">]</span>
 
-# Preparar um data.frame com esses dados
-colnames(fixos.m)&lt;-c(&quot;Estimativas&quot;, &quot;Est.Error&quot;, &quot;lower&quot;, &quot;upper&quot;)
-fixos.m&lt;-as.data.frame(fixos.m)
-</code></pre><p>Agora vamos calcular as razões de chance e probabilidades correspondentes:</p>
-<pre><code class="language-{r}" data-lang="{r}">fixos.m&lt;-fixos.m %&gt;%
-  mutate(OddsRatio=exp(Estimativas)) %&gt;%
-  mutate(Probs=OddsRatio/(1 + OddsRatio)*100)
-</code></pre><p>Com isso, se você achar necessário, já pode fazer um gráfico para publicação.</p>
-<pre><code class="language-{r}" data-lang="{r}">fixos.m %&gt;%
-  ggplot(aes(x=reorder(rownames(fixos.m), Estimativas),
-             y=Estimativas))+
-  geom_hline(yintercept = 0, linetype = &quot;dashed&quot;, color = &quot;grey&quot;)+
-  geom_errorbar(aes(ymin=lower, ymax=upper), width=.0,
-                position=position_dodge(.9))+
-  geom_point(color=&quot;orange&quot;)+
-  scale_x_discrete(labels=c(&quot;ORDEM: todo_um&quot;, &quot;NÚMERO: Singular&quot;, &quot;INTERAÇÃO: ordem x número&quot;))+ # ao mudar a ordem é preciso mudar aqui
-  labs(y = &quot;LogOdds&quot;, x = &quot;&quot;) +
-  ggtitle(&quot;Coeficientes estimados e intervalos de credibilidade (0.95)&quot;,
-          subtitle = &quot;Intervalos que não contêm zero são estatisticamente significativos&quot;) +
-  coord_flip()+theme_classic()
-</code></pre><p>O resultado será mais ou menos assim:</p>
+<span style="color:#177500"># Preparar um data.frame com esses dados</span>
+<span style="color:#000">colnames</span>(<span style="color:#000">fixos.m</span>)<span style="color:#000">&lt;-</span><span style="color:#000">c</span>(<span style="color:#c41a16">&#34;Estimativas&#34;</span>, <span style="color:#c41a16">&#34;Est.Error&#34;</span>, <span style="color:#c41a16">&#34;lower&#34;</span>, <span style="color:#c41a16">&#34;upper&#34;</span>)
+<span style="color:#000">fixos.m</span><span style="color:#000">&lt;-</span><span style="color:#000">as.data.frame</span>(<span style="color:#000">fixos.m</span>)</code></pre></div>
+Agora vamos calcular as razões de chance e probabilidades correspondentes:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">fixos.m</span><span style="color:#000">&lt;-</span><span style="color:#000">fixos.m</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">mutate</span>(<span style="color:#000">OddsRatio</span><span style="color:#000">=</span><span style="color:#000">exp</span>(<span style="color:#000">Estimativas</span>)) <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">mutate</span>(<span style="color:#000">Probs</span><span style="color:#000">=</span><span style="color:#000">OddsRatio</span><span style="color:#000">/</span>(<span style="color:#1c01ce">1</span> <span style="color:#000">+</span> <span style="color:#000">OddsRatio</span>)<span style="color:#000">*</span><span style="color:#1c01ce">100</span>)</code></pre></div>
+<p>Com isso, se você achar necessário, já pode fazer um gráfico para publicação.</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">fixos.m</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">ggplot</span>(<span style="color:#000">aes</span>(<span style="color:#000">x</span><span style="color:#000">=</span><span style="color:#000">reorder</span>(<span style="color:#000">rownames</span>(<span style="color:#000">fixos.m</span>), <span style="color:#000">Estimativas</span>),
+             <span style="color:#000">y</span><span style="color:#000">=</span><span style="color:#000">Estimativas</span>))<span style="color:#000">+</span>
+  <span style="color:#000">geom_hline</span>(<span style="color:#000">yintercept</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>, <span style="color:#000">linetype</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;dashed&#34;</span>, <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;grey&#34;</span>)<span style="color:#000">+</span>
+  <span style="color:#000">geom_errorbar</span>(<span style="color:#000">aes</span>(<span style="color:#000">ymin</span><span style="color:#000">=</span><span style="color:#000">lower</span>, <span style="color:#000">ymax</span><span style="color:#000">=</span><span style="color:#000">upper</span>), <span style="color:#000">width</span><span style="color:#000">=</span><span style="color:#1c01ce">.0</span>,
+                <span style="color:#000">position</span><span style="color:#000">=</span><span style="color:#000">position_dodge</span>(<span style="color:#1c01ce">.9</span>))<span style="color:#000">+</span>
+  <span style="color:#000">geom_point</span>(<span style="color:#000">color</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;orange&#34;</span>)<span style="color:#000">+</span>
+  <span style="color:#000">scale_x_discrete</span>(<span style="color:#000">labels</span><span style="color:#000">=</span><span style="color:#000">c</span>(<span style="color:#c41a16">&#34;ORDEM: todo_um&#34;</span>, <span style="color:#c41a16">&#34;NÚMERO: Singular&#34;</span>, <span style="color:#c41a16">&#34;INTERAÇÃO: ordem x número&#34;</span>))<span style="color:#000">+</span> <span style="color:#177500"># ao mudar a ordem é preciso mudar aqui</span>
+  <span style="color:#000">labs</span>(<span style="color:#000">y</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;LogOdds&#34;</span>, <span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;&#34;</span>) <span style="color:#000">+</span>
+  <span style="color:#000">ggtitle</span>(<span style="color:#c41a16">&#34;Coeficientes estimados e intervalos de credibilidade (0.95)&#34;</span>,
+          <span style="color:#000">subtitle</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;Intervalos que não contêm zero são estatisticamente significativos&#34;</span>) <span style="color:#000">+</span>
+  <span style="color:#000">coord_flip</span>()<span style="color:#000">+</span><span style="color:#000">theme_classic</span>()</code></pre></div>
+O resultado será mais ou menos assim:</p>
 <p><img src="/efeitosfixos.png" alt="Gráfico de efeitos fixos do modelo."></p>
 <h3 id="calculando-a-previsão-de-probabilidades">Calculando a previsão de probabilidades</h3>
 <p>Em geral, a menos que você seja um entendedor do assunto (e, portanto, nem estaria por aqui), esses coeficientes são difíceis de interpretar e, para dados ordinais, o melhor é extrair do modelo a &ldquo;previsão de probabilidades&rdquo; para os dados utilizados ou para um novo conjunto de dados. Vamos usar para isso o pacote <code>sjPlot</code> (documentação <a href="https://cran.r-project.org/web/packages/sjPlot/vignettes/plot_marginal_effects.html">aqui</a>) e investigar os chamados &ldquo;efeitos marginais&rdquo;.</p>
-<pre><code class="language-{r}" data-lang="{r}">model_data&lt;-get_model_data(m2,
-                           type = &quot;pred&quot;,
-                           terms = c(&quot;Ordem&quot;, &quot;Num&quot;),
-                           ci.lvl = .95)
-</code></pre><p>Observe que com isso já temos os dados de que precisamos, mas, para plotá-lo em um gráfico customizável, vamos arrancar esses dados daí e colocá-los em uma data.frame &ldquo;normal&rdquo;, digamos assim.</p>
-<pre><code class="language-{r}" data-lang="{r}">model_data&lt;-data.frame(ordem = model_data$x,
-                       num = model_data$group,
-                       Respostas = model_data$response.level,
-                       Probabilidades = model_data$predicted,
-                       lower = model_data$conf.low,
-                       upper = model_data$conf.high)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">model_data</span><span style="color:#000">&lt;-</span><span style="color:#000">get_model_data</span>(<span style="color:#000">m2</span>,
+                           <span style="color:#000">type</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;pred&#34;</span>,
+                           <span style="color:#000">terms</span> <span style="color:#000">=</span> <span style="color:#000">c</span>(<span style="color:#c41a16">&#34;Ordem&#34;</span>, <span style="color:#c41a16">&#34;Num&#34;</span>),
+                           <span style="color:#000">ci.lvl</span> <span style="color:#000">=</span> <span style="color:#1c01ce">.95</span>)</code></pre></div>
+<p>Observe que com isso já temos os dados de que precisamos, mas, para plotá-lo em um gráfico customizável, vamos arrancar esses dados daí e colocá-los em uma data.frame &ldquo;normal&rdquo;, digamos assim.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">model_data</span><span style="color:#000">&lt;-</span><span style="color:#000">data.frame</span>(<span style="color:#000">ordem</span> <span style="color:#000">=</span> <span style="color:#000">model_data</span><span style="color:#000">$</span><span style="color:#000">x</span>,
+                       <span style="color:#000">num</span> <span style="color:#000">=</span> <span style="color:#000">model_data</span><span style="color:#000">$</span><span style="color:#000">group</span>,
+                       <span style="color:#000">Respostas</span> <span style="color:#000">=</span> <span style="color:#000">model_data</span><span style="color:#000">$</span><span style="color:#000">response.level</span>,
+                       <span style="color:#000">Probabilidades</span> <span style="color:#000">=</span> <span style="color:#000">model_data</span><span style="color:#000">$</span><span style="color:#000">predicted</span>,
+                       <span style="color:#000">lower</span> <span style="color:#000">=</span> <span style="color:#000">model_data</span><span style="color:#000">$</span><span style="color:#000">conf.low</span>,
+                       <span style="color:#000">upper</span> <span style="color:#000">=</span> <span style="color:#000">model_data</span><span style="color:#000">$</span><span style="color:#000">conf.high</span>)
 
-model_data$ordem&lt;-c(rep(&quot;um-todo&quot;, 10), rep(&quot;todo-um&quot;, 10))
+<span style="color:#000">model_data</span><span style="color:#000">$</span><span style="color:#000">ordem</span><span style="color:#000">&lt;-</span><span style="color:#000">c</span>(<span style="color:#000">rep</span>(<span style="color:#c41a16">&#34;um-todo&#34;</span>, <span style="color:#1c01ce">10</span>), <span style="color:#000">rep</span>(<span style="color:#c41a16">&#34;todo-um&#34;</span>, <span style="color:#1c01ce">10</span>))
 
-model_data$ordem&lt;-as.factor(model_data$ordem)
-</code></pre><p>Com isso, podemos finalmente plotar o gráfico, sem os intervalos de credibilidade (mais &ldquo;clean&rdquo;, mas menos informativo) ou com esses intervalos:</p>
-<pre><code class="language-{r}" data-lang="{r}"># Preparar uma paleta de cores condizente com a paleta usada no gráfico de barras empilhadas
-paleta&lt;-c(&quot;#D7191C&quot;, &quot;#FDAE61&quot;, &quot;#9C9C9C&quot;, &quot;#ABDDA4&quot;, &quot;#2B83BA&quot;)
+<span style="color:#000">model_data</span><span style="color:#000">$</span><span style="color:#000">ordem</span><span style="color:#000">&lt;-</span><span style="color:#000">as.factor</span>(<span style="color:#000">model_data</span><span style="color:#000">$</span><span style="color:#000">ordem</span>)</code></pre></div>
+<p>Com isso, podemos finalmente plotar o gráfico, sem os intervalos de credibilidade (mais &ldquo;clean&rdquo;, mas menos informativo) ou com esses intervalos:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#177500"># Preparar uma paleta de cores condizente com a paleta usada no gráfico de barras empilhadas</span>
+<span style="color:#000">paleta</span><span style="color:#000">&lt;-</span><span style="color:#000">c</span>(<span style="color:#c41a16">&#34;#D7191C&#34;</span>, <span style="color:#c41a16">&#34;#FDAE61&#34;</span>, <span style="color:#c41a16">&#34;#9C9C9C&#34;</span>, <span style="color:#c41a16">&#34;#ABDDA4&#34;</span>, <span style="color:#c41a16">&#34;#2B83BA&#34;</span>)
 
-model_data %&gt;%
-  ggplot(aes(x=num, y=Probabilidades, group=Respostas, color=Respostas))+
-  geom_line()+geom_point()+
-  facet_wrap(~ordem)+
-  geom_hline(yintercept=0.5, color=&quot;grey&quot;, linetype=&quot;dashed&quot;)+
-  scale_y_continuous(breaks = seq(from = 0, to = 1.0, by = 0.1),
-                     labels = scales::number_format(accuracy = 0.01))+
-  # scale_colour_manual(values=paleta,
-  #                    labels=c(&quot;Discordo_Totalmente&quot;, &quot;Discordo&quot;, &quot;Neutro&quot;, &quot;Concordo&quot;, &quot;Concordo_Totalmente&quot;))+
-  labs(x = &quot;Número da anáfora&quot;, y = &quot;Probabilidades preditas&quot;, fill=&quot;Respostas&quot;)+
-  ggtitle(&quot;Previsão de probabilidades estimada pelo modelo de regressão ordinal&quot;)+
-  theme_classic()+
-  guides(colour = guide_legend(reverse=T)) # Apenas organizando a ordem da legenda.
+<span style="color:#000">model_data</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">ggplot</span>(<span style="color:#000">aes</span>(<span style="color:#000">x</span><span style="color:#000">=</span><span style="color:#000">num</span>, <span style="color:#000">y</span><span style="color:#000">=</span><span style="color:#000">Probabilidades</span>, <span style="color:#000">group</span><span style="color:#000">=</span><span style="color:#000">Respostas</span>, <span style="color:#000">color</span><span style="color:#000">=</span><span style="color:#000">Respostas</span>))<span style="color:#000">+</span>
+  <span style="color:#000">geom_line</span>()<span style="color:#000">+</span><span style="color:#000">geom_point</span>()<span style="color:#000">+</span>
+  <span style="color:#000">facet_wrap</span>(<span style="color:#000">~</span><span style="color:#000">ordem</span>)<span style="color:#000">+</span>
+  <span style="color:#000">geom_hline</span>(<span style="color:#000">yintercept</span><span style="color:#000">=</span><span style="color:#1c01ce">0.5</span>, <span style="color:#000">color</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;grey&#34;</span>, <span style="color:#000">linetype</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;dashed&#34;</span>)<span style="color:#000">+</span>
+  <span style="color:#000">scale_y_continuous</span>(<span style="color:#000">breaks</span> <span style="color:#000">=</span> <span style="color:#000">seq</span>(<span style="color:#000">from</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>, <span style="color:#000">to</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1.0</span>, <span style="color:#000">by</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.1</span>),
+                     <span style="color:#000">labels</span> <span style="color:#000">=</span> <span style="color:#000">scales</span><span style="color:#000">::</span><span style="color:#000">number_format</span>(<span style="color:#000">accuracy</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.01</span>))<span style="color:#000">+</span>
+  <span style="color:#177500"># scale_colour_manual(values=paleta,</span>
+  <span style="color:#177500">#                    labels=c(&#34;Discordo_Totalmente&#34;, &#34;Discordo&#34;, &#34;Neutro&#34;, &#34;Concordo&#34;, &#34;Concordo_Totalmente&#34;))+</span>
+  <span style="color:#000">labs</span>(<span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;Número da anáfora&#34;</span>, <span style="color:#000">y</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;Probabilidades preditas&#34;</span>, <span style="color:#000">fill</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;Respostas&#34;</span>)<span style="color:#000">+</span>
+  <span style="color:#000">ggtitle</span>(<span style="color:#c41a16">&#34;Previsão de probabilidades estimada pelo modelo de regressão ordinal&#34;</span>)<span style="color:#000">+</span>
+  <span style="color:#000">theme_classic</span>()<span style="color:#000">+</span>
+  <span style="color:#000">guides</span>(<span style="color:#000">colour</span> <span style="color:#000">=</span> <span style="color:#000">guide_legend</span>(<span style="color:#000">reverse</span><span style="color:#000">=</span><span style="color:#5b269a">T</span>)) <span style="color:#177500"># Apenas organizando a ordem da legenda.</span>
 
-model_data %&gt;%
-  ggplot(aes(x=num, y=Probabilidades, group=Respostas, color=Respostas))+
-  geom_line(position = position_dodge(0.2))+
-  geom_point(position = position_dodge(0.2))+
-  geom_errorbar(aes(ymin=lower, ymax=upper),
-                width=0.0, position = position_dodge(0.2), alpha=0.3)+
-  facet_wrap(~ordem)+
-  scale_y_continuous(breaks = seq(from = 0, to = 1.0, by = 0.1),
-                     labels = scales::number_format(accuracy = 0.01))+
-  scale_colour_manual(values=paleta,
-                      labels=c(&quot;Discordo_Totalmente&quot;, &quot;Discordo&quot;, &quot;Neutro&quot;, &quot;Concordo&quot;, &quot;Concordo_Totalmente&quot;))+
-  labs(x = &quot;Número da anáfora&quot;, y = &quot;Probabilidades preditas&quot;, fill=&quot;Respostas&quot;)+
-  ggtitle(&quot;Painel 2: Previsão de probabilidades estimada pelo modelo&quot;,
-          subtitle = &quot;Linhas verticais indicam intervalos de credibilidade preditos.&quot;)+
-  theme_classic()+
-  guides(colour = guide_legend(reverse=T)) # Apenas organizando a ordem da legenda.
-</code></pre><p>Pronto, finalmente acabamos! O resultado final será composto pelos dois gráficos disponíveis no início desse post, colocados um abaixo do outro para facilitar a comparação entre os dados descritivos (Painel 1) e os dados inferenciais (Painel 2).</p>
+<span style="color:#000">model_data</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">ggplot</span>(<span style="color:#000">aes</span>(<span style="color:#000">x</span><span style="color:#000">=</span><span style="color:#000">num</span>, <span style="color:#000">y</span><span style="color:#000">=</span><span style="color:#000">Probabilidades</span>, <span style="color:#000">group</span><span style="color:#000">=</span><span style="color:#000">Respostas</span>, <span style="color:#000">color</span><span style="color:#000">=</span><span style="color:#000">Respostas</span>))<span style="color:#000">+</span>
+  <span style="color:#000">geom_line</span>(<span style="color:#000">position</span> <span style="color:#000">=</span> <span style="color:#000">position_dodge</span>(<span style="color:#1c01ce">0.2</span>))<span style="color:#000">+</span>
+  <span style="color:#000">geom_point</span>(<span style="color:#000">position</span> <span style="color:#000">=</span> <span style="color:#000">position_dodge</span>(<span style="color:#1c01ce">0.2</span>))<span style="color:#000">+</span>
+  <span style="color:#000">geom_errorbar</span>(<span style="color:#000">aes</span>(<span style="color:#000">ymin</span><span style="color:#000">=</span><span style="color:#000">lower</span>, <span style="color:#000">ymax</span><span style="color:#000">=</span><span style="color:#000">upper</span>),
+                <span style="color:#000">width</span><span style="color:#000">=</span><span style="color:#1c01ce">0.0</span>, <span style="color:#000">position</span> <span style="color:#000">=</span> <span style="color:#000">position_dodge</span>(<span style="color:#1c01ce">0.2</span>), <span style="color:#000">alpha</span><span style="color:#000">=</span><span style="color:#1c01ce">0.3</span>)<span style="color:#000">+</span>
+  <span style="color:#000">facet_wrap</span>(<span style="color:#000">~</span><span style="color:#000">ordem</span>)<span style="color:#000">+</span>
+  <span style="color:#000">scale_y_continuous</span>(<span style="color:#000">breaks</span> <span style="color:#000">=</span> <span style="color:#000">seq</span>(<span style="color:#000">from</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>, <span style="color:#000">to</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1.0</span>, <span style="color:#000">by</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.1</span>),
+                     <span style="color:#000">labels</span> <span style="color:#000">=</span> <span style="color:#000">scales</span><span style="color:#000">::</span><span style="color:#000">number_format</span>(<span style="color:#000">accuracy</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.01</span>))<span style="color:#000">+</span>
+  <span style="color:#000">scale_colour_manual</span>(<span style="color:#000">values</span><span style="color:#000">=</span><span style="color:#000">paleta</span>,
+                      <span style="color:#000">labels</span><span style="color:#000">=</span><span style="color:#000">c</span>(<span style="color:#c41a16">&#34;Discordo_Totalmente&#34;</span>, <span style="color:#c41a16">&#34;Discordo&#34;</span>, <span style="color:#c41a16">&#34;Neutro&#34;</span>, <span style="color:#c41a16">&#34;Concordo&#34;</span>, <span style="color:#c41a16">&#34;Concordo_Totalmente&#34;</span>))<span style="color:#000">+</span>
+  <span style="color:#000">labs</span>(<span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;Número da anáfora&#34;</span>, <span style="color:#000">y</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;Probabilidades preditas&#34;</span>, <span style="color:#000">fill</span><span style="color:#000">=</span><span style="color:#c41a16">&#34;Respostas&#34;</span>)<span style="color:#000">+</span>
+  <span style="color:#000">ggtitle</span>(<span style="color:#c41a16">&#34;Painel 2: Previsão de probabilidades estimada pelo modelo&#34;</span>,
+          <span style="color:#000">subtitle</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;Linhas verticais indicam intervalos de credibilidade preditos.&#34;</span>)<span style="color:#000">+</span>
+  <span style="color:#000">theme_classic</span>()<span style="color:#000">+</span>
+  <span style="color:#000">guides</span>(<span style="color:#000">colour</span> <span style="color:#000">=</span> <span style="color:#000">guide_legend</span>(<span style="color:#000">reverse</span><span style="color:#000">=</span><span style="color:#5b269a">T</span>)) <span style="color:#177500"># Apenas organizando a ordem da legenda.</span></code></pre></div>
+<p>Pronto, finalmente acabamos! O resultado final será composto pelos dois gráficos disponíveis no início desse post, colocados um abaixo do outro para facilitar a comparação entre os dados descritivos (Painel 1) e os dados inferenciais (Painel 2).</p>
 
     </div>
     <div class="post-footer">

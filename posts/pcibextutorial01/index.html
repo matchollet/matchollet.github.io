@@ -84,11 +84,12 @@
 <h2 id="linha-de-comando-e-linha-de-comentário">Linha de comando e Linha de comentário</h2>
 <p>Uma linha de comando é um código executável, que faz uma tarefa, digamos, gravar um tempo de reação, apresentar uma frase na tela, centralizar um elemento, etc.; e uma <em>linha de comentário</em> é uma linha visível para o leitor do <em>script</em> (você), mas não para o compilador. Assim, uma linha de comentário não executa nenhuma tarefa. Ela é apenas um comentário explicando um trecho do código, dando uma dica, etc.</p>
 <p>Nos <em>scripts</em> do PCIbex, uma linha de comentário é sempre precedida de duas barras <code>//</code>. Assim sendo, no trecho abaixo, tudo que está depois das duas barras não é lido pelo compilador, podendo ser apagado livremente sem alterar em nada o funcionamento do código:</p>
-<pre><code>newTrial(&quot;meuexemplo&quot;, // controla a primeira &quot;página&quot; do experimento
-    defaultText // aplica os comandos abaixo aos objetos do tipo neeText abaixo
-        .center() // indica que o elemento vai aparecer no centro da tela
-        .print() // mostra o elemento na tela
-</code></pre><p>Um outro modo de colocar trechos não lidos pelo compilador é inserindo blocos inteiros de comentários, o que é feito com o seguinte código <code>/* comentário aqui */</code>. Desse modo, tudo que estiver entre os símbolos da barra e do asterisco (no caso em questão, a frase &ldquo;comentário aqui&rdquo;) não será lido pelo compilador.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;meuexemplo&#34;</span>, <span style="color:#177500">// controla a primeira &#34;página&#34; do experimento
+</span><span style="color:#177500"></span>    <span style="color:#000">defaultText</span> <span style="color:#177500">// aplica os comandos abaixo aos objetos do tipo neeText abaixo
+</span><span style="color:#177500"></span>        .<span style="color:#000">center</span>() <span style="color:#177500">// indica que o elemento vai aparecer no centro da tela
+</span><span style="color:#177500"></span>        .<span style="color:#000">print</span>() <span style="color:#177500">// mostra o elemento na tela
+</span></code></pre></div>
+<p>Um outro modo de colocar trechos não lidos pelo compilador é inserindo blocos inteiros de comentários, o que é feito com o seguinte código <code>/* comentário aqui */</code>. Desse modo, tudo que estiver entre os símbolos da barra e do asterisco (no caso em questão, a frase &ldquo;comentário aqui&rdquo;) não será lido pelo compilador.</p>
 <p>Essa é uma boa ferramenta para testar trechos de códigos, para verificar se funcionam ou não. Em vez de apagar o trecho que funciona, você apenas o comenta e escreve o trecho novo. Se este não funcionar, você não perde o trecho antigo, precisando apenas &ldquo;descomentá-lo&rdquo; para o seu <em>script</em> voltar ao normal.</p>
 <p>Repare, portanto, que vamos usar os comentários com o seguinte código <code>//</code> para explicar o que as linhas de comando executam.</p>
 <h2 id="meu-primeiro-experimento-com-pcibex-leitura-automonitorada">Meu primeiro experimento com PCIbex: leitura automonitorada</h2>
@@ -96,208 +97,222 @@
 <h3 id="página-de-instrução">Página de instrução:</h3>
 <p>Primeiro, criaremos uma página de instrução igual àquela da imagem abaixo:</p>
 <p><img src="/imagem1.png" alt="Página de instrução"></p>
-<p>Para isso, vamos usar o seguinte código:</p>
-<pre><code>// O mais básico dos experimentos de leitura automonitorada
+<p>Para isso, vamos usar o seguinte código (por favor, não se assuste com a quantidade de comentários. Vamos apagá-los logo logo e você então entenderá por que eles estão aqui no começo):</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#177500">// O mais básico dos experimentos de leitura automonitorada
+</span><span style="color:#177500"></span>
+<span style="color:#000">PennController</span>.<span style="color:#000">ResetPrefix</span>(<span style="color:#a90d91">null</span>) <span style="color:#177500">// Não vamos explicar esse agora, apenas mantenha-o aqui.
+</span><span style="color:#177500"></span>
+<span style="color:#177500">// Primeiro, uma página de instruções muito básica
+</span><span style="color:#177500"></span><span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;meuexemplo&#34;</span>, <span style="color:#177500">// é um comando, trial, que controla a primeira &#34;página&#34; do experimento; o nome essa &#34;página&#34; é &#34;meuexemplo&#34;
+</span><span style="color:#177500"></span>    <span style="color:#000">defaultText</span> <span style="color:#177500">// aplica os comandos abaixo aos objetos do tipo newText abaixo
+</span><span style="color:#177500"></span>        .<span style="color:#000">center</span>() <span style="color:#177500">// indica que o elemento vai aparecer no centro da tela
+</span><span style="color:#177500"></span>        .<span style="color:#000">print</span>() <span style="color:#177500">// mostra o elemento na tela
+</span><span style="color:#177500"></span>
+    , <span style="color:#177500">// Essa vírgula separa cada um dos elementos dentro dessa primeira &#34;página&#34;
+</span><span style="color:#177500"></span>
+    <span style="color:#177500">// &lt;br&gt; é uma tag html para &#34;pular linha&#34; (do inglês &#34;break&#34; ou &#34;quebra de linha&#34;);
+</span><span style="color:#177500"></span>    <span style="color:#177500">// &lt;br&gt;&lt;br&gt; pula duas linhas, etc.
+</span><span style="color:#177500"></span>    <span style="color:#177500">// cria um novo elemento de texto com os possíveis argumentos: (&#34;nome do texto&#34;, &#34;texto que quero que apareça na tela&#34;)
+</span><span style="color:#177500"></span>    <span style="color:#177500">// OBS: Por que dar nome aos objetos? O primeiro argumento é a possibilidade de dar o nome para seu objeto, caso você queira utilizá-lo novamente em outro momento do experimento sem digitar todo os códigos novamente. Voltaremos a essa observação em outro momento.
+</span><span style="color:#177500"></span>
+    <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&#34;</span>)
 
-PennController.ResetPrefix(null) // Não vamos explicar esse agora, apenas mantenha-o aqui.
-
-// Primeiro, uma página de instruções muito básica
-newTrial(&quot;meuexemplo&quot;, // [Ana] é um comando, trial, que controla a primeira &quot;página&quot; do experimento, [Ana] e o nome essa &quot;página&quot; é &quot;meuexemplo&quot;
-    defaultText // aplica os comandos abaixo aos objetos do tipo newText abaixo
-        .center() // indica que o elemento vai aparecer no centro da tela
-        .print() // mostra o elemento na tela
-    , // Essa vírgula separa cada um dos elementos dentro dessa primeira &quot;página&quot;
-
-    // &lt;br&gt; é uma tag html para &quot;pular linha&quot; (do inglês &quot;break&quot; ou &quot;quebra de linha&quot;);
-    // &lt;br&gt;&lt;br&gt; pula duas linhas, etc.
-    newText(&quot;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&quot;) // cria um novo elemento de texto [Ana] com os possíveis argumentos: (&quot;nome do texto&quot;, &quot;texto que quero que apareça na tela&quot;)
-  [Ana] // OBS: Por que dar nome aos objetos? O primeiro argumento é a possibilidade de dar o nome para seu objeto, caso você queira utilizá-lo novamente em outro momento do experimento sem digitar todo os código novamente. Voltaremos à essa observação em outro momento.
     ,
 
-    newText(&quot;&lt;br&gt;Vamos começar?&quot;)
+    <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;&lt;br&gt;Vamos começar?&#34;</span>)
     ,
 
-    newButton(&quot;meubotao&quot;, &quot;Sim!&quot;) //cria um botão com os seguintes argumentos: (&quot;nome do botão&quot;, &quot;texto que deve aparecer no botão&quot;)
-        .center()
-        .print()
-        .wait() // indica que o experimento será pausado até que o participante execute uma ação, neste caso, presssionar o botão.
-)
-</code></pre><p>Olhe para esse código com carinho e leia os comentários que foram deixados ao lado de cada linha (daqui em diante, não colocaremos mais comentários sobre o que já explicamos). Observe que temos apenas um elemento principal <code>newTrial</code> dentro do qual existem três outros elementos, a saber: <code>newText</code>, <code>newText</code> de novo e <code>newButton</code>. O esqueleto desse <em>script</em> é mais ou menos assim:</p>
-<pre><code>newTrial(
+    <span style="color:#000">newButton</span>(<span style="color:#c41a16">&#34;meubotao&#34;</span>, <span style="color:#c41a16">&#34;Sim!&#34;</span>) <span style="color:#177500">//cria um botão com os seguintes argumentos: (&#34;nome do botão&#34;, &#34;texto que deve aparecer no botão&#34;)
+</span><span style="color:#177500"></span>        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
+        .<span style="color:#000">wait</span>() <span style="color:#177500">// indica que o experimento será pausado até que o participante execute uma ação, neste caso, presssionar o botão.
+</span><span style="color:#177500"></span>)
+</code></pre></div>
+<p>Olhe para esse código com carinho e leia os comentários que foram deixados ao lado de cada linha (daqui em diante, não colocaremos mais comentários sobre o que já explicamos). Observe que temos apenas um elemento principal <code>newTrial</code> dentro do qual existem três outros elementos, a saber: <code>newText</code>, <code>newText</code> de novo e <code>newButton</code>. O esqueleto desse <em>script</em> é mais ou menos assim:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">newTrial</span>(
 
-  newText()
+  <span style="color:#000">newText</span>()
   ,
-  newText()
+  <span style="color:#000">newText</span>()
   ,
-  newButton()
+  <span style="color:#000">newButton</span>()
   )
-</code></pre><ul>
+</code></pre></div>
+<ul>
 <li><code>newText</code>: permite acrescentar textos à página;</li>
 <li><code>newButton</code>: permite acrescentar um botão clicável à página;</li>
 </ul>
 <p>Aqui há uma questão que pode complicar alguns: se há apenas dois elementos de texto, como pode haver 3 linhas de texto na página? Observe o código abaixo (e lembre-se dos comentários feitos acima). No primeiro elemento de texto, inserimos duas <code>tags html</code> que permitem quebrar a linha (<code>&lt;br&gt;</code>). Logo, temos duas linhas no mesmo elemento. Mais à frente veremos como inserir textos maiores nesse espaço.</p>
-<pre><code>newTrial(
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">newTrial</span>(
 
-  newText(&quot;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&quot;)
+  <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&#34;</span>)
   ,
-  newText(&quot;&lt;br&gt;Vamos começar?&quot;)
+  <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;&lt;br&gt;Vamos começar?&#34;</span>)
   ,
-  newButton()
+  <span style="color:#000">newButton</span>()
   )
-</code></pre><p>Agora observe os elementos que acrescentamos, colocados exatamente abaixo de <code>newTrial</code>:</p>
+</code></pre></div>
+<p>Agora observe os elementos que acrescentamos, colocados exatamente abaixo de <code>newTrial</code>:</p>
 <ul>
 <li><code>.center</code>: centraliza o objeto;</li>
 <li><code>.print</code>: mostra o objeto na tela;</li>
 <li><code>defaultText</code>: controla as propriedades <em>default</em> de todos os elementos de texto dentro desse Trial. Logo, todo elemento do tipo texto aparecerá na tela (<code>.print</code>) centralizado (<code>.center</code>);</li>
 <li><code>&quot;meuexemplo&quot;</code>: é o nome que demos para esse <code>Trial</code>, ou seja, para essa página que está sendo mostrada para você na tela. Você poderia chamar de qualquer coisa aqui, mas sempre entre aspas duplas. O código funcionará normalmente sem esse nome, mas ele pode ser importante se quisermos retomá-lo mais tarde.</li>
 </ul>
-<pre><code>newTrial(&quot;meuexemplo&quot;,
-    defaultText
-        .center()
-        .print()
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;meuexemplo&#34;</span>,
+    <span style="color:#000">defaultText</span>
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
         ,
-        newText(&quot;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&quot;)
+        <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&#34;</span>)
         ,
-        newText(&quot;&lt;br&gt;Vamos começar?&quot;)
+        <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;&lt;br&gt;Vamos começar?&#34;</span>)
         ,
-        newButton()
+        <span style="color:#000">newButton</span>()
         )
-</code></pre><p>Por fim, vamos investigar o botão:</p>
+</code></pre></div>
+<p>Por fim, vamos investigar o botão:</p>
 <h4 id="inserindo-um-botão-clicável">Inserindo um botão clicável</h4>
 <p>Eis o código do nosso botão:</p>
-<pre><code>newButton(&quot;meubotao&quot;, &quot;Sim!&quot;)
-    .center()
-    .print()
-    .wait()
-</code></pre><p>Como já falamos logo acima sobre o <code>newTrial</code>, demos o nome de &ldquo;meubotao&rdquo; para esse objeto e dissemos que nele aparecerá escrita a palavra &ldquo;Sim!&quot;. Ele aparecerá na tela (<code>.print</code>) centralizado (<code>.center</code>) e aguardará (<code>.wait</code>) até ser apertado.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">newButton</span>(<span style="color:#c41a16">&#34;meubotao&#34;</span>, <span style="color:#c41a16">&#34;Sim!&#34;</span>)
+    .<span style="color:#000">center</span>()
+    .<span style="color:#000">print</span>()
+    .<span style="color:#000">wait</span>()
+</code></pre></div>
+<p>Como já falamos logo acima sobre o <code>newTrial</code>, demos o nome de &ldquo;meubotao&rdquo; para esse objeto e dissemos que nele aparecerá escrita a palavra &ldquo;Sim!&quot;. Ele aparecerá na tela (<code>.print</code>) centralizado (<code>.center</code>) e aguardará (<code>.wait</code>) até ser apertado.</p>
 <p>Pronto! Terminamos essa parte! O código final, limpo dos comentários, está abaixo:</p>
-<pre><code>PennController.ResetPrefix(null)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">PennController</span>.<span style="color:#000">ResetPrefix</span>(<span style="color:#a90d91">null</span>)
 
-newTrial(&quot;meuexemplo&quot;,
-    defaultText
-        .center()
-        .print()
+<span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;meuexemplo&#34;</span>,
+    <span style="color:#000">defaultText</span>
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
     ,
 
-    newText(&quot;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&quot;)
+    <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&#34;</span>)
     ,
 
-    newText(&quot;&lt;br&gt;Vamos começar?&quot;)
+    <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;&lt;br&gt;Vamos começar?&#34;</span>)
     ,
 
-    newButton(&quot;meubotao&quot;, &quot;Sim!&quot;)
-        .center()
-        .print()
-        .wait()
+    <span style="color:#000">newButton</span>(<span style="color:#c41a16">&#34;meubotao&#34;</span>, <span style="color:#c41a16">&#34;Sim!&#34;</span>)
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
+        .<span style="color:#000">wait</span>()
 )
-</code></pre><h3 id="acrescentando-um-único-item-experimental">Acrescentando um único item experimental</h3>
+</code></pre></div>
+<h3 id="acrescentando-um-único-item-experimental">Acrescentando um único item experimental</h3>
 <p>Agora que já fizemos a nossa página de instruções (Veja bem, mais à frente, vamos incrementar esse código, colocando mais informações nele. Por enquanto estamos apenas firmando as fundações do nosso projeto.), vamos inserir um item experimental, ou seja, uma frase que apareça na tela para ser lida pelo participante do experimento palavra por palavra, de modo que o próprio participante controle essa passagem apertando a barra de espaço do teclado.</p>
 <p>Assim sendo, vamos acrescentar ao código acima o seguinte trecho:</p>
-<pre><code>, // Essa vírgula separa cada uma das &quot;páginas&quot;
-
-// Agora uma sentença experimental
-newTrial(&quot;frase_1&quot;, // controla a segunda &quot;página&quot; do experimento
-    newController(&quot;DashedSentence&quot;,
-        {s: &quot;Essa é a única frase experimental.&quot;}) //[Ana] o tipo de experimento é leitura autominitorada, &quot;DashedSentence&quot; no PCIbex e há uma sentença ({s: &quot;sentença que quero que o participante leia&quot;}) a ser lida pelo participante item por item
-        .center()
-        .print()
-        .log() //armazena informação relativa ao tempo de resposta
-        .wait()
-        .remove() // remove o item da tela e passa para o próximo
-      ) // Fim do script aqui!
-</code></pre><p>Novamente, leia o código e os comentários com carinho. Abaixo reescrevemos apenas o seu esqueleto para facilitar a compreensão:</p>
-<pre><code>newTrial(
-    newController()
-        .center()
-        .print()
-        .log()
-        .wait()
-        .remove()
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">, <span style="color:#177500">// Essa vírgula separa cada uma das &#34;páginas&#34;
+</span><span style="color:#177500"></span>
+<span style="color:#177500">// Agora uma sentença experimental
+</span><span style="color:#177500"></span><span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;frase_1&#34;</span>, <span style="color:#177500">// controla a segunda &#34;página&#34; do experimento
+</span><span style="color:#177500"></span>    <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>,
+        {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;Essa é a única frase experimental.&#34;</span>}) <span style="color:#177500">//[Ana] o tipo de experimento é leitura autominitorada, &#34;DashedSentence&#34; no PCIbex e há uma sentença ({s: &#34;sentença que quero que o participante leia&#34;}) a ser lida pelo participante item por item
+</span><span style="color:#177500"></span>        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
+        .<span style="color:#000">log</span>() <span style="color:#177500">//armazena informação relativa ao tempo de resposta
+</span><span style="color:#177500"></span>        .<span style="color:#000">wait</span>()
+        .<span style="color:#000">remove</span>() <span style="color:#177500">// remove o item da tela e passa para o próximo
+</span><span style="color:#177500"></span>      ) <span style="color:#177500">// Fim do script aqui!
+</span></code></pre></div>
+<p>Novamente, leia o código e os comentários com carinho. Abaixo reescrevemos apenas o seu esqueleto para facilitar a compreensão:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">newTrial</span>(
+    <span style="color:#000">newController</span>()
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
+        .<span style="color:#000">log</span>()
+        .<span style="color:#000">wait</span>()
+        .<span style="color:#000">remove</span>()
       )
-</code></pre><p>Como você já pôde notar, agora temos apenas dois elementos principais, <code>newTrial</code> e <code>newController</code>. O primeiro você já sabe o que faz: controla toda a informação que está sendo mostrada na página nesse momento. Demos o nome para ele de <code>frase_1</code>, mas você pode chamar como quiser. O segundo - <code>newController</code> - é mais complexo.</p>
+</code></pre></div>
+<p>Como você já pôde notar, agora temos apenas dois elementos principais, <code>newTrial</code> e <code>newController</code>. O primeiro você já sabe o que faz: controla toda a informação que está sendo mostrada na página nesse momento. Demos o nome para ele de <code>frase_1</code>, mas você pode chamar como quiser. O segundo - <code>newController</code> - é mais complexo.</p>
 <p>Se você já usava o <a href="https://spellout.net/ibexfarm">Ibex Farm</a>, a versão antiga do PCIbex, lembrará certamente que lá havia vários &ldquo;controladores&rdquo;, ou seja, comandos pré-prontos para executar determinado tipo de experimento. Assim, se você queria fazer um &ldquo;julgamento de aceitabilidade&rdquo;, havia um controlador chamado <code>AcceptabilityJudgement</code>. Se queria apresentar uma frase cujas palavras passavam sozinhas após certo tempo, havia um controlador chamado <code>FlashSentence</code>. Se queria fazer uma pergunta, havia um controlador chamado <code>Question</code>, etc. <a href="https://doc.pcibex.net/controller/">Clicando aqui você tem acesso a uma lista completa dos controladores do PCIbex</a>. Fique à vontade para experimentar.</p>
 <p>O nosso controlador será <code>DashedSentence</code>, obviamente, após o qual introduziremos a sentença desejada, sempre entre chaves e iniciada pela letra <code>s:</code>: <code>{s: &quot;minha sentença aqui entre aspas duplas.&quot;}</code>. Nosso código agora estaria assim (a sentença <code>{s: &quot;...&quot;}</code> pode tanto aparecer na mesma linha, como abaixo; ou separada em outra linha. Isso não é relevante para o compilador, nesse caso):</p>
-<pre><code>newTrial(&quot;frase_1&quot;,
-    newController(&quot;DashedSentence&quot;, {s: &quot;Essa é a única frase experimental.&quot;})
-        .center()
-        .print()
-        .log()
-        .wait()
-        .remove()
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;frase_1&#34;</span>,
+    <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;Essa é a única frase experimental.&#34;</span>})
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
+        .<span style="color:#000">log</span>()
+        .<span style="color:#000">wait</span>()
+        .<span style="color:#000">remove</span>()
       )
-</code></pre><p>Como você já sabe, <code>.center</code> centralizará nosso elemento na tela; <code>.print</code> o mostrará na tela e <code>.wait</code> garantirá que ele ficará aguardando algo ocorrer (como passar o tempo para que ele desapareça). Os novos elementos são:</p>
+</code></pre></div>
+<p>Como você já sabe, <code>.center</code> centralizará nosso elemento na tela; <code>.print</code> o mostrará na tela e <code>.wait</code> garantirá que ele ficará aguardando algo ocorrer (como passar o tempo para que ele desapareça). Os novos elementos são:</p>
 <ul>
 <li><code>.log</code>: esse elemento grava o tempo quando o controlador é iniciado;</li>
 <li><code>.remove</code>: [Igor] esse elemento remove a frase da tela e passa para a próxima.</li>
 </ul>
 <p>Se você tiver dúvidas sobre qualquer elemento do PCIbex, pode acessar <a href="https://doc.pcibex.net/elements/">essa página</a>, onde todos são explicados pelos autores do projeto.</p>
 <p>Agora que temos a parte da frase experimental, podemos visualizar o código completo:</p>
-<pre><code>PennController.ResetPrefix(null)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">PennController</span>.<span style="color:#000">ResetPrefix</span>(<span style="color:#a90d91">null</span>)
 
-newTrial(&quot;meuexemplo&quot;,
-    defaultText
-        .center()
-        .print()
+<span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;meuexemplo&#34;</span>,
+    <span style="color:#000">defaultText</span>
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
     ,
 
-    newText(&quot;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&quot;)
+    <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&#34;</span>)
     ,
 
-    newText(&quot;&lt;br&gt;Vamos começar?&quot;)
+    <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;&lt;br&gt;Vamos começar?&#34;</span>)
     ,
 
-    newButton(&quot;meubotao&quot;, &quot;Sim!&quot;)
-        .center()
-        .print()
-        .wait()
+    <span style="color:#000">newButton</span>(<span style="color:#c41a16">&#34;meubotao&#34;</span>, <span style="color:#c41a16">&#34;Sim!&#34;</span>)
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
+        .<span style="color:#000">wait</span>()
         )
 ,
 
-newTrial(&quot;frase_1&quot;,
-    newController(&quot;DashedSentence&quot;, {s: &quot;Essa é a única frase experimental.&quot;})
-        .center()
-        .print()
-        .log()
-        .wait()
-        .remove()
+<span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;frase_1&#34;</span>,
+    <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;Essa é a única frase experimental.&#34;</span>})
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
+        .<span style="color:#000">log</span>()
+        .<span style="color:#000">wait</span>()
+        .<span style="color:#000">remove</span>()
       )
-</code></pre><p>Agora você pode simplesmente copiar e colar esse código no <a href="https://farm.pcibex.net/">PCIbex Farm</a> e rodar seu experimento. O resultado será um conjunto de dados parecido com esse.</p>
-<pre><code># Last submission only; create an account for full results file
-#
-# Results on Sunday May 02 2021 01:29:12 UTC
-# USER AGENT: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
-# Design number was non-random = 0
-#
-# Columns below this comment are as follows:
-# 1. Results reception time.
-# 2. MD5 hash of participant's IP address.
-# 3. Controller name.
-# 4. Order number of item.
-# 5. Inner element number.
-# 6. Label.
-# 7. Latin Square Group.
-# 8. PennElementType.
-# 9. PennElementName.
-# 10. Parameter.
-# 11. Value.
-# 12. EventTime.
-# 13. Comments.
-1619918952,313362cc8a2fca017214b0da440b8033,PennController,0,0,meuexemplo,NULL,PennController,0,_Trial_,Start,1619918945449,NULL
-1619918952,313362cc8a2fca017214b0da440b8033,PennController,0,0,meuexemplo,NULL,PennController,0,_Trial_,End,1619918949148,NULL
-1619918952,313362cc8a2fca017214b0da440b8033,PennController,1,0,frase_1,NULL,PennController,1,_Trial_,Start,1619918949161,NULL
-# 13. Reading time.
-# 14. Newline?.
-# 15. Sentence (or sentence MD5).
-# 16. Comments.
-1619918952,313362cc8a2fca017214b0da440b8033,PennController,1,0,frase_1,NULL,Controller-DashedSentence,DashedSentence,1,Essa,1619918952641,390,false,Essa é a única frase experimental.,Any addtional parameters were appended as additional columns
-1619918952,313362cc8a2fca017214b0da440b8033,PennController,1,0,frase_1,NULL,Controller-DashedSentence,DashedSentence,2,é,1619918952641,296,false,Essa é a única frase experimental.,Any addtional parameters were appended as additional columns
-1619918952,313362cc8a2fca017214b0da440b8033,PennController,1,0,frase_1,NULL,Controller-DashedSentence,DashedSentence,3,a,1619918952641,319,false,Essa é a única frase experimental.,Any addtional parameters were appended as additional columns
-1619918952,313362cc8a2fca017214b0da440b8033,PennController,1,0,frase_1,NULL,Controller-DashedSentence,DashedSentence,4,única,1619918952641,353,false,Essa é a única frase experimental.,Any addtional parameters were appended as additional columns
-1619918952,313362cc8a2fca017214b0da440b8033,PennController,1,0,frase_1,NULL,Controller-DashedSentence,DashedSentence,5,frase,1619918952641,375,false,Essa é a única frase experimental.,Any addtional parameters were appended as additional columns
-1619918952,313362cc8a2fca017214b0da440b8033,PennController,1,0,frase_1,NULL,Controller-DashedSentence,DashedSentence,6,experimental.,1619918952641,433,false,Essa é a única frase experimental.,Any addtional parameters were appended as additional columns
-# 13. Comments.
-1619918952,313362cc8a2fca017214b0da440b8033,PennController,1,0,frase_1,NULL,PennController,1,_Trial_,End,1619918952645,NULL
-</code></pre><p>Se quiser saber como acessar esses dados no R, veja <a href="https://igordeo-costa.github.io/posts/dadosibex/">esse post</a>.</p>
+</code></pre></div>
+<p>Agora você pode simplesmente copiar e colar esse código no <a href="https://farm.pcibex.net/">PCIbex Farm</a> e rodar seu experimento. O resultado será um conjunto de dados parecido com esse.</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#177500"># Last submission only; create an account for full results file</span>
+<span style="color:#177500">#</span>
+<span style="color:#177500"># Results on Sunday May 02 2021 01:29:12 UTC</span>
+<span style="color:#177500"># USER AGENT: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0</span>
+<span style="color:#177500"># Design number was non-random = 0</span>
+<span style="color:#177500">#</span>
+<span style="color:#177500"># Columns below this comment are as follows:</span>
+<span style="color:#177500"># 1. Results reception time.</span>
+<span style="color:#177500"># 2. MD5 hash of participant&#39;s IP address.</span>
+<span style="color:#177500"># 3. Controller name.</span>
+<span style="color:#177500"># 4. Order number of item.</span>
+<span style="color:#177500"># 5. Inner element number.</span>
+<span style="color:#177500"># 6. Label.</span>
+<span style="color:#177500"># 7. Latin Square Group.</span>
+<span style="color:#177500"># 8. PennElementType.</span>
+<span style="color:#177500"># 9. PennElementName.</span>
+<span style="color:#177500"># 10. Parameter.</span>
+<span style="color:#177500"># 11. Value.</span>
+<span style="color:#177500"># 12. EventTime.</span>
+<span style="color:#177500"># 13. Comments.</span>
+<span style="color:#1c01ce">1619918952</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">meuexemplo</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1619918945449</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1619918952</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">meuexemplo</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1619918949148</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1619918952</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">frase_1</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1619918949161</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#177500"># 13. Reading time.</span>
+<span style="color:#177500"># 14. Newline?.</span>
+<span style="color:#177500"># 15. Sentence (or sentence MD5).</span>
+<span style="color:#177500"># 16. Comments.</span>
+<span style="color:#1c01ce">1619918952</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">frase_1</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">Essa</span>,<span style="color:#1c01ce">1619918952641</span>,<span style="color:#1c01ce">390</span>,<span style="color:#000">false</span>,<span style="color:#000">Essa</span> é <span style="color:#000">a</span> ú<span style="color:#000">nica</span> <span style="color:#000">frase</span> <span style="color:#000">experimental.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619918952</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">frase_1</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">2</span>,é,<span style="color:#1c01ce">1619918952641</span>,<span style="color:#1c01ce">296</span>,<span style="color:#000">false</span>,<span style="color:#000">Essa</span> é <span style="color:#000">a</span> ú<span style="color:#000">nica</span> <span style="color:#000">frase</span> <span style="color:#000">experimental.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619918952</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">frase_1</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">a</span>,<span style="color:#1c01ce">1619918952641</span>,<span style="color:#1c01ce">319</span>,<span style="color:#000">false</span>,<span style="color:#000">Essa</span> é <span style="color:#000">a</span> ú<span style="color:#000">nica</span> <span style="color:#000">frase</span> <span style="color:#000">experimental.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619918952</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">frase_1</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">4</span>,ú<span style="color:#000">nica</span>,<span style="color:#1c01ce">1619918952641</span>,<span style="color:#1c01ce">353</span>,<span style="color:#000">false</span>,<span style="color:#000">Essa</span> é <span style="color:#000">a</span> ú<span style="color:#000">nica</span> <span style="color:#000">frase</span> <span style="color:#000">experimental.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619918952</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">frase_1</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">frase</span>,<span style="color:#1c01ce">1619918952641</span>,<span style="color:#1c01ce">375</span>,<span style="color:#000">false</span>,<span style="color:#000">Essa</span> é <span style="color:#000">a</span> ú<span style="color:#000">nica</span> <span style="color:#000">frase</span> <span style="color:#000">experimental.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619918952</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">frase_1</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">6</span>,<span style="color:#000">experimental.</span>,<span style="color:#1c01ce">1619918952641</span>,<span style="color:#1c01ce">433</span>,<span style="color:#000">false</span>,<span style="color:#000">Essa</span> é <span style="color:#000">a</span> ú<span style="color:#000">nica</span> <span style="color:#000">frase</span> <span style="color:#000">experimental.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#177500"># 13. Comments.</span>
+<span style="color:#1c01ce">1619918952</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">frase_1</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1619918952645</span>,<span style="color:#a90d91">NULL</span></code></pre></div>
+Se quiser saber como acessar esses dados no R, veja <a href="https://igordeo-costa.github.io/posts/dadosibex/">esse post</a>.</p>
 <p>Por enquanto, vamos ficar por aqui. No próximo artigo aprofundaremos mais nossos estudos.</p>
 
     </div>

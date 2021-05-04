@@ -85,12 +85,12 @@
 <p>O lado negativo desse formato é que ele torna muito difícil a leitura humana do seu conteúdo. Em outras palavras, é ótimo para a máquina, mas pouco amigável para a gente - até que você se acostume a ele, claro.</p>
 <p>No nosso caso, usaremos o <code>.csv</code> para criar uma tabela com informações sobre nossos estímulos experimentais - as frases que usaremos no experimento de leitura automonitorada.</p>
 <p>Mas, afinal, como criar um arquivo <code>.csv</code>? Que programas você deve usar para isso? Criar uma tabela em formato <code>.csv</code> é muito simples: basta abrir um editor de textos (como o &ldquo;Bloco de notas&rdquo; ou o &ldquo;WordPad&rdquo;, ambos da Microsoft) e daí digitar os seus dados, sendo que cada coluna da tabela será separada por uma vírgula, como abaixo, onde temos uma tabela com 4 colunas e 5 linhas:</p>
-<pre><code>Coluna1,Coluna2,Coluna3,Coluna4
-Dado1,Dado2,Dado3,Dado4
-Dado5,Dado6,Dado7,Dado8
-Dado9,Dado10,Dado11,Dado12
-Dado13,Dado14,Dado15,Dado16
-</code></pre><p>Mais à frente, quando você estiver trabalhando com tabelas mais complexas, verá que você pode criá-las no Excel e exportá-las como <code>.csv</code>, mas por enquanto não faça isso, pois há algumas configurações que precisam ser feitas paras as coisas funcionarem direito no Excel.</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">Coluna1</span>,<span style="color:#000">Coluna2</span>,<span style="color:#000">Coluna3</span>,<span style="color:#000">Coluna4</span>
+<span style="color:#000">Dado1</span>,<span style="color:#000">Dado2</span>,<span style="color:#000">Dado3</span>,<span style="color:#000">Dado4</span>
+<span style="color:#000">Dado5</span>,<span style="color:#000">Dado6</span>,<span style="color:#000">Dado7</span>,<span style="color:#000">Dado8</span>
+<span style="color:#000">Dado9</span>,<span style="color:#000">Dado10</span>,<span style="color:#000">Dado11</span>,<span style="color:#000">Dado12</span>
+<span style="color:#000">Dado13</span>,<span style="color:#000">Dado14</span>,<span style="color:#000">Dado15</span>,<span style="color:#000">Dado16</span></code></pre></div>
+Mais à frente, quando você estiver trabalhando com tabelas mais complexas, verá que você pode criá-las no Excel e exportá-las como <code>.csv</code>, mas por enquanto não faça isso, pois há algumas configurações que precisam ser feitas paras as coisas funcionarem direito no Excel.</p>
 <p>Ah! Não coloque espaço entre os elementos depois da vírgula. Isso pode trazer alguns probleminhas.</p>
 <h2 id="definindo-um-design-experimental">Definindo um design experimental</h2>
 <p>Vamos começar com um experimento bem simples em que tenhamos 4 sentenças apenas, todas com <strong>verbos transitivos</strong>, mas nas quais o artigo que introduz o sujeito pode estar no <strong>singular</strong> ou no <strong>plural</strong>:</p>
@@ -103,176 +103,183 @@ Dado13,Dado14,Dado15,Dado16
 <p>Vamos dizer que queiramos uma design <em>between subjects</em>, ou seja, em que um grupo de participantes veja apenas a condição singular e outro veja apenas a condição plural. Vamos criar a seguinte tabela <code>.csv</code> para esses dados e vamos nomeá-la como &ldquo;minhatabela.csv&rdquo; (não se acanhe, você pode apenas copiar o código abaixo, colar no bloco de notas e salvar como &ldquo;minhatabela.csv&rdquo; simplesmente mudando o formato .txt que o Windows te apresenta como padrão para .csv).</p>
 <p>Observe que a nossa tabelinha abaixo não tem acentos ou cedilhas ou qualquer coisa desse tipo. Se a sua tiver, é importante que você salve a sua planilha <code>.csv</code> com codificação <code>UTF-8</code>. Essa codificação apenas indica para o computador que seus dados têm acentos e cedilhas e outros sinais diacríticos. Para salvar seu documento com essa codificação, basta, no Blobo de Notas, selecionar em &ldquo;codificação&rdquo; a opção &ldquo;UTF-8&rdquo;:</p>
 <p><img src="/imagem2.png" alt="utf8"></p>
-<pre><code>group,item,verbo,numero,frase
-A,1,transitivo,sg,A menina comeu o bolo.
-B,1,transitivo,pl,As menina comeu o bolo.
-A,2,transitivo,sg,O lobo mordeu a lebre.
-B,2,transitivo,pl,Os lobo mordeu a lebre.
-</code></pre><p>Como você pode ver, a nossa tabela tem 5 colunas. E aqui há um ponto importante: as três últimas colunas (&ldquo;verbo&rdquo;, &ldquo;numero&rdquo; e &ldquo;frase&rdquo;) foram nomeadas por nós, ou seja, você pode dar o nome que quiser para elas; as duas primeiras, no entanto, têm de ser nomeadas &ldquo;group&rdquo; e &ldquo;item&rdquo; ou o PCIbex não fará o que pedimos. Você pode dar uma olhada na documentação <a href="https://doc.pcibex.net/advanced-tutorial/8_creating-trial-template.html">aqui</a>.</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">item</span>,<span style="color:#000">verbo</span>,<span style="color:#000">numero</span>,<span style="color:#000">frase</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Os</span> <span style="color:#000">lobo</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span></code></pre></div>
+Como você pode ver, a nossa tabela tem 5 colunas. E aqui há um ponto importante: as três últimas colunas (&ldquo;verbo&rdquo;, &ldquo;numero&rdquo; e &ldquo;frase&rdquo;) foram nomeadas por nós, ou seja, você pode dar o nome que quiser para elas; as duas primeiras, no entanto, têm de ser nomeadas &ldquo;group&rdquo; e &ldquo;item&rdquo; ou o PCIbex não fará o que pedimos. Você pode dar uma olhada na documentação <a href="https://doc.pcibex.net/advanced-tutorial/8_creating-trial-template.html">aqui</a>.</p>
 <p>Do modo como essa tabela está organizada, o que acontecerá é o seguinte: um grupo de sujeitos verá as sentenças do tipo A, ou seja, as que estão no singular; e outro grupo verá as sentenças do tipo B, as que estão no plural. Se você quiser, pode pensar na coluna &ldquo;group&rdquo; como aquilo que chamamos de &ldquo;listas&rdquo;, sendo que cada sujeito será automaticamente colocado em uma das duas listas disponíveis. O item e o verbo não serão importantes agora, mas deixemo-los aí para facilitar a nossa vida mais adiante.</p>
 <p>Agora que a nossa tabela está criada, você pode arrastar esse arquivo para a aba <code>Resources</code> do PCIbex (simplesmentes clique em cima do arquivo, segure e arraste que ele vai parar lá.) Se preferir, passe o mouse no sinal <code>+</code> ao lado de <code>Resources</code>; você verá uma opção chamada &ldquo;upload from disk&rdquo;. Ali você seleciona qual arquivo deseja importar para <code>Resources</code>.</p>
 <h2 id="criando-o-nosso-experimento">Criando o nosso experimento</h2>
 <p>Para criar o experimento, vamos usar basicamente a estrutura que fizemos antes, com pequenas modificações. Abaixo está o código completo que usaremos:</p>
-<pre><code>PennController.ResetPrefix(null)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">PennController</span>.<span style="color:#000">ResetPrefix</span>(<span style="color:#a90d91">null</span>)
 
-newTrial(&quot;meuexemplo&quot;,
-    defaultText
-        .center()
-        .print()
+<span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;meuexemplo&#34;</span>,
+    <span style="color:#000">defaultText</span>
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
     ,
 
-    newText(&quot;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&quot;)
+    <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&#34;</span>)
     ,
 
-    newText(&quot;&lt;br&gt;Vamos começar?&quot;)
+    <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;&lt;br&gt;Vamos começar?&#34;</span>)
     ,
 
-    newButton(&quot;meubotao&quot;, &quot;Sim!&quot;)
-        .center()
-        .print()
-        .wait()
+    <span style="color:#000">newButton</span>(<span style="color:#c41a16">&#34;meubotao&#34;</span>, <span style="color:#c41a16">&#34;Sim!&#34;</span>)
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
+        .<span style="color:#000">wait</span>()
 )
 
 ,
 
-Template(&quot;minhatabela.csv&quot;,
-  exp =&gt; newTrial(&quot;minhasfrases&quot;,
-        newController(&quot;DashedSentence&quot;, {s: exp.frase})
-            .center()
-            .print()
-            .log()
-            .wait()
-            .remove()
+<span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;minhasfrases&#34;</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
             )
         )
-</code></pre><p>Como você deve ter notado, o primeiro trial é idêntico ao da parte 1 do nosso tutorial. A mudança toda agora está no segundo trial. Vamos investigar o esqueleto desse código:</p>
-<pre><code>Template(
-  exp =&gt; newTrial(
-        newController()
-            .center()
-            .print()
-            .log()
-            .wait()
-            .remove()
+</code></pre></div>
+<p>Como você deve ter notado, o primeiro trial é idêntico ao da parte 1 do nosso tutorial. A mudança toda agora está no segundo trial. Vamos investigar o esqueleto desse código:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Template</span>(
+  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(
+        <span style="color:#000">newController</span>()
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
             )
         )
-</code></pre><p>As únicas novidades aí são <code>Template</code> e <code>exp</code>. O resto você já sabe o que é (se não sabe, volte à <a href="">Parte 1</a>). Vamos por partes:</p>
-<pre><code>Template(&quot;minhatabela.csv&quot;,
-  exp =&gt;
-</code></pre><p>Em <code>Template</code>, incluímos duas coisas: <code>&quot;minhatabela.csv&quot;</code> e <code>exp</code>. Logo, o que esse <code>Template</code> está fazendo é, em primeiro lugar, acessando a nossa tabela com as frases experimentais (esse nome colocado entre aspas tem de ser idêntico ao nome do arquivo que você salvou, incluisve com o .csv ao final) e atribuindo essa tabela ao objeto <code>exp</code>. O <code>exp</code> é uma variável, ou seja, é uma espécie de comando que nós mesmos criamos e, como nós mesmos criamos, podemos dar o nome que quisermos (na <a href="https://doc.pcibex.net/advanced-tutorial/8_creating-trial-template.html">página do PCIbex</a>, eles dão o nome de <code>row</code>. Você pode trocar pelo que quiser ou manter como está.). Essa variável contém (<code>=&gt;</code>) tudo que está depois da setinha (o sinal de <code>=</code> seguido do sinal de maior <code>&gt;</code>). Vamos à segunda parte então:</p>
-<pre><code>exp =&gt; newTrial(&quot;minhasfrases&quot;,
-      newController(&quot;DashedSentence&quot;, {s: exp.frase})
-</code></pre><p>A nossa variável <code>exp</code> contém um <code>newTrial</code>, que recebeu o nome &ldquo;minhasfrases&rdquo; (você poderia dar qualquer nome aqui) e, como antes, dentro dele colocamos o controlador para <code>DashedSentence</code>. Dentro desse controlador, no entanto, fizemos uma coisa muito diferente, em vez de colocarmos a nossa sentença experimental depois de <code>{s:</code>, colocamos &ldquo;exp.frase&rdquo;. Lembre-se de que a última coluna da nossa tabela se chama justamente frase. Mas, afinal, o que o PCIbex está fazendo aqui? Simplemente dizendo: dentro do objeto <code>exp</code> (que é a tabela <code>.csv</code>), acesse a coluna <code>frase</code> (que contém as frases experimentais a serem apresentadas pelo controlador <code>DashedSentence</code>).</p>
+</code></pre></div>
+<p>As únicas novidades aí são <code>Template</code> e <code>exp</code>. O resto você já sabe o que é (se não sabe, volte à <a href="">Parte 1</a>). Vamos por partes:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+  <span style="color:#000">exp</span> =&gt;
+</code></pre></div>
+<p>Em <code>Template</code>, incluímos duas coisas: <code>&quot;minhatabela.csv&quot;</code> e <code>exp</code>. Logo, o que esse <code>Template</code> está fazendo é, em primeiro lugar, acessando a nossa tabela com as frases experimentais (esse nome colocado entre aspas tem de ser idêntico ao nome do arquivo que você salvou, incluisve com o .csv ao final) e atribuindo essa tabela ao objeto <code>exp</code>. O <code>exp</code> é uma variável, ou seja, é uma espécie de comando que nós mesmos criamos e, como nós mesmos criamos, podemos dar o nome que quisermos (na <a href="https://doc.pcibex.net/advanced-tutorial/8_creating-trial-template.html">página do PCIbex</a>, eles dão o nome de <code>row</code>. Você pode trocar pelo que quiser ou manter como está.). Essa variável contém (<code>=&gt;</code>) tudo que está depois da setinha (o sinal de <code>=</code> seguido do sinal de maior <code>&gt;</code>). Vamos à segunda parte então:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;minhasfrases&#34;</span>,
+      <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+</code></pre></div>
+<p>A nossa variável <code>exp</code> contém um <code>newTrial</code>, que recebeu o nome &ldquo;minhasfrases&rdquo; (você poderia dar qualquer nome aqui) e, como antes, dentro dele colocamos o controlador para <code>DashedSentence</code>. Dentro desse controlador, no entanto, fizemos uma coisa muito diferente, em vez de colocarmos a nossa sentença experimental depois de <code>{s:</code>, colocamos &ldquo;exp.frase&rdquo;. Lembre-se de que a última coluna da nossa tabela se chama justamente frase. Mas, afinal, o que o PCIbex está fazendo aqui? Simplemente dizendo: dentro do objeto <code>exp</code> (que é a tabela <code>.csv</code>), acesse a coluna <code>frase</code> (que contém as frases experimentais a serem apresentadas pelo controlador <code>DashedSentence</code>).</p>
 <p>Feito isso, essa parte do código ficará assim:</p>
-<pre><code>Template(&quot;minhatabela.csv&quot;,
-  exp =&gt; newTrial(&quot;minhasfrases&quot;,
-        newController(&quot;DashedSentence&quot;, {s: exp.frase})
-            .center()
-            .print()
-            .log()
-            .wait()
-            .remove()
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;minhasfrases&#34;</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
             )
         )
-</code></pre><p>E seu experimento estará pronto para rodar. Como nós já definimos a coluna <code>group</code>, não precisamos fazer mais nada. O primeiro sujeito que fizer, fará as sentenças do grupo A e o segundo as do grupo B e assim sucessivamente para todos os sujeitos.</p>
+</code></pre></div>
+<p>E seu experimento estará pronto para rodar. Como nós já definimos a coluna <code>group</code>, não precisamos fazer mais nada. O primeiro sujeito que fizer, fará as sentenças do grupo A e o segundo as do grupo B e assim sucessivamente para todos os sujeitos.</p>
 <p>O resultados que serão recebidos estão abaixo (para o primeiro sujeito apenas):</p>
-<pre><code># Last submission only; create an account for full results file
-#
-# Results on Sunday May 02 2021 16:42:49 UTC
-# USER AGENT: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0
-# Design number was non-random = 2
-#
-# Columns below this comment are as follows:
-# 1. Results reception time.
-# 2. MD5 hash of participant's IP address.
-# 3. Controller name.
-# 4. Order number of item.
-# 5. Inner element number.
-# 6. Label.
-# 7. Latin Square Group.
-# 8. PennElementType.
-# 9. PennElementName.
-# 10. Parameter.
-# 11. Value.
-# 12. EventTime.
-# 13. Comments.
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,0,0,meuexemplo,NULL,PennController,0,_Trial_,Start,1619973764745,NULL
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,0,0,meuexemplo,NULL,PennController,0,_Trial_,End,1619973765691,NULL
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,1,0,minhasfrases,NULL,PennController,1,_Trial_,Start,1619973765705,NULL
-# 13. Reading time.
-# 14. Newline?.
-# 15. Sentence (or sentence MD5).
-# 16. Comments.
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,1,0,minhasfrases,NULL,Controller-DashedSentence,DashedSentence,1,A,1619973767629,319,false,A menina comeu o bolo.,Any addtional parameters were appended as additional columns
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,1,0,minhasfrases,NULL,Controller-DashedSentence,DashedSentence,2,menina,1619973767629,256,false,A menina comeu o bolo.,Any addtional parameters were appended as additional columns
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,1,0,minhasfrases,NULL,Controller-DashedSentence,DashedSentence,3,comeu,1619973767629,256,false,A menina comeu o bolo.,Any addtional parameters were appended as additional columns
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,1,0,minhasfrases,NULL,Controller-DashedSentence,DashedSentence,4,o,1619973767629,255,false,A menina comeu o bolo.,Any addtional parameters were appended as additional columns
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,1,0,minhasfrases,NULL,Controller-DashedSentence,DashedSentence,5,bolo.,1619973767629,257,false,A menina comeu o bolo.,Any addtional parameters were appended as additional columns
-# 13. Comments.
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,1,0,minhasfrases,NULL,PennController,1,_Trial_,End,1619973767632,NULL
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,2,0,minhasfrases,NULL,PennController,2,_Trial_,Start,1619973767635,NULL
-# 13. Reading time.
-# 14. Newline?.
-# 15. Sentence (or sentence MD5).
-# 16. Comments.
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,2,0,minhasfrases,NULL,Controller-DashedSentence,DashedSentence,1,O,1619973769412,256,false,O lobo morreu de fome.,Any addtional parameters were appended as additional columns
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,2,0,minhasfrases,NULL,Controller-DashedSentence,DashedSentence,2,lobo,1619973769412,263,false,O lobo morreu de fome.,Any addtional parameters were appended as additional columns
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,2,0,minhasfrases,NULL,Controller-DashedSentence,DashedSentence,3,morreu,1619973769412,232,false,O lobo morreu de fome.,Any addtional parameters were appended as additional columns
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,2,0,minhasfrases,NULL,Controller-DashedSentence,DashedSentence,4,de,1619973769412,257,false,O lobo morreu de fome.,Any addtional parameters were appended as additional columns
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,2,0,minhasfrases,NULL,Controller-DashedSentence,DashedSentence,5,fome.,1619973769412,247,false,O lobo morreu de fome.,Any addtional parameters were appended as additional columns
-# 13. Comments.
-1619973769,313362cc8a2fca017214b0da440b8033,PennController,2,0,minhasfrases,NULL,PennController,2,_Trial_,End,1619973769415,NULL
-</code></pre><h2 id="uma-pausa-importante-para-análise-dos-resultados">Uma pausa importante para análise dos resultados</h2>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#177500"># Last submission only; create an account for full results file</span>
+<span style="color:#177500">#</span>
+<span style="color:#177500"># Results on Sunday May 02 2021 16:42:49 UTC</span>
+<span style="color:#177500"># USER AGENT: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0</span>
+<span style="color:#177500"># Design number was non-random = 2</span>
+<span style="color:#177500">#</span>
+<span style="color:#177500"># Columns below this comment are as follows:</span>
+<span style="color:#177500"># 1. Results reception time.</span>
+<span style="color:#177500"># 2. MD5 hash of participant&#39;s IP address.</span>
+<span style="color:#177500"># 3. Controller name.</span>
+<span style="color:#177500"># 4. Order number of item.</span>
+<span style="color:#177500"># 5. Inner element number.</span>
+<span style="color:#177500"># 6. Label.</span>
+<span style="color:#177500"># 7. Latin Square Group.</span>
+<span style="color:#177500"># 8. PennElementType.</span>
+<span style="color:#177500"># 9. PennElementName.</span>
+<span style="color:#177500"># 10. Parameter.</span>
+<span style="color:#177500"># 11. Value.</span>
+<span style="color:#177500"># 12. EventTime.</span>
+<span style="color:#177500"># 13. Comments.</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">meuexemplo</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1619973764745</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">meuexemplo</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1619973765691</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1619973765705</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#177500"># 13. Reading time.</span>
+<span style="color:#177500"># 14. Newline?.</span>
+<span style="color:#177500"># 15. Sentence (or sentence MD5).</span>
+<span style="color:#177500"># 16. Comments.</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">A</span>,<span style="color:#1c01ce">1619973767629</span>,<span style="color:#1c01ce">319</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">menina</span>,<span style="color:#1c01ce">1619973767629</span>,<span style="color:#1c01ce">256</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">comeu</span>,<span style="color:#1c01ce">1619973767629</span>,<span style="color:#1c01ce">256</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">o</span>,<span style="color:#1c01ce">1619973767629</span>,<span style="color:#1c01ce">255</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">bolo.</span>,<span style="color:#1c01ce">1619973767629</span>,<span style="color:#1c01ce">257</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#177500"># 13. Comments.</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1619973767632</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1619973767635</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#177500"># 13. Reading time.</span>
+<span style="color:#177500"># 14. Newline?.</span>
+<span style="color:#177500"># 15. Sentence (or sentence MD5).</span>
+<span style="color:#177500"># 16. Comments.</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">O</span>,<span style="color:#1c01ce">1619973769412</span>,<span style="color:#1c01ce">256</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">lobo</span>,<span style="color:#1c01ce">1619973769412</span>,<span style="color:#1c01ce">263</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">morreu</span>,<span style="color:#1c01ce">1619973769412</span>,<span style="color:#1c01ce">232</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">de</span>,<span style="color:#1c01ce">1619973769412</span>,<span style="color:#1c01ce">257</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">fome.</span>,<span style="color:#1c01ce">1619973769412</span>,<span style="color:#1c01ce">247</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#177500"># 13. Comments.</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1619973769415</span>,<span style="color:#a90d91">NULL</span></code></pre></div>
+<h2 id="uma-pausa-importante-para-análise-dos-resultados">Uma pausa importante para análise dos resultados</h2>
 <p>Observe com atenção os dados de resultado que obtivemos. Como você deve ter visto, o experimento funcionou perfeitamente, distribuiu os participantes em grupos corretos e tudo o mais. Mas há um detalhe bem estranho, se você reparar bem. Observe que a coluna <code>6. Label</code> está preenchida com a expressão &ldquo;minhasfrases&rdquo;. Isso é muito ruim, pois não nos permite identificar diretamente qual é a condição experimental que está sendo medida em cada caso (é claro que podemos fazer isso olhando frase por frase na coluna <code>15. Sentence</code>, mas isso seria muito trabalhoso). Mas, se você prestou bem atenção, entenderá porque isso acontece e pensará num modo de resolver. Tire um tempinho e tente fazer isso sozinho: o que é preciso mudar no código para que em <code>Label</code> apareça o <code>group</code> daquela sentença?</p>
 <p>Como você deve ter imaginado, o problema ocorre porque no trecho do código reproduzido abaixo, o elemento que está entrando como Label é a expressão &ldquo;minhasfrases&rdquo;:</p>
-<pre><code>Template(&quot;minhatabela.csv&quot;,
-  exp =&gt; newTrial(&quot;minhasfrases&quot;, // Aqui está o nosso problema
-        newController(&quot;DashedSentence&quot;, {s: exp.frase})
-            .center()
-            .print()
-            .log()
-            .wait()
-            .remove()
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;minhasfrases&#34;</span>, <span style="color:#177500">// Aqui está o nosso problema
+</span><span style="color:#177500"></span>        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
             )
         )
-</code></pre><p>Para solucinar, portanto, basta que o compilador acesse a tabela <code>.csv</code> (que foi armazenada no objeto <code>exp</code>) e inclua a coluna <code>group</code>, exatamente como fizemos com as sentenças dentro do <code>newController</code>. Esse trecho do código então ficará assim:</p>
-<pre><code>Template(&quot;minhatabela.csv&quot;,
-  exp =&gt; newTrial(exp.group,
-        newController(&quot;DashedSentence&quot;, {s: exp.frase})
-            .center()
-            .print()
-            .log()
-            .wait()
-            .remove()
+</code></pre></div>
+<p>Para solucinar, portanto, basta que o compilador acesse a tabela <code>.csv</code> (que foi armazenada no objeto <code>exp</code>) e inclua a coluna <code>group</code>, exatamente como fizemos com as sentenças dentro do <code>newController</code>. Esse trecho do código então ficará assim:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#000">exp</span>.<span style="color:#000">group</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
             )
         )
-</code></pre><p>Com isso, seu resultado agora incluirá o grupo ao qual a sentença pertence na coluna Label. Vai ficar mais ou menos assim (observe que agora a sexta coluna incluiu a letra A no lugar de &ldquo;minhasfrases&rdquo;):</p>
-<pre><code>1619978534,313362cc8a2fca017214b0da440b8033,PennController,1,0,A,NULL,Controller-DashedSentence,DashedSentence,1,A,1619978532343,279,false,A menina comeu o bolo.,Any addtional parameters were appended as additional columns
-1619978534,313362cc8a2fca017214b0da440b8033,PennController,1,0,A,NULL,Controller-DashedSentence,DashedSentence,2,menina,1619978532343,255,false,A menina comeu o bolo.,Any addtional parameters were appended as additional columns
-1619978534,313362cc8a2fca017214b0da440b8033,PennController,1,0,A,NULL,Controller-DashedSentence,DashedSentence,3,comeu,1619978532343,264,false,A menina comeu o bolo.,Any addtional parameters were appended as additional columns
-1619978534,313362cc8a2fca017214b0da440b8033,PennController,1,0,A,NULL,Controller-DashedSentence,DashedSentence,4,o,1619978532343,249,false,A menina comeu o bolo.,Any addtional parameters were appended as additional columns
-1619978534,313362cc8a2fca017214b0da440b8033,PennController,1,0,A,NULL,Controller-DashedSentence,DashedSentence,5,bolo.,1619978532343,247,false,A menina comeu o bolo.,Any addtional parameters were appended as additional columns
-</code></pre><h2 id="brincado-com-os-designs-experimentais">Brincado com os designs experimentais</h2>
+</code></pre></div>
+<p>Com isso, seu resultado agora incluirá o grupo ao qual a sentença pertence na coluna Label. Vai ficar mais ou menos assim (observe que agora a sexta coluna incluiu a letra A no lugar de &ldquo;minhasfrases&rdquo;):</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#1c01ce">1619978534</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">A</span>,<span style="color:#1c01ce">1619978532343</span>,<span style="color:#1c01ce">279</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619978534</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">menina</span>,<span style="color:#1c01ce">1619978532343</span>,<span style="color:#1c01ce">255</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619978534</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">comeu</span>,<span style="color:#1c01ce">1619978532343</span>,<span style="color:#1c01ce">264</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619978534</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">o</span>,<span style="color:#1c01ce">1619978532343</span>,<span style="color:#1c01ce">249</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619978534</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">bolo.</span>,<span style="color:#1c01ce">1619978532343</span>,<span style="color:#1c01ce">247</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span></code></pre></div>
+<h2 id="brincando-com-os-designs-experimentais">Brincando com os designs experimentais</h2>
 <p>Agora que você já sabe como incluir os itens, você pode começar a fazer brincadeiras simples com o seu desenho experimental. Imagine, por exemplo, que você tenha três conjuntos de frases e não mais dois, como antes. Você pode incluí-las facilmente no seu experimento (sem qualquer alteração no código), apenas acrescentando essas sentenças na tabela <code>.csv</code>:</p>
-<pre><code>group,item,verbo,numero,frase
-A,1,transitivo,sg,A menina comeu o bolo.
-B,1,transitivo,pl,As menina comeu o bolo.
-C,1,transitivo,pl red,As meninas comeram o bolo.
-A,2,transitivo,sg,O lobo mordeu a lebre.
-B,2,transitivo,pl,Os lobo mordeu a lebre.
-C,2,transitivo,pl red,Os lobos morderam a lebre.
-</code></pre><p>Nesse caso, continuamos com um desenho <em>between subjects</em>, agora com três grupos (A, B e C, esse para o plural redundante).</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">item</span>,<span style="color:#000">verbo</span>,<span style="color:#000">numero</span>,<span style="color:#000">frase</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">C</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span> <span style="color:#000">red</span>,<span style="color:#000">As</span> <span style="color:#000">meninas</span> <span style="color:#000">comeram</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Os</span> <span style="color:#000">lobo</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span>
+<span style="color:#000">C</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span> <span style="color:#000">red</span>,<span style="color:#000">Os</span> <span style="color:#000">lobos</span> <span style="color:#000">morderam</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span></code></pre></div>
+Nesse caso, continuamos com um desenho <em>between subjects</em>, agora com três grupos (A, B e C, esse para o plural redundante).</p>
 <p>Ou você pode ter, digamos, um outro tipo de verbo, como &ldquo;intransitivo&rdquo;. Repare que mudamos a etiqueta das sentenças para algo mais mnemônico. Nesse caso, teremos 4 grupos de sujeitos, cada qual associado a uma das 4 condições experimentais:</p>
-<pre><code>group,item,verbo,numero,frase
-t_sg,1,transitivo,sg,A menina comeu o bolo.
-t_pl,1,transitivo,pl,As menina comeu o bolo.
-i_sg,1,intransitivo,sg,A menina dormiu cedo.
-i_pl,1,intransitivo,pl,As menina dormiu cedo.
-t_sg,2,transitivo,sg,O lobo mordeu a lebre.
-t_pl,2,transitivo,pl,Os lobo mordeu a lebre.
-i_sg,2,intransitivo,sg,O lobo morreu de fome.
-i_pl,2,intransitivo,pl,Os lobo morreu de fome.
-</code></pre><p>Até agora tudo está funcionando bem, mas nosso experimento ainda apresenta os itens na ordem em que eles aparecem na tabela. No próximo tutorial, vamos mostrar como aleatorizá-los um pouco.</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">item</span>,<span style="color:#000">verbo</span>,<span style="color:#000">numero</span>,<span style="color:#000">frase</span>
+<span style="color:#000">t_sg</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">t_pl</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">i_sg</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">dormiu</span> <span style="color:#000">cedo.</span>
+<span style="color:#000">i_pl</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">dormiu</span> <span style="color:#000">cedo.</span>
+<span style="color:#000">t_sg</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span>
+<span style="color:#000">t_pl</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Os</span> <span style="color:#000">lobo</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span>
+<span style="color:#000">i_sg</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>
+<span style="color:#000">i_pl</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Os</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span></code></pre></div>
+Até agora tudo está funcionando bem, mas nosso experimento ainda apresenta os itens na ordem em que eles aparecem na tabela. No próximo tutorial, vamos mostrar como aleatorizá-los um pouco.</p>
 
     </div>
     <div class="post-footer">
