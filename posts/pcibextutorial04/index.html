@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Começando do zero no PCIbex - Parte 04 // Igor Costa</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Igor Costa" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://igordeo-costa.github.io/css/main.min.4a7ec8660f9a44b08c4da97c5f2e31b1192df1d4d0322e65c0dbbc6ecb1b863f.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Começando do zero no PCIbex - Parte 04"/>
+<meta name="twitter:description" content="Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Antes de avançarmos um pouco mais, gostaríamos de fazer uma pequena pausa para compreendermos melhor a análise dos nossos resultados. Para isso, vamos retomar o código que usamos na Parte 2 do nosso tutorial.
+Lembre-se de que, naquele ponto, tínhamos essa tabela de dados:
+group,item,verbo,numero,frase A,1,transitivo,sg,A menina comeu o bolo. B,1,transitivo,pl,As menina comeu o bolo. A,2,intransitivo,sg,O lobo morreu de fome. B,2,intransitivo,pl,Os lobo morreu de fome."/>
+
+    <meta property="og:title" content="Começando do zero no PCIbex - Parte 04" />
+<meta property="og:description" content="Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Antes de avançarmos um pouco mais, gostaríamos de fazer uma pequena pausa para compreendermos melhor a análise dos nossos resultados. Para isso, vamos retomar o código que usamos na Parte 2 do nosso tutorial.
+Lembre-se de que, naquele ponto, tínhamos essa tabela de dados:
+group,item,verbo,numero,frase A,1,transitivo,sg,A menina comeu o bolo. B,1,transitivo,pl,As menina comeu o bolo. A,2,intransitivo,sg,O lobo morreu de fome. B,2,intransitivo,pl,Os lobo morreu de fome." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://igordeo-costa.github.io/posts/pcibextutorial04/" />
+<meta property="article:published_time" content="2021-05-05T19:30:39-03:00" />
+<meta property="article:modified_time" content="2021-05-05T19:30:39-03:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://igordeo-costa.github.io/"><img class="app-header-avatar" src="/avatar.png" alt="Igor Costa" /></a>
+      <h1>Igor Costa</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">Atuação</a>
+      </nav>
+      <p>Doutorando em Estudos da Linguagem - Lapal/PUC-Rio.</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/igordeo-costa" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Começando do zero no PCIbex - Parte 04</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 5, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          9 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://igordeo-costa.github.io/tags/pcibex/">PCIbex</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h5 id="por-igor-costa-lapalpuc-rio-e-ana-paula-jakubów-lapalpuc-rio-uerj">Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ)</h5>
+<p>Antes de avançarmos um pouco mais, gostaríamos de fazer uma pequena pausa para compreendermos melhor a análise dos nossos resultados. Para isso, vamos retomar o código que usamos na <a href="https://igordeo-costa.github.io/posts/pcibextutorial02/">Parte 2</a> do nosso tutorial.</p>
+<p>Lembre-se de que, naquele ponto, tínhamos essa tabela de dados:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">item</span>,<span style="color:#000">verbo</span>,<span style="color:#000">numero</span>,<span style="color:#000">frase</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Os</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span></code></pre></div>
+<p>E esse era o código completo que usamos:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">PennController</span>.<span style="color:#000">ResetPrefix</span>(<span style="color:#a90d91">null</span>)
+
+<span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;meuexemplo&#34;</span>,
+    <span style="color:#000">defaultText</span>
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
+    ,
+
+    <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&#34;</span>)
+    ,
+
+    <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;&lt;br&gt;Vamos começar?&#34;</span>)
+    ,
+
+    <span style="color:#000">newButton</span>(<span style="color:#c41a16">&#34;meubotao&#34;</span>, <span style="color:#c41a16">&#34;Sim!&#34;</span>)
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
+        .<span style="color:#000">wait</span>()
+)
+
+,
+
+<span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;minhasfrases&#34;</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+            )
+        )
+</code></pre></div>
+<p>Rode esse código e observe com atenção os dados de resultado que obtivemos (se não quiser fazer isso, volte à <a href="https://igordeo-costa.github.io/posts/pcibextutorial02/">Parte</a>, já que eles estão publicados por lá). Vamos reproduzir apenas um trechinho dele aqui para vocês:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">#</span> <span style="color:#1c01ce">4.</span> <span style="color:#000">Order</span> <span style="color:#000">number</span> <span style="color:#a90d91">of</span> <span style="color:#000">item</span>.
+<span style="color:#000">#</span> <span style="color:#1c01ce">5.</span> <span style="color:#000">Inner</span> <span style="color:#000">element</span> <span style="color:#000">number</span>.
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#000">#</span> <span style="color:#1c01ce">6.</span> <span style="color:#000">Label</span>.
+</span><span style="color:#000">#</span> <span style="color:#1c01ce">7.</span> <span style="color:#000">Latin</span> <span style="color:#000">Square</span> <span style="color:#000">Group</span>.
+<span style="color:#000">#</span> <span style="color:#1c01ce">8.</span> <span style="color:#000">PennElementType</span>.
+<span style="color:#000">#</span> <span style="color:#1c01ce">9.</span> <span style="color:#000">PennElementName</span>.
+<span style="color:#000">#</span> <span style="color:#1c01ce">10.</span> <span style="color:#000">Parameter</span>.
+<span style="color:#000">#</span> <span style="color:#1c01ce">11.</span> <span style="color:#000">Value</span>.
+<span style="color:#000">#</span> <span style="color:#1c01ce">12.</span> <span style="color:#000">EventTime</span>.
+<span style="color:#000">#</span> <span style="color:#1c01ce">13.</span> <span style="color:#000">Comments</span>.
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">meuexemplo</span>,<span style="color:#000">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1619973764745</span>,<span style="color:#000">NULL</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">meuexemplo</span>,<span style="color:#000">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1619973765691</span>,<span style="color:#000">NULL</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#000">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1619973765705</span>,<span style="color:#000">NULL</span>
+</span><span style="color:#000">#</span> <span style="color:#1c01ce">13.</span> <span style="color:#000">Reading</span> <span style="color:#000">time</span>.
+<span style="color:#000">#</span> <span style="color:#1c01ce">14.</span> <span style="color:#000">Newline</span><span style="color:#000">?</span>.
+<span style="color:#000">#</span> <span style="color:#1c01ce">15.</span> <span style="color:#000">Sentence</span> (<span style="color:#000">or</span> <span style="color:#000">sentence</span> <span style="color:#000">MD5</span>).
+<span style="color:#000">#</span> <span style="color:#1c01ce">16.</span> <span style="color:#000">Comments</span>.
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#000">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">A</span>,<span style="color:#1c01ce">1619973767629</span>,<span style="color:#1c01ce">319</span>,<span style="color:#a90d91">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo</span>.,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+</span><span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#000">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">menina</span>,<span style="color:#1c01ce">1619973767629</span>,<span style="color:#1c01ce">256</span>,<span style="color:#a90d91">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo</span>.,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#000">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">comeu</span>,<span style="color:#1c01ce">1619973767629</span>,<span style="color:#1c01ce">256</span>,<span style="color:#a90d91">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo</span>.,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#000">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">o</span>,<span style="color:#1c01ce">1619973767629</span>,<span style="color:#1c01ce">255</span>,<span style="color:#a90d91">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo</span>.,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619973769</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#000">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">bolo</span>.,<span style="color:#1c01ce">1619973767629</span>,<span style="color:#1c01ce">257</span>,<span style="color:#a90d91">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo</span>.,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Observe que a coluna <code>6. Label</code> está preenchida com a expressão &ldquo;minhasfrases&rdquo; (veja as linhas 13 e 18, por exemplo, que deixamos destacadas para facilitar a busca). Isso é muito ruim, pois não nos permite identificar diretamente qual é a condição experimental que está sendo medida em cada caso (é claro que podemos fazer isso olhando frase por frase na coluna <code>15. Sentence</code>, mas isso seria muito trabalhoso). Mas, se você prestou bem atenção, entenderá porque isso acontece e pensará num modo de resolver. Tire um tempinho e tente fazer isso sozinho: o que é preciso mudar no código para que em <code>Label</code> apareça o <code>group</code> daquela sentença?</p>
+<p>Como você deve ter imaginado, o problema ocorre porque no trecho do código reproduzido abaixo, o elemento que está entrando como Label é a expressão &ldquo;minhasfrases&rdquo;:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+<span style="display:block;width:100%;background-color:#e5e5e5">  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;minhasfrases&#34;</span>, <span style="color:#177500">// Aqui está o nosso problema
+</span></span><span style="color:#177500"></span>        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+            )
+        )
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Para solucinar, portanto, basta que o compilador acesse a tabela <code>.csv</code> (que foi armazenada no objeto <code>exp</code>) e inclua a coluna <code>group</code>, exatamente como fizemos com as sentenças dentro do <code>newController</code>. Esse trecho do código então ficará assim:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+<span style="display:block;width:100%;background-color:#e5e5e5">  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#000">exp</span>.<span style="color:#000">group</span>,
+</span>        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+            )
+        )
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Com isso, seu resultado agora incluirá o grupo ao qual a sentença pertence na coluna Label. Vai ficar mais ou menos assim (observe que agora a sexta coluna incluiu a letra A no lugar de &ldquo;minhasfrases&rdquo;; veja imediatamente antes da coluna onde está escrito <code>NULL</code>):</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#1c01ce">1619978534</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">A</span>,<span style="color:#1c01ce">1619978532343</span>,<span style="color:#1c01ce">279</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619978534</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">menina</span>,<span style="color:#1c01ce">1619978532343</span>,<span style="color:#1c01ce">255</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619978534</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">comeu</span>,<span style="color:#1c01ce">1619978532343</span>,<span style="color:#1c01ce">264</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619978534</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">o</span>,<span style="color:#1c01ce">1619978532343</span>,<span style="color:#1c01ce">249</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1619978534</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">bolo.</span>,<span style="color:#1c01ce">1619978532343</span>,<span style="color:#1c01ce">247</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span></code></pre></div>
+<p>Essa pode parecer uma solução, mas, na verdade, ela vai gerar outro problema mais grave. Como vimos na <a href="https://igordeo-costa.github.io/posts/pcibextutorial03/">Parte 03</a> do nosso tutorial, nós precisamos que esse <code>newTrial</code> receba o nome &ldquo;minhasfrases&rdquo; ou &ldquo;experimentais&rdquo; (como chamamos naquele tutorial) porque precisamos acessá-lo com o elemento <code>Sequence</code> a fim de definirmos aleatorização e coisas assim. Se não damos um nome para ele em forma de <code>String</code>, não conseguiremos acessá-lo.</p>
+<p>O pessoal do PCIbex então pensou em uma solução bem simples para esse problema, que é usar outros elemento do tipo <code>log</code>. Vamos ver como usá-lo.</p>
+<h2 id="primeiras-informações-sobre-log">Primeiras informações sobre <code>log</code></h2>
+<p>Lembre-se de que a nossa tabela de estímulo tinha uma coluna para o fator &ldquo;verbo&rdquo; e &ldquo;numero&rdquo;.
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">item</span>,<span style="color:#000">verbo</span>,<span style="color:#000">numero</span>,<span style="color:#000">frase</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Os</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span></code></pre></div></p>
+<p>Até agora, rodamos os estímulos experimentais com esse código, no qual inserimos o elemento <code>log</code> e a única coisa que dizemos sobre ele, ainda na <a href="https://igordeo-costa.github.io/posts/pcibextutorial01/">Parte 01</a>, foi que ele registrava os dados dos estímulos:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#000">exp</span>.<span style="color:#000">group</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+<span style="display:block;width:100%;background-color:#e5e5e5">            .<span style="color:#000">log</span>()
+</span>            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+            )
+        )
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Essa era a nossa tabela de resultados com esse código, com 5 conjuntos de dados, dois quais deixamos 2 destacados:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#177500"># Columns below this comment are as follows:</span>
+<span style="color:#177500"># 1. Results reception time.</span>
+<span style="color:#177500"># 2. MD5 hash of participant&#39;s IP address.</span>
+<span style="color:#177500"># 3. Controller name.</span>
+<span style="color:#177500"># 4. Order number of item.</span>
+<span style="color:#177500"># 5. Inner element number.</span>
+<span style="color:#177500"># 6. Label.</span>
+<span style="color:#177500"># 7. Latin Square Group.</span>
+<span style="color:#177500"># 8. PennElementType.</span>
+<span style="color:#177500"># 9. PennElementName.</span>
+<span style="color:#177500"># 10. Parameter.</span>
+<span style="color:#177500"># 11. Value.</span>
+<span style="color:#177500"># 12. EventTime.</span>
+<span style="color:#177500"># 13. Comments.</span>
+<span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">meuexemplo</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1620228867383</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">meuexemplo</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1620228868476</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1620228868490</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#177500"># 13. Reading time.</span>
+<span style="color:#177500"># 14. Newline?.</span>
+<span style="color:#177500"># 15. Sentence (or sentence MD5).</span>
+<span style="color:#177500"># 16. Comments.</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">A</span>,<span style="color:#1c01ce">1620228870616</span>,<span style="color:#1c01ce">134</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">menina</span>,<span style="color:#1c01ce">1620228870616</span>,<span style="color:#1c01ce">174</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">comeu</span>,<span style="color:#1c01ce">1620228870616</span>,<span style="color:#1c01ce">162</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">o</span>,<span style="color:#1c01ce">1620228870616</span>,<span style="color:#1c01ce">160</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">bolo.</span>,<span style="color:#1c01ce">1620228870616</span>,<span style="color:#1c01ce">192</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+</span><span style="color:#177500"># 13. Comments.</span>
+<span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1620228870621</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1620228870623</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#177500"># 13. Reading time.</span>
+<span style="color:#177500"># 14. Newline?.</span>
+<span style="color:#177500"># 15. Sentence (or sentence MD5).</span>
+<span style="color:#177500"># 16. Comments.</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">O</span>,<span style="color:#1c01ce">1620228871999</span>,<span style="color:#1c01ce">152</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">lobo</span>,<span style="color:#1c01ce">1620228871999</span>,<span style="color:#1c01ce">167</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">morreu</span>,<span style="color:#1c01ce">1620228871999</span>,<span style="color:#1c01ce">161</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">de</span>,<span style="color:#1c01ce">1620228871999</span>,<span style="color:#1c01ce">152</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">fome.</span>,<span style="color:#1c01ce">1620228871999</span>,<span style="color:#1c01ce">168</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+</span><span style="color:#177500"># 13. Comments.</span>
+<span style="color:#1c01ce">1620228872</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1620228872003</span>,<span style="color:#a90d91">NULL</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Agora vamos comentar essa linha, rodar o experimento e olhar para o resultado, assim:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#000">exp</span>.<span style="color:#000">group</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+<span style="display:block;width:100%;background-color:#e5e5e5">            <span style="color:#177500">//.log() Nesse momento, o compilador simplemente ignora essa linha e não lê o log
+</span></span><span style="color:#177500"></span>            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+            )
+        )
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>O resultado está abaixo e, como você certamente notou, as informações que destacamos acima não estão presentes aqui. Sem o <code>log</code> dentro do <code>newTrial</code>, simplesmente não temos as informações que nos são mais relevantes, como o &ldquo;Reading Time&rdquo; para cada trecho da sentença. Sem isso, um experimento de leitura automonitorada não faz sequer sentido.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">Columns</span> <span style="color:#000">below</span> <span style="color:#000">this</span> <span style="color:#000">comment</span> <span style="color:#000">are</span> <span style="color:#000">as</span> <span style="color:#000">follows</span><span style="color:#000">:</span>
+<span style="color:#177500"># 1. Results reception time.</span>
+<span style="color:#177500"># 2. MD5 hash of participant&#39;s IP address.</span>
+<span style="color:#177500"># 3. Controller name.</span>
+<span style="color:#177500"># 4. Order number of item.</span>
+<span style="color:#177500"># 5. Inner element number.</span>
+<span style="color:#177500"># 6. Label.</span>
+<span style="color:#177500"># 7. Latin Square Group.</span>
+<span style="color:#177500"># 8. PennElementType.</span>
+<span style="color:#177500"># 9. PennElementName.</span>
+<span style="color:#177500"># 10. Parameter.</span>
+<span style="color:#177500"># 11. Value.</span>
+<span style="color:#177500"># 12. EventTime.</span>
+<span style="color:#177500"># 13. Comments.</span>
+<span style="color:#1c01ce">1620228766</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">meuexemplo</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1620228761699</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1620228766</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">meuexemplo</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1620228762809</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1620228766</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1620228762821</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1620228766</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1620228765325</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1620228766</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1620228765327</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1620228766</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">minhasfrases</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1620228766797</span>,<span style="color:#a90d91">NULL</span></code></pre></div>
+<p>Esse <code>log</code>, portanto, é um que grava as propriedades do nosso controlador. Por isso, no PCIbex, ele é chamado de <code>controller.log</code> (você pode ter mais informações sobre ele <a href="https://doc.pcibex.net/controller/controller-log/">aqui</a>). De fato, se você prestar atenção no código, perceberá que ele está logo depois de <code>newController</code>.</p>
+<p>O PCIbex tem vários tipos diferentes de <code>log</code>, cada qual dependente das propriedades do elemento ao qual está vinculado. Por exemplo, há um <a href="https://doc.pcibex.net/canvas/canvas-log/">canvas.log</a>, um <a href="https://doc.pcibex.net/button/button-log/">button.log</a>, um <a href="https://doc.pcibex.net/audio/audio-log/">audio.log</a> e até um <a href="https://doc.pcibex.net/standard-element-commands/standard-log/">standard.log</a>, dentre muitos outros.</p>
+<h2 id="usando-newtriallog-para-adicionar-colunas-a-nosso-resultado">Usando <code>newTrial.log</code> para adicionar colunas a nosso resultado</h2>
+<p>Sabido isso, dê uma lida <a href="https://doc.pcibex.net/global-commands/newtrial-log/">nesse tipo de log aqui</a>, o chamado <code>newTrial.log</code>. Como você deve ter percebido, nos permite adicionar novas colunas à nossa tabela de resultados, vinculadas ao nosso trial. Vamos usar o código abaixo para isso:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#000">exp</span>.<span style="color:#000">group</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+            )
+<span style="display:block;width:100%;background-color:#e5e5e5">        .<span style="color:#000">log</span>(<span style="color:#c41a16">&#34;verbo&#34;</span>, <span style="color:#000">exp</span>.<span style="color:#000">verbo</span>) <span style="color:#177500">// O primeiro argumento é o nome da coluna na tabela de dados e o segundo argumento é a variável definida após Template, que busca a coluna &#34;verbo&#34; na tabela csv.
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#177500"></span>        .<span style="color:#000">log</span>(<span style="color:#c41a16">&#34;numero&#34;</span>, <span style="color:#000">exp</span>.<span style="color:#000">numero</span>)
+</span>        )
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Se você rodar o experimento com esse código modificado, verá na sua tabela de resultado duas novas linhas (que destacamos abaixo), que apontam para as colunas que trazem as informações do verbo (o nome que demos para um dos <code>newTrial.log</code>) e outra com as informações do número (o nome que demos para o outro <code>newTrial.log</code>). Observe, no conjunto de resultados abaixo, a informação &ldquo;tansitivo&rdquo;/&ldquo;intransitivo&rdquo; e &ldquo;sg&rdquo; imediatamente antes do &ldquo;reading time&rdquo;</p>
+<p>Esse elemeno acessou, na variável <code>exp</code>, que continha &ldquo;minhatabela.csv&rdquo;, as colunas &ldquo;verbo&rdquo; (<code>exp.verbo</code>) e &ldquo;numero&rdquo; (<code>exp.numero</code>).</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">Columns</span> <span style="color:#000">below</span> <span style="color:#000">this</span> <span style="color:#000">comment</span> <span style="color:#000">are</span> <span style="color:#000">as</span> <span style="color:#000">follows</span><span style="color:#000">:</span>
+<span style="color:#177500"># 1. Results reception time.</span>
+<span style="color:#177500"># 2. MD5 hash of participant&#39;s IP address.</span>
+<span style="color:#177500"># 3. Controller name.</span>
+<span style="color:#177500"># 4. Order number of item.</span>
+<span style="color:#177500"># 5. Inner element number.</span>
+<span style="color:#177500"># 6. Label.</span>
+<span style="color:#177500"># 7. Latin Square Group.</span>
+<span style="color:#177500"># 8. PennElementType.</span>
+<span style="color:#177500"># 9. PennElementName.</span>
+<span style="color:#177500"># 10. Parameter.</span>
+<span style="color:#177500"># 11. Value.</span>
+<span style="color:#177500"># 12. EventTime.</span>
+<span style="color:#177500"># 13. Comments.</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">meuexemplo</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1620231195613</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">meuexemplo</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1620231196384</span>,<span style="color:#a90d91">NULL</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#177500"># 13. verbo.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#177500"># 14. numero.</span>
+</span><span style="color:#177500"># 15. Comments.</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1620231196397</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#177500"># 15. Reading time.</span>
+<span style="color:#177500"># 16. Newline?.</span>
+<span style="color:#177500"># 17. Sentence (or sentence MD5).</span>
+<span style="color:#177500"># 18. Comments.</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">A</span>,<span style="color:#1c01ce">1620231198254</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#1c01ce">182</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">menina</span>,<span style="color:#1c01ce">1620231198254</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#1c01ce">152</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">comeu</span>,<span style="color:#1c01ce">1620231198254</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#1c01ce">152</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">o</span>,<span style="color:#1c01ce">1620231198254</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#1c01ce">159</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">bolo.</span>,<span style="color:#1c01ce">1620231198254</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#1c01ce">158</span>,<span style="color:#000">false</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#177500"># 15. Comments.</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1620231198255</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">Start</span>,<span style="color:#1c01ce">1620231198258</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#a90d91">NULL</span>
+<span style="color:#177500"># 15. Reading time.</span>
+<span style="color:#177500"># 16. Newline?.</span>
+<span style="color:#177500"># 17. Sentence (or sentence MD5).</span>
+<span style="color:#177500"># 18. Comments.</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">O</span>,<span style="color:#1c01ce">1620231199479</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#1c01ce">143</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">lobo</span>,<span style="color:#1c01ce">1620231199479</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#1c01ce">144</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">morreu</span>,<span style="color:#1c01ce">1620231199479</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#1c01ce">144</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">de</span>,<span style="color:#1c01ce">1620231199479</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#1c01ce">144</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">Controller</span><span style="color:#000">-</span><span style="color:#000">DashedSentence</span>,<span style="color:#000">DashedSentence</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">fome.</span>,<span style="color:#1c01ce">1620231199479</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#1c01ce">144</span>,<span style="color:#000">false</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>,<span style="color:#000">Any</span> <span style="color:#000">addtional</span> <span style="color:#000">parameters</span> <span style="color:#000">were</span> <span style="color:#000">appended</span> <span style="color:#000">as</span> <span style="color:#000">additional</span> <span style="color:#000">columns</span>
+<span style="color:#177500"># 15. Comments.</span>
+<span style="color:#1c01ce">1620231199</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">A</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1620231199483</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#a90d91">NULL</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Com isso, não precisaremos mudar o nome do nosso <code>newTrial</code>, como tínhamos sugerido no início. Basta apenas usarmos um <code>newTrial.log</code> para incluírmos a informação que quisermos sobre o Trial no resultado. Não sei você, mas nós achamos uma solução elegante.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

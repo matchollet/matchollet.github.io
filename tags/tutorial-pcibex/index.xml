@@ -6,18 +6,41 @@
     <description>Recent content in Tutorial PCIbex on Igor Costa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 May 2021 19:05:10 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 05 May 2021 19:30:39 -0300</lastBuildDate>
     
 	<atom:link href="https://igordeo-costa.github.io/tags/tutorial-pcibex/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Começando do zero no PcIbex - Parte 02</title>
+      <title>Começando do zero no PCIbex - Parte 04</title>
+      <link>https://igordeo-costa.github.io/posts/pcibextutorial04/</link>
+      <pubDate>Wed, 05 May 2021 19:30:39 -0300</pubDate>
+      
+      <guid>https://igordeo-costa.github.io/posts/pcibextutorial04/</guid>
+      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Antes de avançarmos um pouco mais, gostaríamos de fazer uma pequena pausa para compreendermos melhor a análise dos nossos resultados. Para isso, vamos retomar o código que usamos na Parte 2 do nosso tutorial.
+Lembre-se de que, naquele ponto, tínhamos essa tabela de dados:
+group,item,verbo,numero,frase A,1,transitivo,sg,A menina comeu o bolo. B,1,transitivo,pl,As menina comeu o bolo. A,2,intransitivo,sg,O lobo morreu de fome. B,2,intransitivo,pl,Os lobo morreu de fome.</description>
+    </item>
+    
+    <item>
+      <title>Começando do zero no PCIbex - Parte 03</title>
+      <link>https://igordeo-costa.github.io/posts/pcibextutorial03/</link>
+      <pubDate>Wed, 05 May 2021 19:13:25 -0300</pubDate>
+      
+      <guid>https://igordeo-costa.github.io/posts/pcibextutorial03/</guid>
+      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Nessa parte do nosso tutorial, vamos avançar um pouco mais e brincar com a aleatorização dos nossos estímulos experimentais, além de incluir algumas sentenças distratoras. Como sempre, para acompahar o que está aqui, é importante que você tenha lido as primeiras partes:
+Começando no PCIbex do zero - Parte 01
+Começando no PCIbex do zero - Parte 02
+A fim de fazer a aleatorização, não vamos usar o elemento Sequence.</description>
+    </item>
+    
+    <item>
+      <title>Começando do zero no PCIbex - Parte 02</title>
       <link>https://igordeo-costa.github.io/posts/pcibextutorial02/</link>
       <pubDate>Sun, 02 May 2021 19:05:10 -0300</pubDate>
       
       <guid>https://igordeo-costa.github.io/posts/pcibextutorial02/</guid>
-      <description>Na parte 1 do nosso tutorial, que você pode acessar aqui, mostramos como começar do zero no PCIbex, criando uma página de instruções com um botão clicável e como inserir um único item experimental para um experimento de leitura automonitorada. O problema é que nunca temos um único item experimental, mas vários itens, de vários tipos diferentes. Nessa parte 2, então, vamos mostrar como usar a mesma estrutura básica que já aprendemos para, em vez de inserirmos item a item no código, buscarmos cada um dos itens em uma tabela.</description>
+      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Na parte 1 do nosso tutorial, que você pode acessar aqui, mostramos como começar do zero no PCIbex, criando uma página de instruções com um botão clicável e como inserir um único item experimental para um experimento de leitura automonitorada. O problema é que nunca temos um único item experimental, mas vários itens, de vários tipos diferentes. Nessa parte 2, então, vamos mostrar como usar a mesma estrutura básica que já aprendemos para, em vez de inserirmos item a item no código, buscarmos cada um dos itens em uma tabela.</description>
     </item>
     
     <item>
@@ -26,7 +49,7 @@
       <pubDate>Sun, 02 May 2021 18:33:34 -0300</pubDate>
       
       <guid>https://igordeo-costa.github.io/posts/pcibextutorial01/</guid>
-      <description>Este tutorial foi organizado por Igor Costa, com ajuda de Ana Paula Jakubów. Montamos o tutorial com base na nossa experiência com o PCIbex - PennController for Internet Based Experiments. Nesse sentido, criamos um passo-a-passo para aqueles que nunca viram nada de programação, javascript, ccs, html, etc. antes. Esperamos que ajude no seu experimento. Não somos expert no assunto, mas pretendemos ajudar, de alguma forma, os linguistas brasileiros que trabalham com metodologia experimental.</description>
+      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Este tutorial foi organizado por Igor Costa, com ajuda de Ana Paula Jakubów. Montamos o tutorial com base na nossa experiência com o PCIbex - PennController for Internet Based Experiments. Nesse sentido, criamos um passo-a-passo para aqueles que nunca viram nada de programação, javascript, ccs, html, etc. antes. Esperamos que ajude no seu experimento. Não somos expert no assunto, mas pretendemos ajudar, de alguma forma, os linguistas brasileiros que trabalham com metodologia experimental.</description>
     </item>
     
   </channel>

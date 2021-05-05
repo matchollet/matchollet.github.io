@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Começando do zero no PCIbex - Parte 03 // Igor Costa</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Igor Costa" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://igordeo-costa.github.io/css/main.min.4a7ec8660f9a44b08c4da97c5f2e31b1192df1d4d0322e65c0dbbc6ecb1b863f.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Começando do zero no PCIbex - Parte 03"/>
+<meta name="twitter:description" content="Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Nessa parte do nosso tutorial, vamos avançar um pouco mais e brincar com a aleatorização dos nossos estímulos experimentais, além de incluir algumas sentenças distratoras. Como sempre, para acompahar o que está aqui, é importante que você tenha lido as primeiras partes:
+Começando no PCIbex do zero - Parte 01
+Começando no PCIbex do zero - Parte 02
+A fim de fazer a aleatorização, não vamos usar o elemento Sequence."/>
+
+    <meta property="og:title" content="Começando do zero no PCIbex - Parte 03" />
+<meta property="og:description" content="Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Nessa parte do nosso tutorial, vamos avançar um pouco mais e brincar com a aleatorização dos nossos estímulos experimentais, além de incluir algumas sentenças distratoras. Como sempre, para acompahar o que está aqui, é importante que você tenha lido as primeiras partes:
+Começando no PCIbex do zero - Parte 01
+Começando no PCIbex do zero - Parte 02
+A fim de fazer a aleatorização, não vamos usar o elemento Sequence." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://igordeo-costa.github.io/posts/pcibextutorial03/" />
+<meta property="article:published_time" content="2021-05-05T19:13:25-03:00" />
+<meta property="article:modified_time" content="2021-05-05T19:13:25-03:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://igordeo-costa.github.io/"><img class="app-header-avatar" src="/avatar.png" alt="Igor Costa" /></a>
+      <h1>Igor Costa</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">Atuação</a>
+      </nav>
+      <p>Doutorando em Estudos da Linguagem - Lapal/PUC-Rio.</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/igordeo-costa" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Começando do zero no PCIbex - Parte 03</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 5, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          9 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://igordeo-costa.github.io/tags/pcibex/">PCIbex</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h5 id="por-igor-costa-lapalpuc-rio-e-ana-paula-jakubów-lapalpuc-rio-uerj">Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ)</h5>
+<p>Nessa parte do nosso tutorial, vamos avançar um pouco mais e brincar com a aleatorização dos nossos estímulos experimentais, além de incluir algumas sentenças distratoras. Como sempre, para acompahar o que está aqui, é importante que você tenha lido as primeiras partes:</p>
+<p><a href="https://igordeo-costa.github.io/posts/pcibextutorial01/">Começando no PCIbex do zero - Parte 01</a></p>
+<p><a href="https://igordeo-costa.github.io/posts/pcibextutorial02/">Começando no PCIbex do zero - Parte 02</a></p>
+<p>A fim de fazer a aleatorização, não vamos usar o elemento <code>Sequence</code>. A <a href="https://doc.pcibex.net/global-commands/sequence/">documentação do PCIbex para ele</a> tem pouca coisa, recomendando a <a href="https://github.com/addrummond/ibex/blob/master/docs/manual.md#shuffle-sequences">documentação original do Ibex Farm sobre sequência de apresentação</a>. Leia com atenção, pois essa parte é difícil, talvez a mais difícil de todas, mas vamos tentar dar uma mastigadinha aqui para você.</p>
+<h2 id="criando-uma-sequência-de-apresentação">Criando uma sequência de apresentação</h2>
+<p>Para essa parte do tutorial, vamos usar o mesmo código e a mesma tabela de estímulos experimentais que estávamos usando na <a href="https://igordeo-costa.github.io/posts/pcibextutorial02/">Parte 02</a>, com a diferença que mudamos o nome dos dois trials que temos para &ldquo;instrucao&rdquo; e &ldquo;experimentais&rdquo; e acrescentamos uma única linha de código bem no início, antes do primeiro trial.</p>
+<p>Lembre-se: ainda estamos com essa tabela de itens experimentais:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">item</span>,<span style="color:#000">verbo</span>,<span style="color:#000">numero</span>,<span style="color:#000">frase</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>, <span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Os</span> <span style="color:#000">lobo</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span></code></pre></div>
+<p>E esse o código que vamos rodar agora.</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">PennController</span>.<span style="color:#000">ResetPrefix</span>(<span style="color:#a90d91">null</span>)
+
+<span style="color:#000">Sequence</span>(<span style="color:#c41a16">&#34;instrucao&#34;</span>, <span style="color:#000">randomize</span>(<span style="color:#c41a16">&#34;experimentais&#34;</span>)) <span style="color:#177500">// Essa é a linha nova que acrescentamos
+</span><span style="color:#177500"></span>
+<span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;instrucao&#34;</span>,
+    <span style="color:#000">defaultText</span>
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
+    ,
+
+    <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&#34;</span>)
+    ,
+
+    <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;&lt;br&gt;Vamos começar?&#34;</span>)
+    ,
+
+    <span style="color:#000">newButton</span>(<span style="color:#c41a16">&#34;meubotao&#34;</span>, <span style="color:#c41a16">&#34;Sim!&#34;</span>)
+        .<span style="color:#000">center</span>()
+        .<span style="color:#000">print</span>()
+        .<span style="color:#000">wait</span>()
+)
+
+,
+
+<span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;experimentais&#34;</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+            )
+        )
+</code></pre></div>
+Como você deve ter notado, o elemento <code>Sequence</code> controla a sequência de apresentação dos itens do seu experimento: no nosso caso, acrescentamos o elemento <code>randomize</code> como segundo argumento da sequência, para que ele aleatorize a apresentação dos itens experimentais. É muito importante acrescentar o comando <code>Sequence</code>no início do seu código e repetir exatamente os nomes dados aos blocos de apresentação em <code>newTrial</code>ao longo do seu código.Dica: não use acentos no seu código.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Sequence</span>(<span style="color:#c41a16">&#34;instrucao&#34;</span>, <span style="color:#000">randomize</span>(<span style="color:#c41a16">&#34;experimentais&#34;</span>))
+</code></pre></div>
+<p>O código acima, portanto, apresenta primeiro o trial de nome &ldquo;instrucao&rdquo; e, em seguida, os itens experimentais, chamado &ldquo;experimentais&rdquo;, aleatorizados para cada sujeito.</p>
+<p>Simples, não é? Então vamos complicar um pouco.</p>
+<h2 id="adicionando-sentenças-distratoras">Adicionando sentenças distratoras</h2>
+<p>Vamos agora criar uma tabela com um conjunto de 4 sentenças distratoras, como abaixo (e incluí-la na aba <code>Resources</code>):</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">frase</span>
+<span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#1c01ce">1</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#1c01ce">2</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#1c01ce">3</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#1c01ce">4.</span></code></pre></div>
+<p>E acrescentemos um novo trial a fim de acessar essa tabela:</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#177500">// Não vamos repetir o código inteiro aqui. Você já entendeu como funciona, não é?
+</span><span style="color:#177500"></span>
+<span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;experimentais&#34;</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+            )
+        )
+,
+
+<span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhasdistratoras.csv&#34;</span>,
+  <span style="color:#000">dist</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;distratoras&#34;</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">dist</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+            )
+        )
+</code></pre></div>
+Lá no início, acrescentamos a seguinte sequência:</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Sequence</span>(<span style="color:#c41a16">&#34;instrucao&#34;</span>, <span style="color:#000">randomize</span>(<span style="color:#c41a16">&#34;experimentais&#34;</span>), <span style="color:#000">randomize</span>(<span style="color:#c41a16">&#34;distratoras&#34;</span>))
+</code></pre></div>
+Agora veja o que aconteceu&hellip; Não funcionou! Observe que os dois elementos do tipo <code>randomize</code> estão&hellip; bem&hellip; em sequência, um após o outro. O que o código está fazendo, portanto, é rodar a instrução, depois rodar as experimentais aleatorizadas e depois as distratoras aleatorizadas. Não é isso o que queremos. Queremos as distratoras mescladas com as experimentais. Para fazer isso, usaremos o elemento <code>shuffle</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Sequence</span>(<span style="color:#c41a16">&#34;instrucao&#34;</span>, <span style="color:#000">shuffle</span>(<span style="color:#000">randomize</span>(<span style="color:#c41a16">&#34;experimentais&#34;</span>), <span style="color:#000">randomize</span>(<span style="color:#c41a16">&#34;distratoras&#34;</span>)))
+</code></pre></div>
+<p>Observe que agora o código funciona assim: cada <code>randomize</code> aleatoriza o seu conjunto de sentenças (experimentais e distratoras); <code>shuffle</code> mistura esse conjunto aleatorizado; e <code>Sequence</code> apresenta esse conjunto depois da instrução, porque é o segundo na lista de apresentação, depois de &ldquo;instrucao&rdquo;. Importante destacar que <code>shuffle</code> também mantém os elementos do mesmo tipo o mais espaçados possível. Desse modo, como temos 4 distratoras e 2 experimentais, ele colocará a seguinte ordem: 2 distratoras, seguidas de 1 experimental, seguida de 2 distratoras, ou, esquematicamente:</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">dist</span>, <span style="color:#000">dist</span>, <span style="color:#000">[exp]</span>, <span style="color:#000">dist</span>, <span style="color:#000">dist</span>, <span style="color:#000">[exp]</span></code></pre></div>
+Mas, você deve estar se perguntando, por que ele não coloca as 4 distratoras entre as experimentais, assim?</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">[exp]</span>, <span style="color:#000">dist</span>, <span style="color:#000">dist</span>, <span style="color:#000">dist</span>, <span style="color:#000">dist</span>, <span style="color:#000">[exp]</span></code></pre></div>
+<p>Desse modo, elas estariam ainda mais afastadas, impedindo que o sujeito percebesse o que estaria sendo testado. Bem, ele não faz isso porque, se o fizesse, as experimentais estariam &ldquo;o mais afastadas possível&rdquo;, mas as distratoras não. Logo, para achar o equilíbro tanto para as experimentais quanto para as distratoras, ele segue a primeira opção.</p>
+<p>Entendido isso, o PCIbex tem uma outra forma, menos verborrágica, de fazer a aleatorização acima, usando a função <code>rShuffle</code>:</p>
+<p>Essa sequência:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Sequence</span>(<span style="color:#c41a16">&#34;instrucao&#34;</span>, <span style="color:#000">rshuffle</span>(<span style="color:#c41a16">&#34;experimentais&#34;</span>, <span style="color:#c41a16">&#34;distratoras&#34;</span>))
+</code></pre></div></p>
+<p>Faz a mesma coisa que essa sequência:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Sequence</span>(<span style="color:#c41a16">&#34;instrucao&#34;</span>, <span style="color:#000">shuffle</span>(<span style="color:#000">randomize</span>(<span style="color:#c41a16">&#34;experimentais&#34;</span>), <span style="color:#000">randomize</span>(<span style="color:#c41a16">&#34;distratoras&#34;</span>)))
+</code></pre></div>
+<h2 id="complicando-a-sequência-de-apresentação">Complicando a sequência de apresentação</h2>
+<p>Vamos supor, agora, que nós tenhamos dois tipos distintos de distratoras, as distratoras normais e as distratoras exóticas, que vamos incluir em <code>Resources</code> como um novo arquivo <code>.csv</code> (se quiser, você pode pensar em distratoras gramaticais e agramaticais ou algo assim):</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">frase</span>
+<span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#000">exótica</span> <span style="color:#1c01ce">1</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#000">exótica</span> <span style="color:#1c01ce">2</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#000">exótica</span> <span style="color:#1c01ce">3</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#000">exótica</span> <span style="color:#1c01ce">4.</span></code></pre></div>
+<p>Vamos incluir mais um trial no nosso código-base para acessar essa tabela:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#177500">// A essa altura do campeonato você já sabe fazer isso,
+</span><span style="color:#177500">// então só vamos deixar aqui o trechinho final do código caso você tenha alguma dúvida.
+</span><span style="color:#177500"></span>
+<span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhasdistratoras.csv&#34;</span>,
+  <span style="color:#000">dist</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;distratoras&#34;</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">dist</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+            )
+        )
+
+,
+
+<span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;maisdistratoras.csv&#34;</span>,
+  <span style="color:#000">dist2</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;dist_exotic&#34;</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">dist2</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+            )
+        )
+</code></pre></div>
+<p>E agora vamos definir o que queremos: queremos que as sentenças experimentais aleatorizadas apareçam mescladas com as sentenças distratoras normais aleatorizadas e com as distrators exóticas aleatorizadas, num grande mix de todo tipo de sentença.</p>
+<p>Vamos tentar primeiro essa sequência:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Sequence</span>(<span style="color:#c41a16">&#34;instrucao&#34;</span>, <span style="color:#000">rshuffle</span>(<span style="color:#c41a16">&#34;distratoras&#34;</span>, <span style="color:#c41a16">&#34;dist_exotic&#34;</span>), <span style="color:#000">randomize</span>(<span style="color:#c41a16">&#34;experimentais&#34;</span>))
+</code></pre></div>
+<p>Antes de rodar esse código, pare e pense um pouco por que ele não fará o que queremos. Tente explicar para si mesmo em voz alta. Fez? Então vamos fazer o mesmo aqui também: o compilador vai rodar primeiro a &ldquo;instrucao&rdquo;; depois rodará o mix de sentenças distratoras misturas e aleatorizadas (e apenas elas); e só então rodará as experimentais aleatorizadas. Perceba que quase conseguimos o que queríamos. Faltou apenas misturar o mix de distratoras com as experimentais. Vamos, então, colocar tudo isso em um novo <code>shuffle</code>, como abaixo:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Sequence</span>(<span style="color:#c41a16">&#34;instrucao&#34;</span>, <span style="color:#000">shuffle</span>(<span style="color:#000">rshuffle</span>(<span style="color:#c41a16">&#34;distratoras&#34;</span>, <span style="color:#c41a16">&#34;dist_exotic&#34;</span>), <span style="color:#000">randomize</span>(<span style="color:#c41a16">&#34;experimentais&#34;</span>)))
+</code></pre></div>
+<p>Vamos entender passo a passo, começando sempre do elemento mais encaixado:</p>
+<ul>
+<li><code>randomize(&quot;experimentais&quot;)</code>: aleatoriza as sentenças experimentais;</li>
+<li><code>rshuffle(&quot;distratoras&quot;, &quot;dist_exotic&quot;)</code>: aleatoriza as distratoras, aleatoriza as distratoras exóticas e faz um mix delas;</li>
+<li><code>shuffle(rshuffle(&quot;distratoras&quot;, &quot;dist_exotic&quot;), randomize(&quot;experimentais&quot;))</code>: faz um mix dos dois conjuntos anteriores.</li>
+</ul>
+<p>Se ainda assim não ficou claro, rode o código com a primeira sequência dada e observe como está organizado; em seguida, rode com a segunda sequência e observe como está organizado.</p>
+<h2 id="pensando-para-além-da-sequência-de-apresentação">Pensando para além da sequência de apresentação</h2>
+<p>Vamos esquecer por um minuto as sentenças distratoras e focar apenas nas experimentais. Imaginemos que agora temos dois conjuntos de sentenças experimentais: um conjunto com verbos transitivos:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">item</span>,<span style="color:#000">verbo</span>,<span style="color:#000">numero</span>,<span style="color:#000">frase</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Os</span> <span style="color:#000">lobo</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span></code></pre></div>
+<p>E um conjunto com verbos intransitivos:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">item</span>,<span style="color:#000">verbo</span>,<span style="color:#000">numero</span>,<span style="color:#000">frase</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">caiu.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">caiu.</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu.</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Os</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu.</span></code></pre></div>
+<p>Você já sabe definir um código para esses dois grupos: você precisa de um Template para cada um deles, mas vamos facilitar para você e deixar o código pronto abaixo:</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;experimentais2.csv&#34;</span>,
+  <span style="color:#000">exp2</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;exp_intransit&#34;</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp2</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+            )
+        )
+</code></pre></div>
+Agora vamos usar a seguinte sequência de apresentação, para vermos o que ocorre:</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Sequence</span>(<span style="color:#c41a16">&#34;instrucao&#34;</span>, <span style="color:#c41a16">&#34;experimentais&#34;</span>, <span style="color:#c41a16">&#34;exp_intransit&#34;</span>)
+</code></pre></div>
+Ele apresentou as &ldquo;experimentais&rdquo; depois as &ldquo;exp_intransit&rdquo;, ou seja, para um grupo, apresentou as sentenças no singular e para o outro as sentenças equivalentes no plural:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Conjunto A - Singular</th>
+<th align="center">Conjunto B - Plural</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">A menina comeu o bolo.</td>
+<td align="center">As menina comeu o bolo.</td>
+</tr>
+<tr>
+<td align="center">O lobo mordeu a lebre.</td>
+<td align="center">Os lobo mordeu a lebre.</td>
+</tr>
+<tr>
+<td align="center">A menina caiu.</td>
+<td align="center">As menina caiu.</td>
+</tr>
+<tr>
+<td align="center">O lobo morreu.</td>
+<td align="center">Os lobo morreu.</td>
+</tr>
+</tbody>
+</table>
+<p>Nesse caso, não queremos que o mesmo sujeito que viu &ldquo;A menina comeu o bolo&rdquo; veja &ldquo;A menina caiu&rdquo;. O problema, aqui, não está na sequência de apresentação, mas na organização das tabelas de experimentos, nas quais &ldquo;A menina comeu o bolo&rdquo; e &ldquo;A menina caiu&rdquo; foram ambas alocadas sob o <code>group</code> etiquetado como <code>A</code>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">group</th>
+<th align="center">Conjunto A - Singular</th>
+<th align="center">group</th>
+<th align="center">Conjunto B - Plural</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">A</td>
+<td align="center">A menina comeu o bolo.</td>
+<td align="center">B</td>
+<td align="center">As menina comeu o bolo.</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td align="center">O lobo mordeu a lebre.</td>
+<td align="center">B</td>
+<td align="center">Os lobo mordeu a lebre.</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td align="center">A menina caiu.</td>
+<td align="center">B</td>
+<td align="center">As menina caiu.</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td align="center">O lobo morreu.</td>
+<td align="center">B</td>
+<td align="center">Os lobo morreu.</td>
+</tr>
+</tbody>
+</table>
+<p>O compilador não tem dó nesse caso: como ele foi programado para colocar todos os sujeitos que veem sentenças do tipo <code>A</code> no mesmo grupo (ou lista), então é isso que ele vai fazer. Se você quiser que ele faça diferente, terá que alocar tais sentenças em diferentes <code>group</code> e não há nada que você possa fazer na sequência de apresentação para mudar isso, mesmo que as sentenças estejam em outro arquivo.</p>
+<p>Assim sendo, para o caso em questão, talvez não faça diferença deixar todas as sentenças experimentais num mesmo arquivo <code>.csv</code> e todas as distratoras em outro. E vamos assumir também que não tenha problema o nosso sujeito ver a versão transitiva e intransitiva da mesma sentença. Essa será nossa tabela de experimentais:</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">item</span>,<span style="color:#000">verbo</span>,<span style="color:#000">numero</span>,<span style="color:#000">frase</span>
+<span style="color:#000">t_sg</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">t_pl</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">i_sg</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">dormiu</span> <span style="color:#000">cedo.</span>
+<span style="color:#000">i_pl</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">dormiu</span> <span style="color:#000">cedo.</span>
+<span style="color:#000">t_sg</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span>
+<span style="color:#000">t_pl</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Os</span> <span style="color:#000">lobo</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span>
+<span style="color:#000">i_sg</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">O</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>
+<span style="color:#000">i_pl</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Os</span> <span style="color:#000">lobo</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>
+<span style="color:#000">t_sg</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">O</span> <span style="color:#000">bruxo</span> <span style="color:#000">beijou</span> <span style="color:#000">a</span> <span style="color:#000">coruja.</span>
+<span style="color:#000">t_pl</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Os</span> <span style="color:#000">bruxo</span> <span style="color:#000">beijou</span> <span style="color:#000">a</span> <span style="color:#000">coruja.</span>
+<span style="color:#000">i_sg</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">O</span> <span style="color:#000">bruxo</span> <span style="color:#000">caiu</span> <span style="color:#000">da</span> <span style="color:#000">vassoura.</span>
+<span style="color:#000">i_pl</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Os</span> <span style="color:#000">bruxo</span> <span style="color:#000">caiu</span> <span style="color:#000">da</span> <span style="color:#000">vassoura.</span>
+<span style="color:#000">t_sg</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">gata</span> <span style="color:#000">bebeu</span> <span style="color:#000">leite.</span>
+<span style="color:#000">t_pl</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">gata</span> <span style="color:#000">bebeu</span> <span style="color:#000">leite.</span>
+<span style="color:#000">i_sg</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">gata</span> <span style="color:#000">chegou</span> <span style="color:#000">tarde.</span>
+<span style="color:#000">i_pl</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">gata</span> <span style="color:#000">chegou</span> <span style="color:#000">tarde.</span></code></pre></div>
+Agora, cada sujeito lerá 4 sentenças diferentes, todas na mesma condição experimental e teremos 4 listas (<code>group</code>):</p>
+<table>
+<thead>
+<tr>
+<th align="center">Verbo</th>
+<th align="center">Número</th>
+<th align="center">group</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">transitivo</td>
+<td align="center">singular</td>
+<td align="center">t_sg</td>
+</tr>
+<tr>
+<td align="center">transitivo</td>
+<td align="center">plural</td>
+<td align="center">t_pl</td>
+</tr>
+<tr>
+<td align="center">intransitivo</td>
+<td align="center">singular</td>
+<td align="center">t_sg</td>
+</tr>
+<tr>
+<td align="center">intransitivo</td>
+<td align="center">plural</td>
+<td align="center">t_pl</td>
+</tr>
+</tbody>
+</table>
+<p>Imagine que continuássemos com dois conjuntos de distratoras, 4 normais:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">frase</span>
+<span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#1c01ce">1</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#1c01ce">2</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#1c01ce">3</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#1c01ce">4.</span></code></pre></div>
+<p>E 4 exóticas:</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">group</span>,<span style="color:#000">frase</span>
+<span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#000">exótica</span> <span style="color:#1c01ce">1.</span>
+<span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#000">exótica</span> <span style="color:#1c01ce">2.</span>
+<span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#000">exótica</span> <span style="color:#1c01ce">3.</span>
+<span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#000">exótica</span> <span style="color:#1c01ce">4.</span>
+</code></pre></div>
+Com isso, poderíamos definir uma sequência de apresentação como aquela abaixo:</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">Sequence</span>(<span style="color:#c41a16">&#34;instrucao&#34;</span>, <span style="color:#000">rShuffle</span>(<span style="color:#c41a16">&#34;distratoras&#34;</span>, <span style="color:#c41a16">&#34;dist_exotic&#34;</span>), <span style="color:#000">randomize</span>(<span style="color:#c41a16">&#34;experimentais&#34;</span>))
+</code></pre></div>
+Ou simplesmente colocar todas elas no mesmo arquivo:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">frase</span>
+<span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#1c01ce">1</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#1c01ce">2</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#1c01ce">3</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#1c01ce">4</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#000">exótica</span> <span style="color:#1c01ce">1</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#000">exótica</span> <span style="color:#1c01ce">2</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#000">exótica</span> <span style="color:#1c01ce">3</span><span style="color:#000">.
+</span><span style="color:#000">dist</span>,<span style="color:#000">Distratora</span> <span style="color:#000">exótica</span> <span style="color:#1c01ce">4.</span></code></pre></div>
+<p>E definir uma sequência mais simples:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">Sequence</span>(<span style="color:#c41a16">&#34;instrucao&#34;</span>, <span style="color:#000">rShuffle</span>(<span style="color:#c41a16">&#34;distratoras&#34;</span>, <span style="color:#c41a16">&#34;experimentais&#34;</span>))</code></pre></div>
+<p>Tudo isso funcionaria do mesmo jeito. Você precisa apenas definir o que funciona melhor para você e para o seu experimento.</p>
+<p>Até agora trabalhamos apenas com designs <em>between subjects</em>. E se quiséssemos que todos os sujeitos vissem itens de todas as condições? Como fazer. Veremos esse ponto no <a href="https://igordeo-costa.github.io/posts/pcibextutorial04/">Parte 4</a> do nosso tutorial.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
