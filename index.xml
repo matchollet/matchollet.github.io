@@ -6,10 +6,20 @@
     <description>Recent content on Igor Costa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 May 2021 19:30:39 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 15 May 2021 09:31:15 -0300</lastBuildDate>
     
 	<atom:link href="https://igordeo-costa.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Começando do zero no PCIbex - Parte 05</title>
+      <link>https://igordeo-costa.github.io/posts/pcibextutorial05/</link>
+      <pubDate>Sat, 15 May 2021 09:31:15 -0300</pubDate>
+      
+      <guid>https://igordeo-costa.github.io/posts/pcibextutorial05/</guid>
+      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Agora que já estabelecemos alguns conceitos básicos sobre o funcionamento do código, vamos dar alguns passos atrás e olhar para um aspecto muito importante no PCIbex: a organização dos estímulos experimentais na sua tabela .csv, complementando as informações que começamos a dar na Parte 2 do nosso tutorial.
+Vamos partir da tabela que tínhamos deixado ao final daquele tutorial e que acabou sendo complementada no meio da Parte 3.</description>
+    </item>
     
     <item>
       <title>Começando do zero no PCIbex - Parte 04</title>
