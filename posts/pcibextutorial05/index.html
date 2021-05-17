@@ -69,7 +69,7 @@ Vamos partir da tabela que tínhamos deixado ao final daquele tutorial e que aca
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          10 min read
+          14 min read
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
@@ -445,9 +445,230 @@ Vamos partir da tabela que tínhamos deixado ao final daquele tutorial e que aca
 </ul>
 <p>Mas não fique parado aqui olhando para essa tabela: crie um <em>script</em> (ou copie e cole o primeiro que usamos <a href="https://igordeo-costa.github.io/posts/pcibextutorial04/">aqui</a>) e veja a mágica em funcionamento.</p>
 <p>Feito isso, basta organizar uma tabela de distratoras, aleatorizar tudo como vimos na <a href="https://igordeo-costa.github.io/posts/pcibextutorial03/">Parte 03</a> e ser feliz.</p>
-<p>Mas ainda não vimos como tomar medidas repetidas dos participantes por condição, ou seja, como fazer para que o mesmo participante seja submetido a vários itens da mesma condição e não a apenas um, como até agora estamos fazendo. Isso, porém, nos levará para além da coluna &ldquo;group&rdquo;, então, vamos ficar aqui, por enquanto.</p>
+<p>Mas ainda não vimos como tomar medidas repetidas dos participantes por condição, ou seja, como fazer para que o mesmo participante seja submetido a vários itens da mesma condição e não a apenas um, como até agora estamos fazendo.</p>
+<h2 id="tomando-medidas-repetidas-por-condição-de-cada-sujeito">Tomando medidas repetidas por condição de cada sujeito</h2>
+<p>Vamos ver, então, como submeter o mesmo sujeito a vários itens na mesma condição. Para tanto, vamos tomar apenas as sentenças encaixadas e criar mais 4 itens para esse conjunto de dados, de modo que tenhamos um total de 8 itens experimentais e, portanto, 32 versões de cada item, como abaixo:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">item</span>,<span style="color:#000">encaixamento</span>,<span style="color:#000">verbo</span>,<span style="color:#000">numero</span>,<span style="color:#000">frase</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#000">A</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Paulo</span> <span style="color:#000">olhou</span> <span style="color:#000">a</span> <span style="color:#000">menina</span> <span style="color:#000">que</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+</span><span style="color:#000">B</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Paulo</span> <span style="color:#000">olhou</span> <span style="color:#000">as</span> <span style="color:#000">menina</span> <span style="color:#000">que</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+<span style="color:#000">C</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Paulo</span> <span style="color:#000">olhou</span> <span style="color:#000">a</span> <span style="color:#000">menina</span> <span style="color:#000">que</span> <span style="color:#000">dormiu</span> <span style="color:#000">cedo.</span>
+<span style="color:#000">D</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Paulo</span> <span style="color:#000">olhou</span> <span style="color:#000">as</span> <span style="color:#000">menina</span> <span style="color:#000">que</span> <span style="color:#000">dormiu</span> <span style="color:#000">cedo.</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#000">A</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">João</span> <span style="color:#000">beijou</span> <span style="color:#000">os</span> <span style="color:#000">lobo</span> <span style="color:#000">que</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span>
+</span><span style="color:#000">B</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">João</span> <span style="color:#000">beijou</span> <span style="color:#000">o</span> <span style="color:#000">lobo</span> <span style="color:#000">que</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span>
+<span style="color:#000">C</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">João</span> <span style="color:#000">beijou</span> <span style="color:#000">os</span> <span style="color:#000">lobo</span> <span style="color:#000">que</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>
+<span style="color:#000">D</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">João</span> <span style="color:#000">beijou</span> <span style="color:#000">o</span> <span style="color:#000">lobo</span> <span style="color:#000">que</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#000">A</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Taís</span> <span style="color:#000">ajudou</span> <span style="color:#000">o</span> <span style="color:#000">bruxo</span> <span style="color:#000">que</span> <span style="color:#000">caiu</span> <span style="color:#000">da</span> <span style="color:#000">vassoura.</span>
+</span><span style="color:#000">B</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Taís</span> <span style="color:#000">ajudou</span> <span style="color:#000">os</span> <span style="color:#000">bruxo</span> <span style="color:#000">que</span> <span style="color:#000">caiu</span> <span style="color:#000">da</span> <span style="color:#000">vassoura.</span>
+<span style="color:#000">C</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Taís</span> <span style="color:#000">ajudou</span> <span style="color:#000">o</span> <span style="color:#000">bruxo</span> <span style="color:#000">que</span> <span style="color:#000">beijou</span> <span style="color:#000">a</span> <span style="color:#000">coruja.</span>
+<span style="color:#000">D</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Taís</span> <span style="color:#000">ajudou</span> <span style="color:#000">os</span> <span style="color:#000">bruxo</span> <span style="color:#000">que</span> <span style="color:#000">beijou</span> <span style="color:#000">a</span> <span style="color:#000">coruja.</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#000">A</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Maria</span> <span style="color:#000">acariciou</span> <span style="color:#000">as</span> <span style="color:#000">gata</span> <span style="color:#000">que</span> <span style="color:#000">chegou</span> <span style="color:#000">tarde.</span>
+</span><span style="color:#000">B</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Maria</span> <span style="color:#000">acariciou</span> <span style="color:#000">a</span> <span style="color:#000">gata</span> <span style="color:#000">que</span> <span style="color:#000">chegou</span> <span style="color:#000">tarde.</span>
+<span style="color:#000">C</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Maria</span> <span style="color:#000">acariciou</span> <span style="color:#000">as</span> <span style="color:#000">gata</span> <span style="color:#000">que</span> <span style="color:#000">bebeu</span> <span style="color:#000">leite.</span>
+<span style="color:#000">D</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Maria</span> <span style="color:#000">acariciou</span> <span style="color:#000">a</span> <span style="color:#000">gata</span> <span style="color:#000">que</span> <span style="color:#000">bebeu</span> <span style="color:#000">leite.</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#000">A</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Pedro</span> <span style="color:#000">aplaudiu</span> <span style="color:#000">o</span> <span style="color:#000">jogador</span> <span style="color:#000">que</span> <span style="color:#000">virou</span> <span style="color:#000">o</span> <span style="color:#000">jogo.</span>
+</span><span style="color:#000">B</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Pedro</span> <span style="color:#000">aplaudiu</span> <span style="color:#000">os</span> <span style="color:#000">jogador</span> <span style="color:#000">que</span> <span style="color:#000">virou</span> <span style="color:#000">o</span> <span style="color:#000">jogo.</span>
+<span style="color:#000">C</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Pedro</span> <span style="color:#000">aplaudiu</span> <span style="color:#000">o</span> <span style="color:#000">jogador</span> <span style="color:#000">que</span> <span style="color:#000">escorregou</span> <span style="color:#000">no</span> <span style="color:#000">jogo.</span>
+<span style="color:#000">D</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Pedro</span> <span style="color:#000">aplaudiu</span> <span style="color:#000">os</span> <span style="color:#000">jogador</span> <span style="color:#000">que</span> <span style="color:#000">escorregou</span> <span style="color:#000">no</span> <span style="color:#000">jogo.</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#000">A</span>,<span style="color:#1c01ce">6</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Lua</span> <span style="color:#000">visitou</span> <span style="color:#000">as</span> <span style="color:#000">freira</span> <span style="color:#000">que</span> <span style="color:#000">alimentou</span> <span style="color:#000">o</span> <span style="color:#000">mendigo.</span>
+</span><span style="color:#000">B</span>,<span style="color:#1c01ce">6</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Lua</span> <span style="color:#000">visitou</span> <span style="color:#000">a</span> <span style="color:#000">freira</span> <span style="color:#000">que</span> <span style="color:#000">alimentou</span> <span style="color:#000">o</span> <span style="color:#000">mendigo.</span>
+<span style="color:#000">C</span>,<span style="color:#1c01ce">6</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Lua</span> <span style="color:#000">visitou</span> <span style="color:#000">as</span> <span style="color:#000">freira</span> <span style="color:#000">que</span> <span style="color:#000">saiu</span> <span style="color:#000">da</span> <span style="color:#000">igreja.</span>
+<span style="color:#000">D</span>,<span style="color:#1c01ce">6</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Lua</span> <span style="color:#000">visitou</span> <span style="color:#000">a</span> <span style="color:#000">freira</span> <span style="color:#000">que</span> <span style="color:#000">saiu</span> <span style="color:#000">da</span> <span style="color:#000">igreja.</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#000">A</span>,<span style="color:#1c01ce">7</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Josemar</span> <span style="color:#000">seduziu</span> <span style="color:#000">a</span> <span style="color:#000">moça</span> <span style="color:#000">que</span> <span style="color:#000">escorregou</span> <span style="color:#000">na</span> <span style="color:#000">poça.</span>
+</span><span style="color:#000">B</span>,<span style="color:#1c01ce">7</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Josemar</span> <span style="color:#000">seduziu</span> <span style="color:#000">as</span> <span style="color:#000">moça</span> <span style="color:#000">que</span> <span style="color:#000">escorregou</span> <span style="color:#000">na</span> <span style="color:#000">poça.</span>
+<span style="color:#000">C</span>,<span style="color:#1c01ce">7</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Josemar</span> <span style="color:#000">seduziu</span> <span style="color:#000">a</span> <span style="color:#000">moça</span> <span style="color:#000">que</span> <span style="color:#000">cantou</span> <span style="color:#000">a</span> <span style="color:#000">música.</span>
+<span style="color:#000">D</span>,<span style="color:#1c01ce">7</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Josemar</span> <span style="color:#000">seduziu</span> <span style="color:#000">as</span> <span style="color:#000">moça</span> <span style="color:#000">que</span> <span style="color:#000">cantou</span> <span style="color:#000">a</span> <span style="color:#000">música.</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#000">A</span>,<span style="color:#1c01ce">8</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Juliana</span> <span style="color:#000">atingiu</span> <span style="color:#000">o</span> <span style="color:#000">rapaz</span> <span style="color:#000">que</span> <span style="color:#000">sai</span> <span style="color:#000">do</span> ô<span style="color:#000">nibus.</span>
+</span><span style="color:#000">B</span>,<span style="color:#1c01ce">8</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Juliana</span> <span style="color:#000">atingiu</span> <span style="color:#000">o</span> <span style="color:#000">rapaz</span> <span style="color:#000">que</span> <span style="color:#000">sai</span> <span style="color:#000">do</span> ô<span style="color:#000">nibus.</span>
+<span style="color:#000">C</span>,<span style="color:#1c01ce">8</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Juliana</span> <span style="color:#000">atingiu</span> <span style="color:#000">o</span> <span style="color:#000">rapaz</span> <span style="color:#000">que</span> <span style="color:#000">chutou</span> <span style="color:#000">o</span> <span style="color:#000">gato.</span>
+<span style="color:#000">D</span>,<span style="color:#1c01ce">8</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Juliana</span> <span style="color:#000">atingiu</span> <span style="color:#000">os</span> <span style="color:#000">rapaz</span> <span style="color:#000">que</span> <span style="color:#000">chutou</span> <span style="color:#000">o</span> <span style="color:#000">gato.</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>O que fizemos acima pode parecer muito confuso e complexo, mas não é. Observe as marcações do grupo A, que reproduzimos na tabela abaixo:</p>
+<table>
+<thead>
+<tr>
+<th>group</th>
+<th>verbo</th>
+<th>numero</th>
+<th>frase</th>
+<th>item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>transitivo</td>
+<td>sg</td>
+<td>Paulo olhou a menina que comeu o bolo.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>A</td>
+<td>transitivo</td>
+<td>pl</td>
+<td>João beijou os lobo que mordeu a lebre.</td>
+<td>2</td>
+</tr>
+<tr>
+<td>A</td>
+<td>intransitivo</td>
+<td>sg</td>
+<td>Taís ajudou o bruxo que caiu da vassoura.</td>
+<td>3</td>
+</tr>
+<tr>
+<td>A</td>
+<td>intransitivo</td>
+<td>pl</td>
+<td>Maria acariciou as gata que chegou tarde.</td>
+<td>4</td>
+</tr>
+<tr>
+<td>A</td>
+<td>transitivo</td>
+<td>sg</td>
+<td>Pedro aplaudiu o jogador que virou o jogo.</td>
+<td>5</td>
+</tr>
+<tr>
+<td>A</td>
+<td>transitivo</td>
+<td>sg</td>
+<td>Lua visitou as freira que alimentou o mendigo.</td>
+<td>6</td>
+</tr>
+<tr>
+<td>A</td>
+<td>intransitivo</td>
+<td>sg</td>
+<td>Josemar seduziu a moça que escorregou na poça.</td>
+<td>7</td>
+</tr>
+<tr>
+<td>A</td>
+<td>intransitivo</td>
+<td>pl</td>
+<td>Juliana atingiu o rapaz que sai do ônibus.</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>Agora, se quiser, faça uma tabela semelhante para o Grupo B. Como você pode ver, para organizar rapidamente esse tipo de tabela, basta organizar os itens em ordem crescente (de 1 até 8) e atribuir a todo esse conjunto o Grupo A; em seguida, organize um segundo conjunto de 1 até 8 e atribua o Grupo B; o mesmo para o grupo C e D. No caso, em questão, cada sujeito verá 2 itens em cada uma das 4 condições.</p>
+<p>Se você tiver mais itens, digamos, 12 itens, basta organizá-los em conjuntos de 1 até 12 e aplicar os grupos por conjuntos de itens.</p>
+<p>Abaixo vamos reescrever a mesma tabela acima organizada dessa maneira (observe que ambas funcionam igualmente bem para o PCIbex):</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"> <span style="color:#000">group</span>,<span style="color:#000">item</span>,<span style="color:#000">encaixamento</span>,<span style="color:#000">verbo</span>,<span style="color:#000">numero</span>,<span style="color:#000">frase</span>
+ <span style="color:#000">A</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Paulo</span> <span style="color:#000">olhou</span> <span style="color:#000">a</span> <span style="color:#000">menina</span> <span style="color:#000">que</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+ <span style="color:#000">A</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">João</span> <span style="color:#000">beijou</span> <span style="color:#000">os</span> <span style="color:#000">lobo</span> <span style="color:#000">que</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span>
+ <span style="color:#000">A</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Taís</span> <span style="color:#000">ajudou</span> <span style="color:#000">o</span> <span style="color:#000">bruxo</span> <span style="color:#000">que</span> <span style="color:#000">caiu</span> <span style="color:#000">da</span> <span style="color:#000">vassoura.</span>
+ <span style="color:#000">A</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Maria</span> <span style="color:#000">acariciou</span> <span style="color:#000">as</span> <span style="color:#000">gata</span> <span style="color:#000">que</span> <span style="color:#000">chegou</span> <span style="color:#000">tarde.</span>
+ <span style="color:#000">A</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Pedro</span> <span style="color:#000">aplaudiu</span> <span style="color:#000">o</span> <span style="color:#000">jogador</span> <span style="color:#000">que</span> <span style="color:#000">virou</span> <span style="color:#000">o</span> <span style="color:#000">jogo.</span>
+ <span style="color:#000">A</span>,<span style="color:#1c01ce">6</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Lua</span> <span style="color:#000">visitou</span> <span style="color:#000">as</span> <span style="color:#000">freira</span> <span style="color:#000">que</span> <span style="color:#000">alimentou</span> <span style="color:#000">o</span> <span style="color:#000">mendigo.</span>
+ <span style="color:#000">A</span>,<span style="color:#1c01ce">7</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Josemar</span> <span style="color:#000">seduziu</span> <span style="color:#000">a</span> <span style="color:#000">moça</span> <span style="color:#000">que</span> <span style="color:#000">escorregou</span> <span style="color:#000">na</span> <span style="color:#000">poça.</span>
+ <span style="color:#000">A</span>,<span style="color:#1c01ce">8</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Juliana</span> <span style="color:#000">atingiu</span> <span style="color:#000">o</span> <span style="color:#000">rapaz</span> <span style="color:#000">que</span> <span style="color:#000">sai</span> <span style="color:#000">do</span> ô<span style="color:#000">nibus.</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">B</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Paulo</span> <span style="color:#000">olhou</span> <span style="color:#000">as</span> <span style="color:#000">menina</span> <span style="color:#000">que</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">B</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">João</span> <span style="color:#000">beijou</span> <span style="color:#000">o</span> <span style="color:#000">lobo</span> <span style="color:#000">que</span> <span style="color:#000">mordeu</span> <span style="color:#000">a</span> <span style="color:#000">lebre.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">B</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Taís</span> <span style="color:#000">ajudou</span> <span style="color:#000">os</span> <span style="color:#000">bruxo</span> <span style="color:#000">que</span> <span style="color:#000">caiu</span> <span style="color:#000">da</span> <span style="color:#000">vassoura.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">B</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Maria</span> <span style="color:#000">acariciou</span> <span style="color:#000">a</span> <span style="color:#000">gata</span> <span style="color:#000">que</span> <span style="color:#000">chegou</span> <span style="color:#000">tarde.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">B</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Pedro</span> <span style="color:#000">aplaudiu</span> <span style="color:#000">os</span> <span style="color:#000">jogador</span> <span style="color:#000">que</span> <span style="color:#000">virou</span> <span style="color:#000">o</span> <span style="color:#000">jogo.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">B</span>,<span style="color:#1c01ce">6</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Lua</span> <span style="color:#000">visitou</span> <span style="color:#000">a</span> <span style="color:#000">freira</span> <span style="color:#000">que</span> <span style="color:#000">alimentou</span> <span style="color:#000">o</span> <span style="color:#000">mendigo.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">B</span>,<span style="color:#1c01ce">7</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Josemar</span> <span style="color:#000">seduziu</span> <span style="color:#000">as</span> <span style="color:#000">moça</span> <span style="color:#000">que</span> <span style="color:#000">escorregou</span> <span style="color:#000">na</span> <span style="color:#000">poça.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">B</span>,<span style="color:#1c01ce">8</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Juliana</span> <span style="color:#000">atingiu</span> <span style="color:#000">o</span> <span style="color:#000">rapaz</span> <span style="color:#000">que</span> <span style="color:#000">sai</span> <span style="color:#000">do</span> ô<span style="color:#000">nibus.</span>
+</span> <span style="color:#000">C</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Paulo</span> <span style="color:#000">olhou</span> <span style="color:#000">a</span> <span style="color:#000">menina</span> <span style="color:#000">que</span> <span style="color:#000">dormiu</span> <span style="color:#000">cedo.</span>
+ <span style="color:#000">C</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">João</span> <span style="color:#000">beijou</span> <span style="color:#000">os</span> <span style="color:#000">lobo</span> <span style="color:#000">que</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>
+ <span style="color:#000">C</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Taís</span> <span style="color:#000">ajudou</span> <span style="color:#000">o</span> <span style="color:#000">bruxo</span> <span style="color:#000">que</span> <span style="color:#000">beijou</span> <span style="color:#000">a</span> <span style="color:#000">coruja.</span>
+ <span style="color:#000">C</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Maria</span> <span style="color:#000">acariciou</span> <span style="color:#000">as</span> <span style="color:#000">gata</span> <span style="color:#000">que</span> <span style="color:#000">bebeu</span> <span style="color:#000">leite.</span>
+ <span style="color:#000">C</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Pedro</span> <span style="color:#000">aplaudiu</span> <span style="color:#000">o</span> <span style="color:#000">jogador</span> <span style="color:#000">que</span> <span style="color:#000">escorregou</span> <span style="color:#000">no</span> <span style="color:#000">jogo.</span>
+ <span style="color:#000">C</span>,<span style="color:#1c01ce">6</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Lua</span> <span style="color:#000">visitou</span> <span style="color:#000">as</span> <span style="color:#000">freira</span> <span style="color:#000">que</span> <span style="color:#000">saiu</span> <span style="color:#000">da</span> <span style="color:#000">igreja.</span>
+ <span style="color:#000">C</span>,<span style="color:#1c01ce">7</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Josemar</span> <span style="color:#000">seduziu</span> <span style="color:#000">a</span> <span style="color:#000">moça</span> <span style="color:#000">que</span> <span style="color:#000">cantou</span> <span style="color:#000">a</span> <span style="color:#000">música.</span>
+ <span style="color:#000">C</span>,<span style="color:#1c01ce">8</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Juliana</span> <span style="color:#000">atingiu</span> <span style="color:#000">o</span> <span style="color:#000">rapaz</span> <span style="color:#000">que</span> <span style="color:#000">chutou</span> <span style="color:#000">o</span> <span style="color:#000">gato.</span>
+<span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">D</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Paulo</span> <span style="color:#000">olhou</span> <span style="color:#000">as</span> <span style="color:#000">menina</span> <span style="color:#000">que</span> <span style="color:#000">dormiu</span> <span style="color:#000">cedo.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">D</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">João</span> <span style="color:#000">beijou</span> <span style="color:#000">o</span> <span style="color:#000">lobo</span> <span style="color:#000">que</span> <span style="color:#000">morreu</span> <span style="color:#000">de</span> <span style="color:#000">fome.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">D</span>,<span style="color:#1c01ce">3</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Taís</span> <span style="color:#000">ajudou</span> <span style="color:#000">os</span> <span style="color:#000">bruxo</span> <span style="color:#000">que</span> <span style="color:#000">beijou</span> <span style="color:#000">a</span> <span style="color:#000">coruja.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">D</span>,<span style="color:#1c01ce">4</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Maria</span> <span style="color:#000">acariciou</span> <span style="color:#000">a</span> <span style="color:#000">gata</span> <span style="color:#000">que</span> <span style="color:#000">bebeu</span> <span style="color:#000">leite.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">D</span>,<span style="color:#1c01ce">5</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Pedro</span> <span style="color:#000">aplaudiu</span> <span style="color:#000">os</span> <span style="color:#000">jogador</span> <span style="color:#000">que</span> <span style="color:#000">escorregou</span> <span style="color:#000">no</span> <span style="color:#000">jogo.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">D</span>,<span style="color:#1c01ce">6</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">Lua</span> <span style="color:#000">visitou</span> <span style="color:#000">a</span> <span style="color:#000">freira</span> <span style="color:#000">que</span> <span style="color:#000">saiu</span> <span style="color:#000">da</span> <span style="color:#000">igreja.</span>
+</span><span style="display:block;width:100%;background-color:#e5e5e5"> <span style="color:#000">D</span>,<span style="color:#1c01ce">7</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Josemar</span> <span style="color:#000">seduziu</span> <span style="color:#000">as</span> <span style="color:#000">moça</span> <span style="color:#000">que</span> <span style="color:#000">cantou</span> <span style="color:#000">a</span> <span style="color:#000">música.</span>
+</span> <span style="color:#000">D</span>,<span style="color:#1c01ce">8</span>,<span style="color:#000">encaixada</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">Juliana</span> <span style="color:#000">atingiu</span> <span style="color:#000">os</span> <span style="color:#000">rapaz</span> <span style="color:#000">que</span> <span style="color:#000">chutou</span> <span style="color:#000">o</span> <span style="color:#000">gato.</span>
+ </code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="rodando-o-nosso-experimento-completo-até-aqui">Rodando o nosso experimento completo (até aqui)</h2>
-<p>Feito isso, já podemos pensar em rodar nossa experimento &ldquo;completo&rdquo; (mas apenas por enquanto): ele terá o conjunto acima de frases experimentais e o conjunto abaixo de frases distratoras (como cada lista vê apenas 4 sentenças experimnetais, coloquemos o triplo de distratoras):</p>
+<p>Feito isso, já podemos pensar em rodar nossa experimento &ldquo;completo&rdquo; (mas apenas por enquanto): vamos mantê-lo com o conjunto de frases experimentais em que tínhamos encaixadas e não encaixadas como fator <em>between</em> (não esse último que vimos, mas o anterior) e o conjunto abaixo de frases distratoras (como cada lista vê apenas 4 sentenças experimentais, coloquemos o triplo de distratoras):</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
