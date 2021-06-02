@@ -13,10 +13,10 @@
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Começando do zero no PCIbex - Parte 01"/>
-<meta name="twitter:description" content="Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Este tutorial foi organizado por Igor Costa, com ajuda de Ana Paula Jakubów. Montamos o tutorial com base na nossa experiência com o PCIbex - PennController for Internet Based Experiments. Nesse sentido, criamos um passo-a-passo para aqueles que nunca viram nada de programação, javascript, ccs, html, etc. antes. Esperamos que ajude no seu experimento. Não somos expert no assunto, mas pretendemos ajudar, de alguma forma, os linguistas brasileiros que trabalham com metodologia experimental."/>
+<meta name="twitter:description" content="Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Este tutorial foi organizado por Igor Costa, com ajuda de Ana Paula Jakubów. Montamos o tutorial com base na nossa experiência com o PCIbex - PennController for Internet Based Experiments. Nesse sentido, criamos um passo-a-passo para aqueles que nunca viram nada de programação, javascript, ccs, html, etc. Esperamos que ajude no seu experimento. Não somos experts no assunto, mas pretendemos ajudar, de alguma forma, os linguistas brasileiros que trabalham com metodologia experimental."/>
 
     <meta property="og:title" content="Começando do zero no PCIbex - Parte 01" />
-<meta property="og:description" content="Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Este tutorial foi organizado por Igor Costa, com ajuda de Ana Paula Jakubów. Montamos o tutorial com base na nossa experiência com o PCIbex - PennController for Internet Based Experiments. Nesse sentido, criamos um passo-a-passo para aqueles que nunca viram nada de programação, javascript, ccs, html, etc. antes. Esperamos que ajude no seu experimento. Não somos expert no assunto, mas pretendemos ajudar, de alguma forma, os linguistas brasileiros que trabalham com metodologia experimental." />
+<meta property="og:description" content="Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Este tutorial foi organizado por Igor Costa, com ajuda de Ana Paula Jakubów. Montamos o tutorial com base na nossa experiência com o PCIbex - PennController for Internet Based Experiments. Nesse sentido, criamos um passo-a-passo para aqueles que nunca viram nada de programação, javascript, ccs, html, etc. Esperamos que ajude no seu experimento. Não somos experts no assunto, mas pretendemos ajudar, de alguma forma, os linguistas brasileiros que trabalham com metodologia experimental." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://igordeo-costa.github.io/posts/pcibextutorial01/" />
 <meta property="article:published_time" content="2021-05-02T18:33:34-03:00" />
@@ -80,19 +80,19 @@
     </header>
     <div class="post-content">
       <h5 id="por-igor-costa-lapalpuc-rio-e-ana-paula-jakubów-lapalpuc-rio-uerj">Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ)</h5>
-<p>Este tutorial foi organizado por Igor Costa, com ajuda de Ana Paula Jakubów. Montamos o tutorial com base na nossa experiência com o <a href="https://www.pcibex.net/">PCIbex</a> - <em>PennController for Internet Based Experiments</em>. Nesse sentido, criamos um passo-a-passo para aqueles que nunca viram nada de programação, javascript, ccs, html, etc. antes. Esperamos que ajude no seu experimento. Não somos expert no assunto, mas pretendemos ajudar, de alguma forma, os linguistas brasileiros que trabalham com metodologia experimental.</p>
+<p>Este tutorial foi organizado por Igor Costa, com ajuda de Ana Paula Jakubów. Montamos o tutorial com base na nossa experiência com o <a href="https://www.pcibex.net/">PCIbex</a> - <em>PennController for Internet Based Experiments</em>. Nesse sentido, criamos um passo-a-passo para aqueles que nunca viram nada de programação, <code>javascript</code>, <code>ccs</code>, <code>html</code>, etc. Esperamos que ajude no seu experimento. Não somos experts no assunto, mas pretendemos ajudar, de alguma forma, os linguistas brasileiros que trabalham com metodologia experimental.</p>
 <p>Dado esse cenário, vamos começar esse post do zero, explicando algumas coisas que talvez sejam óbvias demais, mas que, na nossa experiência, deixam algumas pessoas confusas.</p>
 <h2 id="linha-de-comando-e-linha-de-comentário">Linha de comando e Linha de comentário</h2>
-<p>Uma linha de comando é um código executável, que faz uma tarefa, digamos, gravar um tempo de reação, apresentar uma frase na tela, centralizar um elemento, etc.; e uma <em>linha de comentário</em> é uma linha visível para o leitor do <em>script</em> (você), mas não para o compilador. Assim, uma linha de comentário não executa nenhuma tarefa. Ela é apenas um comentário explicando um trecho do código, dando uma dica, etc.</p>
-<p>Nos <em>scripts</em> do PCIbex, uma linha de comentário é sempre precedida de duas barras <code>//</code>. Assim sendo, no trecho abaixo, tudo que está depois das duas barras não é lido pelo compilador, podendo ser apagado livremente sem alterar em nada o funcionamento do código:</p>
+<p>Uma linha de comando é um código executável, ou seja, um código que realiza uma tarefa, digamos, gravar um tempo de reação, apresentar uma frase na tela, centralizar um elemento, etc.; e uma <em>linha de comentário</em> é uma linha visível para o leitor do <em>script</em> (você), mas não para o programa. Assim, uma linha de comentário não executa nenhuma tarefa. Ela é apenas um comentário explicando um trecho do código, dando uma dica, etc.</p>
+<p>Nos <em>scripts</em> do PCIbex, uma linha de comentário é sempre precedida de duas barras <code>//</code> (Esse é, na verdade, o modo de fazer comentários na linguagem <code>javascript</code>). Assim sendo, no trecho abaixo, tudo que está depois das duas barras <strong>não é lido</strong> pelo programa, podendo ser apagado livremente sem alterar em nada o funcionamento do código:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;meuexemplo&#34;</span>, <span style="color:#177500">// controla a primeira &#34;página&#34; do experimento
 </span><span style="color:#177500"></span>    <span style="color:#000">defaultText</span> <span style="color:#177500">// aplica os comandos abaixo aos objetos do tipo neeText abaixo
 </span><span style="color:#177500"></span>        .<span style="color:#000">center</span>() <span style="color:#177500">// indica que o elemento vai aparecer no centro da tela
 </span><span style="color:#177500"></span>        .<span style="color:#000">print</span>() <span style="color:#177500">// mostra o elemento na tela
 </span></code></pre></div>
-<p>Um outro modo de colocar trechos não lidos pelo compilador é inserindo blocos inteiros de comentários, o que é feito com o seguinte código <code>/* comentário aqui */</code>. Desse modo, tudo que estiver entre os símbolos da barra e do asterisco (no caso em questão, a frase &ldquo;comentário aqui&rdquo;) não será lido pelo compilador.</p>
-<p>Essa é uma boa ferramenta para testar trechos de códigos, para verificar se funcionam ou não. Em vez de apagar o trecho que funciona, você apenas o comenta e escreve o trecho novo. Se este não funcionar, você não perde o trecho antigo, precisando apenas &ldquo;descomentá-lo&rdquo; para o seu <em>script</em> voltar ao normal.</p>
-<p>Repare, portanto, que vamos usar os comentários com o seguinte código <code>//</code> para explicar o que as linhas de comando executam.</p>
+<p>Um outro modo de colocar trechos não lidos pelo programa é inserindo blocos inteiros de comentários, o que é feito com o seguinte código <code>/* comentário aqui */</code>. Desse modo, tudo que estiver entre os símbolos da barra e do asterisco (no caso em questão, a frase &ldquo;comentário aqui&rdquo;) não será lido pelo compilador.</p>
+<p>Essa é uma boa ferramenta para testar trechos de códigos, para verificar se funcionam ou não, por exemplo. Em vez de apagar o trecho que funciona, você apenas o comenta e escreve o trecho novo. Se este não funcionar, você não perde o trecho antigo, precisando apenas &ldquo;descomentá-lo&rdquo; para o seu <em>script</em> voltar ao normal.</p>
+<p>Repare, portanto, que vamos usar os comentários (introduzidos pelas duas barras <code>//</code>) para explicar o que as linhas de comando executam.</p>
 <h2 id="meu-primeiro-experimento-com-pcibex-leitura-automonitorada">Meu primeiro experimento com PCIbex: leitura automonitorada</h2>
 <p>Vamos começar por um experimento de leitura automonitorada (<em>self-paced reading</em>) muito simples, com apenas uma sentença.</p>
 <h3 id="página-de-instrução">Página de instrução:</h3>
@@ -114,7 +114,7 @@
     <span style="color:#177500">// &lt;br&gt; é uma tag html para &#34;pular linha&#34; (do inglês &#34;break&#34; ou &#34;quebra de linha&#34;);
 </span><span style="color:#177500"></span>    <span style="color:#177500">// &lt;br&gt;&lt;br&gt; pula duas linhas, etc.
 </span><span style="color:#177500"></span>    <span style="color:#177500">// cria um novo elemento de texto com os possíveis argumentos: (&#34;nome do texto&#34;, &#34;texto que quero que apareça na tela&#34;)
-</span><span style="color:#177500"></span>    <span style="color:#177500">// OBS: Por que dar nome aos objetos? O primeiro argumento é a possibilidade de dar o nome para seu objeto, caso você queira utilizá-lo novamente em outro momento do experimento sem digitar todo os códigos novamente. Voltaremos a essa observação em outro momento.
+</span><span style="color:#177500"></span>    <span style="color:#177500">// OBS: Por que dar nome aos objetos? O primeiro argumento é a possibilidade de dar um &#34;nome&#34; para seu objeto, caso você queira utilizá-lo ou referenciá-lo novamente em outro momento do experimento sem digitar todo os códigos de novo. Voltaremos a essa observação mais à frente.
 </span><span style="color:#177500"></span>
     <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;Aperte a barra de espaço para ler as frases. &lt;br&gt;&lt;br&gt; Seu tempo de leitura estará sendo medido.&#34;</span>)
 
@@ -126,7 +126,7 @@
     <span style="color:#000">newButton</span>(<span style="color:#c41a16">&#34;meubotao&#34;</span>, <span style="color:#c41a16">&#34;Sim!&#34;</span>) <span style="color:#177500">//cria um botão com os seguintes argumentos: (&#34;nome do botão&#34;, &#34;texto que deve aparecer no botão&#34;)
 </span><span style="color:#177500"></span>        .<span style="color:#000">center</span>()
         .<span style="color:#000">print</span>()
-        .<span style="color:#000">wait</span>() <span style="color:#177500">// indica que o experimento será pausado até que o participante execute uma ação, neste caso, presssionar o botão.
+        .<span style="color:#000">wait</span>() <span style="color:#177500">// indica que o experimento será pausado até que o participante execute uma ação, neste caso, pressionar o botão.
 </span><span style="color:#177500"></span>)
 </code></pre></div>
 <p>Olhe para esse código com carinho e leia os comentários que foram deixados ao lado de cada linha (daqui em diante, não colocaremos mais comentários sobre o que já explicamos). Observe que temos apenas um elemento principal <code>newTrial</code> dentro do qual existem três outros elementos, a saber: <code>newText</code>, <code>newText</code> de novo e <code>newButton</code>. O esqueleto desse <em>script</em> é mais ou menos assim:</p>
@@ -203,14 +203,14 @@
 )
 </code></pre></div>
 <h3 id="acrescentando-um-único-item-experimental">Acrescentando um único item experimental</h3>
-<p>Agora que já fizemos a nossa página de instruções (Veja bem, mais à frente, vamos incrementar esse código, colocando mais informações nele. Por enquanto estamos apenas firmando as fundações do nosso projeto.), vamos inserir um item experimental, ou seja, uma frase que apareça na tela para ser lida pelo participante do experimento palavra por palavra, de modo que o próprio participante controle essa passagem apertando a barra de espaço do teclado.</p>
+<p>Agora que já fizemos a nossa página de instruções (Veja bem&hellip; mais à frente vamos incrementar esse código, colocando mais informações nele. Por enquanto estamos apenas firmando as fundações do nosso projeto), vamos inserir um item experimental, ou seja, uma frase que apareça na tela para ser lida pelo participante do experimento palavra por palavra, de modo que o próprio participante controle essa passagem apertando a barra de espaço do teclado.</p>
 <p>Assim sendo, vamos acrescentar ao código acima o seguinte trecho:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">, <span style="color:#177500">// Essa vírgula separa cada uma das &#34;páginas&#34;
 </span><span style="color:#177500"></span>
 <span style="color:#177500">// Agora uma sentença experimental
 </span><span style="color:#177500"></span><span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;frase_1&#34;</span>, <span style="color:#177500">// controla a segunda &#34;página&#34; do experimento
 </span><span style="color:#177500"></span>    <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>,
-        {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;Essa é a única frase experimental.&#34;</span>}) <span style="color:#177500">//[Ana] o tipo de experimento é leitura autominitorada, &#34;DashedSentence&#34; no PCIbex e há uma sentença ({s: &#34;sentença que quero que o participante leia&#34;}) a ser lida pelo participante item por item
+        {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;Essa é a única frase experimental.&#34;</span>}) <span style="color:#177500">// o tipo de experimento é leitura automonitorada, denominada &#34;DashedSentence&#34; no PCIbex, e há uma sentença ({s: &#34;sentença que quero que o participante leia&#34;}) a ser lida pelo participante item por item.
 </span><span style="color:#177500"></span>        .<span style="color:#000">center</span>()
         .<span style="color:#000">print</span>()
         .<span style="color:#000">log</span>() <span style="color:#177500">//armazena informação relativa ao tempo de resposta
@@ -230,7 +230,7 @@
 </code></pre></div>
 <p>Como você já pôde notar, agora temos apenas dois elementos principais, <code>newTrial</code> e <code>newController</code>. O primeiro você já sabe o que faz: controla toda a informação que está sendo mostrada na página nesse momento. Demos o nome para ele de <code>frase_1</code>, mas você pode chamar como quiser. O segundo - <code>newController</code> - é mais complexo.</p>
 <p>Se você já usava o <a href="https://spellout.net/ibexfarm">Ibex Farm</a>, a versão antiga do PCIbex, lembrará certamente que lá havia vários &ldquo;controladores&rdquo;, ou seja, comandos pré-prontos para executar determinado tipo de experimento. Assim, se você queria fazer um &ldquo;julgamento de aceitabilidade&rdquo;, havia um controlador chamado <code>AcceptabilityJudgement</code>. Se queria apresentar uma frase cujas palavras passavam sozinhas após certo tempo, havia um controlador chamado <code>FlashSentence</code>. Se queria fazer uma pergunta, havia um controlador chamado <code>Question</code>, etc. <a href="https://doc.pcibex.net/controller/">Clicando aqui você tem acesso a uma lista completa dos controladores do PCIbex</a>. Fique à vontade para experimentar.</p>
-<p>O nosso controlador será <code>DashedSentence</code>, obviamente, após o qual introduziremos a sentença desejada, sempre entre chaves e iniciada pela letra <code>s:</code>: <code>{s: &quot;minha sentença aqui entre aspas duplas.&quot;}</code>. Nosso código agora estaria assim (a sentença <code>{s: &quot;...&quot;}</code> pode tanto aparecer na mesma linha, como abaixo; ou separada em outra linha. Isso não é relevante para o compilador, nesse caso):</p>
+<p>O nosso controlador será <code>DashedSentence</code>, obviamente, após o qual introduziremos a sentença desejada, sempre entre chaves e iniciada pela letra <code>s:</code>, assim: <code>{s: &quot;minha sentença aqui entre aspas duplas.&quot;}</code>. Nosso código agora estaria desse modo (a sentença <code>{s: &quot;...&quot;}</code> pode tanto aparecer na mesma linha, como abaixo; ou separada em outra linha, como estava na versão acima. Isso não é relevante para o compilador, nesse caso):</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;frase_1&#34;</span>,
     <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;Essa é a única frase experimental.&#34;</span>})
         .<span style="color:#000">center</span>()
@@ -243,7 +243,7 @@
 <p>Como você já sabe, <code>.center</code> centralizará nosso elemento na tela; <code>.print</code> o mostrará na tela e <code>.wait</code> garantirá que ele ficará aguardando algo ocorrer (como passar o tempo para que ele desapareça). Os novos elementos são:</p>
 <ul>
 <li><code>.log</code>: esse elemento grava o tempo quando o controlador é iniciado;</li>
-<li><code>.remove</code>: [Igor] esse elemento remove a frase da tela e passa para a próxima.</li>
+<li><code>.remove</code>: esse elemento remove a frase da tela e passa para a próxima.</li>
 </ul>
 <p>Se você tiver dúvidas sobre qualquer elemento do PCIbex, pode acessar <a href="https://doc.pcibex.net/elements/">essa página</a>, onde todos são explicados pelos autores do projeto.</p>
 <p>Agora que temos a parte da frase experimental, podemos visualizar o código completo:</p>
@@ -314,7 +314,7 @@
 <span style="color:#177500"># 13. Comments.</span>
 <span style="color:#1c01ce">1619918952</span>,<span style="color:#1c01ce">313362</span><span style="color:#000">cc8a2fca017214b0da440b8033</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#1c01ce">0</span>,<span style="color:#000">frase_1</span>,<span style="color:#a90d91">NULL</span>,<span style="color:#000">PennController</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">_Trial_</span>,<span style="color:#000">End</span>,<span style="color:#1c01ce">1619918952645</span>,<span style="color:#a90d91">NULL</span></code></pre></div>
 Se quiser saber como acessar esses dados no R, veja <a href="https://igordeo-costa.github.io/posts/dadosibex/">esse post</a>.</p>
-<p>Por enquanto, vamos ficar por aqui. No próximo artigo aprofundaremos mais nossos estudos.</p>
+<p>Por enquanto, vamos ficar por aqui. No <a href="https://igordeo-costa.github.io/posts/pcibextutorial02/">próximo artigo</a> aprofundaremos mais nossos estudos.</p>
 
     </div>
     <div class="post-footer">
