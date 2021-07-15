@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ANOVA on Igor Costa</title>
+    <link>https://igordeo-costa.github.io/tags/anova/</link>
+    <description>Recent content in ANOVA on Igor Costa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Jul 2021 22:53:22 -0300</lastBuildDate>
+    
+	<atom:link href="https://igordeo-costa.github.io/tags/anova/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Por que modelos mistos?</title>
+      <link>https://igordeo-costa.github.io/posts/modelosmistos/</link>
+      <pubDate>Wed, 14 Jul 2021 22:53:22 -0300</pubDate>
+      
+      <guid>https://igordeo-costa.github.io/posts/modelosmistos/</guid>
+      <description>Há algum tempo que o debate sobre modelos mistos tem sido levantado no campo da psicolinguística, pelo menos desde 2008, com os trabalhos de Florian T. Jaeger e Baayen, Davidson and Bates. No Brasil, essa discussão parece ter sido colocada com mais clareza pela professora Mahayana Godoy, da UFRN, no artigo de Godoy &amp;amp; Nunes, muito recente, apesar de o seu tutorial sobre modelos mistos já estar disponível no blog da autora antes disso.</description>
+    </item>
+    
+  </channel>
+</rss>

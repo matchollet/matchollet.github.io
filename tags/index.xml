@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Igor Costa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 May 2021 09:31:15 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jul 2021 22:53:22 -0300</lastBuildDate>
     
 	<atom:link href="https://igordeo-costa.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ANOVA</title>
+      <link>https://igordeo-costa.github.io/tags/anova/</link>
+      <pubDate>Wed, 14 Jul 2021 22:53:22 -0300</pubDate>
+      
+      <guid>https://igordeo-costa.github.io/tags/anova/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modelos mistos</title>
+      <link>https://igordeo-costa.github.io/tags/modelos-mistos/</link>
+      <pubDate>Wed, 14 Jul 2021 22:53:22 -0300</pubDate>
+      
+      <guid>https://igordeo-costa.github.io/tags/modelos-mistos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regressão</title>
+      <link>https://igordeo-costa.github.io/tags/regress%C3%A3o/</link>
+      <pubDate>Wed, 14 Jul 2021 22:53:22 -0300</pubDate>
+      
+      <guid>https://igordeo-costa.github.io/tags/regress%C3%A3o/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Ibex Farm</title>
@@ -62,15 +89,6 @@
       <pubDate>Thu, 01 Apr 2021 23:05:39 -0300</pubDate>
       
       <guid>https://igordeo-costa.github.io/tags/dados-ordinais/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Regressão</title>
-      <link>https://igordeo-costa.github.io/tags/regress%C3%A3o/</link>
-      <pubDate>Thu, 01 Apr 2021 23:05:39 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/tags/regress%C3%A3o/</guid>
       <description></description>
     </item>
     
