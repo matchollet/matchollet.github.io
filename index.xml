@@ -6,10 +6,20 @@
     <description>Recent content on Igor Costa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Jul 2021 22:53:22 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 25 Jul 2021 10:15:42 -0300</lastBuildDate>
     
 	<atom:link href="https://igordeo-costa.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Começando do zero no PCIbex - Parte 06</title>
+      <link>https://igordeo-costa.github.io/posts/pcibextutorial06/</link>
+      <pubDate>Sun, 25 Jul 2021 10:15:42 -0300</pubDate>
+      
+      <guid>https://igordeo-costa.github.io/posts/pcibextutorial06/</guid>
+      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Desde a Parte 1 do nosso tutorial, vimos montando um experimento de leitura automonitorada. Esse tipo de experimento geralmente conta com uma pergunta de compreensão leitora ao final de cada item experimental, visto que ela ajuda a manter a atenção do participante no experimento. Nesta parte, portanto, iremos aprender como fazer essa inserção.
+Podemos inserir perguntas usando o elemento newText. Vejamos:</description>
+    </item>
     
     <item>
       <title>Por que modelos mistos?</title>

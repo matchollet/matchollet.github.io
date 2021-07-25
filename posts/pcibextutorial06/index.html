@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Começando do zero no PCIbex - Parte 06 // Igor Costa</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Igor Costa" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://igordeo-costa.github.io/css/main.min.4a7ec8660f9a44b08c4da97c5f2e31b1192df1d4d0322e65c0dbbc6ecb1b863f.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Começando do zero no PCIbex - Parte 06"/>
+<meta name="twitter:description" content="Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Desde a Parte 1 do nosso tutorial, vimos montando um experimento de leitura automonitorada. Esse tipo de experimento geralmente conta com uma pergunta de compreensão leitora ao final de cada item experimental, visto que ela ajuda a manter a atenção do participante no experimento. Nesta parte, portanto, iremos aprender como fazer essa inserção.
+Podemos inserir perguntas usando o elemento newText. Vejamos:"/>
+
+    <meta property="og:title" content="Começando do zero no PCIbex - Parte 06" />
+<meta property="og:description" content="Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Desde a Parte 1 do nosso tutorial, vimos montando um experimento de leitura automonitorada. Esse tipo de experimento geralmente conta com uma pergunta de compreensão leitora ao final de cada item experimental, visto que ela ajuda a manter a atenção do participante no experimento. Nesta parte, portanto, iremos aprender como fazer essa inserção.
+Podemos inserir perguntas usando o elemento newText. Vejamos:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://igordeo-costa.github.io/posts/pcibextutorial06/" />
+<meta property="article:published_time" content="2021-07-25T10:15:42-03:00" />
+<meta property="article:modified_time" content="2021-07-25T10:15:42-03:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://igordeo-costa.github.io/"><img class="app-header-avatar" src="/avatar.png" alt="Igor Costa" /></a>
+      <h1>Igor Costa</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">Atuação</a>
+      </nav>
+      <p>Doutorando em Estudos da Linguagem - Lapal/PUC-Rio.</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/igordeo-costa" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Começando do zero no PCIbex - Parte 06</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 25, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          8 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://igordeo-costa.github.io/tags/pcibex/">PCIbex</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h5 id="por-igor-costa-lapalpuc-rio-e-ana-paula-jakubów-lapalpuc-rio-uerj">Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ)</h5>
+<p>Desde a <a href="https://igordeo-costa.github.io/posts/pcibextutorial01/">Parte 1</a> do nosso tutorial, vimos montando um experimento de leitura automonitorada. Esse tipo de experimento geralmente conta com uma pergunta de compreensão leitora ao final de cada item experimental, visto que ela ajuda a manter a atenção do participante no experimento. Nesta parte, portanto, iremos aprender como fazer essa inserção.</p>
+<p>Podemos inserir perguntas usando o elemento <code>newText</code>. Vejamos:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">PennController</span>.<span style="color:#000">ResetPrefix</span>(<span style="color:#a90d91">null</span>)
+
+<span style="color:#000">newTrial</span>(
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;A menina comeu o bolo.&#34;</span>}) <span style="color:#177500">// Essa parte do código você já conhece!
+</span><span style="color:#177500"></span>            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+        ,
+        <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;A menina comeu maçã?&#34;</span>) <span style="color:#177500">// Parte nova do código: a pergunta aparecerá após a apresentação do item experimental. Faça o teste!
+</span><span style="color:#177500"></span>            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">wait</span>() <span style="color:#177500">// Colocamos esse comando aqui só para você visualizar a pergunta, vamos continuar escrevendo o código
+</span><span style="color:#177500"></span>        )
+</code></pre></div>
+<p>Já temos uma pergunta, mas não temos opções de respostas. Podemos acrescentar opções de respostas a partir de vários elementos:</p>
+<ul>
+<li><code>DropDown</code> - cria uma tela com opções por meio de rolagem</li>
+<li><code>TextInput</code> - possibilita ao participante digitar um texto</li>
+<li><code>Scale</code> - fornece uma escala de respostas com itens que podem ser selecionados</li>
+<li><code>Selector</code>- torna um objeto, como uma figura, por exemplo, clicável</li>
+</ul>
+<p>Estas são apenas algumas opções de respostas. Há várias! Confira a documentação do PCIbex sobre <code>elements</code> <a href="https://doc.pcibex.net/selector/">aqui</a>.</p>
+<p>No nosso experimento, vamos optar por <code>Scale</code>. Para isso, vamos criar um novo elemento do tipo escala com <code>newScale</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">PennController</span>.<span style="color:#000">ResetPrefix</span>(<span style="color:#a90d91">null</span>)
+
+<span style="color:#000">newTrial</span>(
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;A menina comeu o bolo.&#34;</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+        ,
+        <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;A menina comeu maçã?&#34;</span>)
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+        ,
+        <span style="color:#000">newScale</span>(<span style="color:#c41a16">&#34;resposta&#34;</span>,<span style="color:#c41a16">&#34;sim&#34;</span>, <span style="color:#c41a16">&#34;não&#34;</span>) <span style="color:#177500">// Adicionamos opções de respostas &#34;sim&#34; e &#34;não&#34; que aparecerão na tela do participante. Como você já sabe, &#34;resposta&#34; é simplesmente o nome do objeto.
+</span><span style="color:#177500"></span>            .<span style="color:#000">center</span>()
+            .<span style="color:#000">labelsPosition</span>( <span style="color:#c41a16">&#34;right&#34;</span> ) <span style="color:#177500">// Indica onde as opções de respostas devem aparecer; opções: &#34;left&#34;, &#34;top&#34;, &#34;bottom&#34;
+</span><span style="color:#177500"></span>            .<span style="color:#000">vertical</span>() <span style="color:#177500">// Indica a disposição da opções de respostas na tela
+</span><span style="color:#177500"></span>            .<span style="color:#000">print</span>()
+            .<span style="color:#000">wait</span>() <span style="color:#177500">// Espera a ação do participante de clicar em alguma resposta
+</span><span style="color:#177500"></span>        )
+</code></pre></div>
+<p>Você também pode permitir acesso à próxima etapa apenas se o participante marcar uma das opções fornecidas. Para isso, você deve acrescentar algumas informações dentro do comando <code>.wait()</code>. Vamos colocar essa parte do <code>.wait()</code> aqui, omitindo o resto do código:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">,
+<span style="color:#000">newScale</span>(<span style="color:#c41a16">&#34;resposta&#34;</span>,<span style="color:#c41a16">&#34;sim&#34;</span>, <span style="color:#c41a16">&#34;não&#34;</span>) <span style="color:#177500">// Adicionamos opções de respostas &#34;sim&#34; e &#34;não&#34; que aparecerão na tela do participante. Como você já sabe, &#34;resposta&#34; é simplesmente o nome do objeto.
+</span><span style="color:#177500"></span>    .<span style="color:#000">center</span>()
+    .<span style="color:#000">labelsPosition</span>( <span style="color:#c41a16">&#34;right&#34;</span> ) <span style="color:#177500">// Indica onde as opções de respostas devem aparecer; opções: &#34;left&#34;, &#34;top&#34;, &#34;bottom&#34;
+</span><span style="color:#177500"></span>    .<span style="color:#000">vertical</span>() <span style="color:#177500">// Indica a disposição da opções de respostas na tela
+</span><span style="color:#177500"></span>    .<span style="color:#000">print</span>()
+<span style="display:block;width:100%;background-color:#e5e5e5">    .<span style="color:#000">wait</span>(<span style="color:#000">getScale</span>(<span style="color:#c41a16">&#34;respostas&#34;</span>).<span style="color:#000">test</span>.<span style="color:#000">selected</span>()) <span style="color:#177500">// Espera a ação do participante de clicar em alguma resposta
+</span></span><span style="color:#177500"></span>)
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Observe que, dentro de <code>.wait()</code>, o código recupera a escala por meio do comando <code>getScale</code>e o comando <code>.test.selected()</code>checa se alguma opção da escala foi de fato escolhida. Podemos, ainda, gravar a resposta selecionada pelo participante, acrescentando o comando <code>.log()</code>. Após a possibilidade de escolha em uma escala, podemos, inclusive, adicionar um botão permitindo que o participante passe para a próxima frase. Vamos ver como fica o código completo (sem comentários dessa vez):</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">PennController</span>.<span style="color:#000">ResetPrefix</span>(<span style="color:#a90d91">null</span>)
+
+<span style="color:#000">newTrial</span>(
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;A menina comeu o bolo.&#34;</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+        ,
+        <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;A menina comeu maçã?&#34;</span>)
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+        ,
+        <span style="color:#000">newScale</span>(<span style="color:#c41a16">&#34;resposta&#34;</span>,<span style="color:#c41a16">&#34;sim&#34;</span>, <span style="color:#c41a16">&#34;não&#34;</span>)
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">labelsPosition</span>( <span style="color:#c41a16">&#34;right&#34;</span> )
+            .<span style="color:#000">vertical</span>()
+<span style="display:block;width:100%;background-color:#e5e5e5">            .<span style="color:#000">log</span>() <span style="color:#177500">// Computa qual foi a opção selecionada pelo participante
+</span></span><span style="color:#177500"></span>            .<span style="color:#000">print</span>()
+<span style="display:block;width:100%;background-color:#e5e5e5">            .<span style="color:#000">wait</span>(<span style="color:#000">getScale</span>(<span style="color:#c41a16">&#34;respostas&#34;</span>).<span style="color:#000">test</span>.<span style="color:#000">selected</span>())
+</span>        ,
+        <span style="color:#000">newButton</span>(<span style="color:#c41a16">&#34;Próxima Frase&#34;</span>)
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">wait</span>()
+        )
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>O código acima é uma maneira de incluir perguntas e opções de respostas. Podemos, também, assim como fizemos com os itens experimentais e distratores em partes anteriores do tutorial, organizar uma tabela <code>.csv</code> com perguntas e respostas e usar uma variável para identificar as colunas das tabelas. Vamos ver como fazer dessa maneira.</p>
+<h2 id="extraindo-perguntas-e-respostas-de-uma-tabela-csv">Extraindo perguntas e respostas de uma tabela <code>.csv</code></h2>
+<p>Você lembra da nossa tabela utilizada na <a href="https://igordeo-costa.github.io/posts/pcibextutorial05/">Parte 05</a>? Vamos reproduzir as primeiras linhas aqui, mas repare que acrescentamos algumas colunas e mais algumas linhas para diversificar os estímulos:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">group</span>,<span style="color:#000">item</span>,<span style="color:#000">verbo</span>,<span style="color:#000">numero</span>,<span style="color:#000">frase</span>,<span style="color:#000">pergunta</span>,<span style="color:#000">respC</span>,<span style="color:#000">respE</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">pulou</span> <span style="color:#000">corda</span><span style="color:#000">?</span>,<span style="color:#000">não</span>,<span style="color:#000">sim</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">comeu</span> <span style="color:#000">o</span> <span style="color:#000">bolo.</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">pulou</span> <span style="color:#000">corda</span><span style="color:#000">?</span>,<span style="color:#000">não</span>,<span style="color:#000">sim</span>
+<span style="color:#000">C</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">dormiu</span> <span style="color:#000">cedo.</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">pulou</span> <span style="color:#000">corda</span><span style="color:#000">?</span>,<span style="color:#000">não</span>,<span style="color:#000">sim</span>
+<span style="color:#000">D</span>,<span style="color:#1c01ce">1</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">dormiu</span> <span style="color:#000">cedo.</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">pulou</span> <span style="color:#000">corda</span><span style="color:#000">?</span>,<span style="color:#000">não</span>,<span style="color:#000">sim</span>
+<span style="color:#000">A</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">bebeu</span> <span style="color:#000">o</span> <span style="color:#000">suco.</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">pulou</span> <span style="color:#000">corda</span><span style="color:#000">?</span>,<span style="color:#000">não</span>,<span style="color:#000">sim</span>
+<span style="color:#000">B</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">transitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">bebeu</span> <span style="color:#000">o</span> <span style="color:#000">suco.</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">pulou</span> <span style="color:#000">corda</span><span style="color:#000">?</span>,<span style="color:#000">não</span>,<span style="color:#000">sim</span>
+<span style="color:#000">C</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">sg</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">pulou</span> <span style="color:#000">corda.</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">pulou</span> <span style="color:#000">corda</span><span style="color:#000">?</span>,<span style="color:#000">sim</span>,<span style="color:#000">não</span>
+<span style="color:#000">D</span>,<span style="color:#1c01ce">2</span>,<span style="color:#000">intransitivo</span>,<span style="color:#000">pl</span>,<span style="color:#000">As</span> <span style="color:#000">menina</span> <span style="color:#000">pulou</span> <span style="color:#000">corda.</span>,<span style="color:#000">A</span> <span style="color:#000">menina</span> <span style="color:#000">pulou</span> <span style="color:#000">corda</span><span style="color:#000">?</span>,<span style="color:#000">sim</span>,<span style="color:#000">não</span></code></pre></div>
+<p>As novas colunas são: <em>pergunta</em>, <em>respC</em> (resposta certa) e <em>respE</em> (resposta errada) - vamos explicar, em breve, que ter uma coluna com resposta certa e outra com resposta errada é útil se você quiser dar algum tipo de feedback para o participante. Mas voltemos à extração de informações da tabela <code>.csv</code>.</p>
+<h3 id="acrescentando-perguntas-de-compreensão">Acrescentando perguntas de compreensão</h3>
+<p>Já temos nossa tabela organizada com a coluna <em>pergunta</em> e o código exposto acima. Lembrem-se de que, ao utilizarmos uma tabela, precisamos ativar um <code>Template</code>e criar uma variável. Vejamos:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">PennController</span>.<span style="color:#000">ResetPrefix</span>(<span style="color:#a90d91">null</span>)
+
+<span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+</span><span style="display:block;width:100%;background-color:#e5e5e5">  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;experimentais&#34;</span>,
+</span>        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>() <span style="color:#177500">// Até aqui, você conhece o código, se não, veja as partes anteriores
+</span><span style="color:#177500"></span>        ,
+<span style="display:block;width:100%;background-color:#e5e5e5">        <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;pergunta&#34;</span>, <span style="color:#000">exp</span>.<span style="color:#000">pergunta</span>) <span style="color:#177500">// Veja: aqui usamos a variável exp e selecionamos a coluna chamada &#34;pergunta&#34; em nossa tabela
+</span></span><span style="color:#177500"></span>            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+        ,
+<span style="display:block;width:100%;background-color:#e5e5e5">        <span style="color:#000">newScale</span>(<span style="color:#c41a16">&#34;respostas&#34;</span>,<span style="color:#000">exp</span>.<span style="color:#000">respC</span>, <span style="color:#000">exp</span>.<span style="color:#000">respE</span>) <span style="color:#177500">// Aqui utilizamos a variável exp para selecionar as colunas &#34;respC&#34;&#34; e &#34;respE da nossa tabela)
+</span></span><span style="color:#177500"></span>            .<span style="color:#000">center</span>()
+            .<span style="color:#000">labelsPosition</span>( <span style="color:#c41a16">&#34;right&#34;</span> )
+            .<span style="color:#000">vertical</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">wait</span>(<span style="color:#000">getScale</span>(<span style="color:#c41a16">&#34;respostas&#34;</span>).<span style="color:#000">test</span>.<span style="color:#000">selected</span>())
+            .<span style="color:#000">remove</span>()
+        ,
+        <span style="color:#000">newButton</span>(<span style="color:#c41a16">&#34;Próxima Frase&#34;</span>)
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">wait</span>()
+        )
+    )
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Se você quiser, também pode incluir mensagens para os participantes como retorno positivo ou negativo para as respostas selecionadas. Vamos ver como fazer isso.</p>
+<h3 id="incluindo-mensagem-de-feedback-de-acordo-com-a-opção-selecionada">Incluindo mensagem de <em>feedback</em> de acordo com a opção selecionada</h3>
+<p>Para incluir mensagens de <em>feedback</em> para o participante, é preciso adicionar um pedaço de código que inclui os comandos <code>.success()</code>e <code>.failure()</code>. Esses comandos indicam quais ações devem ser executadas diante de um sucesso ou uma falha.</p>
+<p>Agora explicamos o motivo de termos uma coluna para respostas certas <em>respC</em> e uma coluna para respostas erradas <em>respE</em>. Vamos precisar dessas colunas para indicar, no código, o que é sucesso e qual ação deve ser realizada diante de um sucesso, além de indicar o que é uma falha e qual ação deve ser executada diante de uma falha. No caso do nosso experimento, vamos trabalhar apenas com base nas respostas certas, a coluna <em>respC</em> da tabela. Veja o código abaixo com comentários nas linhas novas:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#177500">// Não vamos repetir o início do código aqui. Ele está logo acima!
+</span><span style="color:#177500"></span>
+        <span style="color:#000">newScale</span>(<span style="color:#c41a16">&#34;respostas&#34;</span>,<span style="color:#000">exp</span>.<span style="color:#000">respC</span>, <span style="color:#000">exp</span>.<span style="color:#000">respE</span>)
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">labelsPosition</span>( <span style="color:#c41a16">&#34;right&#34;</span> )
+            .<span style="color:#000">vertical</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">wait</span>(<span style="color:#000">getScale</span>(<span style="color:#c41a16">&#34;respostas&#34;</span>).<span style="color:#000">test</span>.<span style="color:#000">selected</span>())
+            .<span style="color:#000">remove</span>()
+        ,
+        <span style="color:#000">clear</span>() <span style="color:#177500">// Este comando limpa a tela
+</span><span style="color:#177500"></span>        ,
+<span style="display:block;width:100%;background-color:#e5e5e5">        <span style="color:#000">getScale</span>(<span style="color:#c41a16">&#34;respostas&#34;</span>) <span style="color:#177500">// Acessa a escala criada em newScale acima chamada &#34;respostas&#34;
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#177500"></span>            .<span style="color:#000">test</span>.<span style="color:#000">selected</span>(<span style="color:#000">exp</span>.<span style="color:#000">respC</span>) <span style="color:#177500">// Verifica se, na escala &#34;respostas&#34;, a opção selecionada combina com a resposta presente na coluna respC em minhatabela.csv
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#177500"></span>            .<span style="color:#000">success</span>(
+</span><span style="display:block;width:100%;background-color:#e5e5e5">                <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;Muito bem!&#34;</span>) <span style="color:#177500">// Se a resposta escolhida pelo participante for compatível com a resposta esperada na coluna respC da tabela, surge uma mensagem com feedback positivo
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#177500"></span>                    .<span style="color:#000">cssContainer</span>({<span style="color:#c41a16">&#34;font-size&#34;</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;160%&#34;</span>, <span style="color:#c41a16">&#34;color&#34;</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;green&#34;</span>}) <span style="color:#177500">// Você pode alterar a fonte e a cor da mensagem, caso queira - colocamos aqui para exemplificar
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#177500"></span>                    .<span style="color:#000">print</span>()
+</span><span style="display:block;width:100%;background-color:#e5e5e5">                    .<span style="color:#000">center</span>()
+</span><span style="display:block;width:100%;background-color:#e5e5e5">            )
+</span><span style="display:block;width:100%;background-color:#e5e5e5">            .<span style="color:#000">failure</span>(
+</span><span style="display:block;width:100%;background-color:#e5e5e5">                <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;Não foi dessa vez. Preste atenção e acertará na próxima!&#34;</span>) <span style="color:#177500">// Se a resposta escolhida for qualquer outra, diferente da que está especificada em success, aparecerá uma mensagem de feedback negativo
+</span></span><span style="display:block;width:100%;background-color:#e5e5e5"><span style="color:#177500"></span>                    .<span style="color:#000">cssContainer</span>({<span style="color:#c41a16">&#34;font-size&#34;</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;160%&#34;</span>, <span style="color:#c41a16">&#34;color&#34;</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;red&#34;</span>})
+</span><span style="display:block;width:100%;background-color:#e5e5e5">                    .<span style="color:#000">print</span>()
+</span><span style="display:block;width:100%;background-color:#e5e5e5">                    .<span style="color:#000">center</span>()
+</span><span style="display:block;width:100%;background-color:#e5e5e5">            )
+</span><span style="display:block;width:100%;background-color:#e5e5e5">        ,
+</span><span style="display:block;width:100%;background-color:#e5e5e5">        <span style="color:#000">newButton</span>(<span style="color:#c41a16">&#34;Próxima Frase&#34;</span>)
+</span><span style="display:block;width:100%;background-color:#e5e5e5">            .<span style="color:#000">center</span>()
+</span><span style="display:block;width:100%;background-color:#e5e5e5">            .<span style="color:#000">print</span>()
+</span><span style="display:block;width:100%;background-color:#e5e5e5">            .<span style="color:#000">wait</span>()
+</span><span style="display:block;width:100%;background-color:#e5e5e5">    )
+</span><span style="display:block;width:100%;background-color:#e5e5e5">)
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Veja que em <code>.wait()</code> o comando <code>.test.selected()</code> só verifica se alguma opção foi marcada. Quando utilizamos <code>.success(getScale(&quot;respostas&quot;).test.selected(exp.respC)</code>, estamos indicando que a opção marcada pelo participante só é bem sucedida se combinar com as respostas fornecidas na coluna <em>respC</em> de <em>minhatabela.csv</em>, caso contrário é uma falha. Repare que não especificamos nenhuma resposta dentro do comando <code>.failure()</code>, portanto, qualquer outra resposta fornecida diferente da que foi especificada em <code>.success()</code>é uma falha. Teste o código.</p>
+<p>Do jeito que o código está, o botão &ldquo;Próxima Frase&rdquo; aparece junto da mensagem de erro/ acerto. Se você não quiser que o botão apareça junto com a mensagem de erro/acerto, tente implementar um temporizador após a mensagem de erro/acerto, antes do botão &ldquo;próxima frase&rdquo;, conforme abaixo:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">newTimer</span>(<span style="color:#c41a16">&#34;aguardar&#34;</span>, <span style="color:#1c01ce">1000</span>) <span style="color:#177500">// A mensagem de erro/acerto ficará exibida na tela por 1000 ms.
+</span><span style="color:#177500"></span>            .<span style="color:#000">start</span>()
+            .<span style="color:#000">wait</span>()
+</code></pre></div>
+<p>Com isso, podemos então verificar o código completo:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#000">PennController</span>.<span style="color:#000">ResetPrefix</span>(<span style="color:#a90d91">null</span>)
+
+<span style="color:#000">Template</span>(<span style="color:#c41a16">&#34;minhatabela.csv&#34;</span>,
+  <span style="color:#000">exp</span> =&gt; <span style="color:#000">newTrial</span>(<span style="color:#c41a16">&#34;experimentais&#34;</span>,
+        <span style="color:#000">newController</span>(<span style="color:#c41a16">&#34;DashedSentence&#34;</span>, {<span style="color:#000">s</span><span style="color:#000">:</span> <span style="color:#000">exp</span>.<span style="color:#000">frase</span>})
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">wait</span>()
+            .<span style="color:#000">remove</span>()
+        ,
+        <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;pergunta&#34;</span>, <span style="color:#000">exp</span>.<span style="color:#000">pergunta</span>)
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+        ,
+        <span style="color:#000">newScale</span>(<span style="color:#c41a16">&#34;respostas&#34;</span>,<span style="color:#000">exp</span>.<span style="color:#000">respC</span>, <span style="color:#000">exp</span>.<span style="color:#000">respE</span>)
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">labelsPosition</span>( <span style="color:#c41a16">&#34;right&#34;</span> )
+            .<span style="color:#000">vertical</span>()
+            .<span style="color:#000">log</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">wait</span>(<span style="color:#000">getScale</span>(<span style="color:#c41a16">&#34;respostas&#34;</span>).<span style="color:#000">test</span>.<span style="color:#000">selected</span>())
+            .<span style="color:#000">remove</span>()
+        ,
+        <span style="color:#000">clear</span>()
+        ,
+        <span style="color:#000">getScale</span>(<span style="color:#c41a16">&#34;respostas&#34;</span>)
+            .<span style="color:#000">test</span>.<span style="color:#000">selected</span>(<span style="color:#000">exp</span>.<span style="color:#000">respC</span>)
+            .<span style="color:#000">success</span>(
+                <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;Muito bem!&#34;</span>)
+                    .<span style="color:#000">cssContainer</span>({<span style="color:#c41a16">&#34;font-size&#34;</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;160%&#34;</span>, <span style="color:#c41a16">&#34;color&#34;</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;green&#34;</span>})
+                    .<span style="color:#000">print</span>()
+                    .<span style="color:#000">center</span>()
+            )
+            .<span style="color:#000">failure</span>(
+                <span style="color:#000">newText</span>(<span style="color:#c41a16">&#34;Não foi dessa vez. Preste atenção e acertará na próxima!&#34;</span>)
+                    .<span style="color:#000">cssContainer</span>({<span style="color:#c41a16">&#34;font-size&#34;</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;160%&#34;</span>, <span style="color:#c41a16">&#34;color&#34;</span><span style="color:#000">:</span> <span style="color:#c41a16">&#34;red&#34;</span>})
+                    .<span style="color:#000">print</span>()
+                    .<span style="color:#000">center</span>()
+            )
+        ,
+        <span style="color:#000">newTimer</span>(<span style="color:#c41a16">&#34;wait&#34;</span>, <span style="color:#1c01ce">1000</span>)
+            .<span style="color:#000">start</span>()
+            .<span style="color:#000">wait</span>()
+        ,
+        <span style="color:#000">clear</span>()
+        ,
+        <span style="color:#000">newButton</span>(<span style="color:#c41a16">&#34;Próxima Frase&#34;</span>)
+            .<span style="color:#000">center</span>()
+            .<span style="color:#000">print</span>()
+            .<span style="color:#000">wait</span>()
+    )
+)
+</code></pre></div>
+<p>Pronto! Até aqui, você já tem uma base sólida sobre os principais comandos e elementos para a elaboração de um experimento de leitura automonitorada. Agora você pode (e deve!) explorar a documentação e os fóruns do PCIbex. Programar exige muito tempo de dedicação e muita paciência com as quantidades de erros que vão surgir. Haverá necessidade de revisar partes de códigos inúmeras vezes. Não se frustre e não desista. Isso é absolutamente normal até entre os programadores experientes. Por isso, recomendamos participar de fóruns de dúvidas. Além disso, a equipe do PCIbex costuma ser bastante rápida nas respostas dos fóruns e explicam muito bem as dúvidas.</p>
+<p>Mas não fique com saudades! Ainda não acabou. Na <a href="">próxima etapa do nosso tutorial</a> vamos aprender como coletar as informações dos sujeitos, como idade, escolaridade, se é ou não falante nativo, etc.Ah! E ainda precisamos entender como os resultados dos experimentos são gerados. Até lá.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
