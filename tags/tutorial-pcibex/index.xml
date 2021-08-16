@@ -6,10 +6,19 @@
     <description>Recent content in Tutorial PCIbex on Igor Costa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Jul 2021 10:15:42 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 02 Aug 2021 19:05:10 -0300</lastBuildDate>
     
 	<atom:link href="https://igordeo-costa.github.io/tags/tutorial-pcibex/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Começando do zero no PCIbex - Parte 07</title>
+      <link>https://igordeo-costa.github.io/posts/pcibextutorial07/</link>
+      <pubDate>Mon, 02 Aug 2021 19:05:10 -0300</pubDate>
+      
+      <guid>https://igordeo-costa.github.io/posts/pcibextutorial07/</guid>
+      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Vimos como montar um experimento de leitura automonitorada nas Partes 1 a 7. No entanto, sempre que fazemos experimentos com seres humanos, precisamos de autorização de um Comitê de Ética. Cada universidade tem seu Comitê de Ética, um comitê (como o nome diz) responsável por analisar os projetos submetidos e suas adequações de acordo com a Resolução CNS nº 510/16. Todo projeto de pesquisa submetido a um Comitê de Ética deve apresentar um Termo de Compromisso Livre e Esclarecido, o TCLE.</description>
+    </item>
     
     <item>
       <title>Começando do zero no PCIbex - Parte 06</title>
