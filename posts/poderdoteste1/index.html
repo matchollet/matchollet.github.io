@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Poder Estatístico - Uma abordagem compreensiva // Igor Costa</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Igor Costa" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://igordeo-costa.github.io/css/main.min.4a7ec8660f9a44b08c4da97c5f2e31b1192df1d4d0322e65c0dbbc6ecb1b863f.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Poder Estatístico - Uma abordagem compreensiva"/>
+<meta name="twitter:description" content="Nota prévia: Neste artigo, usarei alguns códigos apresentados pelos professores João Veríssimo e Audrey Bürki durante o último SMLP - Fifth Summer School on Statistical Methods for Linguistics and Psychology. Fiz apenas algumas modificações a fim de tonar a apresentação aqui mais didática.
+Nível de significância e poder do teste Quando se trata do clássido teste de hipóteses do paradigma frequentista (NHST - Null Hyphotesis Significance Testing&hellip; o que exatamente isso quer dizer já é em si uma questão."/>
+
+    <meta property="og:title" content="Poder Estatístico - Uma abordagem compreensiva" />
+<meta property="og:description" content="Nota prévia: Neste artigo, usarei alguns códigos apresentados pelos professores João Veríssimo e Audrey Bürki durante o último SMLP - Fifth Summer School on Statistical Methods for Linguistics and Psychology. Fiz apenas algumas modificações a fim de tonar a apresentação aqui mais didática.
+Nível de significância e poder do teste Quando se trata do clássido teste de hipóteses do paradigma frequentista (NHST - Null Hyphotesis Significance Testing&hellip; o que exatamente isso quer dizer já é em si uma questão." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://igordeo-costa.github.io/posts/poderdoteste1/" />
+<meta property="article:published_time" content="2021-10-05T21:01:52-03:00" />
+<meta property="article:modified_time" content="2021-10-05T21:01:52-03:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://igordeo-costa.github.io/"><img class="app-header-avatar" src="/avatar.png" alt="Igor Costa" /></a>
+      <h1>Igor Costa</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">Atuação</a>
+      </nav>
+      <p>Doutorando em Estudos da Linguagem - Lapal/PUC-Rio.</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/igordeo-costa" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Poder Estatístico - Uma abordagem compreensiva</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Oct 5, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          12 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://igordeo-costa.github.io/tags/poder/">Poder</a>
+              <a class="tag" href="https://igordeo-costa.github.io/tags/teste-t/">Teste-t</a>
+              <a class="tag" href="https://igordeo-costa.github.io/tags/estat%C3%ADstica/">Estatística</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p><strong>Nota prévia:</strong> Neste artigo, usarei alguns códigos apresentados pelos professores <a href="https://www.jverissimo.net/">João Veríssimo</a> e <a href="https://www.uni-potsdam.de/en/ling/staff-list/audreybuerki.html">Audrey Bürki</a> durante o último <a href="https://vasishth.github.io/smlp2021/">SMLP - Fifth Summer School on Statistical Methods for Linguistics and Psychology</a>. Fiz apenas algumas modificações a fim de tonar a apresentação aqui mais didática.</p>
+<h3 id="nível-de-significância-e-poder-do-teste">Nível de significância e poder do teste</h3>
+<p>Quando se trata do clássido teste de hipóteses do paradigma frequentista (NHST - <em>Null Hyphotesis Significance Testing</em>&hellip; o que exatamente isso quer dizer já é em si uma questão. Não deixe de ler <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00223/full">Perezgonzalez (2015)</a> para uma abordagem extramente didática), as opções que temos para lidar com a relação entre rejeição ou não da Hipótese Nula (H0) estão resumidas na tabela abaixo:</p>
+<table>
+<thead>
+<tr>
+<th>Decisão</th>
+<th>H0 é verdadeira (não existe efeito)</th>
+<th>H0 é falsa (existe um efeito)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rejeitar</td>
+<td>Falso Positivo</td>
+<td>Decisão correta</td>
+</tr>
+<tr>
+<td></td>
+<td>(Erro do Tipo I ou alpha)</td>
+<td>(verdadeiro positivo ou 1 - beta)</td>
+</tr>
+<tr>
+<td>Não Rejeitar</td>
+<td>Decisão correta</td>
+<td>Falso negativo</td>
+</tr>
+<tr>
+<td></td>
+<td>(Verdadeiro negativo ou 1 - alpha)</td>
+<td>(Erro do Tipo II ou beta)</td>
+</tr>
+</tbody>
+</table>
+<p>A probabilidade de cometermos um Erro do Tipo I, ou seja, de anunciarmos um efeito quando ele na verdade não existe é chamada de <strong>nível de significância</strong> (no, digamos assim, paradigma &ldquo;fisheriano&rdquo;) ou alpha (no paradigma de Neyman-Pearson) e é um valor arbitrário, convencionalmente estabelecido (em psicolinguística, geralmente de 0.05 ou 5%). A probabilidade de cometermos um Erro do Tipo II, ou seja, de não descobrirmos um efeito quando ele de fato existe é denominada beta e seu valor complementar (1 - beta) é o chamado <strong>poder do teste</strong>, ou seja, é a probabilidade de decobrirmos um efeito quando ele de fato existe. Esse valor é dependente:</p>
+<ul>
+<li>(i) do tipo de teste que estamos aplicando;</li>
+<li>(ii) do tamanho do efeito que estamos mensurando;</li>
+<li>(iii) do tamanho da amostra que temos; e</li>
+<li>(iv) do nível de significância.</li>
+</ul>
+<p>O que nós vamos fazer aqui é tentar entender o que são alpha (ou <strong>nível de significância</strong>) e beta (ou <strong>poder do teste</strong>) com base em algumas simulações computacionais.</p>
+<p><strong>IMPORTANTE:</strong> o trabalho com simulações tem muito mais efeito pedagógico se você mesmo puder implementá-las no seu computador, neste caso, por meio do <a href="http://localhost:1313/posts/intallr/">R</a>. Para isso, você deveria baixar o <a href=""><em>script</em> para executar os códigos</a> e acompanhar o debate aqui realizado executando os códigos por si próprio.</p>
+<p>Vamos às simulações!</p>
+<h3 id="esse-código-serve-apenas-para-carregar-os-pacotes-necessários-à-análise">Esse código serve apenas para carregar os pacotes necessários à análise!</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">require</span>(<span style="color:#000">mvtnorm</span>)
+<span style="color:#000">require</span>(<span style="color:#000">ggplot2</span>)
+<span style="color:#000">require</span>(<span style="color:#000">dplyr</span>)</code></pre></div>
+<h3 id="poder-do-teste-por-meio-de-simulações">Poder do teste por meio de simulações</h3>
+<p>Já que o <em>poder do teste</em> depende do teste que estamos usando, vamos começar com um dos mais simples, o <strong>teste-t para dados pareados</strong> ou <strong>paired t-test</strong>. Neste caso, estamos assumindo que os dois grupos comparados são correlacionados. Você pode pensar, por exemplo, que colocamos os mesmos sujeitos para ver ambas as condições experimentais.</p>
+<p>Para isso, vamos criar uma função chamada <code>poder.paired</code>, cujos argumentos são explicados abaixo, e carregá-la no R.</p>
+<p><strong>O que essa função faz?</strong> Nós inserimos nela alguns argumentos que definem as propriedades dos dados que criaremos e ela então retira um grande número de amostras aleatórias com essas propriedades e, para cada uma dessas amostras, calcula um teste-t. Ela então computa qual a proporção desses testes deram significativo, plotando um gráfico da distribuição de frequência desses p-valores.</p>
+<p>Em outras palavras, nós damos à função os <em>parâmetros populacionais</em> (que na vida real são desconhecidos, mas que na simulação nós sabemos, porque nós inventamos) e ela retira amostras aleatórias dessa população.</p>
+<p>A função já está pronta abaixo. Basta apenas carregá-la no R.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">poder.paired</span> <span style="color:#000">&lt;-</span> <span style="color:#000">function</span>(<span style="color:#000">n</span>, <span style="color:#000">mu1</span>, <span style="color:#000">mudiff</span>, <span style="color:#000">sigma1</span>, <span style="color:#000">sigma2</span>, <span style="color:#000">rho12</span>, <span style="color:#000">nsims</span>){
+
+<span style="color:#000">nsims</span> <span style="color:#000">=</span> <span style="color:#000">nsims</span>
+
+<span style="color:#177500"># vetor vazio para armazenar os valores de p</span>
+  <span style="color:#000">pvalor</span> <span style="color:#000">&lt;-</span> <span style="color:#000">c</span>()
+
+<span style="color:#000">for</span>(<span style="color:#000">i</span> <span style="color:#000">in</span> <span style="color:#1c01ce">1</span><span style="color:#000">:</span><span style="color:#000">nsims</span>){
+  <span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#000">n</span>
+  <span style="color:#000">mu1</span> <span style="color:#000">=</span> <span style="color:#000">mu1</span>
+  <span style="color:#000">mudiff</span> <span style="color:#000">=</span> <span style="color:#000">mudiff</span>
+  <span style="color:#000">sigma1</span> <span style="color:#000">=</span> <span style="color:#000">sigma1</span>
+  <span style="color:#000">sigma2</span> <span style="color:#000">=</span> <span style="color:#000">sigma2</span>
+  <span style="color:#000">rho12</span> <span style="color:#000">=</span> <span style="color:#000">rho12</span>
+
+  <span style="color:#000">mu2</span> <span style="color:#000">&lt;-</span> <span style="color:#000">mu1</span> <span style="color:#000">+</span> <span style="color:#000">mudiff</span> <span style="color:#177500"># define a média da segunda condição</span>
+
+  <span style="color:#177500"># Definir a matriz de covariância</span>
+  <span style="color:#000">cov12</span> <span style="color:#000">&lt;-</span> <span style="color:#000">rho12</span> <span style="color:#000">*</span> <span style="color:#000">sigma1</span> <span style="color:#000">*</span> <span style="color:#000">sigma2</span>
+  <span style="color:#000">vcov</span> <span style="color:#000">&lt;-</span> <span style="color:#000">matrix</span>(<span style="color:#000">c</span>(<span style="color:#000">sigma1^2</span>, <span style="color:#000">cov12</span>,
+                   <span style="color:#000">cov12</span>, <span style="color:#000">sigma2^2</span>), <span style="color:#000">nrow</span><span style="color:#000">=</span><span style="color:#1c01ce">2</span>, <span style="color:#000">byrow</span><span style="color:#000">=</span><span style="color:#5b269a">T</span>)
+
+  <span style="color:#177500"># Realizandoo procedimento de amostragem</span>
+  <span style="color:#000">head</span>(<span style="color:#000">Y</span> <span style="color:#000">&lt;-</span> <span style="color:#000">rmvnorm</span>(<span style="color:#000">n</span>, <span style="color:#000">c</span>(<span style="color:#000">mu1</span>, <span style="color:#000">mu2</span>), <span style="color:#000">vcov</span>))
+  <span style="color:#000">Y1</span> <span style="color:#000">&lt;-</span> <span style="color:#000">Y[</span>, <span style="color:#1c01ce">1</span><span style="color:#000">]</span>
+  <span style="color:#000">Y2</span> <span style="color:#000">&lt;-</span> <span style="color:#000">Y[</span>, <span style="color:#1c01ce">2</span><span style="color:#000">]</span>
+
+  <span style="color:#000">test</span> <span style="color:#000">&lt;-</span> <span style="color:#000">t.test</span>(<span style="color:#000">Y2</span>, <span style="color:#000">Y1</span>, <span style="color:#000">paired</span> <span style="color:#000">=</span> <span style="color:#5b269a">T</span>)
+  <span style="color:#000">pvalor</span> <span style="color:#000">&lt;-</span> <span style="color:#000">c</span>(<span style="color:#000">pvalor</span>, <span style="color:#000">test</span><span style="color:#000">$</span><span style="color:#000">p.value</span>)
+
+  }
+<span style="color:#000">dados</span> <span style="color:#000">&lt;-</span> <span style="color:#000">as.data.frame</span>(<span style="color:#000">pvalor</span>)
+
+<span style="color:#000">poder</span> <span style="color:#000">&lt;-</span> <span style="color:#000">dados</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">summarise</span>(<span style="color:#000">poder</span> <span style="color:#000">=</span> <span style="color:#000">sum</span>(<span style="color:#000">pvalor</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">0.05</span>) <span style="color:#000">/</span> <span style="color:#000">nsims</span>)
+
+<span style="color:#000">ggplot</span>() <span style="color:#000">+</span>
+  <span style="color:#000">geom_density</span>(<span style="color:#000">data</span> <span style="color:#000">=</span> <span style="color:#000">dados</span>, <span style="color:#000">aes</span>(<span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#000">pvalor</span>), <span style="color:#000">fill</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;orange&#34;</span>, <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;orange&#34;</span>, <span style="color:#000">alpha</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.4</span>) <span style="color:#000">+</span>
+  <span style="color:#000">geom_vline</span>(<span style="color:#000">aes</span>(<span style="color:#000">xintercept</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.05</span>), <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;red&#34;</span>, <span style="color:#000">linetype</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;dashed&#34;</span>) <span style="color:#000">+</span>
+  <span style="color:#000">geom_text</span>(<span style="color:#000">data</span> <span style="color:#000">=</span> <span style="color:#000">poder</span>, <span style="color:#000">aes</span>(<span style="color:#000">label</span> <span style="color:#000">=</span> <span style="color:#000">poder</span>, <span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.05</span>, <span style="color:#000">y</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.2</span>)) <span style="color:#000">+</span>
+  <span style="color:#000">theme_classic</span>() <span style="color:#000">+</span>
+  <span style="color:#000">labs</span>(<span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;p-valor&#34;</span>, <span style="color:#000">y</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;Density&#34;</span>)
+}</code></pre></div>
+<h3 id="entendendo-a-função-que-criamos">Entendendo a função que criamos</h3>
+<p>Você terá que definir 7 argumentos para essa função, conforme explicados abaixo:</p>
+<ul>
+<li><code>n</code>: o tamanho da amostra desejada.</li>
+<li><code>mu1</code>: a média do grupo 1.</li>
+<li><code>mudiff</code>: a diferença entre a média do grupo 1 e a média do grupo 2 com o qual comparar o grupo 1. Se esse valor for igual a zero, então os grupos têm médias idênticas e não existe efeito.</li>
+<li><code>sigma1</code> e <code>sigma2</code>: os desvios padrão dos grupo 1 e 2, que estão sendo comparados.</li>
+<li><code>rho12</code>: um valor entre zero e 1 que indica a correlação entre as duas condições. Como os dados são pareados, ou seja, não independentes, então eles serão correlacionados.</li>
+<li><code>nsims</code>: número de simulações a serem implementadas (número de amostras que serão retiradas e número de testes t que serão aplicados). O ideal é que seja um valor alto, como 1000 ou 10000.</li>
+</ul>
+<h3 id="exemplo-1-h0-é-verdadeira-e-não-há-efeito">Exemplo 1: H0 é verdadeira e não há efeito</h3>
+<p>Vamos começar imaginando um cenário em que os grupos comparados têm médias idênticas, ou seja, mudiff = 0. Em outras palavras, não há efeito na população e H0 é verdadeira.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">poder.paired</span>(<span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">30</span>,
+             <span style="color:#000">mu1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">150</span>,
+             <span style="color:#000">mudiff</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>,
+             <span style="color:#000">sigma1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">40</span>,
+             <span style="color:#000">sigma2</span> <span style="color:#000">=</span> <span style="color:#1c01ce">40</span>,
+             <span style="color:#000">rho12</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.3</span>,
+             <span style="color:#000">nsims</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>)</code></pre></div>
+<p><img src="/img_poder/img1.png" alt="Imagem1"></p>
+<p>Nesse caso, como mudiff = 0, então H0 é mesmo verdadeira e o poder do teste não se aplica, já que poder é a <strong>probabilidade de encontrar um efeito quando ele de fato existe</strong> (H0 é falsa). Logo, o que se aplica é o nível de significância. Como se pode ver, apenas cerca de 5% dos nossos resultados são menores do que 0.05 (são <strong>falsos positivos</strong>). De fato, essa é a definição de p-valor: um p-valor menor do que 0.05 apenas indica que, se replicássemos o experimento um número grande de vezes, obteríamos um efeito significativo em apenas 5% dos casos.</p>
+<p>Rode mais algumas vezes o mesmo código acima e veja como esse valor oscila em torno de 5%, às vezes para mais, às vezes para menos.</p>
+<h3 id="exemplo-2-h0-é-falsa-e-existe-um-efeito-pequeno">Exemplo 2: H0 é falsa e existe um efeito pequeno</h3>
+<p>Aqui temos um efeito de 20 unidades (mudiff = 20), sendo que todos os outros parâmetros foram mantidos constantes.
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">poder.paired</span>(<span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">30</span>,
+             <span style="color:#000">mu1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">150</span>,
+             <span style="color:#000">mudiff</span> <span style="color:#000">=</span> <span style="color:#1c01ce">20</span>, <span style="color:#177500"># A única coisa que mudamos foi a diferença entre os grupos</span>
+             <span style="color:#000">sigma1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">40</span>,
+             <span style="color:#000">sigma2</span> <span style="color:#000">=</span> <span style="color:#1c01ce">40</span>,
+             <span style="color:#000">rho12</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.3</span>,
+             <span style="color:#000">nsims</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>)</code></pre></div></p>
+<p><img src="/img_poder/img2.png" alt="Imagem2"></p>
+<p>Nesse caso, cerca de 60% dos nossos testes deram significativo (ou seja, são verdadeiros positivos), mas o restante deles (cerca de 40%) foi maior do que 0.05 (falsos negativos). Nestes últimos casos, nós não rejeitaríamos a hipótese nula mesmo sendo ela verdadeira.</p>
+<h3 id="exemplo-3-h0-é-falsa-e-o-efeito-é-maior">Exemplo 3: H0 é falsa e o efeito é maior</h3>
+<p>Vamos manter tudo igual, mas agora vamos aumentar o tamanho do efeito de 20 para 40:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">poder.paired</span>(<span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">30</span>,
+             <span style="color:#000">mu1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">150</span>,
+             <span style="color:#000">mudiff</span> <span style="color:#000">=</span> <span style="color:#1c01ce">40</span>, <span style="color:#177500"># Mais uma vez, mudamos aqui, agora de 20 para 40</span>
+             <span style="color:#000">sigma1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">40</span>,
+             <span style="color:#000">sigma2</span> <span style="color:#000">=</span> <span style="color:#1c01ce">40</span>,
+             <span style="color:#000">rho12</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.3</span>,
+             <span style="color:#000">nsims</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>)</code></pre></div></p>
+<p><img src="/img_poder/img3.png" alt="Imagem2"></p>
+<p>Nesse caso, com um efeito maior, mais testes obtêm resultados positivos, agora próximo dos 100%. Aumentando o tamanho do efeito, aumenta-se o poder.</p>
+<h3 id="exemplo-4-h0-é-falsa-e-a-amostra-é-pequena">Exemplo 4: H0 é falsa e a amostra é pequena</h3>
+<p>Vamos voltar para o nosso Exemplo 2.</p>
+<p>Nesse caso, nossa diferança era de 20 e a amostra era de tamanho 30 (n = 30), caso em que tínhamos um poder de cerca de 60%. Vamos reduzi-la para 10, mantendo o restante igual.
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">poder.paired</span>(<span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">10</span>, <span style="color:#177500"># Dessa vez, mudamos o tamnho da amostra</span>
+             <span style="color:#000">mu1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">150</span>,
+             <span style="color:#000">mudiff</span> <span style="color:#000">=</span> <span style="color:#1c01ce">20</span>,
+             <span style="color:#000">sigma1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">40</span>,
+             <span style="color:#000">sigma2</span> <span style="color:#000">=</span> <span style="color:#1c01ce">40</span>,
+             <span style="color:#000">rho12</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.3</span>,
+             <span style="color:#000">nsims</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>)</code></pre></div></p>
+<p><img src="/img_poder/img4.png" alt="Imagem4"></p>
+<p>Como você pode ver, ao reduzir o tamanho da amostra, reduzimos drasticamenteo poder do teste (para cerca de 20%). Isso significa que, mesmo que o efeito exista na população, nós só o descobriríamos 20% das vezes que o testássemos!</p>
+<h3 id="exemplo-5-h0-é-falsa-e-a-amostra-é-grande">Exemplo 5: H0 é falsa e a amostra é grande</h3>
+<p>Se aumentamos o número da amostra para 60, mantendo tudo igual, então aumentamos nosso poder:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">poder.paired</span>(<span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">60</span>, <span style="color:#177500"># Agora aumentando o tamanho da amostra</span>
+             <span style="color:#000">mu1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">150</span>,
+             <span style="color:#000">mudiff</span> <span style="color:#000">=</span> <span style="color:#1c01ce">20</span>,
+             <span style="color:#000">sigma1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">40</span>,
+             <span style="color:#000">sigma2</span> <span style="color:#000">=</span> <span style="color:#1c01ce">40</span>,
+             <span style="color:#000">rho12</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.3</span>,
+             <span style="color:#000">nsims</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>)</code></pre></div></p>
+<p><img src="/img_poder/img5.png" alt="Imagem5"></p>
+<h3 id="exemplo-6-desvio-padrão">Exemplo 6: Desvio padrão</h3>
+<p>A variabilidade contida nos dados também afeta o poder do teste (mas, sobre essa, em geral não temos controle).</p>
+<p>Mas vamos brincar um pouco aqui: deixemos tudo como o Exemplo 5, acima, mas dobremos o desvio padrão de ambos os grupos (de 40 para 80).
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">poder.paired</span>(<span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">60</span>,
+             <span style="color:#000">mu1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">150</span>,
+             <span style="color:#000">mudiff</span> <span style="color:#000">=</span> <span style="color:#1c01ce">20</span>,
+             <span style="color:#000">sigma1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">80</span>, <span style="color:#177500"># Agora estamos brincando com a variabilidade dos dados</span>
+             <span style="color:#000">sigma2</span> <span style="color:#000">=</span> <span style="color:#1c01ce">80</span>, <span style="color:#177500"># E aqui também.</span>
+             <span style="color:#000">rho12</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.3</span>,
+             <span style="color:#000">nsims</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>)</code></pre></div>
+<img src="/img_poder/img6.png" alt="Imagem6"></p>
+<p>Observe que, com isso, há uma redução do poder do teste. Se há muita variabilidade nos dados (proporcionalmente ao tamanho do efeito), então temos mais dificuldade de encontrar um efeito significativo, mesmo quando ele existe na população.</p>
+<p>Você pode ver isso facilmente se comparar os gráficos abaixo. Em ambos os casos, temos distribuições com a mesma diferença: uma unidade. A distribuição laranja tem média zero e a distribuição vermelha tem média um. Contudo, neste primeiro gráfico, o desvio padrão de ambas as distribuições é igual a um, de modo que elas se soprepõem em grande parte. Encontrar esse efeito, portanto, é bem difícil, daí ser necessário uma amostra maior para isso.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">require</span>(<span style="color:#000">ggplot2</span>)
+
+<span style="color:#000">ggplot</span>(<span style="color:#000">data</span> <span style="color:#000">=</span> <span style="color:#000">data.frame</span>(<span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#000">c</span>(<span style="color:#1c01ce">-3</span>, <span style="color:#1c01ce">3</span>)), <span style="color:#000">aes</span>(<span style="color:#000">x</span>)) <span style="color:#000">+</span>
+  <span style="color:#000">stat_function</span>(<span style="color:#000">fun</span> <span style="color:#000">=</span> <span style="color:#000">dnorm</span>, <span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>, <span style="color:#000">args</span> <span style="color:#000">=</span> <span style="color:#000">list</span>(<span style="color:#000">mean</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>, <span style="color:#000">sd</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>), <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;orange&#34;</span>) <span style="color:#000">+</span>
+  <span style="color:#000">geom_vline</span>(<span style="color:#000">aes</span>(<span style="color:#000">xintercept</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>), <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;orange&#34;</span>, <span style="color:#000">linetype</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;dashed&#34;</span>, <span style="color:#000">alpha</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.4</span>) <span style="color:#000">+</span>
+  <span style="color:#000">stat_function</span>(<span style="color:#000">fun</span> <span style="color:#000">=</span> <span style="color:#000">dnorm</span>, <span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>, <span style="color:#000">args</span> <span style="color:#000">=</span> <span style="color:#000">list</span>(<span style="color:#000">mean</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">sd</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>), <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;red&#34;</span>) <span style="color:#000">+</span>
+  <span style="color:#000">geom_vline</span>(<span style="color:#000">aes</span>(<span style="color:#000">xintercept</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>), <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;red&#34;</span>, <span style="color:#000">linetype</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;dashed&#34;</span>, <span style="color:#000">alpha</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.4</span>) <span style="color:#000">+</span>
+  <span style="color:#000">ylab</span>(<span style="color:#c41a16">&#34;&#34;</span>) <span style="color:#000">+</span> <span style="color:#000">xlab</span>(<span style="color:#c41a16">&#34;&#34;</span>) <span style="color:#000">+</span>
+  <span style="color:#000">scale_y_continuous</span>(<span style="color:#000">breaks</span> <span style="color:#000">=</span> <span style="color:#a90d91">NULL</span>) <span style="color:#000">+</span>
+  <span style="color:#000">scale_x_continuous</span>(<span style="color:#000">limits</span> <span style="color:#000">=</span> <span style="color:#000">c</span>(<span style="color:#1c01ce">-3</span>, <span style="color:#1c01ce">+4</span>), <span style="color:#000">breaks</span> <span style="color:#000">=</span> <span style="color:#000">seq</span>(<span style="color:#000">from</span> <span style="color:#000">=</span> <span style="color:#1c01ce">-2</span>, <span style="color:#000">to</span> <span style="color:#000">=</span><span style="color:#1c01ce">4</span>, <span style="color:#000">by</span> <span style="color:#000">=</span><span style="color:#1c01ce">1</span>)) <span style="color:#000">+</span>
+  <span style="color:#000">theme_classic</span>()</code></pre></div>
+<p><img src="/img_poder/imgX.png" alt="ImagemX"></p>
+<p>Neste segundo caso, reduzimos o desvio padrão em um quarto (de 1 para 0.25), de modo que as distribuições quase não se sobrepõem. Assim sendo, apesar de a diferença entre elas continuar sendo a mesma, ficou muito mais fácil achar um efeito aqui, de modo que precisamos de uma amostra menor para isso.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">ggplot</span>(<span style="color:#000">data</span> <span style="color:#000">=</span> <span style="color:#000">data.frame</span>(<span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#000">c</span>(<span style="color:#1c01ce">-3</span>, <span style="color:#1c01ce">3</span>)), <span style="color:#000">aes</span>(<span style="color:#000">x</span>)) <span style="color:#000">+</span>
+  <span style="color:#000">stat_function</span>(<span style="color:#000">fun</span> <span style="color:#000">=</span> <span style="color:#000">dnorm</span>, <span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>, <span style="color:#000">args</span> <span style="color:#000">=</span> <span style="color:#000">list</span>(<span style="color:#000">mean</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>, <span style="color:#000">sd</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.25</span>), <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;orange&#34;</span>) <span style="color:#000">+</span>
+  <span style="color:#000">geom_vline</span>(<span style="color:#000">aes</span>(<span style="color:#000">xintercept</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>), <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;orange&#34;</span>, <span style="color:#000">linetype</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;dashed&#34;</span>, <span style="color:#000">alpha</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.4</span>) <span style="color:#000">+</span>
+  <span style="color:#000">stat_function</span>(<span style="color:#000">fun</span> <span style="color:#000">=</span> <span style="color:#000">dnorm</span>, <span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>, <span style="color:#000">args</span> <span style="color:#000">=</span> <span style="color:#000">list</span>(<span style="color:#000">mean</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">sd</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.25</span>), <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;red&#34;</span>) <span style="color:#000">+</span>
+  <span style="color:#000">geom_vline</span>(<span style="color:#000">aes</span>(<span style="color:#000">xintercept</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>), <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;red&#34;</span>, <span style="color:#000">linetype</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;dashed&#34;</span>, <span style="color:#000">alpha</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.4</span>) <span style="color:#000">+</span>
+  <span style="color:#000">ylab</span>(<span style="color:#c41a16">&#34;&#34;</span>) <span style="color:#000">+</span> <span style="color:#000">xlab</span>(<span style="color:#c41a16">&#34;&#34;</span>) <span style="color:#000">+</span>
+  <span style="color:#000">scale_y_continuous</span>(<span style="color:#000">breaks</span> <span style="color:#000">=</span> <span style="color:#a90d91">NULL</span>) <span style="color:#000">+</span>
+  <span style="color:#000">scale_x_continuous</span>(<span style="color:#000">limits</span> <span style="color:#000">=</span> <span style="color:#000">c</span>(<span style="color:#1c01ce">-1</span>, <span style="color:#1c01ce">2</span>), <span style="color:#000">breaks</span> <span style="color:#000">=</span> <span style="color:#000">seq</span>(<span style="color:#000">from</span> <span style="color:#000">=</span> <span style="color:#1c01ce">-1</span>, <span style="color:#000">to</span> <span style="color:#000">=</span> <span style="color:#1c01ce">2</span>, <span style="color:#000">by</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>)) <span style="color:#000">+</span>
+  <span style="color:#000">theme_classic</span>()</code></pre></div>
+<p><img src="/img_poder/imgY.png" alt="ImagemY"></p>
+<h3 id="exemplo-7-menor-desvio-padrão">Exemplo 7: menor desvio padrão</h3>
+<p>Agora deixemos tudo como o Exemplo 4, mas reduzamos em 1/2 o desvio padrão de ambos os grupos (de 40 para 20).</p>
+<p><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">poder.paired</span>(<span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">10</span>, <span style="color:#177500"># Estamos comparando com o exemplo 4!!!</span>
+             <span style="color:#000">mu1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">150</span>,
+             <span style="color:#000">mudiff</span> <span style="color:#000">=</span> <span style="color:#1c01ce">20</span>,
+             <span style="color:#000">sigma1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">20</span>, <span style="color:#177500"># Agora mudamos aqui, mas reduzindo, dessa vez.</span>
+             <span style="color:#000">sigma2</span> <span style="color:#000">=</span> <span style="color:#1c01ce">20</span>, <span style="color:#177500"># Aqui também.</span>
+             <span style="color:#000">rho12</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.3</span>,
+             <span style="color:#000">nsims</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>)</code></pre></div>
+<img src="/img_poder/img7.png" alt="Imagem7"></p>
+<p>Nesse caso, o poder passou de cerca de 20% no exemplo 4 para 60% agora.</p>
+<h3 id="exemplo-8-o-poder-do-teste-e-o-nível-de-significância">Exemplo 8: O poder do teste e o nível de significância</h3>
+<p>Vamos fazer uma pequena mudança na nossa função e acrescentar mais um argumento a ela, o parâmetro alpha, de modo que possamos brincar com o nível de significância.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">poder.paired2</span> <span style="color:#000">&lt;-</span> <span style="color:#000">function</span>(<span style="color:#000">n</span>, <span style="color:#000">mu1</span>, <span style="color:#000">mudiff</span>, <span style="color:#000">sigma1</span>, <span style="color:#000">sigma2</span>, <span style="color:#000">rho12</span>, <span style="color:#000">nsims</span>, <span style="color:#000">alpha</span>){
+
+<span style="color:#000">nsims</span> <span style="color:#000">=</span> <span style="color:#000">nsims</span>
+
+<span style="color:#177500"># vetor vazio para armazenar os valores de p</span>
+  <span style="color:#000">pvalor</span> <span style="color:#000">&lt;-</span> <span style="color:#000">c</span>()
+
+<span style="color:#000">for</span>(<span style="color:#000">i</span> <span style="color:#000">in</span> <span style="color:#1c01ce">1</span><span style="color:#000">:</span><span style="color:#000">nsims</span>){
+  <span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#000">n</span>
+  <span style="color:#000">mu1</span> <span style="color:#000">=</span> <span style="color:#000">mu1</span>
+  <span style="color:#000">mudiff</span> <span style="color:#000">=</span> <span style="color:#000">mudiff</span>
+  <span style="color:#000">sigma1</span> <span style="color:#000">=</span> <span style="color:#000">sigma1</span>
+  <span style="color:#000">sigma2</span> <span style="color:#000">=</span> <span style="color:#000">sigma2</span>
+  <span style="color:#000">rho12</span> <span style="color:#000">=</span> <span style="color:#000">rho12</span>
+
+  <span style="color:#000">mu2</span> <span style="color:#000">&lt;-</span> <span style="color:#000">mu1</span> <span style="color:#000">+</span> <span style="color:#000">mudiff</span> <span style="color:#177500"># define a média da segunda condição</span>
+
+  <span style="color:#177500"># Definir a matriz de covariância</span>
+  <span style="color:#000">cov12</span> <span style="color:#000">&lt;-</span> <span style="color:#000">rho12</span> <span style="color:#000">*</span> <span style="color:#000">sigma1</span> <span style="color:#000">*</span> <span style="color:#000">sigma2</span>
+  <span style="color:#000">vcov</span> <span style="color:#000">&lt;-</span> <span style="color:#000">matrix</span>(<span style="color:#000">c</span>(<span style="color:#000">sigma1^2</span>, <span style="color:#000">cov12</span>,
+                   <span style="color:#000">cov12</span>, <span style="color:#000">sigma2^2</span>), <span style="color:#000">nrow</span><span style="color:#000">=</span><span style="color:#1c01ce">2</span>, <span style="color:#000">byrow</span><span style="color:#000">=</span><span style="color:#5b269a">T</span>)
+
+  <span style="color:#177500"># Realizandoo procedimento de amostragem</span>
+  <span style="color:#000">head</span>(<span style="color:#000">Y</span> <span style="color:#000">&lt;-</span> <span style="color:#000">rmvnorm</span>(<span style="color:#000">n</span>, <span style="color:#000">c</span>(<span style="color:#000">mu1</span>, <span style="color:#000">mu2</span>), <span style="color:#000">vcov</span>))
+  <span style="color:#000">Y1</span> <span style="color:#000">&lt;-</span> <span style="color:#000">Y[</span>, <span style="color:#1c01ce">1</span><span style="color:#000">]</span>
+  <span style="color:#000">Y2</span> <span style="color:#000">&lt;-</span> <span style="color:#000">Y[</span>, <span style="color:#1c01ce">2</span><span style="color:#000">]</span>
+
+  <span style="color:#000">test</span> <span style="color:#000">&lt;-</span> <span style="color:#000">t.test</span>(<span style="color:#000">Y2</span>, <span style="color:#000">Y1</span>, <span style="color:#000">paired</span> <span style="color:#000">=</span> <span style="color:#5b269a">T</span>)
+  <span style="color:#000">pvalor</span> <span style="color:#000">&lt;-</span> <span style="color:#000">c</span>(<span style="color:#000">pvalor</span>, <span style="color:#000">test</span><span style="color:#000">$</span><span style="color:#000">p.value</span>)
+
+  }
+<span style="color:#000">dados</span> <span style="color:#000">&lt;-</span> <span style="color:#000">as.data.frame</span>(<span style="color:#000">pvalor</span>)
+
+<span style="color:#000">poder</span> <span style="color:#000">&lt;-</span> <span style="color:#000">dados</span> <span style="color:#000">%&gt;%</span>
+  <span style="color:#000">summarise</span>(<span style="color:#000">poder</span> <span style="color:#000">=</span> <span style="color:#000">sum</span>(<span style="color:#000">pvalor</span> <span style="color:#000">&lt;</span> <span style="color:#000">alpha</span>) <span style="color:#000">/</span> <span style="color:#000">nsims</span>)
+
+<span style="color:#000">ggplot</span>() <span style="color:#000">+</span>
+  <span style="color:#000">geom_density</span>(<span style="color:#000">data</span> <span style="color:#000">=</span> <span style="color:#000">dados</span>, <span style="color:#000">aes</span>(<span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#000">pvalor</span>), <span style="color:#000">fill</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;orange&#34;</span>, <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;orange&#34;</span>, <span style="color:#000">alpha</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.4</span>) <span style="color:#000">+</span>
+  <span style="color:#000">geom_vline</span>(<span style="color:#000">aes</span>(<span style="color:#000">xintercept</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.05</span>), <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;red&#34;</span>, <span style="color:#000">linetype</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;dashed&#34;</span>) <span style="color:#000">+</span>
+  <span style="color:#000">geom_segment</span>(<span style="color:#000">aes</span>(<span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.05</span>, <span style="color:#000">xend</span> <span style="color:#000">=</span> <span style="color:#000">alpha</span>, <span style="color:#000">y</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.35</span>, <span style="color:#000">yend</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.35</span>),
+               <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;grey&#34;</span>, <span style="color:#000">arrow</span> <span style="color:#000">=</span> <span style="color:#000">arrow</span>(<span style="color:#000">length</span> <span style="color:#000">=</span> <span style="color:#000">unit</span>(<span style="color:#1c01ce">0.03</span>, <span style="color:#c41a16">&#34;npc&#34;</span>))) <span style="color:#000">+</span>
+  <span style="color:#000">geom_vline</span>(<span style="color:#000">aes</span>(<span style="color:#000">xintercept</span> <span style="color:#000">=</span> <span style="color:#000">alpha</span>), <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;blue&#34;</span>, <span style="color:#000">linetype</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;dashed&#34;</span>) <span style="color:#000">+</span>
+  <span style="color:#000">geom_text</span>(<span style="color:#000">data</span> <span style="color:#000">=</span> <span style="color:#000">poder</span>, <span style="color:#000">aes</span>(<span style="color:#000">label</span> <span style="color:#000">=</span> <span style="color:#000">poder</span>, <span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#000">alpha</span><span style="color:#000">*</span><span style="color:#1c01ce">1.5</span>, <span style="color:#000">y</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.2</span>), <span style="color:#000">color</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;blue&#34;</span>) <span style="color:#000">+</span>
+  <span style="color:#000">theme_classic</span>() <span style="color:#000">+</span>
+  <span style="color:#000">labs</span>(<span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;p-valor&#34;</span>, <span style="color:#000">y</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34;Density&#34;</span>)
+}</code></pre></div>
+<p>Vamos esatabeler um nível de significância igual a 0.1, ou seja, 10% (indicado pela linha azul no gráfico. A linha vermelha continua indicando 5% ou 0.05). Se fazemos isso, estamos aumentando a área de rejeição da hipótese nula e, portanto, <strong>aumentando o poder do teste</strong>. Logo, teremos mais p-valores que consideramos significativos e, portanto, maior poder.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">poder.paired2</span>(<span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">50</span>,
+             <span style="color:#000">mu1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">150</span>,
+             <span style="color:#000">mudiff</span> <span style="color:#000">=</span> <span style="color:#1c01ce">10</span>,
+             <span style="color:#000">sigma1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">40</span>,
+             <span style="color:#000">sigma2</span> <span style="color:#000">=</span> <span style="color:#1c01ce">40</span>,
+             <span style="color:#000">rho12</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.3</span>,
+             <span style="color:#000">nsims</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>,
+             <span style="color:#000">alpha</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.1</span>)</code></pre></div>
+<p><img src="/img_poder/img8.png" alt="Imagem8"></p>
+<p>O inverso ocorre se diminuirmos o nível de significância. Nesse caso, <strong>reduzimos o poder</strong> e, logo, a probabilidade de encontrar um efeito quando ele de fato existe. Vamos testar com alpha 0.01 (1%):</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#000">poder.paired2</span>(<span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">50</span>,
+             <span style="color:#000">mu1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">150</span>,
+             <span style="color:#000">mudiff</span> <span style="color:#000">=</span> <span style="color:#1c01ce">20</span>,
+             <span style="color:#000">sigma1</span> <span style="color:#000">=</span> <span style="color:#1c01ce">20</span>,
+             <span style="color:#000">sigma2</span> <span style="color:#000">=</span> <span style="color:#1c01ce">20</span>,
+             <span style="color:#000">rho12</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.3</span>,
+             <span style="color:#000">nsims</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>,
+             <span style="color:#000">alpha</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0.01</span>)</code></pre></div>
+<p><img src="/img_poder/img9.png" alt="Imagem9"></p>
+<p>Esse ponto é muito importante, pois mostra que o p-valor e o poder do teste são informações relacionados. Logo, não faz qualquer sentido calcular o poder do teste <strong>depois</strong> que o p-valor foi calculado (o chamado <em>poder post-hoc</em> ou <em>poder calculado</em>). O poder necessariamente tem de ser calculado <strong>antes</strong> da realização do experimento.</p>
+<p>Agora que entendemos os conceitos basilares por detrás da noção de poder estatístico, podemos avançar para os modelos mistos e como calcular o poder para eles.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
