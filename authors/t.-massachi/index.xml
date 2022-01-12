@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>T. Massachi | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/authors/t.-massachi/</link>
+      <atom:link href="https://matchollet.github.io/authors/t.-massachi/index.xml" rel="self" type="application/rss+xml" />
+    <description>T. Massachi</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>T. Massachi</title>
+      <link>https://matchollet.github.io/authors/t.-massachi/</link>
+    </image>
+    
+    <item>
+      <title>Racing heart and sweaty palms: What influences users&#39; self-assessments and physiological signals when interacting with virtual audiences?</title>
+      <link>https://matchollet.github.io/publication/iva17racing/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/iva17racing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Investigating the Physiological Responses to Virtual Audience Behavioral Changes</title>
+      <link>https://matchollet.github.io/publication/pava16stress/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/pava16stress/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

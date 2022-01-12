@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>T. Wörtwein | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/authors/t.-w%C3%B6rtwein/</link>
+      <atom:link href="https://matchollet.github.io/authors/t.-w%C3%B6rtwein/index.xml" rel="self" type="application/rss+xml" />
+    <description>T. Wörtwein</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 May 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>T. Wörtwein</title>
+      <link>https://matchollet.github.io/authors/t.-w%C3%B6rtwein/</link>
+    </image>
+    
+    <item>
+      <title>A multimodal corpus for the assessment of public speaking ability and anxiety</title>
+      <link>https://matchollet.github.io/publication/lrec16corpus/</link>
+      <pubDate>Sun, 01 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/lrec16corpus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multimodal public speaking performance assessment</title>
+      <link>https://matchollet.github.io/publication/icmi15multimodal/</link>
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/icmi15multimodal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploring feedback strategies to improve public speaking: An interactive virtual audience framework</title>
+      <link>https://matchollet.github.io/publication/ubicomp15exploring/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/ubicomp15exploring/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

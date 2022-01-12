@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>K. Prepin | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/authors/k.-prepin/</link>
+      <atom:link href="https://matchollet.github.io/authors/k.-prepin/index.xml" rel="self" type="application/rss+xml" />
+    <description>K. Prepin</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 22 Sep 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>K. Prepin</title>
+      <link>https://matchollet.github.io/authors/k.-prepin/</link>
+    </image>
+    
+    <item>
+      <title>Vers des Agents Conversationnels Animés dotés d&#39;émotions et d&#39;attitudes sociales</title>
+      <link>https://matchollet.github.io/publication/jips15agents/</link>
+      <pubDate>Tue, 22 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/jips15agents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vers des agents conversationnels animés socio-affectifs</title>
+      <link>https://matchollet.github.io/publication/ihm13agents/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/ihm13agents/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2 | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/publication_types/2/</link>
+      <atom:link href="https://matchollet.github.io/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+    <description>2</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 06 Mar 2021 11:35:10 +0200</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>2</title>
+      <link>https://matchollet.github.io/publication_types/2/</link>
+    </image>
+    
+    <item>
+      <title>Training public speaking with virtual social interactions: effectiveness of real-time feedback and delayed feedback</title>
+      <link>https://matchollet.github.io/publication/jmuitraining/</link>
+      <pubDate>Sat, 06 Mar 2021 11:35:10 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/jmuitraining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Methodology for the Automatic Extraction and Generation of Non-Verbal Signals Sequences Conveying Interpersonal Attitudes</title>
+      <link>https://matchollet.github.io/publication/taffc17methodology/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/taffc17methodology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Perception of virtual audiences</title>
+      <link>https://matchollet.github.io/publication/cga17perception/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/cga17perception/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vers des Agents Conversationnels Animés dotés d&#39;émotions et d&#39;attitudes sociales</title>
+      <link>https://matchollet.github.io/publication/jips15agents/</link>
+      <pubDate>Tue, 22 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/jips15agents/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

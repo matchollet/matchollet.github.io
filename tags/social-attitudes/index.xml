@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Social Attitudes | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/tags/social-attitudes/</link>
+      <atom:link href="https://matchollet.github.io/tags/social-attitudes/index.xml" rel="self" type="application/rss+xml" />
+    <description>Social Attitudes</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Social Attitudes</title>
+      <link>https://matchollet.github.io/tags/social-attitudes/</link>
+    </image>
+    
+    <item>
+      <title>Tardis</title>
+      <link>https://matchollet.github.io/project/tardis/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/project/tardis/</guid>
+      <description>&lt;p&gt;I was involved in the EU FP7 Tardis Project. TARDIS aimed to build a scenario-based serious-game simulation platform for young people (ages 18-25) at risk of exclusion to explore, practice and improve their social skills. TARDIS  facilitates the interaction through virtual agents (VAs) acting as recruiters in job interviews scenarios. My contribution in this project focused on the virtual recruiter. I proposed a data-driven model allowing VAs to express different interpersonal attitudes (dominant, friendly&amp;hellip;) which takes into account how the recruiter’s non-verbal behaviors are sequenced. The model uses a dataset of non-verbal behavior sequences obtained using sequence mining techniques, and can generate new sequences to express a chosen interpersonal attitude.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/8fmJMzC18C4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>A Methodology for the Automatic Extraction and Generation of Non-Verbal Signals Sequences Conveying Interpersonal Attitudes</title>
+      <link>https://matchollet.github.io/publication/taffc17methodology/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/taffc17methodology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emotion and Attitude Modeling for Non-player Characters</title>
+      <link>https://matchollet.github.io/publication/eig16emotion/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/eig16emotion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vers des Agents Conversationnels Animés dotés d&#39;émotions et d&#39;attitudes sociales</title>
+      <link>https://matchollet.github.io/publication/jips15agents/</link>
+      <pubDate>Tue, 22 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/jips15agents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Towards a socially adaptive virtual agent</title>
+      <link>https://matchollet.github.io/publication/iva15adaptative/</link>
+      <pubDate>Sat, 01 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/iva15adaptative/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An architecture for a socially adaptive virtual recruiter in job interview simulations</title>
+      <link>https://matchollet.github.io/publication/idgei15architecture/</link>
+      <pubDate>Sun, 29 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/idgei15architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>From non-verbal signals sequence mining to bayesian networks for interpersonal attitudes expression</title>
+      <link>https://matchollet.github.io/publication/iva14sequence/</link>
+      <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/iva14sequence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Expressing social attitudes in virtual agents for social coaching</title>
+      <link>https://matchollet.github.io/publication/wacai14expressing/</link>
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/wacai14expressing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Expressing social attitudes in virtual agents for social coaching</title>
+      <link>https://matchollet.github.io/publication/aamas14expressing/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/aamas14expressing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mining a multimodal corpus for non-verbal signals sequences conveying attitudes</title>
+      <link>https://matchollet.github.io/publication/lrec14mining/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/lrec14mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Expressing social attitudes in virtual agents for social training games</title>
+      <link>https://matchollet.github.io/publication/idgei14expressing/</link>
+      <pubDate>Mon, 24 Feb 2014 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/idgei14expressing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Investigating Non-Verbal Behaviors Conveying Interpersonal Stances</title>
+      <link>https://matchollet.github.io/publication/mmsym13investigating/</link>
+      <pubDate>Sun, 01 Sep 2013 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/mmsym13investigating/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A multimodal corpus for the study of non-verbal behavior expressing interpersonal stances</title>
+      <link>https://matchollet.github.io/publication/mmc13corpus/</link>
+      <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/mmc13corpus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vers des agents conversationnels animés socio-affectifs</title>
+      <link>https://matchollet.github.io/publication/ihm13agents/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/ihm13agents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interpersonal stance recognition using non-verbal signals on several time windows</title>
+      <link>https://matchollet.github.io/publication/wacai12interpersonal/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/wacai12interpersonal/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

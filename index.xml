@@ -1,146 +1,469 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Igor Costa</title>
-    <link>https://igordeo-costa.github.io/</link>
-    <description>Recent content on Igor Costa</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 05 Oct 2021 21:01:52 -0300</lastBuildDate>
-    
-	<atom:link href="https://igordeo-costa.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Mathieu Chollet</title>
+    <link>https://matchollet.github.io/</link>
+      <atom:link href="https://matchollet.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mathieu Chollet</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 06 Mar 2021 11:35:10 +0200</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Mathieu Chollet</title>
+      <link>https://matchollet.github.io/</link>
+    </image>
     
     <item>
-      <title>Poder Estatístico - Uma abordagem compreensiva</title>
-      <link>https://igordeo-costa.github.io/posts/poderdoteste1/</link>
-      <pubDate>Tue, 05 Oct 2021 21:01:52 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/posts/poderdoteste1/</guid>
-      <description>Nota prévia: Neste artigo, usarei alguns códigos apresentados pelos professores João Veríssimo e Audrey Bürki durante o último SMLP - Fifth Summer School on Statistical Methods for Linguistics and Psychology. Fiz apenas algumas modificações a fim de tonar a apresentação aqui mais didática.
-Nível de significância e poder do teste Quando se trata do clássido teste de hipóteses do paradigma frequentista (NHST - Null Hyphotesis Significance Testing&amp;hellip; o que exatamente isso quer dizer já é em si uma questão.</description>
+      <title>Cicero</title>
+      <link>https://matchollet.github.io/project/cicero/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/project/cicero/</guid>
+      <description>&lt;p&gt;In the CICERO project, our aim is to investigate if public speaking skills can be improved using virtual training. Descriptions of the user&amp;rsquo;s public speaking behavior are automatically extracted from audiovisual sensors, and an interactive virtual audience is used to provide feedback to the users depending on their public speaking performance. To investigate how virtual characters can help improving the learning outcome of a public speaking training system, I proposed a flexible and modular architecture for interactive virtual audiences, and conducted a series of studies on the impact of different feedback strategies on training outcomes and user experiences.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/dTE14lPBO98&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;!-- raw HTML omitted --&gt;
+</description>
     </item>
     
     <item>
-      <title>Começando do zero no PCIbex - Parte 07</title>
-      <link>https://igordeo-costa.github.io/posts/pcibextutorial07/</link>
-      <pubDate>Mon, 02 Aug 2021 19:05:10 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/posts/pcibextutorial07/</guid>
-      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Vimos como montar um experimento de leitura automonitorada nas Partes 1 a 7. No entanto, sempre que fazemos experimentos com seres humanos, precisamos de autorização de um Comitê de Ética. Cada universidade tem seu Comitê de Ética, um comitê (como o nome diz) responsável por analisar os projetos submetidos e suas adequações de acordo com a Resolução CNS nº 510/16. Todo projeto de pesquisa submetido a um Comitê de Ética deve apresentar um Termo de Compromisso Livre e Esclarecido, o TCLE.</description>
+      <title>Tardis</title>
+      <link>https://matchollet.github.io/project/tardis/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/project/tardis/</guid>
+      <description>&lt;p&gt;I was involved in the EU FP7 Tardis Project. TARDIS aimed to build a scenario-based serious-game simulation platform for young people (ages 18-25) at risk of exclusion to explore, practice and improve their social skills. TARDIS  facilitates the interaction through virtual agents (VAs) acting as recruiters in job interviews scenarios. My contribution in this project focused on the virtual recruiter. I proposed a data-driven model allowing VAs to express different interpersonal attitudes (dominant, friendly&amp;hellip;) which takes into account how the recruiter’s non-verbal behaviors are sequenced. The model uses a dataset of non-verbal behavior sequences obtained using sequence mining techniques, and can generate new sequences to express a chosen interpersonal attitude.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/8fmJMzC18C4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
     </item>
     
     <item>
-      <title>Começando do zero no PCIbex - Parte 06</title>
-      <link>https://igordeo-costa.github.io/posts/pcibextutorial06/</link>
-      <pubDate>Sun, 25 Jul 2021 10:15:42 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/posts/pcibextutorial06/</guid>
-      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Desde a Parte 1 do nosso tutorial, vimos montando um experimento de leitura automonitorada. Esse tipo de experimento geralmente conta com uma pergunta de compreensão leitora ao final de cada item experimental, visto que ela ajuda a manter a atenção do participante no experimento. Nesta parte, portanto, iremos aprender como fazer essa inserção.
-Podemos inserir perguntas usando o elemento newText. Vejamos:</description>
+      <title>Perceptive Patient</title>
+      <link>https://matchollet.github.io/project/perceptivepatient/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/project/perceptivepatient/</guid>
+      <description>&lt;p&gt;With colleagues from the MedVR USC-ICT group, I was involved in the Perceptive Patient project where we investigated training medical doctors communication skills. Doctors’ communication styles are known to be predictors of patients’ satisfaction, as well as actual health outcomes. We are designing emotional state and behavioral expression models for virtual patients, and creating new architectures for online, distributed systems for human-virtual agent interaction. Our system demo at the 2018 International Meeting on Simulation in Healthcare received the “Best of Show” demo award.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/DHaUUt5yeWQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
     </item>
     
     <item>
-      <title>Por que modelos mistos?</title>
-      <link>https://igordeo-costa.github.io/posts/modelosmistos/</link>
-      <pubDate>Wed, 14 Jul 2021 22:53:22 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/posts/modelosmistos/</guid>
-      <description>Há algum tempo que o debate sobre modelos mistos tem sido levantado no campo da psicolinguística, pelo menos desde 2008, com os trabalhos de Florian T. Jaeger e Baayen, Davidson and Bates. No Brasil, essa discussão parece ter sido colocada com mais clareza pela professora Mahayana Godoy, da UFRN, no artigo de Godoy &amp;amp; Nunes, 2020, muito recente, apesar de o seu tutorial sobre modelos mistos já estar disponível no blog da autora antes disso.</description>
+      <title>CineSys</title>
+      <link>https://matchollet.github.io/project/cinesys/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/project/cinesys/</guid>
+      <description>&lt;p&gt;As part of my Master’s thesis, I proposed a model for automatic editing of 3D movies, that can learn from examples. Using a 3D virtual environment (CineSys) and a description of a scenario (i.e. timed actor actions), it casts the problem of film editing as a path-planning problem in a space of available cameras (pre-defined positions or automatically computed from actors positions). I defined cost functions for shot quality (e.g. shot type preferences, composition, visibility of actions), for cutting between shots (e.g. jump cuts, do not break the line of action), and for pacing. Each rule is associated to a weight: these weights can be automatically learned from manually produced movie examples, effectively representing the editing style of a particular user.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/Aj1Iy_k0QVI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
     </item>
     
     <item>
-      <title>Começando do zero no PCIbex - Parte 05</title>
-      <link>https://igordeo-costa.github.io/posts/pcibextutorial05/</link>
-      <pubDate>Sat, 15 May 2021 09:31:15 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/posts/pcibextutorial05/</guid>
-      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Agora que já estabelecemos alguns conceitos básicos sobre o funcionamento do código, vamos dar alguns passos atrás e olhar para um aspecto muito importante no PCIbex: a organização dos estímulos experimentais na sua tabela .csv, complementando as informações que começamos a dar na Parte 2 do nosso tutorial.
-Vamos partir da tabela que tínhamos deixado ao final daquele tutorial e que acabou sendo complementada no meio da Parte 3.</description>
+      <title>Training public speaking with virtual social interactions: effectiveness of real-time feedback and delayed feedback</title>
+      <link>https://matchollet.github.io/publication/jmuitraining/</link>
+      <pubDate>Sat, 06 Mar 2021 11:35:10 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/jmuitraining/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Começando do zero no PCIbex - Parte 04</title>
-      <link>https://igordeo-costa.github.io/posts/pcibextutorial04/</link>
-      <pubDate>Wed, 05 May 2021 19:30:39 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/posts/pcibextutorial04/</guid>
-      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Antes de avançarmos um pouco mais, gostaríamos de fazer uma pequena pausa para compreendermos melhor a análise dos nossos resultados. Para isso, vamos retomar o código que usamos na Parte 2 do nosso tutorial.
-Lembre-se de que, naquele ponto, tínhamos essa tabela de dados:
-group,item,verbo,numero,frase A,1,transitivo,sg,A menina comeu o bolo. B,1,transitivo,pl,As menina comeu o bolo. A,2,intransitivo,sg,O lobo morreu de fome. B,2,intransitivo,pl,Os lobo morreu de fome.</description>
+      <title>Assessment of Situation Awareness during Robotic Surgery using Multimodal Data</title>
+      <link>https://matchollet.github.io/publication/msecp20sawareness/</link>
+      <pubDate>Sun, 25 Oct 2020 11:34:59 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/msecp20sawareness/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Começando do zero no PCIbex - Parte 03</title>
-      <link>https://igordeo-costa.github.io/posts/pcibextutorial03/</link>
-      <pubDate>Wed, 05 May 2021 19:13:25 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/posts/pcibextutorial03/</guid>
-      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Nessa parte do nosso tutorial, vamos avançar um pouco mais e brincar com a aleatorização dos nossos estímulos experimentais, além de incluir algumas sentenças distratoras. Como sempre, para acompahar o que está aqui, é importante que você tenha lido as primeiras partes:
-Começando no PCIbex do zero - Parte 01
-Começando no PCIbex do zero - Parte 02
-A fim de fazer a aleatorização, não vamos usar o elemento Sequence.</description>
+      <title>Investigating the Influence of Sound Design for Inducing Anxiety in Virtual Public Speaking</title>
+      <link>https://matchollet.github.io/publication/samih20sound/</link>
+      <pubDate>Sun, 25 Oct 2020 11:34:59 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/samih20sound/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Começando do zero no PCIbex - Parte 02</title>
-      <link>https://igordeo-costa.github.io/posts/pcibextutorial02/</link>
-      <pubDate>Sun, 02 May 2021 19:05:10 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/posts/pcibextutorial02/</guid>
-      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Na parte 1 do nosso tutorial, que você pode acessar aqui, mostramos como começar do zero no PCIbex, criando uma página de instruções com um botão clicável e como inserir um único item experimental para um experimento de leitura automonitorada. O problema é que nunca temos um único item experimental, mas vários itens, de vários tipos diferentes. Nessa parte 2, então, vamos mostrar como usar a mesma estrutura básica que já aprendemos para, em vez de inserirmos item a item no código, buscarmos cada um dos itens em uma tabela.</description>
+      <title>Etude de l&#39;influence du comportement d&#39;un public virtuel sur le stress ressenti lors de prises de paroles simulées</title>
+      <link>https://matchollet.github.io/publication/wacai20stress/</link>
+      <pubDate>Wed, 03 Jun 2020 11:34:24 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/wacai20stress/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Começando do zero no PCIbex - Parte 01</title>
-      <link>https://igordeo-costa.github.io/posts/pcibextutorial01/</link>
-      <pubDate>Sun, 02 May 2021 18:33:34 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/posts/pcibextutorial01/</guid>
-      <description>Por Igor Costa (LAPAL/PUC-Rio) e Ana Paula Jakubów (LAPAL/PUC-Rio; UERJ) Este tutorial foi organizado por Igor Costa, com ajuda de Ana Paula Jakubów. Montamos o tutorial com base na nossa experiência com o PCIbex - PennController for Internet Based Experiments. Nesse sentido, criamos um passo-a-passo para aqueles que nunca viram nada de programação, javascript, ccs, html, etc. Esperamos que ajude no seu experimento. Não somos experts no assunto, mas pretendemos ajudar, de alguma forma, os linguistas brasileiros que trabalham com metodologia experimental.</description>
+      <title>Vers un système de production de feedbacks personnalisé pour l&#39;entraînement de la prise de parole en public</title>
+      <link>https://matchollet.github.io/publication/wacai20feedback/</link>
+      <pubDate>Fri, 06 Mar 2020 11:34:33 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/wacai20feedback/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Instalando o R pela primeira vez</title>
-      <link>https://igordeo-costa.github.io/posts/intallr/</link>
-      <pubDate>Sun, 11 Apr 2021 22:18:25 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/posts/intallr/</guid>
-      <description>Esse artigo &amp;ndash; feito à pedido da minha amiga Ana Paula &amp;ndash; tem por objetivo apresentar o R e o R Studio, fornecendo um passo a passo muito básico de como instalá-los. Ao final desse texto, acreditamos que você estará mais informado sobre o que é o R e sobre as diferenças entre ele e o R Studio.
-O que é o R? R é uma linguagem de programação e, ao mesmo tempo, um ambiente de trabalho para análise estatística, ou seja, é uma ferramenta específica para a manipulação de dados numéricos, produção de gráficos e modelagens estatísticas, das mais simples às mais complexas.</description>
+      <title>Multiple metaphors in metaphoric gesturing</title>
+      <link>https://matchollet.github.io/publication/acii19gesture/</link>
+      <pubDate>Tue, 03 Sep 2019 11:33:58 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/acii19gesture/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Acessando dados do Ibex e PCIbex com o R</title>
-      <link>https://igordeo-costa.github.io/posts/dadosibex/</link>
-      <pubDate>Thu, 08 Apr 2021 19:37:46 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/posts/dadosibex/</guid>
-      <description>O objetivo deste artigo é mostrar como você pode acessar facilmente os resultados do seu experimento do Ibex Farm ou do PCIbex usando o R, sobretudo com as funcionalidades do pacote stringr para separar em múltiplas colunas as variáveis que compõem as condições experimentais, geralmente disponíveis em uma única coluna.
-Acessando os dados do Ibex Farm Eu já falei um pouquinho aqui sobre acesso aos dados do Ibex Farm. Como disse por lá, a melhor forma, a meu ver, é usar o pacote ibextor, que tem uma função para cada tipo de controlador disponível, ou seja, uma para extrair dados de leitura automonitorada (get_results_ds), sendo o ds uma abreviação de &amp;ldquo;DashedSentence&amp;rdquo;; uma para extrair os dados de julgamento de aceitabilidade (get_results_aj), sendo o aj de &amp;ldquo;AcceptabilityJudgment&amp;rdquo;; uma para extrair os dados de questionários (get_results_q), sendo o q, obviamente, de &amp;ldquo;Question&amp;rdquo;; e uma para extrair os dados de julgamento de aceitabilidade em que o falante moninota a leitura da sentença (get_results_daj), sendo o daj de &amp;ldquo;DashedAcceptabilityJudgment&amp;rdquo; feito com sentença.</description>
+      <title>Towards Narrative-Driven Atmosphere for Virtual Classroom</title>
+      <link>https://matchollet.github.io/publication/chi19classroom/</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/chi19classroom/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Tratamento de dados de Escala Likert</title>
-      <link>https://igordeo-costa.github.io/posts/escalalikert/</link>
-      <pubDate>Thu, 01 Apr 2021 23:05:39 -0300</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/posts/escalalikert/</guid>
-      <description>Preliminares Nosso objetivo é mostrar como fazer um tratamento preliminar de dados de escala do tipo Likert usando o R. Nosso caminho será:
-  Inicialmente, mostraremos como extrair os dados de um documento advindo do Ibex Farm, fazendo uma pequena limpeza nos dados de modo a torná-los mais palatáveis;
-  Em seguida, faremos uma breve investigação descritiva dos dados, mostrando como construir uma tabela com contagens e porcentagens para cada nível da escala e como visualizar esses dados com um gráfico útil para publicar essas informações;</description>
+      <title>A Scalability Benchmark for a Virtual Audience Perception Model in Virtual Reality</title>
+      <link>https://matchollet.github.io/publication/vrst19scalability/</link>
+      <pubDate>Sat, 12 Jan 2019 11:34:10 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/vrst19scalability/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Atuação</title>
-      <link>https://igordeo-costa.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://igordeo-costa.github.io/about/</guid>
-      <description>Dissertação e Tese   Costa (em processo de conclusão). Estruturas distributivas em Português Brasileiro: aspectos linguísticos e processuais.
-  Costa (2013): Verbos meteorológicos no plural em orações relativas do Português Brasileiro: gramática e processamento.
-  Artigos   Costa, Augusto &amp;amp; Rodrigues (2016). Verbos meteorológicos flexionados no plural e a hipótese da inacusatividade biargumental: explorando a sintaxe do Português Brasileiro.
-  Augusto, Rodrigues &amp;amp; Costa (2020). &amp;ldquo;Topic-subject&amp;rdquo; structure and agreement with wether verbs within relative clauses: Experimental evidence from adult and children brazilian portuguese speakers.</description>
+      <title>Talks</title>
+      <link>https://matchollet.github.io/talk/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/talk/</guid>
+      <description>&lt;p&gt;+++
+title = &amp;ldquo;Recent &amp;amp; Upcoming Talks&amp;rdquo;
+date = 2017-01-01T00:00:00&lt;/p&gt;
+&lt;h1 id=&#34;list-format&#34;&gt;List format.&lt;/h1&gt;
+&lt;h1 id=&#34;0--simple&#34;&gt;0 = Simple&lt;/h1&gt;
+&lt;h1 id=&#34;1--detailed&#34;&gt;1 = Detailed&lt;/h1&gt;
+&lt;h1 id=&#34;2--stream&#34;&gt;2 = Stream&lt;/h1&gt;
+&lt;p&gt;list_format = 2&lt;/p&gt;
+&lt;h1 id=&#34;optional-featured-image-relative-to-staticimg-folder&#34;&gt;Optional featured image (relative to &lt;code&gt;static/img/&lt;/code&gt; folder).&lt;/h1&gt;
+&lt;p&gt;[header]
+image = &amp;quot;&amp;quot;
+caption = &amp;quot;&amp;quot;
++++&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Influence of individual differences when training public speaking with virtual audiences</title>
+      <link>https://matchollet.github.io/publication/iva18influence/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/iva18influence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NADIA - Neural network driven virtual human conversation agents</title>
+      <link>https://matchollet.github.io/publication/iva18nadia/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/iva18nadia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A generic platform for training social skills with adaptative virtual agents</title>
+      <link>https://matchollet.github.io/publication/aamas18generic/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/aamas18generic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NADiA - Towards neural network driven virtual human conversation agents</title>
+      <link>https://matchollet.github.io/publication/aamas18nadia/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/aamas18nadia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The relationship between task-induced stress, vocal changes, and physiological state during a dyadic team task</title>
+      <link>https://matchollet.github.io/publication/icmi17physiology/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/icmi17physiology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Methodology for the Automatic Extraction and Generation of Non-Verbal Signals Sequences Conveying Interpersonal Attitudes</title>
+      <link>https://matchollet.github.io/publication/taffc17methodology/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/taffc17methodology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Perception of virtual audiences</title>
+      <link>https://matchollet.github.io/publication/cga17perception/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/cga17perception/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Racing heart and sweaty palms: What influences users&#39; self-assessments and physiological signals when interacting with virtual audiences?</title>
+      <link>https://matchollet.github.io/publication/iva17racing/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/iva17racing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Affect-LM: A neural language model for customizable affective text generation</title>
+      <link>https://matchollet.github.io/publication/acl17affectlm/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/acl17affectlm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Assessing Public Speaking Ability from Thin Slices of Behavior</title>
+      <link>https://matchollet.github.io/publication/fg17assessing/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/fg17assessing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emotion and Attitude Modeling for Non-player Characters</title>
+      <link>https://matchollet.github.io/publication/eig16emotion/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/eig16emotion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Native vs. Non-native language fluency implications on multimodal interaction for interpersonal skills training</title>
+      <link>https://matchollet.github.io/publication/icmi16native/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/icmi16native/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An architecture for biologically grounded real-time reflexive behavior</title>
+      <link>https://matchollet.github.io/publication/iva16biologically/</link>
+      <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/iva16biologically/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Manipulating the perception of virtual audiences using crowdsourced behaviors</title>
+      <link>https://matchollet.github.io/publication/iva16manipulating/</link>
+      <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/iva16manipulating/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Investigating the Physiological Responses to Virtual Audience Behavioral Changes</title>
+      <link>https://matchollet.github.io/publication/pava16stress/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/pava16stress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A multimodal corpus for the assessment of public speaking ability and anxiety</title>
+      <link>https://matchollet.github.io/publication/lrec16corpus/</link>
+      <pubDate>Sun, 01 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/lrec16corpus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multimodal public speaking performance assessment</title>
+      <link>https://matchollet.github.io/publication/icmi15multimodal/</link>
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/icmi15multimodal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Public speaking training with a multimodal interactive virtual audience framework</title>
+      <link>https://matchollet.github.io/publication/icmi15demo/</link>
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/icmi15demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vers des Agents Conversationnels Animés dotés d&#39;émotions et d&#39;attitudes sociales</title>
+      <link>https://matchollet.github.io/publication/jips15agents/</link>
+      <pubDate>Tue, 22 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/jips15agents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploring feedback strategies to improve public speaking: An interactive virtual audience framework</title>
+      <link>https://matchollet.github.io/publication/ubicomp15exploring/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/ubicomp15exploring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Towards a socially adaptive virtual agent</title>
+      <link>https://matchollet.github.io/publication/iva15adaptative/</link>
+      <pubDate>Sat, 01 Aug 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/iva15adaptative/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Agents Conversationnels Animés pour l’entrainement social : modèle computationnel de l’expression d’attitudes sociales par des séquences de signaux non-verbaux</title>
+      <link>https://matchollet.github.io/publication/phd15/</link>
+      <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/phd15/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An architecture for a socially adaptive virtual recruiter in job interview simulations</title>
+      <link>https://matchollet.github.io/publication/idgei15architecture/</link>
+      <pubDate>Sun, 29 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/idgei15architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>From non-verbal signals sequence mining to bayesian networks for interpersonal attitudes expression</title>
+      <link>https://matchollet.github.io/publication/iva14sequence/</link>
+      <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/iva14sequence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Suggestions for extending saiba with the vib platform</title>
+      <link>https://matchollet.github.io/publication/wasiva14vib/</link>
+      <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/wasiva14vib/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Expressing social attitudes in virtual agents for social coaching</title>
+      <link>https://matchollet.github.io/publication/wacai14expressing/</link>
+      <pubDate>Sun, 01 Jun 2014 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/wacai14expressing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An interactive virtual audience platform for public speaking training</title>
+      <link>https://matchollet.github.io/publication/aamas14audience/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/aamas14audience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Expressing social attitudes in virtual agents for social coaching</title>
+      <link>https://matchollet.github.io/publication/aamas14expressing/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/aamas14expressing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mining a multimodal corpus for non-verbal signals sequences conveying attitudes</title>
+      <link>https://matchollet.github.io/publication/lrec14mining/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/lrec14mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Expressing social attitudes in virtual agents for social training games</title>
+      <link>https://matchollet.github.io/publication/idgei14expressing/</link>
+      <pubDate>Mon, 24 Feb 2014 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/idgei14expressing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Investigating Non-Verbal Behaviors Conveying Interpersonal Stances</title>
+      <link>https://matchollet.github.io/publication/mmsym13investigating/</link>
+      <pubDate>Sun, 01 Sep 2013 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/mmsym13investigating/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A multimodal corpus for the study of non-verbal behavior expressing interpersonal stances</title>
+      <link>https://matchollet.github.io/publication/mmc13corpus/</link>
+      <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/mmc13corpus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A multimodal corpus approach to the design of virtual recruiters</title>
+      <link>https://matchollet.github.io/publication/acii13multimodal/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/acii13multimodal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The TARDIS framework: Intelligent virtual agents for social coaching in job interviews</title>
+      <link>https://matchollet.github.io/publication/ace13tardis/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/ace13tardis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vers des agents conversationnels animés socio-affectifs</title>
+      <link>https://matchollet.github.io/publication/ihm13agents/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/ihm13agents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interpersonal stance recognition using non-verbal signals on several time windows</title>
+      <link>https://matchollet.github.io/publication/wacai12interpersonal/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/wacai12interpersonal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computational model of film editing for interactive storytelling</title>
+      <link>https://matchollet.github.io/publication/icids11computational/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/icids11computational/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A virtual cinematography system that learns from examples</title>
+      <link>https://matchollet.github.io/publication/master11/</link>
+      <pubDate>Wed, 01 Jun 2011 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/master11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automated Camera Planner for Film Editing Using Key Shots</title>
+      <link>https://matchollet.github.io/publication/sca11planner/</link>
+      <pubDate>Sun, 01 May 2011 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/sca11planner/</guid>
+      <description></description>
     </item>
     
   </channel>

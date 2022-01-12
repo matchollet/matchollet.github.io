@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>P., Philippe | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/authors/p.-philippe/</link>
+      <atom:link href="https://matchollet.github.io/authors/p.-philippe/index.xml" rel="self" type="application/rss+xml" />
+    <description>P., Philippe</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Aug 2014 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>P., Philippe</title>
+      <link>https://matchollet.github.io/authors/p.-philippe/</link>
+    </image>
+    
+    <item>
+      <title>Suggestions for extending saiba with the vib platform</title>
+      <link>https://matchollet.github.io/publication/wasiva14vib/</link>
+      <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/wasiva14vib/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

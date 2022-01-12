@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>J. Wu | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/authors/j.-wu/</link>
+      <atom:link href="https://matchollet.github.io/authors/j.-wu/index.xml" rel="self" type="application/rss+xml" />
+    <description>J. Wu</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>J. Wu</title>
+      <link>https://matchollet.github.io/authors/j.-wu/</link>
+    </image>
+    
+    <item>
+      <title>NADIA - Neural network driven virtual human conversation agents</title>
+      <link>https://matchollet.github.io/publication/iva18nadia/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/iva18nadia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NADiA - Towards neural network driven virtual human conversation agents</title>
+      <link>https://matchollet.github.io/publication/aamas18nadia/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/publication/aamas18nadia/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

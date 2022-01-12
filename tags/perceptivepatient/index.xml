@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PerceptivePatient | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/tags/perceptivepatient/</link>
+      <atom:link href="https://matchollet.github.io/tags/perceptivepatient/index.xml" rel="self" type="application/rss+xml" />
+    <description>PerceptivePatient</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 24 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>PerceptivePatient</title>
+      <link>https://matchollet.github.io/tags/perceptivepatient/</link>
+    </image>
+    
+    <item>
+      <title>Perceptive Patient</title>
+      <link>https://matchollet.github.io/project/perceptivepatient/</link>
+      <pubDate>Thu, 24 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://matchollet.github.io/project/perceptivepatient/</guid>
+      <description>&lt;p&gt;With colleagues from the MedVR USC-ICT group, I was involved in the Perceptive Patient project where we investigated training medical doctors communication skills. Doctors’ communication styles are known to be predictors of patients’ satisfaction, as well as actual health outcomes. We are designing emotional state and behavioral expression models for virtual patients, and creating new architectures for online, distributed systems for human-virtual agent interaction. Our system demo at the 2018 International Meeting on Simulation in Healthcare received the “Best of Show” demo award.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/DHaUUt5yeWQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>

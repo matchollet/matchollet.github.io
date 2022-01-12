@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Admin Page | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/authors/admin/</link>
+      <atom:link href="https://matchollet.github.io/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    <description>Admin Page</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Admin Page</title>
+      <link>https://matchollet.github.io/authors/admin/</link>
+    </image>
+    
+  </channel>
+</rss>

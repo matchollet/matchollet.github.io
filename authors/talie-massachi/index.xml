@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Talie Massachi | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/authors/talie-massachi/</link>
+      <atom:link href="https://matchollet.github.io/authors/talie-massachi/index.xml" rel="self" type="application/rss+xml" />
+    <description>Talie Massachi</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 03 Jun 2020 11:34:24 +0200</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Talie Massachi</title>
+      <link>https://matchollet.github.io/authors/talie-massachi/</link>
+    </image>
+    
+    <item>
+      <title>Etude de l&#39;influence du comportement d&#39;un public virtuel sur le stress ressenti lors de prises de paroles simulées</title>
+      <link>https://matchollet.github.io/publication/wacai20stress/</link>
+      <pubDate>Wed, 03 Jun 2020 11:34:24 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/wacai20stress/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

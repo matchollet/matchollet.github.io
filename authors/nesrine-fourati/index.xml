@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nesrine Fourati | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/authors/nesrine-fourati/</link>
+      <atom:link href="https://matchollet.github.io/authors/nesrine-fourati/index.xml" rel="self" type="application/rss+xml" />
+    <description>Nesrine Fourati</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 06 Mar 2020 11:34:33 +0200</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Nesrine Fourati</title>
+      <link>https://matchollet.github.io/authors/nesrine-fourati/</link>
+    </image>
+    
+    <item>
+      <title>Vers un système de production de feedbacks personnalisé pour l&#39;entraînement de la prise de parole en public</title>
+      <link>https://matchollet.github.io/publication/wacai20feedback/</link>
+      <pubDate>Fri, 06 Mar 2020 11:34:33 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/wacai20feedback/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

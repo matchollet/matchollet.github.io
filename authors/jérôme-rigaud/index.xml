@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jérôme Rigaud | Mathieu Chollet</title>
+    <link>https://matchollet.github.io/authors/j%C3%A9r%C3%B4me-rigaud/</link>
+      <atom:link href="https://matchollet.github.io/authors/j%C3%A9r%C3%B4me-rigaud/index.xml" rel="self" type="application/rss+xml" />
+    <description>Jérôme Rigaud</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 25 Oct 2020 11:34:59 +0200</lastBuildDate>
+    <image>
+      <url>https://matchollet.github.io/img/icon-192.png</url>
+      <title>Jérôme Rigaud</title>
+      <link>https://matchollet.github.io/authors/j%C3%A9r%C3%B4me-rigaud/</link>
+    </image>
+    
+    <item>
+      <title>Assessment of Situation Awareness during Robotic Surgery using Multimodal Data</title>
+      <link>https://matchollet.github.io/publication/msecp20sawareness/</link>
+      <pubDate>Sun, 25 Oct 2020 11:34:59 +0200</pubDate>
+      <guid>https://matchollet.github.io/publication/msecp20sawareness/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
