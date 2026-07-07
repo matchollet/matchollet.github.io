@@ -8,18 +8,43 @@
   <meta name="author" content="Mathieu Chollet">
   <meta name="description" content="Team members supervised by Mathieu Chollet">
   <meta name="theme-color" content="#3f51b5">
+  <link rel="alternate" hreflang="en-us" href="https://matchollet.github.io/team/">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
   <link rel="stylesheet" href="/css/academic.css">
-  <style>body{background-color:#f5f5f5}</style>
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
   <link rel="canonical" href="https://matchollet.github.io/team/">
+  <meta property="og:site_name" content="Mathieu Chollet">
+  <meta property="og:url" content="https://matchollet.github.io/team/">
+  <meta property="og:title" content="Team | Mathieu Chollet">
+  <meta property="og:description" content="Team members supervised by Mathieu Chollet">
+  <meta property="og:image" content="https://matchollet.github.io/img/icon-192.png">
+  <meta property="og:locale" content="en-us">
   <title>Team | Mathieu Chollet</title>
 </head>
-<body id="top">
-
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents">
+  <aside class="search-results" id="search">
+    <div class="container">
+      <section class="search-header">
+        <div class="row no-gutters justify-content-between mb-3">
+          <div class="col-6"><h1>Search</h1></div>
+          <div class="col-6 col-search-close">
+            <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div id="search-box"></div>
+      </section>
+      <section class="section-search-results">
+        <div id="search-hits"></div>
+      </section>
+    </div>
+  </aside>
   <nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
     <div class="container">
       <a class="navbar-brand" href="/">Mathieu Chollet</a>
@@ -37,182 +62,201 @@
       </div>
     </div>
   </nav>
-
   <div class="container" style="padding-top:80px;padding-bottom:60px">
-
     <div class="row mb-3">
       <div class="col-12">
         <h1>Team</h1>
-        <p style="color:#666">PhD students and research fellows I supervise or have supervised.</p>
+        <p class="text-muted">PhD students and research fellows I supervise or have supervised.</p>
       </div>
     </div>
-
     <div class="row mb-2">
       <div class="col-12"><h2>Current Students &amp; Postdocs</h2></div>
     </div>
     <div class="row mb-5">
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Junhan Yang</h5>
-            <p class="mb-1" style="color:#555"><em>PhD Student (co-supervised with Prof. Tanaya Guha)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">University of Glasgow &middot; 2025–present</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Virtual Agent Co-Speech Gesture Synthesis</p>
-          </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Junhan Yang</h5>
+          <p class="mb-1 text-muted"><em>PhD Student (co-supervised with Prof. Tanaya Guha)</em></p>
+          <p class="mb-1" style="font-size:.9em">University of Glasgow &middot; 2025&ndash;present</p>
+          <p class="small mt-1">Virtual Agent Co-Speech Gesture Synthesis</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Junle Li</h5>
-            <p class="mb-1" style="color:#555"><em>PhD Student (co-supervised with Prof. Mohamed Khamis)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">University of Glasgow &middot; 2025–present</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Biometric Authentication for eXtended Reality</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Junle Li</h5>
+          <p class="mb-1 text-muted"><em>PhD Student (co-supervised with Prof. Mohamed Khamis)</em></p>
+          <p class="mb-1" style="font-size:.9em">University of Glasgow &middot; 2025&ndash;present</p>
+          <p class="small mt-1">Biometric Authentication for eXtended Reality</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Morad Elfleet</h5>
-            <p class="mb-1" style="color:#555"><em>PhD Student (co-supervised with Prof. Mohamed Khamis)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">University of Glasgow &middot; 2024–present</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Artificial Companions for eXtended Reality</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Morad Elfleet</h5>
+          <p class="mb-1 text-muted"><em>PhD Student (co-supervised with Prof. Mohamed Khamis)</em></p>
+          <p class="mb-1" style="font-size:.9em">University of Glasgow &middot; 2024&ndash;present</p>
+          <p class="small mt-1">Artificial Companions for eXtended Reality</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Maryam Aziz</h5>
-            <p class="mb-1" style="color:#555"><em>PhD Student (co-supervised with Prof. Sharon Simpson)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">University of Glasgow &middot; 2024–present</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Chatbots for Mental Health Support</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Maryam Aziz</h5>
+          <p class="mb-1 text-muted"><em>PhD Student (co-supervised with Prof. Sharon Simpson)</em></p>
+          <p class="mb-1" style="font-size:.9em">University of Glasgow &middot; 2024&ndash;present</p>
+          <p class="small mt-1">Chatbots for Mental Health Support</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Maram AlMutairi</h5>
-            <p class="mb-1" style="color:#555"><em>PhD Student (co-supervised with Prof. Alessandro Vinciarelli)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">University of Glasgow &middot; 2024–present</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Acoustic and Linguistic Analysis for Automatic Anxiety Detection in Public Speaking</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Maram AlMutairi</h5>
+          <p class="mb-1 text-muted"><em>PhD Student (co-supervised with Prof. Alessandro Vinciarelli)</em></p>
+          <p class="mb-1" style="font-size:.9em">University of Glasgow &middot; 2024&ndash;present</p>
+          <p class="small mt-1">Acoustic and Linguistic Analysis for Automatic Anxiety Detection in Public Speaking</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Wenli Hu</h5>
-            <p class="mb-1" style="color:#555"><em>PhD Student (co-supervised with Prof. Bridgette Wessels)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">University of Glasgow &middot; 2023–present</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Emotional Labour and Affective Labour in Social Robots</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Wenli Hu</h5>
+          <p class="mb-1 text-muted"><em>PhD Student (co-supervised with Prof. Bridgette Wessels)</em></p>
+          <p class="mb-1" style="font-size:.9em">University of Glasgow &middot; 2023&ndash;present</p>
+          <p class="small mt-1">Emotional Labour and Affective Labour in Social Robots</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Alia Ahmed Al Dossary</h5>
-            <p class="mb-1" style="color:#555"><em>PhD Student (co-supervised with Prof. Alessandro Vinciarelli)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">University of Glasgow &middot; 2023–present</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Speech and Physiological Foundation Models for Stress Detection</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Alia Ahmed Al Dossary</h5>
+          <p class="mb-1 text-muted"><em>PhD Student (co-supervised with Prof. Alessandro Vinciarelli)</em></p>
+          <p class="mb-1" style="font-size:.9em">University of Glasgow &middot; 2023&ndash;present</p>
+          <p class="small mt-1">Speech and Physiological Foundation Models for Stress Detection</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Tongfei Bian</h5>
-            <p class="mb-1" style="color:#555"><em>PhD Student (co-supervised with Prof. Tanaya Guha)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">University of Glasgow &middot; 2023–present</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Social Scene Understanding in Human-Robot Interaction Egocentric Videos</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Tongfei Bian</h5>
+          <p class="mb-1 text-muted"><em>PhD Student (co-supervised with Prof. Tanaya Guha)</em></p>
+          <p class="mb-1" style="font-size:.9em">University of Glasgow &middot; 2023&ndash;present</p>
+          <p class="small mt-1">Social Scene Understanding in Human-Robot Interaction Egocentric Videos</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Lin Luo</h5>
-            <p class="mb-1" style="color:#555"><em>PhD Student (co-supervised with Prof. Simone Stumpf)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">University of Glasgow &middot; 2023–present</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Machine Learning Fairness Auditing</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Lin Luo</h5>
+          <p class="mb-1 text-muted"><em>PhD Student (co-supervised with Prof. Simone Stumpf)</em></p>
+          <p class="mb-1" style="font-size:.9em">University of Glasgow &middot; 2023&ndash;present</p>
+          <p class="small mt-1">Machine Learning Fairness Auditing</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Jeanne Parisse</h5>
-            <p class="mb-1" style="color:#555"><em>PhD Student (co-supervised with Prof. Domitile Lourdeaux)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">UTC Heudiasyc, France &middot; 2023–present</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Virtual Reality Scenario Generation for First Responders Training</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Jeanne Parisse</h5>
+          <p class="mb-1 text-muted"><em>PhD Student (co-supervised with Prof. Domitile Lourdeaux)</em></p>
+          <p class="mb-1" style="font-size:.9em">UTC Heudiasyc, France &middot; 2023&ndash;present</p>
+          <p class="small mt-1">Virtual Reality Scenario Generation for First Responders Training</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Arnaud Allemang-Trivalle</h5>
-            <p class="mb-1" style="color:#555"><em>PhD Student (co-supervised with Prof. Katherine Kuchenbecker and Prof. Caroline Cao)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">Max Planck Institute, Stuggart; IMT Atlantique, France &middot; 2021–present</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Multimodal Analysis to Understand and Enhance Team Performance in Time-Constrained
-Environments </p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Arnaud Allemang-Trivalle</h5>
+          <p class="mb-1 text-muted"><em>PhD Student (co-supervised with Prof. Katherine Kuchenbecker and Prof. Caroline Cao)</em></p>
+          <p class="mb-1" style="font-size:.9em">Max Planck Institute, Stuttgart; IMT Atlantique, France &middot; 2021&ndash;present</p>
+          <p class="small mt-1">Multimodal Analysis to Understand and Enhance Team Performance in Time-Constrained Environments</p>
         </div>
+      </div>
     </div>
-
     <div class="row mb-2">
       <div class="col-12"><h2>Alumni</h2></div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Aurélien Léchappé</h5>
-            <p class="mb-1" style="color:#555"><em>PhD (co-supervised with Prof. Cédric Fleury and Dr. Cédric Dumas)</em> &mdash; defended February 2026</p>
-            <p class="mb-1" style="color:#888;font-size:.9em">IMT Atlantique, France &middot; 2022–2026</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Measuring and Modelling Team Activity in Virtual Reality: from Social Signals to Collaboration Indices</p>
-          </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Aur&eacute;lien L&eacute;chappe&acute;</h5>
+          <p class="mb-1 text-muted"><em>PhD (co-supervised with Prof. C&eacute;dric Fleury and Dr. C&eacute;dric Dumas)</em> &mdash; defended February 2026</p>
+          <p class="mb-1" style="font-size:.9em">IMT Atlantique, France &middot; 2022&ndash;2026</p>
+          <p class="small mt-1">Measuring and Modelling Team Activity in Virtual Reality: from Social Signals to Collaboration Indices</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Alisa Barkar</h5>
-            <p class="mb-1" style="color:#555"><em>PhD (co-supervised with Prof. Chloé Clavel, Dr. Beatrice Biencardi and Dr. Matthieu Labeau)</em> &mdash; defended December 2025</p>
-            <p class="mb-1" style="color:#888;font-size:.9em">Télécom Paris, France &middot; 2022–2025</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Automatically Interpreting LLM Judgments Using Linguistic Insights: Case of Public Speaking</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Alisa Barkar</h5>
+          <p class="mb-1 text-muted"><em>PhD (co-supervised with Prof. Chlo&eacute; Clavel, Dr. Beatrice Biancardi and Dr. Matthieu Labeau)</em> &mdash; defended December 2025</p>
+          <p class="mb-1" style="font-size:.9em">T&eacute;l&eacute;com Paris, France &middot; 2022&ndash;2025</p>
+          <p class="small mt-1">Automatically Interpreting LLM Judgments Using Linguistic Insights: Case of Public Speaking</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Celia Kessassi</h5>
-            <p class="mb-1" style="color:#555"><em>PhD (co-supervised with Prof. Caroline Cao and Dr. Cédric Dumas)</em> &mdash; defended February 2025</p>
-            <p class="mb-1" style="color:#888;font-size:.9em">IMT Atlantique, France &middot; 2021–2025</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Modelling the Induction of Social Stress in Immersive Virtual Reality Simulations</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Celia Kessassi</h5>
+          <p class="mb-1 text-muted"><em>PhD (co-supervised with Prof. Caroline Cao and Dr. C&eacute;dric Dumas)</em> &mdash; defended February 2025</p>
+          <p class="mb-1" style="font-size:.9em">IMT Atlantique, France &middot; 2021&ndash;2025</p>
+          <p class="small mt-1">Modelling the Induction of Social Stress in Immersive Virtual Reality Simulations</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Dr. Maheshya Weerasinghe</h5>
-            <p class="mb-1" style="color:#555"><em>Post-Doctoral Research Fellow (co-supervised with Prof. Mohamed Khamis and Dr. Mark McGill)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">University of Glasgow &middot; 2023–2024</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Assessing Efficacy of Social Virtual Reality Safety Techniques.</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Dr. Maheshya Weerasinghe</h5>
+          <p class="mb-1 text-muted"><em>Post-Doctoral Research Fellow (co-supervised with Prof. Mohamed Khamis and Dr. Mark McGill)</em></p>
+          <p class="mb-1" style="font-size:.9em">University of Glasgow &middot; 2023&ndash;2024</p>
+          <p class="small mt-1">Assessing Efficacy of Social Virtual Reality Safety Techniques.</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Dr. Liv Danthon-Lefebvre</h5>
-            <p class="mb-1" style="color:#555"><em>Post-Doctoral Research Fellow</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">IMT Atlantique, France &middot; Feb 2022–Feb 2024</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">User-Centred Design of Technologically Augmented Public Speaking Skills Training.</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Dr. Liv Danthon-Lefebvre</h5>
+          <p class="mb-1 text-muted"><em>Post-Doctoral Research Fellow</em></p>
+          <p class="mb-1" style="font-size:.9em">IMT Atlantique, France &middot; Feb 2022&ndash;Feb 2024</p>
+          <p class="small mt-1">User-Centred Design of Technologically Augmented Public Speaking Skills Training.</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Dr. Alexandre Kabil</h5>
-            <p class="mb-1" style="color:#555"><em>Post-Doctoral Research Fellow (co-supervised with Dr. Cédric Dumas)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">IMT Atlantique, France &middot; 2021–2022</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Supporting Collaboration in Virtual Reality Interactions.</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Dr. Alexandre Kabil</h5>
+          <p class="mb-1 text-muted"><em>Post-Doctoral Research Fellow (co-supervised with Dr. C&eacute;dric Dumas)</em></p>
+          <p class="mb-1" style="font-size:.9em">IMT Atlantique, France &middot; 2021&ndash;2022</p>
+          <p class="small mt-1">Supporting Collaboration in Virtual Reality Interactions.</p>
         </div>
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
-            <h5 class="mb-1">Dr. Beatrice Biancardi</h5>
-            <p class="mb-1" style="color:#555"><em>Post-Doctoral Research Fellow (co-supervised with Dr. Chloé Clavel)</em></p>
-            <p class="mb-1" style="color:#888;font-size:.9em">Télécom Paristech, France &middot; 2021</p>
-            <p style="color:#666;font-size:.88em;margin-top:4px">Investigating the Timing of Public Speaking Judgments.</p>
-          </div>
+      </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 p-3" style="box-shadow:0 2px 8px rgba(0,0,0,.08);border-radius:8px">
+          <h5 class="mb-1">Dr. Beatrice Biancardi</h5>
+          <p class="mb-1 text-muted"><em>Post-Doctoral Research Fellow (co-supervised with Dr. Chlo&eacute; Clavel)</em></p>
+          <p class="mb-1" style="font-size:.9em">T&eacute;l&eacute;com Paristech, France &middot; 2021</p>
+          <p class="small mt-1">Investigating the Timing of Public Speaking Judgments.</p>
         </div>
+      </div>
     </div>
-
   </div>
-
   <div class="container">
     <footer class="site-footer">
-      <p class="powered-by">Powered by the <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.</p>
+      <p class="powered-by">
+        Powered by the <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+        <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+        <span class="float-right" aria-hidden="true">
+          <a href="#" class="back-to-top"><span class="button_icon"><i class="fas fa-chevron-up fa-2x"></i></span></a>
+        </span>
+      </p>
     </footer>
   </div>
-
+  <div id="modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cite</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body"><pre><code class="tex hljs"></code></pre></div>
+        <div class="modal-footer">
+          <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank"><i class="fas fa-copy"></i> Copy</a>
+          <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank"><i class="fas fa-download"></i> Download</a>
+          <div id="modal-error"></div>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <script src="/js/academic.min.8c16f756486dbe4bda816a966f48730d.js"></script>
 </body>
 </html>
